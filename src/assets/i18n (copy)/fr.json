@@ -1,0 +1,22 @@
+{
+	"Login": {
+		"KeepMeLoggedIn": "Garder ma session active",
+		"Login": "Login",
+		"LoginHere": "Login ici",
+		"LoginToMySpace": "Se connecter à mon espace",
+		"NoAccount": "Pas de compte",
+		"Password": "Mot de passe",
+		"PasswordHere": "Mot de passe ici",
+		"PleaseSignIntoYourAccount": "S'il vous plait connectez-vous à votre compte",
+		"RecoverPassword": "Retrouver mon mot de passe",
+		"SignUpNow": "S'enregistrer maintenant",
+		"WelcomeBack": "Bienvenue sur e-church",
+		"ConnectedWithSuccess": "Connected with success", 
+		"AllFieldsAreRequired": "Tout les champs sont requis",
+		"ErrorIncorrectLoginOrPwd": "Login ou mot de passe incorrect"
+	},
+	"Parishionals": {
+		"ChooseLanguage": "Choisir une Langue",
+		"PopularLanguages": "Languages populaire"
+	}
+}
