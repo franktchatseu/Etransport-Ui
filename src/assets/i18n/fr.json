@@ -57,7 +57,7 @@
 		"ServerUnavailable": "Serveur indisponible",
 		"Welcome": "Bienvenue",
 		"FormInvalid": "Formulaire invalide veuillez remplir les champs requis",
-		"CreateYourAccount": "Crée votre compte",
+		"CreateYourAccount": "Enregistrez vous",
 		"PersonalInformation": "Informations personnelles",
 		"Engagement": "Engagements",
 		"FirstNameField": "Nom",
@@ -89,6 +89,8 @@
 		"ChooseYourCebField": "Choisir votre CEB",
 		"ChooseYourPostField": "Choisir votre poste",
 		"ChooseYourGroupField": "Choisir votre groupe",
-		"DoneWithSuccess": "Inscription réussie avec succès"
+		"DoneWithSuccess": "Inscription réussie avec succès",
+		"FileLabel": "Choisir votre photo de profile",
+		"InvalidPhoneNumber": "Numéro de téléphone invalide"
 	}
 }

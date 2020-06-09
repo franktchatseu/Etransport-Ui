@@ -28,6 +28,7 @@ export class RegisterComponent implements OnInit {
   cebs: any[] = [];
   groupes: any[] = [];
   postes: any[] = [];
+  file:File = null;
 
   // language
   currentLanguage = Lang.currentLang;
@@ -45,7 +46,7 @@ export class RegisterComponent implements OnInit {
 
   ngOnInit() {
     this.registerForm = this.formBuilder.group({
-      login: ['', [Validators.required]],
+      // login: ['', [Validators.required]],
       email: ['', [Validators.required]],
       gender: ['', [Validators.required]],
       first_name: ['', [Validators.required]],
@@ -59,16 +60,24 @@ export class RegisterComponent implements OnInit {
       baptist_date: [''],
       baptist_place: [''],
       profession_id: ['', [Validators.required]],
-      ceb: ['', [Validators.required]],
-      post: ['', [Validators.required]],
-      group: ['', [Validators.required]],
+      ceb: [''],
+      post: [''],
+      group: [''],
       language: ['', [Validators.required]],
       tel: ['', [Validators.required]],
       is_married: [0, [Validators.required]],
+      files: ['', [Validators.required]]
     });
    // }, {validator: this.checkPasswords });
     this.changeLanguage(this.currentLanguage);
     this.getProfessions();
+    this.getPostes();
+    this.getCebs();
+    this.getGroupes();
+  }
+
+  onSelectfile(event) {
+    this.file = event.target.files[0];
   }
 
   getProfessions() {
@@ -113,14 +122,24 @@ export class RegisterComponent implements OnInit {
     return this.registerForm.controls;
   }
 
+  isValidPhonenumber(value) {
+    return (/^\d{7,}$/).test(value.replace(/[\s()+\-\.]|ext/gi, ''));
+  }
+
   onSubmit() {
     this.isError = false;
     this.isSuccess = false;
     this.isLoading = false;
     this.isSubmitted = true;
 
+    console.log(this.form);
     if (this.registerForm.invalid) {
       this.notificationService.danger(this.translations.Register.FormInvalid);
+      return;
+    }
+
+    if (!this.isValidPhonenumber(this.form.tel.value)) {
+      this.notificationService.danger(this.translations.Register.InvalidPhoneNumber);
       return;
     }
 
@@ -131,13 +150,16 @@ export class RegisterComponent implements OnInit {
       if (k) {
         if (data[k].value === true || data[k].value === false) {
           formData.append(k + '', data[k].value === true ? '1' : '0');
-        } else  {
+        } else if (k === 'files') {
+          formData.append(k, this.file);
+        } else {
           formData.append(k + '', data[k].value);
         }
       }
     }
     this.registrationService.post(formData)
       .then(resp => {
+        console.log(resp);
         this.notificationService.success(this.translations.Register.DoneWithSuccess);
       })
       .catch(err => {

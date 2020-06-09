@@ -57,7 +57,7 @@
 		"ServerUnavailable": "Server unavailable",
 		"Welcome": "Welcome",
 		"FormInvalid": "Invalid form please fill required fields",
-		"CreateYourAccount": "Create your account",
+		"CreateYourAccount": "Register now",
 		"PersonalInformation": "Personals informations",
 		"Engagement": "Engagements",
 		"FirstNameField": "First name",
@@ -89,6 +89,8 @@
 		"ChooseYourCebField": "Choose your CEB",
 		"ChooseYourPostField": "Choose your poste",
 		"ChooseYourGroupField": "Choisir votre groupe",
-		"DoneWithSuccess": "Inscription done with success"
+		"DoneWithSuccess": "Inscription done with success",
+		"FileLabel": "Choose your picture profile",
+		"InvalidPhoneNumber": "Invalid phone number"
 	}
 }
