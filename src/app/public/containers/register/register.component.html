@@ -199,7 +199,7 @@
                                             </small>
                                         </div>
                                     </div>
-                                    <div class="col-md-6">
+                                    <!-- <div class="col-md-6">
                                         <div class="position-relative form-group">
                                             <label for="exampleEmail" class="">
                                                 <span
@@ -213,6 +213,18 @@
                                             <small class="form-text text-muted info-error info-error-danger"
                                                 *ngIf="handleError?.profession_id">
                                                 {{ handleError?.profession_id }}
+                                            </small>
+                                        </div>
+                                    </div>-->
+                                    <div class="col-md-6">
+                                        <div class="position-relative form-group">
+                                            <label for="exampleEmail" class=""><span
+                                                    class="text-danger">*</span>{{ 'Register.YourProfessionField' | translate }}</label>
+                                            <input name="email" id="exampleEmail" placeholder="..." type="text"
+                                                formControlName="profession"
+                                                class="form-control {{ form.profession.errors && isSubmitted ? 'invalid': '' }}">
+                                            <small class="form-text text-muted info-error info-error-danger" *ngIf="handleError?.profession">
+                                                {{ handleError?.profession }}
                                             </small>
                                         </div>
                                     </div>
