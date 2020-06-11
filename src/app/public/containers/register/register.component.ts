@@ -45,6 +45,16 @@ export class RegisterComponent implements OnInit {
     private formBuilder: FormBuilder) {}
 
   ngOnInit() {
+    this.initForm();
+   // }, {validator: this.checkPasswords });
+    this.changeLanguage(this.currentLanguage);
+    this.getProfessions();
+    this.getPostes();
+    this.getCebs();
+    this.getGroupes();
+  }
+
+  initForm() {
     this.registerForm = this.formBuilder.group({
       // login: ['', [Validators.required]],
       email: ['', [Validators.required]],
@@ -69,12 +79,6 @@ export class RegisterComponent implements OnInit {
       is_married: [0, [Validators.required]],
       files: ['', [Validators.required]]
     });
-   // }, {validator: this.checkPasswords });
-    this.changeLanguage(this.currentLanguage);
-    this.getProfessions();
-    this.getPostes();
-    this.getCebs();
-    this.getGroupes();
   }
 
   onSelectfile(event) {
@@ -161,6 +165,7 @@ export class RegisterComponent implements OnInit {
     this.registrationService.post(formData)
       .then(resp => {
         console.log(resp);
+        this.initForm();
         this.notificationService.success(this.translations.Register.DoneWithSuccess);
       })
       .catch(err => {
