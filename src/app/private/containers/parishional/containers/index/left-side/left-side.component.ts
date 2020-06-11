@@ -4,7 +4,7 @@ import { Subscription } from 'rxjs';
 import { AuthService } from 'src/app/auth/services/auth.service';
 import { MessageService } from 'src/app/services/message.service';
 import { NotificationService } from 'src/app/services/notification.service';
-
+declare var $;
 @Component({
   selector: 'app-left-side',
   templateUrl: './left-side.component.html',
@@ -23,7 +23,14 @@ export class LeftSideComponent implements OnInit {
     private router: Router) {
     }
 
-
+  showChildren(parent) {
+    const uls = $(parent);
+    if (!uls.hasClass('mm-show')) {
+       uls.addClass('mm-show');
+    } else {
+      uls.removeClass('mm-show');
+    }
+  }
   ngOnInit() {
     console.log('Load data for component');
   }

@@ -46,7 +46,7 @@ export class IndexComponent implements OnInit {
       OTHER: 'others',
       SUPERADMIN: 'superadmins'
     };
-    if (this.user) {
+    if (this.user.types) {
       this.router.navigate(['/private/' + ui[this.user.types[0]]]);
     } else {
       this.router.navigate(['/private/login']);
