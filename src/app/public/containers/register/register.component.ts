@@ -28,7 +28,8 @@ export class RegisterComponent implements OnInit {
   cebs: any[] = [];
   groupes: any[] = [];
   postes: any[] = [];
-  file:File = null;
+  file: File = null;
+  isSpa = false;
 
   // language
   currentLanguage = Lang.currentLang;
@@ -77,6 +78,7 @@ export class RegisterComponent implements OnInit {
       language: ['', [Validators.required]],
       tel: ['', [Validators.required]],
       is_married: [0, [Validators.required]],
+      is_spa: [0],
       files: ['', [Validators.required]]
     });
   }

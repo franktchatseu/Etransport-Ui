@@ -38,13 +38,15 @@
                             <form (submit)="onSubmit()" [formGroup]="registerForm">
                                 <div class="form-row">
                                     <div class="col-md-12">
-                                        <h4>{{ 'Register.PersonalInformation' | translate }}</h4>
+                                        <h4>{{ 'Register.PersonalInformation' | translate }}
+                                            <span>({{ 'Register.Required'| translate }})</span></h4>
                                     </div>
                                     <div class="col-md-6">
                                         <div class="position-relative form-group">
-                                            <label for="exampleEmail" class=""><span
+                                            <label for="exampleEmail" class="">
+                                                <span
                                                     class="text-danger">*</span>{{ 'Register.FirstNameField' | translate }}</label>
-                                            <input name="email" id="exampleEmail" placeholder="..." type="text"
+                                            <input name="email" id="exampleEmail" placeholder="{{ 'Register.TypeFirstNameField' | translate }}..." type="text"
                                                 formControlName="first_name"
                                                 class="form-control {{ form.first_name.errors && isSubmitted ? 'invalid': '' }}">
                                             <small class="form-text text-muted info-error info-error-danger"
@@ -57,7 +59,7 @@
                                         <div class="position-relative form-group">
                                             <label for="exampleEmail" class=""><span
                                                     class="text-danger">*</span>{{ 'Register.LastNameField' | translate }}</label>
-                                            <input name="email" id="exampleEmail" placeholder="..." type="text"
+                                            <input name="email" id="exampleEmail" placeholder="{{ 'Register.TypeLastNameField' | translate }}..." type="text"
                                                 formControlName="last_name"
                                                 class="form-control {{ form.last_name.errors && isSubmitted ? 'invalid': '' }}">
                                             <small class="form-text text-muted info-error info-error-danger"
@@ -134,7 +136,7 @@
                                         <div class="position-relative form-group">
                                             <label for="exampleEmail" class=""><span
                                                     class="text-danger">*</span>{{ 'Register.DistrictField' | translate }}</label>
-                                            <input name="email" id="exampleEmail" placeholder="..." type="text"
+                                            <input name="email" id="exampleEmail" placeholder="{{ 'Register.TypeDistrict' | translate }}" type="text"
                                                 formControlName="district"
                                                 class="form-control {{ form.district.errors && isSubmitted ? 'invalid': '' }}">
                                             <small class="form-text text-muted info-error info-error-danger"
@@ -147,7 +149,7 @@
                                         <div class="position-relative form-group">
                                             <label for="exampleEmail" class=""><span
                                                     class="text-danger">*</span>{{ 'Register.TelephoneField' | translate }}</label>
-                                            <input name="email" id="exampleEmail" placeholder="..." type="tel"
+                                            <input name="email" id="exampleEmail" placeholder="{{ 'Register.TypePhoneNumber' | translate }}" type="tel"
                                                 formControlName="tel"
                                                 class="form-control {{ form.tel.errors && isSubmitted ? 'invalid': '' }}">
                                             <small class="form-text text-muted info-error info-error-danger"
@@ -158,9 +160,9 @@
                                     </div>
                                     <div class="col-md-6">
                                         <div class="position-relative form-group">
-                                            <label for="exampleEmail" class=""><span
-                                                    class="text-danger">*</span>{{ 'Register.EmailField' | translate }}</label>
-                                            <input name="email" id="exampleEmail" placeholder="..." type="email"
+                                            <label for="exampleEmail"
+                                                class="">{{ 'Register.EmailField' | translate }}</label>
+                                            <input name="email" id="exampleEmail" placeholder="{{ 'Register.TypeEmailField' | translate }}" type="email"
                                                 formControlName="email"
                                                 class="form-control {{ form.email.errors && isSubmitted ? 'invalid': '' }}">
                                             <small class="form-text text-muted info-error info-error-danger"
@@ -223,7 +225,8 @@
                                             <input name="email" id="exampleEmail" placeholder="..." type="text"
                                                 formControlName="profession"
                                                 class="form-control {{ form.profession.errors && isSubmitted ? 'invalid': '' }}">
-                                            <small class="form-text text-muted info-error info-error-danger" *ngIf="handleError?.profession">
+                                            <small class="form-text text-muted info-error info-error-danger"
+                                                *ngIf="handleError?.profession">
                                                 {{ handleError?.profession }}
                                             </small>
                                         </div>
@@ -247,25 +250,41 @@
                                     </div>
                                     <div class="col-md-6">
                                         <div class="position-relative form-group">
-                                            <label for="exampleEmail" class="">
+                                            <label for="exampleEmail">
                                                 <span class="text-danger">*</span>
                                                 {{ 'Register.AreYouMarriedField' | translate }}
                                             </label>
-                                            <div style="height:30px; margin-left:1%">
-                                                <input formControlName="is_married" style="border: 1px solid green"
-                                                    type="checkbox" size="20" checked="false" data-toggle="toggle"
-                                                    data-onstyle="success" value="{{ 'Register.Yes' | translate }}" />
+                                            <div class="row">
+                                                <div class="col-md-6 form-check">
+                                                    <input formControlName="is_married" class="form-check-input"
+                                                        type="radio" name="exampleRadios" id="exampleRadios1"
+                                                        value="1" checked>
+                                                    <label class="form-check-label" for="exampleRadios1">
+                                                        {{ 'Register.Yes' | translate }}
+                                                    </label>
+                                                </div>
+                                                <div class="col-md-6 form-check">
+                                                    <input (click)="form.is_married.value=null" class="form-check-input"
+                                                        type="radio" name="exampleRadios" id="exampleRadios2"
+                                                        value="0">
+                                                    <label class="form-check-label" for="exampleRadios2">
+                                                        {{ 'Register.No' | translate }}
+                                                    </label>
+                                                </div>
+                                                <small class="form-text text-muted info-error info-error-danger"
+                                                    *ngIf="handleError?.is_married">
+                                                    {{ handleError?.is_married }}
+                                                </small>
                                             </div>
-                                            <small class="form-text text-muted info-error info-error-danger"
-                                                *ngIf="handleError?.is_married">
-                                                {{ handleError?.is_married }}
-                                            </small>
                                         </div>
                                     </div>
                                     <div class="col-md-6">
                                         <div class="position-relative form-group">
-                                            <label for="exampleText" class="">{{ "Register.FileLabel" | translate }}</label>
-                                            <input formControlName="files" name="file" id="file" placeholder="{{ 'Register.FileField' | translate }}" type="file" (change)="onSelectfile($event)" class="form-control">
+                                            <label for="exampleText"
+                                                class=""><span class="text-danger">*</span>{{ "Register.FileLabel" | translate }}</label>
+                                            <input formControlName="files" name="file" id="file"
+                                                placeholder="{{ 'Register.FileField' | translate }}" type="file"
+                                                (change)="onSelectfile($event)" class="form-control">
                                         </div>
                                     </div>
                                     <div class="col-md-12">
@@ -274,8 +293,7 @@
                                     <div class="col-md-6">
                                         <div class="position-relative form-group">
                                             <label for="exampleEmail" class="">
-                                                <span
-                                                    class="text-danger">*</span>{{ 'Register.ChooseYourCebField' | translate }}
+                                                {{ 'Register.ChooseYourCebField' | translate }}
                                             </label>
                                             <select formControlName="ceb"
                                                 class="form-control {{ form.ceb.errors && isSubmitted ? 'invalid': '' }}">
@@ -291,8 +309,7 @@
                                     <div class="col-md-6">
                                         <div class="position-relative form-group">
                                             <label for="exampleEmail" class="">
-                                                <span
-                                                    class="text-danger">*</span>{{ 'Register.ChooseYourGroupField' | translate }}
+                                                {{ 'Register.ChooseYourGroupField' | translate }}
                                             </label>
                                             <select formControlName="group"
                                                 class="form-control {{ form.group.errors && isSubmitted ? 'invalid': '' }}">
@@ -306,6 +323,32 @@
                                         </div>
                                     </div>
                                     <div class="col-md-6">
+                                        <div class="position-relative form-group">
+                                            <label for="exampleEmail" class="">
+                                                {{ 'Register.AreYouSpaParishional' | translate }}
+                                            </label>
+                                            <div class="row">
+                                                <div class="col-md-6 form-check">
+                                                    <input (click)="form.is_spa.value=null" class="form-check-input"
+                                                        type="radio" name="exampleRadios" id="exampleRadios1"
+                                                        value="1" checked>
+                                                    <label class="form-check-label" for="exampleRadios1">
+                                                        {{ 'Register.Yes' | translate }}
+                                                    </label>
+                                                </div>
+                                                <div class="col-md-6 form-check">
+                                                    <input formControlName="is_spa" class="form-check-input"
+                                                        type="radio" name="exampleRadios" id="exampleRadios2"
+                                                        value="0">
+                                                    <label class="form-check-label" for="exampleRadios2">
+                                                        {{ 'Register.No' | translate }}
+                                                    </label>
+                                                </div>
+                                            </div>
+
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6" *ngIf="form.is_spa.value">
                                         <div class="position-relative form-group">
                                             <label for="exampleEmail" class="">
                                                 <span
@@ -326,13 +369,25 @@
                                     <div class="col-md-6">
                                         <div class="position-relative form-group">
                                             <label for="exampleEmail" class="">
-                                                <span
-                                                    class="text-danger">*</span>{{ 'Register.AreYouBaptistedField' | translate }}
+                                                {{ 'Register.AreYouBaptistedField' | translate }}
                                             </label>
-                                            <div style="height:30px; margin-left:1%">
-                                                <input formControlName="is_baptisted" style="border: 1px solid green"
-                                                    type="checkbox" size="20" checked="false" data-toggle="toggle"
-                                                    data-onstyle="success">
+                                            <div class="row">
+                                                <div class="col-md-6 form-check">
+                                                    <input formControlName="is_baptisted" class="form-check-input"
+                                                        type="radio" name="exampleRadios" id="exampleRadios1"
+                                                        value="1" checked>
+                                                    <label class="form-check-label" for="exampleRadios1">
+                                                        {{ 'Register.Yes' | translate }}
+                                                    </label>
+                                                </div>
+                                                <div class="col-md-6 form-check">
+                                                    <input class="form-check-input"
+                                                        (click)="form.is_baptisted.value=null" type="radio"
+                                                        name="exampleRadios" id="exampleRadios2" value="0">
+                                                    <label class="form-check-label" for="exampleRadios2">
+                                                        {{ 'Register.No' | translate }}
+                                                    </label>
+                                                </div>
                                             </div>
                                             <small class="form-text text-muted info-error info-error-danger"
                                                 *ngIf="handleError?.is_baptisted">
@@ -375,7 +430,7 @@
                                             </small>
                                         </div>
                                     </div>
-                                    
+
                                 </div>
                                 <div class="mt-3 position-relative form-check">
                                     <input name="check" id="exampleCheck" type="checkbox" class="form-check-input">
