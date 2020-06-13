@@ -3,6 +3,7 @@ import { Observable } from 'rxjs';
 import { AuthService } from 'src/app/auth/services/auth.service';
 import { Router } from '@angular/router';
 
+
 @Component({
   selector: 'app-random-number',
   templateUrl: './random-number.component.html',

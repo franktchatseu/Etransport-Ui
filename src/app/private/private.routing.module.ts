@@ -21,39 +21,39 @@ const routes: Routes = [
       },
       {
         path: 'catechists',
-        loadChildren: './containers/catechist/catechist.module#CatechistModule',
+        loadChildren: () => import('./containers/catechist/catechist.module').then(m => m.CatechistModule),
         canActivate: [CatechistGuard],
         canLoad: [CatechistGuard] /* */
       },
       {
         path: 'cathecumenes',
         loadChildren:
-          './containers/cathecumene/cathecumene.module#CathecumeneModule',
+          () => import('./containers/cathecumene/cathecumene.module').then(m => m.CathecumeneModule),
         canActivate: [CathecumeneGuard],
         canLoad: [CathecumeneGuard] /* */
       },
       {
         path: 'others',
-        loadChildren: './containers/other/other.module#OtherModule',
+        loadChildren: () => import('./containers/other/other.module').then(m => m.OtherModule),
         canActivate: [OtherGuard],
         canLoad: [OtherGuard] /* */
       },
       {
         path: 'parishionals',
-        loadChildren: './containers/parishional/parishional.module#ParishionalModule',
+        loadChildren: () => import('./containers/parishional/parishional.module').then(m => m.ParishionalModule),
         canActivate: [ParishionalGuard],
         canLoad: [ParishionalGuard] /* */
       },
       {
         path: 'priests',
-        loadChildren: './containers/priest/priest.module#PriestModule',
+        loadChildren: () => import('./containers/priest/priest.module').then(m => m.PriestModule),
         canActivate: [PriestGuard],
         canLoad: [PriestGuard] /* */
       },
       {
         path: 'superadmins',
         loadChildren:
-          './containers/superadmin/superadmin.module#SuperadminModule',
+          () => import('./containers/superadmin/superadmin.module').then(m => m.SuperadminModule),
         canActivate: [SuperadminGuard],
         canLoad: [SuperadminGuard] /* */
       }
