@@ -14,8 +14,8 @@ import { Lang } from 'src/app/services/config/lang';
 })
 export class MyParishComponent implements OnInit {
 
-  parishs: Observable<any[]>;
-  activeParish: Observable<any>;
+  parishs: any;
+  activeParish: any;
   user: any = null;
 
   // language
