@@ -251,10 +251,27 @@
                                                 <span class="text-danger">*</span>
                                                 {{ 'Register.AreYouMarriedField' | translate }}
                                             </label>
-                                            <div style="height:30px; margin-left:1%">
-                                                <input formControlName="is_married" style="border: 1px solid green"
-                                                    type="checkbox" size="20" checked="false" data-toggle="toggle"
-                                                    data-onstyle="success" value="{{ 'Register.Yes' | translate }}" />
+                                            <div class="row">
+                                                <div class="col-md-6 form-check">
+                                                    <input formControlName="is_married" class="form-check-input"
+                                                        type="radio" name="married" id="married"
+                                                        value="1" checked>
+                                                    <label class="form-check-label" for="exampleRadios1">
+                                                        {{ 'Register.Yes' | translate }}
+                                                    </label>
+                                                </div>
+                                                <div class="col-md-6 form-check">
+                                                    <input (click)="form.is_married.value=null" class="form-check-input"
+                                                        type="radio" name="married" id="married"
+                                                        value="0">
+                                                    <label class="form-check-label" for="exampleRadios2">
+                                                        {{ 'Register.No' | translate }}
+                                                    </label>
+                                                </div>
+                                                <small class="form-text text-muted info-error info-error-danger"
+                                                    *ngIf="handleError?.is_married">
+                                                    {{ handleError?.is_married }}
+                                                </small>
                                             </div>
                                             <small class="form-text text-muted info-error info-error-danger"
                                                 *ngIf="handleError?.is_married">
@@ -306,6 +323,32 @@
                                         </div>
                                     </div>
                                     <div class="col-md-6">
+                                        <div class="position-relative form-group">
+                                            <label for="exampleEmail" class="">
+                                                {{ 'Register.AreYouSpaParishional' | translate }}
+                                            </label>
+                                            <div class="row">
+                                                <div class="col-md-6 form-check">
+                                                    <input (click)="form.is_spa.value=null" class="form-check-input"
+                                                        type="radio" id="spa_dec" name="spa_dec"
+                                                        value="1" checked>
+                                                    <label class="form-check-label" for="exampleRadios1">
+                                                        {{ 'Register.Yes' | translate }}
+                                                    </label>
+                                                </div>
+                                                <div class="col-md-6 form-check">
+                                                    <input formControlName="is_spa" class="form-check-input"
+                                                        type="radio" id="spa_dec" name="spa_dec"
+                                                        value="0">
+                                                    <label class="form-check-label" for="exampleRadios2">
+                                                        {{ 'Register.No' | translate }}
+                                                    </label>
+                                                </div>
+                                            </div>
+
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6" *ngIf="form.is_spa.value">
                                         <div class="position-relative form-group">
                                             <label for="exampleEmail" class="">
                                                 <span
