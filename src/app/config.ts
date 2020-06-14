@@ -1,3 +1,3 @@
 export const config = {
-  apiUrl: 'https://echurch-api.dschangen1clic.online/api'
+  apiUrl: 'https://echurchapi.dschangen1clic.online/api'
 };
