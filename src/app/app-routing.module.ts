@@ -6,12 +6,12 @@ const routes: Routes = [
   {
     path: 'private',
     loadChildren:
-      () => import('./private/private.module').then(m => m.PrivateModule),
+      './private/private.module#PrivateModule',
   },
   {
     path: 'public',
     loadChildren:
-      () => import('./public/public.module').then(m => m.PublicModule),
+      './public/public.module#PublicModule',
   }
 ];
 @NgModule({
