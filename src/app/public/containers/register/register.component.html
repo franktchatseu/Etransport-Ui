@@ -264,7 +264,7 @@
                                                     </label>
                                                 </div>
                                                 <div class="col-md-6 form-check">
-                                                    <input (click)="form.is_married.value=0" class="form-check-input"
+                                                    <input (click)="registerForm.patchValue({is_married:0})" class="form-check-input"
                                                         type="radio" name="is_married" id="is_married"
                                                         value="0">
                                                     <label class="form-check-label" for="exampleRadios2">
@@ -329,7 +329,7 @@
                                             </label>
                                             <div class="row">
                                                 <div class="col-md-6 form-check">
-                                                    <input (click)="form.is_spa.value=0" class="form-check-input"
+                                                    <input (click)="registerForm.patchValue({is_spa:0})" class="form-check-input"
                                                         type="radio" id="is_spa" name="is_spa"
                                                         value="1" checked>
                                                     <label class="form-check-label" for="exampleRadios1">
@@ -382,7 +382,7 @@
                                                 </div>
                                                 <div class="col-md-6 form-check">
                                                     <input class="form-check-input"
-                                                        (click)="form.is_baptisted.value=0" type="radio"
+                                                        (click)="registerForm.patchValue({is_baptisted:0})" type="radio"
                                                         name="is_baptisted" id="is_baptisted" value="0">
                                                     <label class="form-check-label" for="exampleRadios2">
                                                         {{ 'Register.No' | translate }}
