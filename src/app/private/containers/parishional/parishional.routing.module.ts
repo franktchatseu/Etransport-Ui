@@ -3,6 +3,7 @@ import { RouterModule, Routes } from '@angular/router';
 import { RandomNumberComponent } from './containers/random-number/random-number.component';
 import { IndexComponent } from './containers/index/index.component';
 import { MyParishComponent } from './containers/my-parish/my-parish.component';
+import { Info1Component } from './containers/info1/info1.component';
 
 const routes: Routes = [
   {
@@ -16,6 +17,10 @@ const routes: Routes = [
       {
         path: 'my-parishs',
         component: MyParishComponent,
+      },
+      {
+        path: 'info1',
+        component: Info1Component,
       }
     ]
   },

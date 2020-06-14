@@ -65,7 +65,7 @@
             </div>
         </div>
         <div class="col-lg-6">
-            <div class="main-card mb-3 card">
+            <div class="main-card mb-3 card" *ngIf="activeParish">
                 <div class="card-body">
                     <h5 class="card-title" style="text-align: center">{{ 'Parishionals.ParishDetails' | translate:{'name': activeParish?.name} }}</h5>
                     <div class="row container-details">

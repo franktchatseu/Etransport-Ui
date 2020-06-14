@@ -40,20 +40,20 @@
                         </a>
                         <ul class="my-profile mm-collapse">
                             <li>
-                                <a href="javascript:void(0);" class="mm-active">
+                                <a href="javascript:void(0);" (click)="activeMenu.menu0=1;goTo('info1')" class="{{ activeMenu.menu0 == 1 ? 'mm-active': ''}}">
                                     <i class="metismenu-icon">
-                                    </i>Info 1 
+                                    </i>{{ 'Parishionals.Info1.Title' | translate }}
                                 </a>
                             </li>
                             <li>
-                                <a href="javascript:void(0);">
+                                <a href="javascript:void(0);" (click)="activeMenu.menu0=2" class="{{ activeMenu.menu0 == 2 ? 'mm-active': ''}}">
                                     <i class="metismenu-icon">
                                     </i>Info 2 
                                 </a>
                             </li>
                         </ul>
                     </li>
-                    <li class="mm-active">
+                    <li class="">
                         <a href="javascript:void(0);" aria-expanded="false" (click)="showChildren('.my-finance')">
                             <i class="metismenu-icon pe-7s-rocket"></i>
                             Mes finances
@@ -61,20 +61,20 @@
                         </a>
                         <ul class="my-finance mm-collapse">
                             <li>
-                                <a href="javascript:void(0);" class="mm-active">
+                                <a href="javascript:void(0);" (click)="activeMenu.menu1=1" class="{{ activeMenu.menu1 == 1 ? 'mm-active': ''}}">
                                     <i class="metismenu-icon">
                                     </i>Contributions financière
                                 </a>
                             </li>
                             <li>
-                                <a href="javascript:void(0);">
+                                <a href="javascript:void(0);" (click)="activeMenu.menu1=2" class="{{ activeMenu.menu1 == 2 ? 'mm-active': ''}}">
                                     <i class="metismenu-icon">
                                     </i>Dons en ligne
                                 </a>
                             </li>
                         </ul>
                     </li>
-                    <li class="mm-active">
+                    <li class="">
                         <a href="javascript:void(0);" aria-expanded="false" (click)="showChildren('.consult-messages')">
                             <i class="metismenu-icon pe-7s-rocket"></i>
                             Consulter ses messages
@@ -82,20 +82,20 @@
                         </a>
                         <ul class="consult-messages mm-collapse">
                             <li>
-                                <a href="javascript:void(0);" class="mm-active">
+                                <a href="javascript:void(0);" (click)="activeMenu.menu2=1" class="{{ activeMenu.menu2 == 1 ? 'mm-active': ''}}">
                                     <i class="metismenu-icon">
                                     </i>...
                                 </a>
                             </li>
                             <li>
-                                <a href="javascript:void(0);">
+                                <a href="javascript:void(0);" (click)="activeMenu.menu2=2" class="{{ activeMenu.menu2 == 2 ? 'mm-active': ''}}">
                                     <i class="metismenu-icon">
                                     </i>...
                                 </a>
                             </li>
                         </ul>
                     </li>
-                    <li class="mm-active">
+                    <li class="">
                         <a href="javascript:void(0);" aria-expanded="false" (click)="showChildren('.statistic')">
                             <i class="metismenu-icon pe-7s-rocket"></i>
                             Statistiques
@@ -103,32 +103,32 @@
                         </a>
                         <ul class="statistic mm-collapse">
                             <li>
-                                <a href="javascript:void(0);" class="mm-active">
+                                <a href="javascript:void(0);" (click)="activeMenu.menu3=1" class="{{ activeMenu.menu3 == 1 ? 'mm-active': ''}}">
                                     <i class="metismenu-icon">
                                     </i>Quêtes
                                 </a>
                             </li>
                             <li>
-                                <a href="javascript:void(0);">
+                                <a href="javascript:void(0);" (click)="activeMenu.menu3=2" class="{{ activeMenu.menu3 == 2 ? 'mm-active': ''}}">
                                     <i class="metismenu-icon">
                                     </i>Décès enregistrés
                                 </a>
                             </li>
                             <li>
-                                <a href="javascript:void(0);">
+                                <a href="javascript:void(0);" (click)="activeMenu.menu3=3" class="{{ activeMenu.menu3 == 3 ? 'mm-active': ''}}">
                                     <i class="metismenu-icon">
                                     </i>Utilisateurs
                                 </a>
                             </li>
                             <li>
-                                <a href="javascript:void(0);">
+                                <a href="javascript:void(0);" (click)="activeMenu.menu3=4" class="{{ activeMenu.menu3 == 4 ? 'mm-active': ''}}">
                                     <i class="metismenu-icon">
-                                    </i>Fête de récolte
+                                    </i>Fête de récoltes
                                 </a>
                             </li>
                         </ul>
                     </li>
-                    <li class="mm-active">
+                    <li class="">
                         <a href="javascript:void(0);" aria-expanded="false" (click)="showChildren('.transfert')">
                             <i class="metismenu-icon pe-7s-rocket"></i>
                             Transfert
@@ -136,14 +136,14 @@
                         </a>
                         <ul class="transfert mm-collapse">
                             <li>
-                                <a href="javascript:void(0);" class="mm-active">
+                                <a href="javascript:void(0);" (click)="activeMenu.menu4=1" class="{{ activeMenu.menu4 == 1 ? 'mm-active': ''}}">
                                     <i class="metismenu-icon">
                                     </i>Changement de paroisse
                                 </a>
                             </li>
                         </ul>
                     </li>
-                    <li class="mm-active">
+                    <li class="">
                         <a href="javascript:void(0);" aria-expanded="false" (click)="showChildren('.save-for-event')">
                             <i class="metismenu-icon pe-7s-rocket"></i>
                             Enregistrement
@@ -151,34 +151,34 @@
                         </a>
                         <ul class="save-for-event mm-collapse">
                             <li>
-                                <a href="javascript:void(0);" class="mm-active">
+                                <a href="javascript:void(0);" (click)="activeMenu.menu5=1" class="{{ activeMenu.menu5 == 1 ? 'mm-active': ''}}">
                                     <i class="metismenu-icon">
                                     </i>Nouveau evenement
                                 </a>
                             </li>
                             <li>
-                                <a href="javascript:void(0);">
+                                <a href="javascript:void(0);" (click)="activeMenu.menu5=2" class="{{ activeMenu.menu5 == 2 ? 'mm-active': ''}}">
                                     <i class="metismenu-icon">
                                     </i>Afficher les evenements
                                 </a>
                             </li>
                             <li>
-                                <a href="javascript:void(0);">
+                                <a href="javascript:void(0);" (click)="activeMenu.menu5=3" class="{{ activeMenu.menu5 == 3 ? 'mm-active': ''}}">
                                     <i class="metismenu-icon">
                                     </i>S'enregistrer
                                 </a>
                             </li>
                         </ul>
                     </li>
-                    <li class="mm-active">
-                        <a href="javascript:void(0);" aria-expanded="false" (click)="showChildren('.save-for-event')">
+                    <li class="">
+                        <a href="javascript:void(0);" aria-expanded="false" (click)="showChildren('.priest-write-you')">
                             <i class="metismenu-icon pe-7s-rocket"></i>
                             Les pères vous répondent
                             <i class="metismenu-state-icon pe-7s-angle-down caret-left"></i>
                         </a>
-                        <ul class="save-for-event mm-collapse">
+                        <ul class="priest-write-you mm-collapse">
                             <li>
-                                <a href="javascript:void(0);" class="mm-active">
+                                <a href="javascript:void(0);" (click)="activeMenu.menu6=1" class="{{ activeMenu.menu6 == 1 ? 'mm-active': ''}}">
                                     <i class="metismenu-icon">
                                     </i>Laissez un message
                                 </a>

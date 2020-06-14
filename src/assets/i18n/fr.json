@@ -51,6 +51,11 @@
 			"ServiceNumber" : "Nombre de services",
 			"StationNumber" : "Nombre de stations",
 			"StructureNumber": "Nombre de structures"
+		},
+		"Info1": {
+			"Title": "Info un",
+			"MyInfo1": "Mes infos",
+			"DescribeMyInfo1": " Nana ni nana na fr"
 		}
 	}, 
 	"Register": {

@@ -63,7 +63,7 @@ export class LoginComponent implements OnInit {
         const user = this.authService.getUserInfos();
         if (success) {
           this.notificationService.success(this.translations.Login.ConnectedWithSuccess);
-          this.router.navigate(['/private/' + ui[user.types[0]]]);
+          this.router.navigate(['/private/' + ui.PARISHIONAL]);
         } else {
           this.notificationService.danger(this.translations.Login.ErrorIncorrectLoginOrPwd);
         }

@@ -15,6 +15,15 @@ export class LeftSideComponent implements OnInit {
   isAuthenticated = false;
   subscription: Subscription;
   translations: any = null;
+  activeMenu: any = {
+    menu0: 1,
+    menu1: 1,
+    menu2: 1,
+    menu3: 1,
+    menu4: 1,
+    menu5: 1,
+    menu6: 1,
+  };
 
   constructor(
     private authService: AuthService,
@@ -41,6 +50,10 @@ export class LeftSideComponent implements OnInit {
 
   changeLanguage(value) {
     console.log('change language !');
+  }
+
+  goTo(component) {
+    this.router.navigate(['/private/parishionals/' + component]);
   }
 
 }

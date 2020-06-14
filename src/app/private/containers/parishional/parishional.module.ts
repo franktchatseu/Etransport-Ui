@@ -8,11 +8,12 @@ import { LeftSideComponent } from './containers/index/left-side/left-side.compon
 import { NavBarComponent } from './containers/index/nav-bar/nav-bar.component';
 import { MessageService } from 'src/app/services/message.service';
 import { MyParishComponent } from './containers/my-parish/my-parish.component';
+import { Info1Component } from './containers/info1/info1.component';
 
 @NgModule({
   declarations: [
     IndexComponent, RandomNumberComponent, NavBarComponent, LeftSideComponent,
-    MyParishComponent
+    MyParishComponent, Info1Component
   ],
   imports: [
     CommonModule,
