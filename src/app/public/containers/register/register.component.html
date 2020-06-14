@@ -47,7 +47,7 @@
                                         <div class="position-relative form-group">
                                             <label for="exampleEmail" class=""><span
                                                     class="text-danger">*</span>{{ 'Register.FirstNameField' | translate }}</label>
-                                            <input name="email" id="exampleEmail" placeholder="..." type="text"
+                                            <input name="email" id="exampleEmail" placeholder="{{ 'Register.TypeFirstNameField' | translate }}" type="text"
                                                 formControlName="first_name"
                                                 class="form-control {{ form.first_name.errors && isSubmitted ? 'invalid': '' }}">
                                             <small class="form-text text-muted info-error info-error-danger"
@@ -60,7 +60,7 @@
                                         <div class="position-relative form-group">
                                             <label for="exampleEmail" class=""><span
                                                     class="text-danger">*</span>{{ 'Register.LastNameField' | translate }}</label>
-                                            <input name="email" id="exampleEmail" placeholder="..." type="text"
+                                            <input name="email" id="exampleEmail" placeholder="{{ 'Register.TypeLastNameField' | translate }}" type="text"
                                                 formControlName="last_name"
                                                 class="form-control {{ form.last_name.errors && isSubmitted ? 'invalid': '' }}">
                                             <small class="form-text text-muted info-error info-error-danger"
@@ -125,7 +125,7 @@
                                             <label for="exampleEmail" class=""><span
                                                     class="text-danger">*</span>{{ 'Register.BirthPlaceField' | translate }}</label>
                                             <input name="email" id="exampleEmail" formControlName="birth_place"
-                                                placeholder="..." type="text"
+                                                placeholder="{{ 'Register.TypeDistrict' | translate }}" type="text"
                                                 class="form-control {{ form.birth_place.errors && isSubmitted ? 'invalid': '' }}">
                                             <small class="form-text text-muted info-error info-error-danger"
                                                 *ngIf="handleError?.birth_place">
@@ -137,7 +137,7 @@
                                         <div class="position-relative form-group">
                                             <label for="exampleEmail" class=""><span
                                                     class="text-danger">*</span>{{ 'Register.DistrictField' | translate }}</label>
-                                            <input name="email" id="exampleEmail" placeholder="..." type="text"
+                                            <input name="email" id="exampleEmail" placeholder="{{ 'Register.TypeDistrict' | translate }}" type="text"
                                                 formControlName="district"
                                                 class="form-control {{ form.district.errors && isSubmitted ? 'invalid': '' }}">
                                             <small class="form-text text-muted info-error info-error-danger"
@@ -150,7 +150,7 @@
                                         <div class="position-relative form-group">
                                             <label for="exampleEmail" class=""><span
                                                     class="text-danger">*</span>{{ 'Register.TelephoneField' | translate }}</label>
-                                            <input name="email" id="exampleEmail" placeholder="..." type="tel"
+                                            <input name="email" id="exampleEmail" placeholder="{{ 'Register.TelephoneField' | translate }}" type="tel"
                                                 formControlName="tel"
                                                 class="form-control {{ form.tel.errors && isSubmitted ? 'invalid': '' }}">
                                             <small class="form-text text-muted info-error info-error-danger"
@@ -162,7 +162,7 @@
                                     <div class="col-md-6">
                                         <div class="position-relative form-group">
                                             <label for="exampleEmail" class="">{{ 'Register.EmailField' | translate }}</label>
-                                            <input name="email" id="exampleEmail" placeholder="..." type="email"
+                                            <input name="email" id="exampleEmail" placeholder="{{ 'Register.TypeEmailField' | translate }}" type="email"
                                                 formControlName="email"
                                                 class="form-control {{ form.email.errors && isSubmitted ? 'invalid': '' }}">
                                             <small class="form-text text-muted info-error info-error-danger"
@@ -192,6 +192,7 @@
                                             </label>
                                             <select formControlName="language"
                                                 class="form-control {{ form.language.errors && isSubmitted ? 'invalid': '' }}">
+                                                <option value="" disabled selected hidden>{{ 'Register.ChooseYourLanguageField'| translate }}</option>
                                                 <option value="en">{{ 'Register.EnglishValue' | translate }}</option>
                                                 <option value="fr">{{ 'Register.FrenchValue' | translate }}</option>
                                             </select>
@@ -222,7 +223,7 @@
                                         <div class="position-relative form-group">
                                             <label for="exampleEmail" class=""><span
                                                     class="text-danger">*</span>{{ 'Register.YourProfessionField' | translate }}</label>
-                                            <input name="email" id="exampleEmail" placeholder="..." type="text"
+                                            <input name="email" id="exampleEmail" placeholder="{{ 'Register.YourProfessionField' | translate }}" type="text"
                                                 formControlName="profession"
                                                 class="form-control {{ form.profession.errors && isSubmitted ? 'invalid': '' }}">
                                             <small class="form-text text-muted info-error info-error-danger" *ngIf="handleError?.profession">
@@ -238,6 +239,7 @@
                                             </label>
                                             <select formControlName="gender"
                                                 class="form-control {{ form.gender.errors && isSubmitted ? 'invalid': '' }}">
+                                                <option value="" disabled selected hidden>{{ 'Register.GenderField'| translate }}</option>
                                                 <option value="F">{{ 'Register.FemaleValue' | translate }}</option>
                                                 <option value="M">{{ 'Register.MaleValue' | translate }}</option>
                                             </select>
@@ -298,6 +300,7 @@
                                             </label>
                                             <select formControlName="ceb"
                                                 class="form-control {{ form.ceb.errors && isSubmitted ? 'invalid': '' }}">
+                                                <option value="" disabled selected hidden>{{ 'Register.ChooseYourCebField'| translate }}</option>
                                                 <option value="{{ ceb.name }}" *ngFor="let ceb of cebs">
                                                     {{  ceb.name }}</option>
                                             </select>
@@ -314,6 +317,7 @@
                                             </label>
                                             <select formControlName="group"
                                                 class="form-control {{ form.group.errors && isSubmitted ? 'invalid': '' }}">
+                                                <option value="" disabled selected hidden>{{ 'Register.ChooseYourGroupField'| translate }}</option>
                                                 <option value="{{ group.name }}" *ngFor="let group of groupes">
                                                     {{  group.name }}</option>
                                             </select>
@@ -357,6 +361,7 @@
                                             </label>
                                             <select formControlName="post"
                                                 class="form-control {{ form.post.errors && isSubmitted ? 'invalid': '' }}">
+                                                <option value="" disabled selected hidden>{{ 'Register.ChooseYourPostField'| translate }}</option>
                                                 <option value="{{ post.name }}" *ngFor="let post of postes">
                                                     {{  post.name }}</option>
                                             </select>
@@ -423,7 +428,7 @@
                                         <div class="position-relative form-group">
                                             <label for="exampleEmail" class=""><span
                                                     class="text-danger">*</span>{{ 'Register.PlaceBaptistField' | translate }}</label>
-                                            <input name="email" id="exampleEmail" placeholder="..." type="text"
+                                            <input name="email" id="exampleEmail" placeholder="{{ 'Register.PlaceBaptistField' | translate }}" type="text"
                                                 formControlName="baptist_place"
                                                 class="form-control {{ form.baptist_place.errors && isSubmitted ? 'invalid': '' }}">
                                             <small class="form-text text-muted info-error info-error-danger"
