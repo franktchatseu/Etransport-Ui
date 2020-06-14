@@ -5,7 +5,10 @@
                 <div
                     class="parent-form h-100 d-md-flex d-sm-block bg-white justify-content-center align-items-center col-md-12 col-lg-7">
                     <div class="mx-auto app-login-box col-sm-12 col-md-10 col-lg-9">
-                        <div class="app-logo"></div>
+                        <div>
+                            <img width="80" height="60" src="assets/images/logo1.jpeg" alt="">
+
+                        </div>
                         <div class="row">
                             <div class="col-sm-6">
                                 <h4>
@@ -158,8 +161,7 @@
                                     </div>
                                     <div class="col-md-6">
                                         <div class="position-relative form-group">
-                                            <label for="exampleEmail" class=""><span
-                                                    class="text-danger">*</span>{{ 'Register.EmailField' | translate }}</label>
+                                            <label for="exampleEmail" class="">{{ 'Register.EmailField' | translate }}</label>
                                             <input name="email" id="exampleEmail" placeholder="..." type="email"
                                                 formControlName="email"
                                                 class="form-control {{ form.email.errors && isSubmitted ? 'invalid': '' }}">
@@ -281,7 +283,8 @@
                                     </div>
                                     <div class="col-md-6">
                                         <div class="position-relative form-group">
-                                            <label for="exampleText" class="">{{ "Register.FileLabel" | translate }}</label>
+                                            <label for="exampleText" class=""><span
+                                                class="text-danger">*</span>{{ "Register.FileLabel" | translate }}</label>
                                             <input formControlName="files" name="file" id="file" placeholder="{{ 'Register.FileField' | translate }}" type="file" (change)="onSelectfile($event)" class="form-control">
                                         </div>
                                     </div>
@@ -291,8 +294,7 @@
                                     <div class="col-md-6">
                                         <div class="position-relative form-group">
                                             <label for="exampleEmail" class="">
-                                                <span
-                                                    class="text-danger">*</span>{{ 'Register.ChooseYourCebField' | translate }}
+                                                {{ 'Register.ChooseYourCebField' | translate }}
                                             </label>
                                             <select formControlName="ceb"
                                                 class="form-control {{ form.ceb.errors && isSubmitted ? 'invalid': '' }}">
@@ -308,8 +310,7 @@
                                     <div class="col-md-6">
                                         <div class="position-relative form-group">
                                             <label for="exampleEmail" class="">
-                                                <span
-                                                    class="text-danger">*</span>{{ 'Register.ChooseYourGroupField' | translate }}
+                                                {{ 'Register.ChooseYourGroupField' | translate }}
                                             </label>
                                             <select formControlName="group"
                                                 class="form-control {{ form.group.errors && isSubmitted ? 'invalid': '' }}">
@@ -459,9 +460,9 @@
                                 <div class="position-relative h-100 d-flex justify-content-center align-items-center bg-premium-dark"
                                     tabindex="-1">
                                     <div class="slide-img-bg"
-                                        style="background-image: url('assets/images/originals/citynights.jpg');"></div>
+                                        style="background-image: url('assets/images/originals/background2.jpg');"></div>
                                     <div class="slider-content">
-                                        <h3>Scalable, Modular, Consistent</h3>
+                                        <img width="80" height="60" src="assets/images/logo2.png" alt="">
                                         <p>Easily exclude the components you don't require. Lightweight, consistent
                                             Bootstrap based styles across all elements and components</p>
                                     </div>
