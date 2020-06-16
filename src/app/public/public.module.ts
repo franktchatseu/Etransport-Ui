@@ -5,11 +5,9 @@ import { IndexComponent } from './containers/index/index.component';
 import { TranslateModule } from '@ngx-translate/core';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { RandomNumberComponent } from './containers/random-number/random-number.component';
-// import { RegisterComponent } from './containers/register/register.component';
 @NgModule({
   declarations: [
-    IndexComponent, RandomNumberComponent, 
-    // RegisterComponent
+    IndexComponent, RandomNumberComponent,
   ],
   imports: [
     CommonModule,

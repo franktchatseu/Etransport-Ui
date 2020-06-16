@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Observable } from 'rxjs/Observable';
-import { AuthService } from 'src/app/auth/services/auth.service';
 import { Router } from '@angular/router';
+import { AuthService } from '../../../auth/services/auth.service';
 
 @Component({
   selector: 'app-index',
@@ -13,7 +13,7 @@ export class IndexComponent implements OnInit {
   constructor(private authService: AuthService, private router: Router) {}
 
   ngOnInit() {
-    this.router.navigate(['/public/register']);
+    this.router.navigate(['/public/random-number']);
   }
 
   logout() {
