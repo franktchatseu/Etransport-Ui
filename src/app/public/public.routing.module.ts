@@ -3,6 +3,7 @@ import { RouterModule, Routes } from '@angular/router';
 import { IndexComponent } from './containers/index/index.component';
 import { RandomNumberComponent } from './containers/random-number/random-number.component';
 import { RegisterComponent } from './containers/register/register.component';
+import { ListUsersComponent } from './containers/list-users/list-users.component';
 
 const routes: Routes = [
   {
@@ -17,6 +18,11 @@ const routes: Routes = [
       {
         path: 'random-number',
         component: RandomNumberComponent
+        // canActivate: [AuthGuard] /* */
+      },
+      {
+        path: 'list-users',
+        component: ListUsersComponent
         // canActivate: [AuthGuard] /* */
       }
     ]

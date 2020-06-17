@@ -54,6 +54,7 @@
 		}
 	}, 
 	"Register": {
+		"Users":"Liste des utilisatateurs du systeme",
 		"ServerUnavailable": "Serveur indisponible",
 		"Welcome": "Bienvenue",
 		"FormInvalid": "Formulaire invalide veuillez remplir les champs requis",
@@ -97,8 +98,10 @@
 		"ChooseYourCebField": "Sélectionner votre CEB",
 		"ChooseYourPostField": "Sélectionner votre poste",
 		"ChooseYourGroupField": "Sélectionner votre groupe",
+		"Avatar":"Photo",
 		"DoneWithSuccess": "Inscription réussie avec succès",
 		"FileLabel": "Choisir votre photo de profile",
-		"InvalidPhoneNumber": "Numéro de téléphone invalide"
+		"InvalidPhoneNumber": "Numéro de téléphone invalide",
+		"AddUser":"Ajouter un Paroissien"
 	}
 }

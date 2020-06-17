@@ -54,6 +54,7 @@
 		}
 	}, 
 	"Register": {
+		"Users":"List of system Users",
 		"ServerUnavailable": "Server unavailable",
 		"Welcome": "Welcome",
 		"FormInvalid": "Invalid form please fill required fields",
@@ -98,7 +99,10 @@
 		"ChooseYourPostField": "Select your poste",
 		"ChooseYourGroupField": "Select your group",
 		"DoneWithSuccess": "Inscription done with success",
+		"Avatar":"Picture",
 		"FileLabel": "Choose your picture profile",
-		"InvalidPhoneNumber": "Invalid phone number"
+		"InvalidPhoneNumber": "Invalid phone number",
+		"AddUser":"Add a Parishionnal"
+
 	}
 }
