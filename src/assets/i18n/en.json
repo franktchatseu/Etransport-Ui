@@ -102,7 +102,11 @@
 		"Avatar":"Picture",
 		"FileLabel": "Choose your picture profile",
 		"InvalidPhoneNumber": "Invalid phone number",
-		"AddUser":"Add a Parishionnal"
-
+		"DateInvalid": "Invalid date",
+		"AddUser":"Add a Parishionnal",
+		"Sexe":"Sex",
+		"Ceb":"CEB",
+		"Group":"Group",
+		"Post":"Post"
 	}
 }

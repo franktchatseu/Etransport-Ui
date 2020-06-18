@@ -9,6 +9,8 @@ import { NotificationService } from 'src/app/services/notification.service';
 import { FormBuilder } from '@angular/forms';
 import { Lang } from 'src/app/services/config/lang';
 import { BlockUI, NgBlockUI } from 'ng-block-ui';
+import { config } from 'src/app/config';
+
 
 @Component({
   selector: 'app-list-users',
@@ -18,9 +20,12 @@ import { BlockUI, NgBlockUI } from 'ng-block-ui';
 export class ListUsersComponent implements OnInit {
 
   users : any[] = [];
+  loading: boolean = true;
+
+
+  // language
   currentLanguage = Lang.currentLang;
   translations: any = null;
-  loading: boolean = true;
 
   @BlockUI() blockUI: NgBlockUI;
 
@@ -50,14 +55,13 @@ export class ListUsersComponent implements OnInit {
   ) {}
 
   ngOnInit() {
-    this.getUsers();
     this.changeLanguage(this.currentLanguage);
-
+    this.getUsers();
   }
 
   getUsers() {
     this.loading = true;
-    this.registrationService.all().then(
+    this.registrationService.all(3000).then(
       response => {
         this.users=response.data;
         console.log(response.data)
@@ -74,9 +78,18 @@ export class ListUsersComponent implements OnInit {
     )
   }
 
+  getImage(url){
+    url=config.route+JSON.parse(url);
+    return url;
+  }
+
   changeLanguage(value) {
     this.currentLanguage = value;
     this.internationalizationService.changeLanguage(this.currentLanguage, (res) => { this.translations = res; });
+  }
+
+  detailsUser(id:number) {
+    this.router.navigate(['/public/details-user/'+id]);
   }
 
 }

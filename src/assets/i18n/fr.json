@@ -102,6 +102,12 @@
 		"DoneWithSuccess": "Inscription réussie avec succès",
 		"FileLabel": "Choisir votre photo de profile",
 		"InvalidPhoneNumber": "Numéro de téléphone invalide",
-		"AddUser":"Ajouter un Paroissien"
+		"DateInvalid": "Date invalide",
+		"AddUser":"Ajouter un Paroissien",
+		"Sexe":"Sexe",
+		"Ceb":"CEB",
+		"Group":"Groupe",
+		"Post":"Poste"
+
 	}
 }

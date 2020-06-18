@@ -1,0 +1,272 @@
+<div class="app-page-title" style="margin-top: auto;">
+    <div class="col-md-12 col-lg-12 col-xl-12">
+    <div class="card-shadow-primary card-border mb-3 card">
+        <div class="dropdown-menu-header">
+            <div class="dropdown-menu-header-inner bg-dark">
+                <div class="menu-header-content">
+                    <div class="avatar-icon-wrapper mb-3 avatar-icon-xl">
+                        <div class="avatar-icon" style="width: 100px;height: 100px;">
+                            <img src="{{user ? user.avatar ? getImage(user.avatar) : 'assets/images/avatars/default-avatar.jpg' : 'assets/images/avatars/default-avatar.jpg' }}" alt="pic" >
+                        </div>
+                    </div>
+                    <div>
+                        <h5 class="menu-header-title" *ngIf="user">{{user.first_name}} {{user.last_name}}</h5>
+                        <h6 class="menu-header-subtitle" *ngIf="user"><i>{{user.profession}}</i> </h6>
+                    </div>
+                </div>
+        </div>
+ <div class="row">
+    <div class="col-md-6">
+        <div class="tabs-animation">
+            <div class="main-card mb-3 card">
+                <div class="card-header font-icon-wrapper">
+                    <i class="pe-7s-user"> </i>
+                    {{ 'Register.PersonalInformation' | translate }}
+                </div>
+                
+                <div class="card-body">
+                    <div class="row">
+                        <div class="col-md-12">
+                            <ul class="list-group list-group-flush" >
+                                       
+                                <li class="list-group-item" >
+                                    <div >
+                                    <div class="widget-content p-0"  >
+                                        <div class="widget-content-wrapper">
+                                            <div class="widget-content-left mr-3">
+                                                <div class="icon-wrapper border-light rounded m-0">
+                                                    <div class="icon-wrapper-bg bg-light"></div>
+                                                    <i class="lnr-cog icon-gradient bg-happy-itmeo"></i></div>
+                                            </div>
+                                            <div class="widget-content-left">
+                                                <div class="widget-heading" style="color: #0e0d0d;"> {{ 'Register.EmailField' | translate }}</div>                       
+                                                <div style="color: #0e0d0d;">
+                                                    {{user.email}}
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div> 
+                                </li> 
+                                <li class="list-group-item" >
+                                    <div >
+                                    <div class="widget-content p-0"  >
+                                        <div class="widget-content-wrapper">
+                                            <div class="widget-content-left mr-3">
+                                                <div class="icon-wrapper border-light rounded m-0">
+                                                    <div class="icon-wrapper-bg bg-light"></div>
+                                                    <i class="lnr-cog icon-gradient bg-happy-itmeo"></i></div>
+                                            </div>
+                                            <div class="widget-content-left">
+                                                <div class="widget-heading" style="color: #0e0d0d;"> {{ 'Register.BirthDateField' | translate }}</div>                       
+                                                <div style="color: #0e0d0d;">
+                                                    {{ user.birth_date }}
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div> 
+                                </li>
+                                <li class="list-group-item" >
+                                    <div >
+                                    <div class="widget-content p-0"  >
+                                        <div class="widget-content-wrapper">
+                                            <div class="widget-content-left mr-3">
+                                                <div class="icon-wrapper border-light rounded m-0">
+                                                    <div class="icon-wrapper-bg bg-light"></div>
+                                                    <i class="lnr-cog icon-gradient bg-happy-itmeo"></i></div>
+                                            </div>
+                                            <div class="widget-content-left">
+                                                <div class="widget-heading" style="color: #0e0d0d;"> {{ 'Register.BirthPlaceField' | translate }}</div>                       
+                                                <div style="color: #0e0d0d;">
+                                                    {{ user.birth_place }}
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div> 
+                                </li>
+                                <li class="list-group-item" >
+                                    <div >
+                                    <div class="widget-content p-0"  >
+                                        <div class="widget-content-wrapper">
+                                            <div class="widget-content-left mr-3">
+                                                <div class="icon-wrapper border-light rounded m-0">
+                                                    <div class="icon-wrapper-bg bg-light"></div>
+                                                    <i class="lnr-cog icon-gradient bg-happy-itmeo"></i></div>
+                                            </div>
+                                            <div class="widget-content-left">
+                                                <div class="widget-heading" style="color: #0e0d0d;"> {{ 'Register.DistrictField' | translate }}</div>                       
+                                                <div style="color: #0e0d0d;">
+                                                    {{ user.district }}
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div> 
+                                </li>
+                                <li class="list-group-item" >
+                                    <div >
+                                    <div class="widget-content p-0"  >
+                                        <div class="widget-content-wrapper">
+                                            <div class="widget-content-left mr-3">
+                                                <div class="icon-wrapper border-light rounded m-0">
+                                                    <div class="icon-wrapper-bg bg-light"></div>
+                                                    <i class="lnr-cog icon-gradient bg-happy-itmeo"></i></div>
+                                            </div>
+                                            <div class="widget-content-left">
+                                                <div class="widget-heading" style="color: #0e0d0d;"> {{ 'Register.TelephoneField' | translate }}</div>                       
+                                                <div style="color: #0e0d0d;">
+                                                    {{ user.tel }}
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div> 
+                                </li>
+                                <li class="list-group-item" >
+                                    <div >
+                                    <div class="widget-content p-0"  >
+                                        <div class="widget-content-wrapper">
+                                            <div class="widget-content-left mr-3">
+                                                <div class="icon-wrapper border-light rounded m-0">
+                                                    <div class="icon-wrapper-bg bg-light"></div>
+                                                    <i class="lnr-cog icon-gradient bg-happy-itmeo"></i></div>
+                                            </div>
+                                            <div class="widget-content-left">
+                                                <div class="widget-heading" style="color: #0e0d0d;"> {{ 'Register.Sexe' | translate }}</div>                       
+                                                <div style="color: #0e0d0d;">
+                                                    {{ user.gender }}
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div> 
+                                </li>
+                                
+                                <li class="list-group-item" *ngIf="user.baptist_date!== null">
+                                    <div >
+                                    <div class="widget-content p-0"  >
+                                        <div class="widget-content-wrapper">
+                                            <div class="widget-content-left mr-3">
+                                                <div class="icon-wrapper border-light rounded m-0">
+                                                    <div class="icon-wrapper-bg bg-light"></div>
+                                                    <i class="lnr-cog icon-gradient bg-happy-itmeo"></i></div>
+                                            </div>
+                                            <div class="widget-content-left" >
+                                                <div class="widget-heading" style="color: #0e0d0d;"> {{ 'Register.BaptistDateField' | translate }}</div>                       
+                                                <div style="color: #0e0d0d;">
+                                                    {{ user.baptist_date }}
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div> 
+                                </li>
+                                <li class="list-group-item" *ngIf="user.baptist_place!== null" >
+                                    <div >
+                                    <div class="widget-content p-0"  >
+                                        <div class="widget-content-wrapper">
+                                            <div class="widget-content-left mr-3">
+                                                <div class="icon-wrapper border-light rounded m-0">
+                                                    <div class="icon-wrapper-bg bg-light"></div>
+                                                    <i class="lnr-cog icon-gradient bg-happy-itmeo"></i></div>
+                                            </div>
+                                            <div class="widget-content-left">
+                                                <div class="widget-heading" style="color: #0e0d0d;"> {{ 'Register.PlaceBaptistField' | translate }}</div>                       
+                                                <div style="color: #0e0d0d;">
+                                                    {{ user.baptist_place }}
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div> 
+                                </li>
+                                <li class="list-group-item" *ngIf="user.ceb!== null">
+                                    <div >
+                                    <div class="widget-content p-0"  >
+                                        <div class="widget-content-wrapper">
+                                            <div class="widget-content-left mr-3">
+                                                <div class="icon-wrapper border-light rounded m-0">
+                                                    <div class="icon-wrapper-bg bg-light"></div>
+                                                    <i class="lnr-cog icon-gradient bg-happy-itmeo"></i></div>
+                                            </div>
+                                            <div class="widget-content-left">
+                                                <div class="widget-heading" style="color: #0e0d0d;"> {{ 'Register.Ceb' | translate }}</div>                       
+                                                <div style="color: #0e0d0d;">
+                                                    {{ user.ceb }}
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div> 
+                                </li>
+                                <li class="list-group-item" *ngIf="user.group!== null" >
+                                    <div >
+                                    <div class="widget-content p-0"  >
+                                        <div class="widget-content-wrapper">
+                                            <div class="widget-content-left mr-3">
+                                                <div class="icon-wrapper border-light rounded m-0">
+                                                    <div class="icon-wrapper-bg bg-light"></div>
+                                                    <i class="lnr-cog icon-gradient bg-happy-itmeo"></i></div>
+                                            </div>
+                                            <div class="widget-content-left">
+                                                <div class="widget-heading" style="color: #0e0d0d;"> {{ 'Register.Group' | translate }}</div>                       
+                                                <div style="color: #0e0d0d;">
+                                                    {{ user.group }}
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div> 
+                                </li>
+                                <li class="list-group-item" *ngIf="user.post!== null" >
+                                    <div >
+                                    <div class="widget-content p-0"  >
+                                        <div class="widget-content-wrapper">
+                                            <div class="widget-content-left mr-3">
+                                                <div class="icon-wrapper border-light rounded m-0">
+                                                    <div class="icon-wrapper-bg bg-light"></div>
+                                                    <i class="lnr-cog icon-gradient bg-happy-itmeo"></i></div>
+                                            </div>
+                                            <div class="widget-content-left">
+                                                <div class="widget-heading" style="color: #0e0d0d;"> {{ 'Register.Post' | translate }}</div>                       
+                                                <div style="color: #0e0d0d;">
+                                                    {{ user.post }}
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div> 
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+               
+            </div>
+        </div>
+    </div>
+    <div class="col-md-6">
+        <div class="tabs-animation">
+            <div class="main-card mb-3 card">              
+                <div class="card-body">
+                    <div class="avatar-icon-wrapper btn-hover-shine mb-2 avatar-icon-xl">
+                        <img width="100%" height="100%" src="{{user ? user.avatar ? getImage(user.avatar) : 'assets/images/avatars/default-avatar.jpg' : 'assets/images/avatars/default-avatar.jpg' }}" alt="pic" >
+   
+                    </div>
+                    
+            </div>
+
+            <a type="button" [routerLink]="['/public/list-users']" data-toggle="tooltip" title="{{ 'Register.AddUser' | translate }}" data-placement="bottom" class="mb-2 mr-2 btn-icon btn-shadow btn-outline-2x btn btn-outline-primary" style="padding-top: 5px; padding-bottom: 5px; padding-left: 20px; padding-right: 20px; flex-direction: row;">
+                <!-- <i class="pe-7s-diskette btn-icon-wrapper" style="font-size: 1.2em;"></i> -->
+                <p style="font-size: 1.2em; margin-top: 7%;">return home</p>
+            </a>
+        </div>
+    </div>
+   </div>          
+  </div>
+ </div>
+</div>
+</div>
+</div>

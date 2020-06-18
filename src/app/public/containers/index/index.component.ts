@@ -27,6 +27,5 @@ export class IndexComponent implements OnInit {
 
   goTo(url) {
     this.router.navigate(['/public/random-number']);
-    this.router.navigate(['/public/list-users']);
   }
 }

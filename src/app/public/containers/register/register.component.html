@@ -6,7 +6,7 @@
                     class="parent-form h-100 d-md-flex d-sm-block bg-white justify-content-center align-items-center col-md-12 col-lg-7">
                     <div class="mx-auto app-login-box col-sm-12 col-md-10 col-lg-9">
                         <div>
-                            <img width="80" height="60" src="assets/images/logo1.jpeg" alt="">
+                            <img width="100" height="60" src="assets/images/E-church Logo.png" alt="">
 
                         </div>
                         <div class="row">
@@ -110,9 +110,9 @@
                                                     <i class="fa fa-calendar-alt"></i>
                                                 </div>
                                             </div>
-                                            <input type="date" formControlName="birth_date"
+                                            <input type="text" formControlName="birth_date"  placeholder="YYYY-MM-DD"
                                                 class="form-control input-mask-trigger {{ form.birth_date.errors && isSubmitted ? 'invalid': '' }}"
-                                                data-inputmask-alias="datetime" data-inputmask-inputformat="mm/dd/yyyy"
+                                                data-inputmask-alias="datetime"
                                                 im-insert="false">
                                             <small class="form-text text-muted info-error info-error-danger"
                                                 *ngIf="handleError?.birth_date">
@@ -405,7 +405,6 @@
                                     <div class="col-md-6"></div>
                                     <div class="col-sm-6" *ngIf="form.is_baptisted.value">
                                         <label for="exampleEmail" class="">
-                                            <span class="text-danger">*</span>
                                             {{ 'Register.BaptistDateField' | translate }}
                                         </label>
                                         <div class="input-group">
@@ -414,7 +413,7 @@
                                                     <i class="fa fa-calendar-alt"></i>
                                                 </div>
                                             </div>
-                                            <input type="date" formControlName="baptist_date"
+                                            <input type="text" formControlName="baptist_date" placeholder="YYYY-MM-DD"
                                                 class="form-control input-mask-trigger {{ form.baptist_date.errors && isSubmitted ? 'invalid': '' }}"
                                                 data-inputmask-alias="datetime" data-inputmask-inputformat="mm/dd/yyyy"
                                                 im-insert="false">
@@ -426,8 +425,7 @@
                                     </div>
                                     <div class="col-md-6" *ngIf="form.is_baptisted.value">
                                         <div class="position-relative form-group">
-                                            <label for="exampleEmail" class=""><span
-                                                    class="text-danger">*</span>{{ 'Register.PlaceBaptistField' | translate }}</label>
+                                            <label for="exampleEmail" class="">{{ 'Register.PlaceBaptistField' | translate }}</label>
                                             <input name="email" id="exampleEmail" placeholder="{{ 'Register.PlaceBaptistField' | translate }}" type="text"
                                                 formControlName="baptist_place"
                                                 class="form-control {{ form.baptist_place.errors && isSubmitted ? 'invalid': '' }}">

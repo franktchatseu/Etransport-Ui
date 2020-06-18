@@ -7,9 +7,10 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { RandomNumberComponent } from './containers/random-number/random-number.component';
 import { RegisterComponent } from './containers/register/register.component';
 import { ListUsersComponent } from './containers/list-users/list-users.component';
+import { DetailsUserComponent } from './containers/details-user/details-user.component';
 @NgModule({
   declarations: [
-    IndexComponent, RandomNumberComponent, RegisterComponent, ListUsersComponent
+    IndexComponent, RandomNumberComponent, RegisterComponent, ListUsersComponent, DetailsUserComponent
   ],
   imports: [
     CommonModule,

@@ -133,6 +133,12 @@ export class RegisterComponent implements OnInit {
     return (/^\d{7,}$/).test(value.replace(/[\s()+\-\.]|ext/gi, ''));
   }
 
+  dateFormat(value) {
+    
+      return   (/^\d{4}\-(0?[1-9]|1[012])\-(0?[1-9]|[12][0-9]|3[01])$/.test(value));
+  }
+
+
   onSubmit() {
     this.isError = false;
     this.isSuccess = false;
@@ -145,8 +151,21 @@ export class RegisterComponent implements OnInit {
       return;
     }
 
+
+    if (!this.dateFormat(this.form.birth_date.value)) {
+      console.log('erreur');
+      this.notificationService.danger(this.translations.Register.DateInvalid);
+      return;
+    }
+
     if (!this.isValidPhonenumber(this.form.tel.value)) {
       this.notificationService.danger(this.translations.Register.InvalidPhoneNumber);
+      return;
+    }
+
+    if ( this.form.baptist_date.value !== '' && !this.dateFormat(this.form.baptist_date.value)) {
+      this.notificationService.danger(this.translations.Register.DateInvalid);
+      console.log('erreur baptist');
       return;
     }
 

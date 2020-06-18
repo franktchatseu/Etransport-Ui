@@ -4,6 +4,7 @@ import { IndexComponent } from './containers/index/index.component';
 import { RandomNumberComponent } from './containers/random-number/random-number.component';
 import { RegisterComponent } from './containers/register/register.component';
 import { ListUsersComponent } from './containers/list-users/list-users.component';
+import { DetailsUserComponent } from './containers/details-user/details-user.component';
 
 const routes: Routes = [
   {
@@ -23,6 +24,11 @@ const routes: Routes = [
       {
         path: 'list-users',
         component: ListUsersComponent
+        // canActivate: [AuthGuard] /* */
+      },
+      {
+        path: 'details-user/:id',
+        component: DetailsUserComponent
         // canActivate: [AuthGuard] /* */
       }
     ]

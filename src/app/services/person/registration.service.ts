@@ -20,12 +20,13 @@ export class RegistrationService {
       .pipe(map(data => data));
   }
 
-  all(): Promise<any> {
-    return this.http.get<any>(`${config.apiUrl}/persons/users`).toPromise();
+  all(limit): Promise<any> {
+    return this.http.get<any>(`${config.apiUrl}/persons/users?limit=${limit}`).toPromise();
   }
 
-  delete(id: number): Promise<any> {
-    return this.http.delete<any>(`${config.apiUrl}/persons/users/{id}`).toPromise();
+  find(id:number): Promise<any> {
+    return this.http.get<any>(`${config.apiUrl}/persons/users/${id}`).toPromise();
   }
+
 
 }
