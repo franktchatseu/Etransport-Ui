@@ -1,0 +1,63 @@
+<div class="container">
+    <div class="row">
+        <div class="app-page-title" style="margin: 0%; width: 100%;">
+            <div class="page-title-wrapper">
+                <div class="page-title-heading">
+                    <div class="page-title-icon">
+                        <i class="pe-7s-phone icon-gradient bg-premium-dark">
+                        </i>
+                    </div>
+                    <div>{{ 'Parishionals.MyParish' | translate }}
+                        <div class="page-title-subheading">{{ 'Parishionals.DescribeMyParish' | translate }}.
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-lg-6">
+            <div class="main-card mb-3 card">
+                <ul class="list-group list-group-flush">
+                    <li class="list-group-item" *ngFor="let parish of parishs?.data">
+                        <div class="widget-content p-0" style="cursor: pointer">
+                            <div class="widget-content-wrapper">
+                                <div class="widget-content-left mr-3">
+                                    <img width="42" class="rounded-circle" src="assets/images/avatars/1.jpg" alt="">
+                                </div>
+                                <div class="widget-content-left">
+                                    <div class="widget-heading">{{ parish.name }}</div>
+                                    <div class="widget-subheading" style="padding-right: 5%">
+                                        {{ parish.decision_creation }}</div>
+                                </div>
+                                <div class="widget-content-right">
+                                    <div role="group" class="btn-group-sm btn-group">
+                                        <button type="button" class="btn-shadow btn btn-success"
+                                            *ngIf="!parish.parish_is_active"
+                                            title="{{ 'Parishionals.On' | translate }}"><i
+                                            class="pe-7s-light"></i></button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <div class="col-lg-6">
+            <div class="main-card mb-3 card" *ngIf="activeParish">
+                <div class="card-body">
+                    <h5 class="card-title" style="text-align: center">{{ 'Parishionals.ParishDetails' | translate:{'name': activeParish?.name} }}</h5>
+                    <div class="row container-details">
+                        <div class="col-lg-12">
+                            <strong>{{ 'Parishionals.ParishDetailsProperties.DecisionCreation' | translate }} : </strong><span> {{ activeParish?.decision_creation }}</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</div>
+
+<!-- Tabs -->

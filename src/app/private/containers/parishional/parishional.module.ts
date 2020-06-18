@@ -1,6 +1,7 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { RandomNumberComponent } from './containers/random-number/random-number.component';
+import { UpdateInfoComponent } from './containers/update-info/update-info.component';
 import { ParishionalRoutingModule } from './parishional.routing.module';
 import { TranslateModule } from '@ngx-translate/core';
 import { IndexComponent } from './containers/index/index.component';
@@ -13,7 +14,7 @@ import { Info1Component } from './containers/info1/info1.component';
 @NgModule({
   declarations: [
     IndexComponent, RandomNumberComponent, NavBarComponent, LeftSideComponent,
-    MyParishComponent, Info1Component
+    MyParishComponent, Info1Component, UpdateInfoComponent
   ],
   imports: [
     CommonModule,
