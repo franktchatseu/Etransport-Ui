@@ -21,7 +21,7 @@ export class RandomNumberComponent implements OnInit {
     this.authService.logout()
       .subscribe(success => {
         if (success) {
-          this.router.navigate(['/login']);
+          this.router.navigate(['/private/login']);
         }
       });
   }

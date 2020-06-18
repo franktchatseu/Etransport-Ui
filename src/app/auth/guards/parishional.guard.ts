@@ -15,7 +15,7 @@ export class ParishionalGuard implements CanActivate, CanLoad {
 
   canLoad() {
     if (!this.authService.isLoggedIn()) {
-      this.router.navigate(['/login']);
+      this.router.navigate(['/private/login']);
     }
     return this.authService.isLoggedIn();
   }
