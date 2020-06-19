@@ -67,6 +67,10 @@ export class AuthService {
     return JSON.parse(localStorage.getItem(this.USER_INFOS));
   }
 
+  public storeUserInfos(user: any) {
+    localStorage.setItem(this.USER_INFOS, JSON.stringify(user));
+  } 
+
   private storeJwtToken(token: string) {
     localStorage.setItem(this.JWT_TOKEN, token);
   }
