@@ -53,11 +53,11 @@ export class EvenementsAllComponent implements OnInit {
     private translate: TranslateService,
   ) {
     this.translate.get(
-      ['SweetAlert.AreYouSurePro', 'SweetAlert.Warning', 'SweetAlert.Yes', 'SweetAlert.No', 'SweetAlert.Deleted',
+      ['SweetAlert.AreYouSure', 'SweetAlert.Warning', 'SweetAlert.Yes', 'SweetAlert.No', 'SweetAlert.Deleted',
       'SweetAlert.DeletedMessage', 'SweetAlert.Cancelled', 'SweetAlert.CancelledMessage'],
-      { data: 'role' })
+      { data: ' cet evenement' })
       .subscribe(val => {
-        this.areYouSure = val['SweetAlert.AreYouSurePro'];
+        this.areYouSure = val['SweetAlert.AreYouSure'];
         this.warning = val['SweetAlert.Warning'];
         this.yes = val['SweetAlert.Yes'];
         this.no = val['SweetAlert.No'];

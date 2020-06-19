@@ -7,8 +7,8 @@
                         <i class="pe-7s-phone icon-gradient bg-premium-dark">
                         </i>
                     </div>
-                    <div>{{ 'Parishionals.MyParish' | translate }}
-                        <div class="page-title-subheading">{{ 'Parishionals.DescribeMyParish' | translate }}.
+                    <div>{{ 'Parishionals.Evenement.MyEvenement' | translate }}
+                        <div class="page-title-subheading">{{ 'Parishionals.Evenement.Describe' | translate }}.
                         </div>
                     </div>
                 </div>
@@ -17,13 +17,13 @@
     </div>
     <div class="main-card mb-3 card">
         <div class="card-body">
-            <button type="button" class="btn mr-2 mb-2 btn-primary" (click)="add()"> New</button>
+            <button type="button" class="btn mr-2 mb-2 btn-primary" (click)="add()"> {{ 'Parishionals.Evenement.ButtonAdd' | translate }}</button>
                 <br>
             <table style="width: 100%;" id="example" class="table ">
                 <thead>
                 <tr>
                     <th>Id</th>
-                    <th>Nom</th>
+                    <th>{{ 'Parishionals.Evenement.LabelName' | translate }}</th>
                     <th>Description</th>
                     <th>Date</th>
                     <th>Action</th>

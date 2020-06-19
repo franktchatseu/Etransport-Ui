@@ -87,7 +87,7 @@ export class EvenementUpdateComponent implements OnInit {
     // Si la validation a echoué, on arrete l'execution de la fonction
     //this.form.name.setValue(this.proSituationName);
     if (this.formEvenement.invalid) {
-      this.translate.get('ProSituation.SubmitError')
+      this.translate.get('Parishionals.Evenement.SubmitError')
         .subscribe(val => this.notifService.danger(val));
       return;
     }
@@ -100,11 +100,12 @@ export class EvenementUpdateComponent implements OnInit {
     console.log(formData)
     this.evenementService.update(formData,this.evenement_id)
       .then(resp => {
-        this.translate.get('ProSituation.SubmitSuccess')
+        this.translate.get('Parishionals.Evenement.SubmitSucessEdit')
           .subscribe(val => this.notifService.success(val));
         this.isSubmitted = false;
         console.log(resp)
         this.formEvenement.reset();
+        
       })
       .catch(error => {
         console.log(error);
