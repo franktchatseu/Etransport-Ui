@@ -9,16 +9,25 @@ import { NavBarComponent } from './containers/index/nav-bar/nav-bar.component';
 import { MessageService } from 'src/app/services/message.service';
 import { MyParishComponent } from './containers/my-parish/my-parish.component';
 import { Info1Component } from './containers/info1/info1.component';
+import { EvenementAddComponent} from './containers/evenements/evenement-add/evenement-add.component';
+import { EvenementsAllComponent} from './containers/evenements/evenements-all/evenements-all.component';
+import {MatDialog, MatDialogModule } from '@angular/material'
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { EvenementUpdateComponent } from './containers/evenements/evenement-update/evenement-update.component';
 
 @NgModule({
   declarations: [
     IndexComponent, RandomNumberComponent, NavBarComponent, LeftSideComponent,
-    MyParishComponent, Info1Component
+    MyParishComponent, Info1Component,EvenementsAllComponent,EvenementAddComponent,EvenementUpdateComponent
   ],
   imports: [
     CommonModule,
     ParishionalRoutingModule,
     TranslateModule,
+    MatDialogModule,
+    FormsModule,
+    ReactiveFormsModule
+    
   ],
   providers: [
     MessageService
