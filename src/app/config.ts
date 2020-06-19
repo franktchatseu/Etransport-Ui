@@ -1,5 +1,5 @@
 export const config = {
-  route:'https://echurchapi.dschangen1clic.online/',
-  apiUrl: 'https://echurchapi.dschangen1clic.online/api'
-            
+  apiUrl: 'http://localhost:8000/api',
+  route:'http://localhost:8000/'
+
 };

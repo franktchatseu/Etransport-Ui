@@ -1,4 +1,4 @@
-<div class="app-container app-theme-white body-tabs-shadow">
+<div class="app-container app-theme-white body-tabs-shadow col-md-12">
     <div class="app-container">
         <div class="h-100">
             <div class="h-100 no-gutters row">
@@ -10,13 +10,13 @@
 
                         </div>
                         <div class="row">
-                            <div class="col-sm-6">
+                            <div class="col-sm-6 col-md-6 col-lg-6 col-xl-6">
                                 <h4>
                                     <div>{{ 'Register.Welcome' | translate }},</div>
                                     <span>{{ 'Register.CreateYourAccount' | translate }}</span>
                                 </h4>
                             </div>
-                            <div class="col-sm-6">
+                            <div class="col-sm-6 col-md-6 col-lg-6 col-xl-6">
                                 <div class="dropdown">
                                     <button *ngIf="currentLanguage == 'fr'" (click)="changeLanguage('en')"
                                         style="float: right" type="button" data-toggle="dropdown"
@@ -43,7 +43,7 @@
                                     <div class="col-md-12">
                                         <h4>{{ 'Register.PersonalInformation' | translate }}</h4>
                                     </div>
-                                    <div class="col-md-6">
+                                    <div class="col-sm-6 col-md-6 col-lg-6 col-xl-6">
                                         <div class="position-relative form-group">
                                             <label for="exampleEmail" class=""><span
                                                     class="text-danger">*</span>{{ 'Register.FirstNameField' | translate }}</label>
@@ -56,7 +56,7 @@
                                             </small>
                                         </div>
                                     </div>
-                                    <div class="col-md-6">
+                                    <div class="col-sm-6 col-md-6 col-lg-6 col-xl-6">
                                         <div class="position-relative form-group">
                                             <label for="exampleEmail" class=""><span
                                                     class="text-danger">*</span>{{ 'Register.LastNameField' | translate }}</label>
@@ -70,7 +70,7 @@
                                         </div>
                                     </div>
 
-                                    <!-- <div class="col-md-6">
+                                    <!-- <div class="col-sm-6 col-md-6 col-lg-6 col-xl-6">
                                         <div class="position-relative form-group">
                                             <label for="exampleEmail" class=""><span
                                                     class="text-danger">*</span>{{ 'Register.PasswordField' | translate }}</label>
@@ -84,7 +84,7 @@
                                         </div>
                                     </div>
 
-                                    <div class="col-md-6">
+                                    <div class="col-sm-6 col-md-6 col-lg-6 col-xl-6">
                                         <div class="position-relative form-group">
                                             <label for="exampleEmail" class=""><span
                                                     class="text-danger">*</span>{{ 'Register.ConfirmPasswordField' | translate }}</label>
@@ -99,7 +99,7 @@
                                     </div> -->
 
 
-                                    <div class="col-md-6">
+                                    <div class="col-sm-6 col-md-6 col-lg-6 col-xl-6">
                                         <label for="exampleEmail" class="">
                                             <span
                                                 class="text-danger">*</span>{{ 'Register.BirthDateField' | translate }}
@@ -120,7 +120,7 @@
                                             </small>
                                         </div>
                                     </div>
-                                    <div class="col-md-6">
+                                    <div class="col-sm-6 col-md-6 col-lg-6 col-xl-6">
                                         <div class="position-relative form-group">
                                             <label for="exampleEmail" class=""><span
                                                     class="text-danger">*</span>{{ 'Register.BirthPlaceField' | translate }}</label>
@@ -133,7 +133,7 @@
                                             </small>
                                         </div>
                                     </div>
-                                    <div class="col-md-6">
+                                    <div class="col-sm-6 col-md-6 col-lg-6 col-xl-6">
                                         <div class="position-relative form-group">
                                             <label for="exampleEmail" class=""><span
                                                     class="text-danger">*</span>{{ 'Register.DistrictField' | translate }}</label>
@@ -146,7 +146,7 @@
                                             </small>
                                         </div>
                                     </div>
-                                    <div class="col-md-6">
+                                    <div class="col-sm-6 col-md-6 col-lg-6 col-xl-6">
                                         <div class="position-relative form-group">
                                             <label for="exampleEmail" class=""><span
                                                     class="text-danger">*</span>{{ 'Register.TelephoneField' | translate }}</label>
@@ -159,7 +159,7 @@
                                             </small>
                                         </div>
                                     </div>
-                                    <div class="col-md-6">
+                                    <div class="col-sm-6 col-md-6 col-lg-6 col-xl-6">
                                         <div class="position-relative form-group">
                                             <label for="exampleEmail" class="">{{ 'Register.EmailField' | translate }}</label>
                                             <input name="email" id="exampleEmail" placeholder="{{ 'Register.TypeEmailField' | translate }}" type="email"
@@ -171,7 +171,7 @@
                                             </small>
                                         </div>
                                     </div>
-                                    <!-- <div class="col-md-6">
+                                    <!-- <div class="col-sm-6 col-md-6 col-lg-6 col-xl-6">
                                         <div class="position-relative form-group">
                                             <label for="exampleEmail" class=""><span
                                                     class="text-danger">*</span>{{ 'Register.LoginField' | translate }}</label>
@@ -184,7 +184,7 @@
                                         </div>
                                     </div> -->
 
-                                    <div class="col-md-6">
+                                    <div class="col-sm-6 col-md-6 col-lg-6 col-xl-6">
                                         <div class="position-relative form-group">
                                             <label for="exampleEmail" class="">
                                                 <span
@@ -202,7 +202,7 @@
                                             </small>
                                         </div>
                                     </div>
-                                    <!-- <div class="col-md-6">
+                                    <!-- <div class="col-sm-6 col-md-6 col-lg-6 col-xl-6">
                                         <div class="position-relative form-group">
                                             <label for="exampleEmail" class="">
                                                 <span
@@ -219,7 +219,7 @@
                                             </small>
                                         </div>
                                     </div>-->
-                                    <div class="col-md-6">
+                                    <div class="col-sm-6 col-md-6 col-lg-6 col-xl-6">
                                         <div class="position-relative form-group">
                                             <label for="exampleEmail" class=""><span
                                                     class="text-danger">*</span>{{ 'Register.YourProfessionField' | translate }}</label>
@@ -231,7 +231,7 @@
                                             </small>
                                         </div>
                                     </div>
-                                    <div class="col-md-6">
+                                    <div class="col-sm-6 col-md-6 col-lg-6 col-xl-6">
                                         <div class="position-relative form-group">
                                             <label for="exampleEmail" class="">
                                                 <span
@@ -249,14 +249,14 @@
                                             </small>
                                         </div>
                                     </div>
-                                    <div class="col-md-6">
+                                    <div class="col-sm-6 col-md-6 col-lg-6 col-xl-6">
                                         <div class="position-relative form-group">
                                             <label for="exampleEmail" class="">
                                                 <span class="text-danger">*</span>
                                                 {{ 'Register.AreYouMarriedField' | translate }}
                                             </label>
                                             <div class="row">
-                                                <div class="col-md-6 form-check">
+                                                <div class="col-sm-6 col-md-6 col-lg-6 col-xl-6 form-check">
                                                     <input formControlName="is_married" class="form-check-input"
                                                         type="radio" name="is_married" id="is_married"
                                                         value="1" checked>
@@ -264,7 +264,7 @@
                                                         {{ 'Register.Yes' | translate }}
                                                     </label>
                                                 </div>
-                                                <div class="col-md-6 form-check">
+                                                <div class="col-sm-6 col-md-6 col-lg-6 col-xl-6 form-check">
                                                     <input (click)="registerForm.patchValue({is_married:0})" class="form-check-input"
                                                         type="radio" name="is_married" id="is_married"
                                                         value="0">
@@ -283,7 +283,7 @@
                                             </small>
                                         </div>
                                     </div>
-                                    <div class="col-md-6">
+                                    <div class="col-sm-6 col-md-6 col-lg-6 col-xl-6">
                                         <div class="position-relative form-group">
                                             <label for="exampleText" class=""><span
                                                 class="text-danger">*</span>{{ "Register.FileLabel" | translate }}</label>
@@ -293,7 +293,7 @@
                                     <div class="col-md-12">
                                         <h4>{{ 'Register.Engagement' | translate }}</h4>
                                     </div>
-                                    <div class="col-md-6">
+                                    <div class="col-sm-6 col-md-6 col-lg-6 col-xl-6">
                                         <div class="position-relative form-group">
                                             <label for="exampleEmail" class="">
                                                 {{ 'Register.ChooseYourCebField' | translate }}
@@ -310,7 +310,7 @@
                                             </small>
                                         </div>
                                     </div>
-                                    <div class="col-md-6">
+                                    <div class="col-sm-6 col-md-6 col-lg-6 col-xl-6">
                                         <div class="position-relative form-group">
                                             <label for="exampleEmail" class="">
                                                 {{ 'Register.ChooseYourGroupField' | translate }}
@@ -327,13 +327,13 @@
                                             </small>
                                         </div>
                                     </div>
-                                    <div class="col-md-6">
+                                    <div class="col-sm-6 col-md-6 col-lg-6 col-xl-6">
                                         <div class="position-relative form-group">
                                             <label for="exampleEmail" class="">
                                                 {{ 'Register.AreYouSpaParishional' | translate }}
                                             </label>
                                             <div class="row">
-                                                <div class="col-md-6 form-check">
+                                                <div class="col-sm-6 col-md-6 col-lg-6 col-xl-6 form-check">
                                                     <input (click)="registerForm.patchValue({is_spa:0})" class="form-check-input"
                                                         type="radio" id="is_spa" name="is_spa"
                                                         value="1" checked>
@@ -341,7 +341,7 @@
                                                         {{ 'Register.Yes' | translate }}
                                                     </label>
                                                 </div>
-                                                <div class="col-md-6 form-check">
+                                                <div class="col-sm-6 col-md-6 col-lg-6 col-xl-6 form-check">
                                                     <input formControlName="is_spa" class="form-check-input"
                                                         type="radio" id="is_spa" name="is_spa"
                                                         value="0">
@@ -353,7 +353,7 @@
 
                                         </div>
                                     </div>
-                                    <div class="col-md-6" *ngIf="form.is_spa.value">
+                                    <div class="col-sm-6 col-md-6 col-lg-6 col-xl-6" *ngIf="form.is_spa.value">
                                         <div class="position-relative form-group">
                                             <label for="exampleEmail" class="">
                                                 <span
@@ -372,14 +372,14 @@
                                         </div>
                                     </div>
                                     <div class="col-md-12"></div>
-                                    <div class="col-md-6">
+                                    <div class="col-sm-6 col-md-6 col-lg-6 col-xl-6">
                                         <div class="position-relative form-group">
                                             <label for="exampleEmail" class="">
                                                 <span
                                                     class="text-danger">*</span>{{ 'Register.AreYouBaptistedField' | translate }}
                                             </label>
                                             <div class="row">
-                                                <div class="col-md-6 form-check">
+                                                <div class="col-sm-6 col-md-6 col-lg-6 col-xl-6 form-check">
                                                     <input formControlName="is_baptisted" class="form-check-input"
                                                         type="radio" name="is_baptisted" id="is_baptisted"
                                                         value="1" checked>
@@ -387,7 +387,7 @@
                                                         {{ 'Register.Yes' | translate }}
                                                     </label>
                                                 </div>
-                                                <div class="col-md-6 form-check">
+                                                <div class="col-sm-6 col-md-6 col-lg-6 col-xl-6 form-check">
                                                     <input class="form-check-input"
                                                         (click)="registerForm.patchValue({is_baptisted:0})" type="radio"
                                                         name="is_baptisted" id="is_baptisted" value="0">
@@ -402,7 +402,7 @@
                                             </small>
                                         </div>
                                     </div>
-                                    <div class="col-md-6"></div>
+                                    <div class="col-sm-6 col-md-6 col-lg-6 col-xl-6"></div>
                                     <div class="col-sm-6" *ngIf="form.is_baptisted.value">
                                         <label for="exampleEmail" class="">
                                             {{ 'Register.BaptistDateField' | translate }}
@@ -423,7 +423,7 @@
                                             </small>
                                         </div>
                                     </div>
-                                    <div class="col-md-6" *ngIf="form.is_baptisted.value">
+                                    <div class="col-sm-6 col-md-6 col-lg-6 col-xl-6" *ngIf="form.is_baptisted.value">
                                         <div class="position-relative form-group">
                                             <label for="exampleEmail" class="">{{ 'Register.PlaceBaptistField' | translate }}</label>
                                             <input name="email" id="exampleEmail" placeholder="{{ 'Register.PlaceBaptistField' | translate }}" type="text"
@@ -466,8 +466,7 @@
                                         style="background-image: url('assets/images/originals/background2.jpg');"></div>
                                     <div class="slider-content">
                                         <img width="80" height="60" src="assets/images/logo2.png" alt="">
-                                        <p>Easily exclude the components you don't require. Lightweight, consistent
-                                            Bootstrap based styles across all elements and components</p>
+                                        <p>vivez désormais votre spiritualité autrement gr&agrave;ce au numérique</p>
                                     </div>
                                 </div>
                             </div>
