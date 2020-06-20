@@ -53,9 +53,6 @@ export class UpdatePersonnalInfoComponent implements OnInit {
    // }, {validator: this.checkPasswords });
     this.changeLanguage(this.currentLanguage);
     this.getProfessions();
-    this.getPostes();
-    this.getCebs();
-    this.getGroupes();
   }
 
   initForm() {
@@ -70,18 +67,11 @@ export class UpdatePersonnalInfoComponent implements OnInit {
       birth_date: [this.user.infos.birth_date],
       birth_place: [this.user.infos.birth_place],
       district: [this.user.infos.district],
-      is_baptisted: [this.user.infos.is_baptisted],
-      baptist_date: [this.user.infos.baptist_date],
-      baptist_place: [this.user.infos.baptist_place],
       // profession_id: ['', [Validators.required]],
       profession: [this.user.infos.profession],
-      ceb: [this.user.infos.ceb],
-      post: [this.user.infos.post],
-      group: [this.user.infos.group],
       language: [this.user.infos.language],
       tel: [this.user.infos.tel],
       is_married: [this.user.infos.is_married],
-      is_spa: [0],
       files: ['']
     });
   }
@@ -93,30 +83,6 @@ export class UpdatePersonnalInfoComponent implements OnInit {
   getProfessions() {
     this.professionService.getProfessions(10000).subscribe((response) => {
       this.professions = response.data;
-    }, (error) => {
-      this.notificationService.danger(this.translations.UpdatePersonnalInfo.ServerUnavailable);
-    });
-  }
-
-  getCebs() {
-    this.extraService.getCebs().subscribe((response) => {
-      this.cebs = response.data;
-    }, (error) => {
-      this.notificationService.danger(this.translations.UpdatePersonnalInfo.ServerUnavailable);
-    });
-  }
-
-  getGroupes() {
-    this.extraService.getGroupes().subscribe((response) => {
-      this.groupes = response.data;
-    }, (error) => {
-      this.notificationService.danger(this.translations.UpdatePersonnalInfo.ServerUnavailable);
-    });
-  }
-
-  getPostes() {
-    this.extraService.getPostes().subscribe((response) => {
-      this.postes = response.data;
     }, (error) => {
       this.notificationService.danger(this.translations.UpdatePersonnalInfo.ServerUnavailable);
     });
