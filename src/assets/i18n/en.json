@@ -56,6 +56,24 @@
 			"Title": "Info one",
 			"MyInfo1": "My infos",
 			"DescribeMyInfo1": " Nana ni nana na"
+		},
+		"Evenement": {
+			"Title": "Events",
+			"MyEvenement": "My Events",
+			"Describe": " here, you have all the event that you have save",
+			"ButtonAdd":"Add",
+			"ButtonEdit":"Edit",
+			"ButtonClose":"Close",
+			"LabelAdd":"New Event",
+			"LabelEdit":"Edit Event",
+			"LabelName":"name",
+			"SubmitError":"please fill in all fields",
+			"SubmitSucessAdd":"event add successfully",
+			"SubmitSucessEdit":"event Edit successfully",
+			"SubmitErrorEdit":"failure to modify event ",
+			"SubmitErrorAdd":"failure to add event "
+
+
 		}
 	}, 
 	"Register": {
