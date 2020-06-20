@@ -31,6 +31,7 @@ export class UpdatePersonnalInfoComponent implements OnInit {
   file: File = null;
   isSpa = false;
   user: any = null;
+  avatarPath = '';
 
   // language
   currentLanguage = Lang.currentLang;
@@ -48,8 +49,8 @@ export class UpdatePersonnalInfoComponent implements OnInit {
 
   ngOnInit() {
     this.user = this.authService.getUserInfos();
-    console.log(JSON.parse(this.user.infos.avatar));
     this.initForm();
+    this.initAvatar();
    // }, {validator: this.checkPasswords });
     this.changeLanguage(this.currentLanguage);
     this.getProfessions();
@@ -74,6 +75,10 @@ export class UpdatePersonnalInfoComponent implements OnInit {
       is_married: [this.user.infos.is_married],
       files: ['']
     });
+  }
+
+  initAvatar() {
+    this.avatarPath = (JSON.parse(this.user.infos.avatar)).images;
   }
 
   onSelectfile(event) {
@@ -136,6 +141,7 @@ export class UpdatePersonnalInfoComponent implements OnInit {
     this.userService.put(this.user.infos.id, formData)
       .then(resp => {
         console.log(resp);
+        this.avatarPath = (JSON.parse(resp.avatar)).images;
         this.user.infos = resp
         this.authService.storeUserInfos(this.user);
         this.notificationService.success(this.translations.UpdatePersonnalInfo.DoneWithSuccess);
