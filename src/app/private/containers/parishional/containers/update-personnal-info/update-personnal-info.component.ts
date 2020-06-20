@@ -32,6 +32,7 @@ export class UpdatePersonnalInfoComponent implements OnInit {
   isSpa = false;
   user: any = null;
   avatarPath = '';
+  avatarPreviewPath = '';
 
   // language
   currentLanguage = Lang.currentLang;
@@ -83,6 +84,26 @@ export class UpdatePersonnalInfoComponent implements OnInit {
 
   onSelectfile(event) {
     this.file = event.target.files[0];
+    this.previewAvatar();
+  }
+
+  previewAvatar() {
+    const reader = new FileReader();
+    reader.readAsDataURL(this.file);
+    reader.onload = () => {
+      this.avatarPreviewPath = reader.result as string;
+    }
+  }
+
+  chooseFile() {
+    document.getElementById('my_file').click();
+  }
+
+  computeFileName() {
+    if(this.file.name.length > 15)
+      return this.file.name.substr(0, 20) + '  ...';
+    else
+      return this.file.name;
   }
 
   getProfessions() {

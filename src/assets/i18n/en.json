@@ -177,13 +177,14 @@
 		"PlaceBaptistField": "Place of Baptist",
 		"AlreadyHaveAnAccount": "Already have an account ?",
 		"SignIn": "Sign In",
-		"CreateAccountField": "Create Account",		
+		"ModifyAccountField": "Modify your personnal informations",		
 		"ChooseYourCebField": "Select your CEB",
 		"ChooseYourPostField": "Select your poste",
 		"ChooseYourGroupField": "Select your group",
 		"DoneWithSuccess": "Inscription done with success",
 		"FileLabel": "Choose your picture profile",
 		"InvalidPhoneNumber": "Invalid phone number",
-		"ViewProfile": "view my profile"
+		"ViewProfile": "view my profile",
+		"ChooseFileTitle": "Browser your profile picture"
 	}
 }

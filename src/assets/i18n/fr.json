@@ -200,13 +200,14 @@
 		"BaptistDateField": "Date de Baptême",
 		"PlaceBaptistField": "Lieu de Baptême",
 		"AlreadyHaveAnAccount": "Avez-vous déjà un compte ?",
-		"CreateAccountField": "mettre mes infos à jour",
+		"ModifyAccountField": "mettre mes infos à jour",
 		"ChooseYourCebField": "Sélectionner votre CEB",
 		"ChooseYourPostField": "Sélectionner votre poste",
 		"ChooseYourGroupField": "Sélectionner votre groupe",
 		"DoneWithSuccess": "Vos informations personnelles ont été mis à jour avec succès",
 		"FileLabel": "Choisir votre photo de profile",
 		"InvalidPhoneNumber": "Numéro de téléphone invalide",
-		"ViewProfile": "voir mon profile"
+		"ViewProfile": "voir mon profile",
+		"ChooseFileTitle": "Choisir votre photo de profile"
 	}
 }

@@ -20,5 +20,13 @@
 }
 
 .page-column {
-  height: 640px;
+  height: 710px;
+}
+
+#my_file {
+    display: none;
+}
+
+#get_file {
+    cursor: pointer;
 }
