@@ -58,6 +58,31 @@
 			"DescribeMyInfo1": " Nana ni nana na"
 		}
 	}, 
+	"Cathecumene" : {
+		"Info1": {
+			"Title": "Informations"
+		}
+	}, 
+	"AssociationManager" : {
+		"Info1": {
+			"Title": "Informations"
+		}
+	}, 
+	"ParishionerSecretary" : {
+		"Info1": {
+			"Title": "Informations"
+		}
+	}, 
+	"CathechesisCoordinator" : {
+		"Info1": {
+			"Title": "Informations"
+		}
+	}, 
+	"Cathechesis" : {
+		"Info1": {
+			"Title": "Informations"
+		}
+	},
 	"Register": {
 		"ServerUnavailable": "Server unavailable",
 		"Welcome": "Welcome",

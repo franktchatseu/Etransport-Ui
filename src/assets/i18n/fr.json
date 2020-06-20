@@ -1,4 +1,15 @@
 {
+	
+	"SweetAlert": {
+        "AreYouSure": "Etes-vous sure de vouloir supprimer  {{ data }} ?",
+        "Warning": "Cette action est irreversible !",
+        "Yes": "Oui, supprimer",
+        "No": "Non, annuler",
+        "Deleted": "Supprimé",
+        "DeletedMessage": "Element supprimé avec succès",
+        "Cancelled": "Annulé",
+        "CancelledMessage": "Element conservé"
+    },
 	"Login": {
 		"KeepMeLoggedIn": "Garder ma session active",
 		"Login": "Login",
@@ -56,8 +67,49 @@
 			"Title": "Info un",
 			"MyInfo1": "Mes infos",
 			"DescribeMyInfo1": " Nana ni nana na fr"
+		},
+		"Evenement": {
+			"Title": "Evenements",
+			"MyEvenement": "Mes Evenements",
+			"Describe": " il s'agit ici de tout les evenements dont vous avez enregistré",
+			"ButtonAdd":"Ajouter",
+			"ButtonEdit":"Editer",
+			"ButtonClose":"Fermer",
+			"LabelAdd":"Nouvel Evenement",
+			"LabelEdit":"Editer Evenement",
+			"LabelName":"Nom",
+			"SubmitError":"veuillez remplir tous les champs",
+			"SubmitSucessAdd":"evement ajouter avec success",
+			"SubmitSucessEdit":"evement modifier avec success",
+			"SubmitErrorEdit":"echec de modification de evenement ",
+			"SubmitErrorAdd":"echec de ajout de evenement "
+		}
+	},
+	"Cathecumene" : {
+		"Info1": {
+			"Title": "Informations"
 		}
 	}, 
+	"AssociationManager" : {
+		"Info1": {
+			"Title": "Informations"
+		}
+	}, 
+	"ParishionerSecretary" : {
+		"Info1": {
+			"Title": "Informations"
+		}
+	}, 
+	"CathechesisCoordinator" : {
+		"Info1": {
+			"Title": "Informations"
+		}
+	}, 
+	"Cathechesis" : {
+		"Info1": {
+			"Title": "Informations"
+		}
+	},
 	"Register": {
 		"ServerUnavailable": "Serveur indisponible",
 		"Welcome": "Bienvenue",

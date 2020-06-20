@@ -3,11 +3,11 @@ import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { AuthService } from '../../services/auth.service';
 import { Subscription } from 'rxjs/Subscription';
-import { MessageService } from 'src/app/services/message.service';
-import { NotificationService } from 'src/app/services/notification.service';
+import { MessageService } from '../../../services/message.service';
+import { NotificationService } from '../../../services/notification.service';
 import { TranslateService } from '@ngx-translate/core';
-import { Lang } from 'src/app/services/config/lang';
-import { InternationalizationService } from 'src/app/services/features/internationalization.service';
+import { Lang } from '../../../services/config/lang';
+import { InternationalizationService } from '../../../services/features/internationalization.service';
 
 @Component({
   selector: 'app-login',

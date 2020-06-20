@@ -1,10 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import { Observable } from 'rxjs/Observable';
-import { AuthService } from 'src/app/auth/services/auth.service';
 import { Router } from '@angular/router';
-import { MessageService } from 'src/app/services/message.service';
-import { NotificationService } from 'src/app/services/notification.service';
+import { NotificationService } from '../../../../../services/notification.service';
 import { Subscription } from 'rxjs/Subscription';
+import { AuthService } from '../../../../../auth/services/auth.service';
 
 @Component({
   selector: 'app-index',
@@ -19,21 +18,15 @@ export class IndexComponent implements OnInit {
 
   constructor(
     private authService: AuthService,
-    private messageService: MessageService,
     private notificationService: NotificationService,
     private router: Router) {
-      this.subscription = this.messageService.getMessage().subscribe(message => {
-        const data = JSON.parse(message.text);
-        if (data.code === 'new-translation') {
-          this.translations = data.data;
-        }
-        console.log( this.translations );
-      });
+
     }
 
   ngOnInit() {
     console.log(this.authService.getUserInfos());
     this.isAuthenticated = this.authService.getUserInfos() ? true : false;
+    this.router.navigate(['/private/cathecumene/info1']);
   }
 
   logout() {
@@ -46,6 +39,6 @@ export class IndexComponent implements OnInit {
   }
 
   goTo(url) {
-    this.router.navigate(['/private/parishionals']);
+    this.router.navigate(['/private/cathecumene']);
   }
 }

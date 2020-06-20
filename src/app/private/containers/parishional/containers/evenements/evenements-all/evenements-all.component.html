@@ -1,0 +1,51 @@
+<div class="container">
+    <div class="row">
+        <div class="app-page-title" style="margin: 0%; width: 100%;">
+            <div class="page-title-wrapper">
+                <div class="page-title-heading">
+                    <div class="page-title-icon">
+                        <i class="pe-7s-phone icon-gradient bg-premium-dark">
+                        </i>
+                    </div>
+                    <div>{{ 'Parishionals.Evenement.MyEvenement' | translate }}
+                        <div class="page-title-subheading">{{ 'Parishionals.Evenement.Describe' | translate }}.
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="main-card mb-3 card">
+        <div class="card-body">
+            <button type="button" class="btn mr-2 mb-2 btn-primary" (click)="add()"> {{ 'Parishionals.Evenement.ButtonAdd' | translate }}</button>
+                <br>
+            <table style="width: 100%;" id="example" class="table ">
+                <thead>
+                <tr>
+                    <th>Id</th>
+                    <th>{{ 'Parishionals.Evenement.LabelName' | translate }}</th>
+                    <th>Description</th>
+                    <th>Date</th>
+                    <th>Action</th>
+                </tr>
+                </thead>
+                <tbody>
+                 <tr *ngFor="let evenement of evenements">
+                    <td>{{evenement.id}}</td>
+                    <td>{{evenement.name}}</td>
+                    <td>{{evenement.description}}</td>
+                    <td>{{evenement.created_at}}</td>
+                    <td style="width: 25%">
+                        <button  class="mr-2 btn-icon btn-icon-only btn btn-outline-primary" (click)="update(evenement.id)"><i class="pe-7s-pen btn-icon-wrapper"> </i></button>
+                        <button class="mr-2 btn-icon btn-icon-only btn btn-outline-success" ><i class="pe-7s-info btn-icon-wrapper"> </i></button>
+                        <button class="mr-2 btn-icon btn-icon-only btn btn-outline-danger" (click)="delete(evenement.id)"><i class="pe-7s-trash btn-icon-wrapper"> </i></button>
+                    </td>
+                 </tr>
+            
+                </tbody>
+                <tfoot>
+               
+                </tfoot>
+            </table>
+        </div>
+    </div>
