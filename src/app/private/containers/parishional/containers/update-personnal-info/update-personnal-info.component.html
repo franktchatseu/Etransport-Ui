@@ -258,7 +258,7 @@
                         </div>
                     </div>
                     <div>
-                        <div class="scrollbar-container ps ps--active-y">
+                        <div class="ps ps--active-y">
                             <ul class="list-group list-group-flush">
                                 <li class="list-group-item">
                                     <div class="widget-content p-0">
@@ -360,6 +360,32 @@
                                             </div>
                                             <div class="widget-content-right">
                                                {{ displayUserLanguage() }}
+                                            </div>
+                                        </div>
+                                    </div>
+                                </li>
+                                <li class="list-group-item">
+                                    <div class="widget-content p-0">
+                                        <div class="widget-content-wrapper">
+                                            <div class="widget-content-left center-elem mr-2"><i class="pe-7s-portfolio text-muted fsize-2"></i></div>
+                                            <div class="widget-content-left">
+                                                <div class="widget-heading">{{ 'UpdatePersonnalInfo.ChooseYourProfessionField' | translate }}</div>
+                                            </div>
+                                            <div class="widget-content-right">
+                                               {{ user.infos.profession}}
+                                            </div>
+                                        </div>
+                                    </div>
+                                </li>
+                                <li class="list-group-item">
+                                    <div class="widget-content p-0">
+                                        <div class="widget-content-wrapper">
+                                            <div class="widget-content-left center-elem mr-2"><i class="pe-7s-like text-muted fsize-2"></i></div>
+                                            <div class="widget-content-left">
+                                                <div class="widget-heading">{{ 'UpdatePersonnalInfo.AreYouMarriedField' | translate }}</div>
+                                            </div>
+                                            <div class="widget-content-right">
+                                               {{ computeMarriedStatus() | translate }}
                                             </div>
                                         </div>
                                     </div>

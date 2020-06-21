@@ -106,6 +106,10 @@ export class UpdatePersonnalInfoComponent implements OnInit {
       return this.file.name;
   }
 
+  computeMarriedStatus() {
+    return (this.user.infos.is_married === 1) ? 'UpdatePersonnalInfo.Yes' : 'UpdatePersonnalInfo.No';
+  }
+
   getProfessions() {
     this.professionService.getProfessions(10000).subscribe((response) => {
       this.professions = response.data;
