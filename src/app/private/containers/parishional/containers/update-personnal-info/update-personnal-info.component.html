@@ -22,9 +22,9 @@
                     <div>
                         <form (submit)="onSubmit()" [formGroup]="registerForm">
                             <div class="form-row">
-                                <div class="col-md-12 bg-secondary  text-light text-center mb-3 form-title-box" style="width: 100%;">
+                                <!-- <div class="col-md-12 bg-secondary  text-light text-center mb-3 form-title-box" style="width: 100%;">
                                     <h4>{{ 'UpdatePersonnalInfo.UpdatePersonnalInfoForm.Title' | translate }}</h4>
-                                </div>
+                                </div> -->
                                 <div class="col-md-6">
                                     <div class="position-relative form-group">
                                         <label for="exampleEmail" class="">{{ 'UpdatePersonnalInfo.FirstNameField' | translate }}</label>
@@ -200,16 +200,29 @@
                                     </div>
                                 </div>
                                 <div class="col-md-6">
-                                    <div class="position-relative form-group">
-                                        <label for="exampleText" class="">{{ "UpdatePersonnalInfo.FileLabel" | translate }}</label>
-                                        <input formControlName="files" name="file" id="file" placeholder="{{ 'UpdatePersonnalInfo.FileField' | translate }}" type="file" (change)="onSelectfile($event)" class="form-control">
+                                    <div class="position-relative form-group text-center">
+                                        <button (click)="chooseFile()" class="mb-2 mt-2 mr-2 btn-icon btn-icon-only btn-pill btn btn-outline-focus" type="button" title="{{ 'UpdatePersonnalInfo.ChooseFileTitle' | translate }}" data-placement="top" id="get_file">
+                                            <i class="pe-7s-upload btn-icon-wrapper"> </i>
+                                            {{ "UpdatePersonnalInfo.ChooseFileTitle" | translate }}
+                                        </button>
+                                        <input formControlName="files" type="file" accept=".png, .jpg, .jpeg" (change)="onSelectfile($event)" id="my_file" class="form-control" name="file" placeholder="{{ 'UpdatePersonnalInfo.FileField' | translate }}"/>
+                                        <div *ngIf="file !== null">
+                                           <strong> {{ computeFileName() }} </strong>
+                                        </div>
                                     </div>
-                                </div>     
+                                </div> 
+
+                                <div *ngIf="file !== null" class="col-sm-12 col-md-12 text-center ">
+                                    <div class="avatar-icon-wrapper avatar-icon-lg bg-secondary">
+                                        <div class="avatar-icon rounded btn-hover-shine"  style="height: 10% width: 10%;"><img [src]="avatarPreviewPath" alt="Avatar"></div>
+                                    </div>
+                                </div>
+
                             </div>
                             <div class="mt-3 mb-4 d-flex align-items-center">
                                 <div class="text-center" style="width: 100%;"> 
                                     <button  [disabled]="isLoading" class="btn-wide btn-shadow btn-hover-shine btn btn-pill btn-danger" style="width: 100%; justify-content: center; align-items: center; flex: 1;">
-                                        <p *ngIf="!isLoading" style="font-size: medium; padding: 0px; margin: 5px;"> {{ 'UpdatePersonnalInfo.CreateAccountField' | translate }} </p>
+                                        <p *ngIf="!isLoading" style="font-size: medium; padding: 0px; margin: 5px;"> {{ 'UpdatePersonnalInfo.ModifyAccountField' | translate }} </p>
                                         <div *ngIf="isLoading" style="padding: 15px; margin-left: 50%;">
                                             <div class="ball-scale-multiple">
                                                 <div style="background-color: white;"></div>
@@ -232,7 +245,7 @@
                             <div class="menu-header-image" style="background-image: url('assets/images/dropdown-header/city2.jpg'); height: 200px;"></div>
                             <div class="menu-header-content">
                                 <div class="avatar-icon-wrapper avatar-icon-lg">
-                                    <div class="avatar-icon rounded btn-hover-shine"><img src="assets/images/avatars/12.jpg" alt="Avatar 5"></div>
+                                    <div class="avatar-icon rounded btn-hover-shine"><img [src]="avatarPath" alt="Avatar"></div>
                                 </div>
                                 <div>
                                     <h5 class="menu-header-title">{{ user.infos.first_name ? user.infos.first_name : '' }} {{ user.infos.last_name ? user.infos.last_name : '' }}</h5>
@@ -244,7 +257,7 @@
                             </div>
                         </div>
                     </div>
-                    <div style="height: 560px;">
+                    <div>
                         <div class="scrollbar-container ps ps--active-y">
                             <ul class="list-group list-group-flush">
                                 <li class="list-group-item">
