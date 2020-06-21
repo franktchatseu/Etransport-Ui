@@ -32,7 +32,6 @@ const routes: Routes = [
       ,
       {
         path: 'evenements',
-        
         children: [
           {
             path: 'all',
@@ -46,7 +45,6 @@ const routes: Routes = [
             path: 'update/:id',
             component: EvenementUpdateComponent,
           },
-       
         ]
       }
     ]
