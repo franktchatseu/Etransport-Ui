@@ -1,6 +1,7 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { RandomNumberComponent } from './containers/random-number/random-number.component';
+import { UpdatePersonnalInfoComponent } from './containers/update-personnal-info/update-personnal-info.component';
 import { IndexComponent } from './containers/index/index.component';
 import { MyParishComponent } from './containers/my-parish/my-parish.component';
 import { Info1Component } from './containers/info1/info1.component';
@@ -23,11 +24,14 @@ const routes: Routes = [
       {
         path: 'info1',
         component: Info1Component,
+      },
+      {
+        path: 'modify-personnal-informations',
+        component: UpdatePersonnalInfoComponent,
       }
       ,
       {
         path: 'evenements',
-        
         children: [
           {
             path: 'all',
@@ -41,7 +45,6 @@ const routes: Routes = [
             path: 'update/:id',
             component: EvenementUpdateComponent,
           },
-       
         ]
       }
     ]

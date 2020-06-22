@@ -7,6 +7,9 @@ import { OtherGuard } from '../auth/guards/other.guard';
 import { ParishionalGuard } from '../auth/guards/parishional.guard';
 import { PriestGuard } from '../auth/guards/priest.guard';
 import { SuperadminGuard } from '../auth/guards/superadmin.guard';
+import { AssociationManagerGuard } from '../auth/guards/association-manager.guard';
+import { ParishionerSecretaryGuard } from '../auth/guards/parishioner-secretary.guard';
+import { CathechesisCoordinatorGuard } from '../auth/guards/cathechesis-coordinator.guard';
 import { LoginComponent } from '../auth/containers/login/login.component';
 
 const routes: Routes = [
@@ -56,6 +59,33 @@ const routes: Routes = [
           () => import('./containers/superadmin/superadmin.module').then(m => m.SuperadminModule),
         canActivate: [SuperadminGuard],
         canLoad: [SuperadminGuard] /* */
+      },
+      {
+        path: 'association-manager',
+        loadChildren: () => import('./containers/association-manager/association-manager.module').then(m => m.AssociationManagerModule),
+        canActivate: [AssociationManagerGuard],
+        canLoad: [AssociationManagerGuard] /* */
+      },
+      {
+        path: 'parishioner-secretary',
+        loadChildren: () => import('./containers/parishioner-secretary/parishioner-secretary.module')
+        .then(m => m.ParishionerSecretaryModule),
+        canActivate: [ParishionerSecretaryGuard],
+        canLoad: [ParishionerSecretaryGuard] /* */
+      },
+      {
+        path: 'cathechesis-coordinator',
+        loadChildren: () => import('./containers/cathechesis-coordinator/cathechesis-coordinator.module')
+        .then(m => m.CathechesisCoordinatorModule),
+        canActivate: [CathechesisCoordinatorGuard],
+        canLoad: [CathechesisCoordinatorGuard] /* */
+      },
+      {
+        path: 'cathechesis',
+        loadChildren: () => import('./containers/cathechesis/cathechesis.module')
+        .then(m => m.CathechesisModule),
+        canActivate: [CathechesisCoordinatorGuard],
+        canLoad: [CathechesisCoordinatorGuard] /* */
       }
     ]
   }

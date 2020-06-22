@@ -1,9 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import { Observable } from 'rxjs/Observable';
-import { AuthService } from 'src/app/auth/services/auth.service';
+import { AuthService } from '../../../../../auth/services/auth.service';
 import { Router } from '@angular/router';
-import { MessageService } from 'src/app/services/message.service';
-import { NotificationService } from 'src/app/services/notification.service';
+import { MessageService } from '../../../../../services/message.service';
+import { NotificationService } from '../../../../../services/notification.service';
 import { Subscription } from 'rxjs/Subscription';
 
 @Component({
@@ -28,7 +28,8 @@ export class IndexComponent implements OnInit {
   ngOnInit() {
     console.log(this.authService.getUserInfos());
     this.isAuthenticated = this.authService.getUserInfos() ? true : false;
-    this.router.navigate(['/private/parishionals/evenement/update/1']);
+    this.router.navigate(['/private/parishionals/modify-personnal-informations']);
+    // this.router.navigate(['/private/parishionals/evenement/update/1']);
   }
 
   logout() {

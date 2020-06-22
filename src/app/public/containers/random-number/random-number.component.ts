@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { Observable } from 'rxjs';
-import { AuthService } from 'src/app/auth/services/auth.service';
+import { Observable } from 'rxjs/Observable';
+import { AuthService } from '../../../auth/services/auth.service';
 import { Router } from '@angular/router';
 
 @Component({
@@ -23,7 +23,7 @@ export class RandomNumberComponent implements OnInit {
     this.authService.logout()
       .subscribe(success => {
         if (success) {
-          this.router.navigate(['/login']);
+          this.router.navigate(['/private/login']);
         }
       });
   }

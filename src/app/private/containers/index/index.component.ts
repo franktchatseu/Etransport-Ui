@@ -1,8 +1,8 @@
 import { Component, OnInit } from '@angular/core';
-import { AuthService } from 'src/app/auth/services/auth.service';
+import { AuthService } from '../../../auth/services/auth.service';
 import { Router } from '@angular/router';
-import { MessageService } from 'src/app/services/message.service';
-import { NotificationService } from 'src/app/services/notification.service';
+import { MessageService } from '../../../services/message.service';
+import { NotificationService } from './../../../services/notification.service';
 import { Subscription } from 'rxjs/Subscription';
 
 @Component({
@@ -46,7 +46,7 @@ export class IndexComponent implements OnInit {
       OTHER: 'others',
       SUPERADMIN: 'superadmins'
     };
-    if (this.user.types) {
+    if (this.user && this.user.types) {
       this.router.navigate(['/private/parishionals']);
     } else {
       this.router.navigate(['/private/login']);
