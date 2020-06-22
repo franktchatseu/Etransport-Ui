@@ -1,14 +1,14 @@
 import { Component, OnInit } from '@angular/core';
-import { Observable } from 'rxjs';
-import { AuthService } from 'src/app/auth/services/auth.service';
+import { Observable } from 'rxjs/Observable';
+import { AuthService } from '../../../../../auth/services/auth.service';
 import { Router } from '@angular/router';
 import { FormGroup, FormBuilder } from '@angular/forms';
-import { NotificationService } from 'src/app/services/notification.service';
-import { UserService } from 'src/app/services/person/user.service';
-import { ProfessionService } from 'src/app/services/person/profession.service';
-import { InternationalizationService } from 'src/app/services/features/internationalization.service';
-import { Lang } from 'src/app/services/config/lang';
-import { ExtraService } from 'src/app/services/person/extra.service';
+import { NotificationService } from '../../../../../services/notification.service';
+import { UserService } from '../../../../../services/person/user.service';
+import { ProfessionService } from '../../../../../services/person/profession.service';
+import { InternationalizationService } from '../../../../../services/features/internationalization.service';
+import { Lang } from '../../../../../services/config/lang';
+import { ExtraService } from '../../../../../services/person/extra.service';
 
 @Component({
   selector: 'app-update-personnal-info',
@@ -79,7 +79,8 @@ export class UpdatePersonnalInfoComponent implements OnInit {
   }
 
   initAvatar() {
-    this.avatarPath = (JSON.parse(this.user.infos.avatar)).images;
+    const value = (JSON.parse(this.user.infos.avatar));
+    this.avatarPath = value ? value.images : '';
   }
 
   onSelectfile(event) {
@@ -92,7 +93,7 @@ export class UpdatePersonnalInfoComponent implements OnInit {
     reader.readAsDataURL(this.file);
     reader.onload = () => {
       this.avatarPreviewPath = reader.result as string;
-    }
+    };
   }
 
   chooseFile() {
@@ -100,14 +101,15 @@ export class UpdatePersonnalInfoComponent implements OnInit {
   }
 
   computeFileName() {
-    if(this.file.name.length > 15)
+    if (this.file.name.length > 15) {
       return this.file.name.substr(0, 20) + '  ...';
-    else
+    } else {
       return this.file.name;
+    }
   }
 
   computeMarriedStatus() {
-    return (this.user.infos.is_married === 1) ? 'UpdatePersonnalInfo.Yes' : 'UpdatePersonnalInfo.No';
+    return (this.user.infos.is_married === '1') ? 'UpdatePersonnalInfo.Yes' : 'UpdatePersonnalInfo.No';
   }
 
   getProfessions() {
@@ -167,7 +169,7 @@ export class UpdatePersonnalInfoComponent implements OnInit {
       .then(resp => {
         console.log(resp);
         this.avatarPath = (JSON.parse(resp.avatar)).images;
-        this.user.infos = resp
+        this.user.infos = resp;
         this.authService.storeUserInfos(this.user);
         this.notificationService.success(this.translations.UpdatePersonnalInfo.DoneWithSuccess);
       })
@@ -182,13 +184,14 @@ export class UpdatePersonnalInfoComponent implements OnInit {
   }
 
   displayUserLanguage() {
-    if(this.user.infos.language) {
-      if(this.user.infos.language === 'fr')
+    if (this.user.infos.language) {
+      if (this.user.infos.language === 'fr') {
         return 'Français';
-      else if(this.user.infos.language === 'en')
+      } else if (this.user.infos.language === 'en') {
         return 'Anglais';
-      else
+      } else {
         return 'langue inconnue';
+      }
     }
   }
 
@@ -197,5 +200,5 @@ export class UpdatePersonnalInfoComponent implements OnInit {
     this.currentLanguage = value;
     this.internationalizationService.changeLanguage(this.currentLanguage, (res) => { this.translations = res; });
   }
-  
+
 }
