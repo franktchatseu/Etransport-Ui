@@ -170,28 +170,23 @@
                     <li class="">
                         <a href="javascript:void(0);" aria-expanded="false" (click)="showChildren('.save-for-event')">
                             <i class="metismenu-icon pe-7s-rocket"></i>
-                            Enregistrement
+                            Evenement
                             <i class="metismenu-state-icon pe-7s-angle-down caret-left"></i>
                         </a>
                         <ul class="save-for-event mm-collapse">
                             <li>
-                                <a href="javascript:void(0);" (click)="activeMenu.menu5=1" class="{{ activeMenu.menu5 == 1 ? 'mm-active': ''}}">
-                                    <i class="metismenu-icon">
-                                    </i>Nouveau evenement
-                                </a>
-                            </li>
-                            <li>
-                                <a href="javascript:void(0);" (click)="activeMenu.menu5=2" class="{{ activeMenu.menu5 == 2 ? 'mm-active': ''}}">
+                                <a routerLink="/private/parishionals/evenements/all" (click)="activeMenu.menu5=1" class="{{ activeMenu.menu5 == 1 ? 'mm-active': ''}}">
                                     <i class="metismenu-icon">
                                     </i>Afficher les evenements
                                 </a>
                             </li>
                             <li>
-                                <a href="javascript:void(0);" (click)="activeMenu.menu5=3" class="{{ activeMenu.menu5 == 3 ? 'mm-active': ''}}">
+                                <a href="javascript:void(0);" (click)="activeMenu.menu5=2" class="{{ activeMenu.menu5 == 2 ? 'mm-active': ''}}">
                                     <i class="metismenu-icon">
-                                    </i>S'enregistrer
+                                    </i>...
                                 </a>
                             </li>
+                            
                         </ul>
                     </li>
                     <li class="">

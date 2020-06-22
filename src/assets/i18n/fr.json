@@ -1,4 +1,15 @@
 {
+	
+	"SweetAlert": {
+        "AreYouSure": "Etes-vous sure de vouloir supprimer  {{ data }} ?",
+        "Warning": "Cette action est irreversible !",
+        "Yes": "Oui, supprimer",
+        "No": "Non, annuler",
+        "Deleted": "Supprimé",
+        "DeletedMessage": "Element supprimé avec succès",
+        "Cancelled": "Annulé",
+        "CancelledMessage": "Element conservé"
+    },
 	"Login": {
 		"KeepMeLoggedIn": "Garder ma session active",
 		"Login": "Login",
@@ -56,8 +67,49 @@
 			"Title": "Info un",
 			"MyInfo1": "Mes infos",
 			"DescribeMyInfo1": " Nana ni nana na fr"
+		},
+		"Evenement": {
+			"Title": "Evenements",
+			"MyEvenement": "Mes Evenements",
+			"Describe": " il s'agit ici de tout les evenements dont vous avez enregistré",
+			"ButtonAdd":"Ajouter",
+			"ButtonEdit":"Editer",
+			"ButtonClose":"Fermer",
+			"LabelAdd":"Nouvel Evenement",
+			"LabelEdit":"Editer Evenement",
+			"LabelName":"Nom",
+			"SubmitError":"veuillez remplir tous les champs",
+			"SubmitSucessAdd":"evement ajouter avec success",
+			"SubmitSucessEdit":"evement modifier avec success",
+			"SubmitErrorEdit":"echec de modification de evenement ",
+			"SubmitErrorAdd":"echec de ajout de evenement "
+		}
+	},
+	"Cathecumene" : {
+		"Info1": {
+			"Title": "Informations"
 		}
 	}, 
+	"AssociationManager" : {
+		"Info1": {
+			"Title": "Informations"
+		}
+	}, 
+	"ParishionerSecretary" : {
+		"Info1": {
+			"Title": "Informations"
+		}
+	}, 
+	"CathechesisCoordinator" : {
+		"Info1": {
+			"Title": "Informations"
+		}
+	}, 
+	"Cathechesis" : {
+		"Info1": {
+			"Title": "Informations"
+		}
+	},
 	"Register": {
 		"ServerUnavailable": "Serveur indisponible",
 		"Welcome": "Bienvenue",
@@ -120,6 +172,59 @@
 		"AProbleOccured":"Un probleme est survenue",
 		"ElementSelectedNotAvailable": "L'élément selectionné est indisponible",
 		"MessageSendSuccessfully" : "le Message a été envoyer avec succès"
+	},
 
+	"UpdatePersonnalInfo": {
+		"ServerUnavailable": "Serveur indisponible",
+		"MyPersonnalInfo": "Mes infos personnelles",
+		"FormInvalid": "Formulaire invalide veuillez remplir les champs requis",
+		"DescribeMyPersonnalInfo": "Depuis cette interface vous avez la possibilité de visualiser et de modifier vos informations personnelles en tout simplicité",
+		"UpdatePersonnalInfoForm": {
+			"Title": "Mettre à jour vos informations dépuis ce formulaire"
+		},
+		"Engagement": "Engagements",
+		"FirstNameField": "Nom",
+		"LastNameField": "Prénom",
+		"TypeFirstNameField": "Entrez votre nom",
+		"TypeLastNameField": "Entrer votre prénom",
+		"TypeDistrict": "Entrer votre quartier",
+		"EmailField": "Email",
+		"TypeEmailField": "Entrer votre email",
+		"TypePhoneNumber": "Numéro de téléphone",
+		"LoginField": "Login",
+		"PasswordField": "Mot de passe",
+		"ConfirmPasswordField": "Confirmez votre mot de passe",
+		"GenderField": "Sélectionner votre sexe",
+		"FemaleValue": "Femme",
+		"MaleValue": "Homme",
+		"BirthDateField": "Date de naissance",
+		"BirthPlaceField": "Lieu de naissance",
+		"DistrictField": "Quartier",
+		"TelephoneField": "Téléphone",
+		"AreYouMarriedField": "Êtes-vous marié ?",
+		"Yes": "Oui",
+		"No": "Non",
+		"Required": "les champs avec * sont requis",
+		"Language": "Langue parlée",
+		"ChooseYourLanguageField": "Selectionner votre langue",
+		"EnglishValue": "Anglais",
+		"FrenchValue": "Français",
+		"ChooseYourProfessionField": "Votre profession",
+		"YourProfessionField": "Votre profession",
+		"MatrimonialStatus": "Statut matrimonial",
+		"AreYouBaptistedField": "Êtes-vous Déjà Baptisé ?",
+		"AreYouSpaParishional": "Are you parishioner of St. Paul the Apostle of Foréké-Dschang?",
+		"BaptistDateField": "Date de Baptême",
+		"PlaceBaptistField": "Lieu de Baptême",
+		"AlreadyHaveAnAccount": "Avez-vous déjà un compte ?",
+		"ModifyAccountField": "mettre mes infos à jour",
+		"ChooseYourCebField": "Sélectionner votre CEB",
+		"ChooseYourPostField": "Sélectionner votre poste",
+		"ChooseYourGroupField": "Sélectionner votre groupe",
+		"DoneWithSuccess": "Vos informations personnelles ont été mis à jour avec succès",
+		"FileLabel": "Choisir votre photo de profile",
+		"InvalidPhoneNumber": "Numéro de téléphone invalide",
+		"ViewProfile": "voir mon profile",
+		"ChooseFileTitle": "Choisir votre photo de profile"
 	}
 }

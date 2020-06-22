@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { config } from 'src/app/config';
+import { config } from '../../config';
 import { HttpClient } from '@angular/common/http';
 import { map } from 'rxjs/operators';
 
@@ -14,7 +14,7 @@ export class UserUtypeService {
 
   async post(formData) {
 
-    return await this.http.post(`${config.apiUrl}/suggestions`, formData, {
+    return await this.http.post(`${config.apiUrl}/persons`, formData, {
       reportProgress: true,
       observe: 'events'
     }).pipe(map(data => data));

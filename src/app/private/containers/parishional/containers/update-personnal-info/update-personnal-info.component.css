@@ -1,0 +1,32 @@
+.container-details div {
+  margin-top: 4%;
+}
+
+.invalid {
+  border: 1px solid red;
+}
+
+.form-control {
+  border: 2px solid grey;
+}
+
+.info-error-danger {
+  color: red !important;
+}
+
+.form-title-box {
+  padding: 10px;
+  border-radius: 5%;
+}
+
+.page-column {
+  height: 710px;
+}
+
+#my_file {
+    display: none;
+}
+
+#get_file {
+    cursor: pointer;
+}
