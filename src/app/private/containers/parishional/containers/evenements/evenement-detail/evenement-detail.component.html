@@ -1,0 +1,46 @@
+<div class="card">
+    <div class="card-header">
+        <h3 style="text-align: center;">{{ 'Parishionals.Evenement.LabelDetail' | translate }}</h3>
+    </div>
+    <div class="card-body">
+        <div class="row">
+            <div class="col-md-6 card-title">
+                {{ 'Parishionals.Evenement.LabelName' | translate }}: {{evenement.name}}
+            </div>
+            <div class="col-md-6 card-title">
+                Date de Creation: {{evenement.created_at| date:'dd/MM/yyyy'}}
+            </div>
+        </div>
+        <div class="col-md-12">
+            <div class="scroll-area-lg">
+                <div class="scrollbar-container ps--active-y">
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum sodales
+                        ullamcorper
+                        vehicula. Duis placerat quam porta lorem lobortis, sit amet sodales mauris
+                        finibus. Donec posuere diam at volutpat viverra. Cras fringilla auctor augue sed
+                        congue.
+                        Maecenas mollis quis enim quis egestas. In sollicitudin mi a pretium varius.
+                        Integer
+                        eleifend sodales pharetra. Nullam vitae
+                        libero sem. Nulla et eros congue, tincidunt ante eu, tincidunt eros. Donec nisl
+                        purus,
+                        convallis a hendrerit ut, eleifend in lectus. Proin luctus dignissim lacus, in
+                        laoreet
+                        arcu
+                        eleifend non. Quisque viverra ipsum
+                        a massa porta convallis. Donec tincidunt imperdiet purus, interdum elementum
+                        ante
+                        commodo a.
+                        Quisque pharetra arcu sapien, vel ornare magna sollicitudin quis.</p>
+
+                    <img [src]="this.imagePath" alt="" srcset="">
+                </div>
+            </div>
+        </div>
+
+    </div>
+    <div class="footer">
+        <a type="button " class="btn btn-danger btn-right" style="float: right"
+            (click)="close()">{{ 'Parishionals.Evenement.ButtonClose' | translate }}</a>
+    </div>
+</div>

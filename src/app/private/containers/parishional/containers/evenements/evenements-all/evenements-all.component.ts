@@ -12,6 +12,7 @@ import { NgBlockUI, BlockUI } from 'ng-block-ui';
 import Swal from 'sweetalert2'
 import { TranslateService } from '@ngx-translate/core';
 import { EvenementUpdateComponent } from '../evenement-update/evenement-update.component';
+import { EvenementDetailComponent } from '../evenement-detail/evenement-detail.component';
 @Component({
   selector: 'app-evenements-all',
   templateUrl: './evenements-all.component.html',
@@ -48,13 +49,13 @@ export class EvenementsAllComponent implements OnInit {
     private internationalizationService: InternationalizationService,
     private notificationService: NotificationService,
     private evenementService: EvenementService,
-    private dialog:MatDialog,
+    private dialog: MatDialog,
     private notifService: NotificationService,
     private translate: TranslateService,
   ) {
     this.translate.get(
       ['SweetAlert.AreYouSure', 'SweetAlert.Warning', 'SweetAlert.Yes', 'SweetAlert.No', 'SweetAlert.Deleted',
-      'SweetAlert.DeletedMessage', 'SweetAlert.Cancelled', 'SweetAlert.CancelledMessage'],
+        'SweetAlert.DeletedMessage', 'SweetAlert.Cancelled', 'SweetAlert.CancelledMessage'],
       { data: ' cet evenement' })
       .subscribe(val => {
         this.areYouSure = val['SweetAlert.AreYouSure'];
@@ -66,7 +67,7 @@ export class EvenementsAllComponent implements OnInit {
         this.cancelled = val['SweetAlert.Cancelled'];
         this.cancelledMessage = val['SweetAlert.CancelledMessage'];
       });
-   }
+  }
 
   ngOnInit(): void {
     this.user = this.authService.getUserInfos();
@@ -77,7 +78,7 @@ export class EvenementsAllComponent implements OnInit {
 
 
   getEvenementByUser(idUser: number) {
-    this.evenementService.getEvenementsByUser(idUser,10).subscribe((res) => {
+    this.evenementService.getEvenementsByUser(idUser, 10).subscribe((res) => {
       this.evenements = res.data;
       console.log(res)
     }, (error) => {
@@ -85,7 +86,7 @@ export class EvenementsAllComponent implements OnInit {
     });
   }
 
-  getPage(url){
+  getPage(url) {
     this.evenementService.get(url).subscribe((res) => {
       this.evenements = res.data;
       console.log(res)
@@ -100,17 +101,27 @@ export class EvenementsAllComponent implements OnInit {
     this.internationalizationService.changeLanguage(this.currentLanguage, (res) => { this.translations = res; });
   }
   //ajout d'un evenement
-  add(){
-    this.dialog.open(EvenementAddComponent,{
-      width:'600px',
+  add() {
+    this.dialog.open(EvenementAddComponent, {
+      width: '600px',
       disableClose: true
     });
   }
-  update(evenement_id){
-    this.dialog.open(EvenementUpdateComponent,{
-      width:'600px',
+  update(evenement_id) {
+    this.dialog.open(EvenementUpdateComponent, {
+      width: '600px',
       disableClose: true,
-      data:evenement_id
+      data: evenement_id
+    });
+
+  }
+
+  detail(evenement_id) {
+    this.dialog.open(EvenementDetailComponent, {
+      width: '700px',
+      height: '700px',
+      disableClose: true,
+      data: evenement_id
     });
   }
   //suppression d'un evenement
@@ -139,8 +150,8 @@ export class EvenementsAllComponent implements OnInit {
           error => {
             console.log(error)
             this.blockUI.stop();
-            this.translate.get('Role.'+error.error.code)
-            .subscribe(val => this.notifService.danger(val));
+            this.translate.get('Role.' + error.error.code)
+              .subscribe(val => this.notifService.danger(val));
           }
         )
 

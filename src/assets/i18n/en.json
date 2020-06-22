@@ -45,11 +45,11 @@
 			"DecisionCreation": "Creation Decision",
 			"SaintPatternDate": "Pattern date",
 			"Name": "Name",
-			"CebNumber" : "CEB Number",
-			"GroupNumber" : "Group Number",			
-			"SeminaristNumber" : "Seminarist Number",
-			"ServiceNumber" : "Service Number",
-			"StationNumber" : "Station Number",
+			"CebNumber": "CEB Number",
+			"GroupNumber": "Group Number",
+			"SeminaristNumber": "Seminarist Number",
+			"ServiceNumber": "Service Number",
+			"StationNumber": "Station Number",
 			"StructureNumber": "Structure Number"
 		},
 		"Info1": {
@@ -61,42 +61,41 @@
 			"Title": "Events",
 			"MyEvenement": "My Events",
 			"Describe": " here, you have all the event that you have save",
-			"ButtonAdd":"Add",
-			"ButtonEdit":"Edit",
-			"ButtonClose":"Close",
-			"LabelAdd":"New Event",
-			"LabelEdit":"Edit Event",
-			"LabelName":"name",
-			"SubmitError":"please fill in all fields",
-			"SubmitSucessAdd":"event add successfully",
-			"SubmitSucessEdit":"event Edit successfully",
-			"SubmitErrorEdit":"failure to modify event ",
-			"SubmitErrorAdd":"failure to add event "
-
-
+			"ButtonAdd": "Add",
+			"ButtonEdit": "Edit",
+			"ButtonClose": "Close",
+			"LabelAdd": "New Event",
+			"LabelEdit": "Edit Event",
+			"LabelDetail": "Detail Event",
+			"LabelName": "name",
+			"SubmitError": "please fill in all fields",
+			"SubmitSucessAdd": "event add successfully",
+			"SubmitSucessEdit": "event Edit successfully",
+			"SubmitErrorEdit": "failure to modify event ",
+			"SubmitErrorAdd": "failure to add event "
 		}
-	}, 
-	"Cathecumene" : {
+	},
+	"Cathecumene": {
 		"Info1": {
 			"Title": "Informations"
 		}
-	}, 
-	"AssociationManager" : {
+	},
+	"AssociationManager": {
 		"Info1": {
 			"Title": "Informations"
 		}
-	}, 
-	"ParishionerSecretary" : {
+	},
+	"ParishionerSecretary": {
 		"Info1": {
 			"Title": "Informations"
 		}
-	}, 
-	"CathechesisCoordinator" : {
+	},
+	"CathechesisCoordinator": {
 		"Info1": {
 			"Title": "Informations"
 		}
-	}, 
-	"Cathechesis" : {
+	},
+	"Cathechesis": {
 		"Info1": {
 			"Title": "Informations"
 		}
@@ -141,7 +140,7 @@
 		"PlaceBaptistField": "Place of Baptist",
 		"AlreadyHaveAnAccount": "Already have an account ?",
 		"SignIn": "Sign In",
-		"CreateAccountField": "Create Account",		
+		"CreateAccountField": "Create Account",
 		"ChooseYourCebField": "Select your CEB",
 		"ChooseYourPostField": "Select your poste",
 		"ChooseYourGroupField": "Select your group",
@@ -195,7 +194,7 @@
 		"PlaceBaptistField": "Place of Baptist",
 		"AlreadyHaveAnAccount": "Already have an account ?",
 		"SignIn": "Sign In",
-		"ModifyAccountField": "Modify your personnal informations",		
+		"ModifyAccountField": "Modify your personnal informations",
 		"ChooseYourCebField": "Select your CEB",
 		"ChooseYourPostField": "Select your poste",
 		"ChooseYourGroupField": "Select your group",

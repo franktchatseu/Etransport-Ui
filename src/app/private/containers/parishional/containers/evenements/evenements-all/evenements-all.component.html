@@ -17,34 +17,38 @@
     </div>
     <div class="main-card mb-3 card">
         <div class="card-body">
-            <button type="button" class="btn mr-2 mb-2 btn-primary" (click)="add()"> {{ 'Parishionals.Evenement.ButtonAdd' | translate }}</button>
-                <br>
+            <button type="button" class="btn mr-2 mb-2 btn-primary" (click)="add()">
+                {{ 'Parishionals.Evenement.ButtonAdd' | translate }}</button>
+            <br>
             <table style="width: 100%;" id="example" class="table ">
                 <thead>
-                <tr>
-                    <th>Id</th>
-                    <th>{{ 'Parishionals.Evenement.LabelName' | translate }}</th>
-                    <th>Description</th>
-            s        <th>Date</th>
-                    <th>Action</th>
-                </tr>
+                    <tr>
+                        <th>Id</th>
+                        <th>{{ 'Parishionals.Evenement.LabelName' | translate }}</th>
+                        <th>Description</th>
+                        s <th>Date</th>
+                        <th>Action</th>
+                    </tr>
                 </thead>
                 <tbody>
-                 <tr *ngFor="let evenement of evenements">
-                    <td>{{evenement.id}}</td>
-                    <td>{{evenement.name}}</td>
-                    <td>{{evenement.description}}</td>
-                    <td>{{evenement.created_at}}</td>
-                    <td style="width: 25%">
-                        <button  class="mr-2 btn-icon btn-icon-only btn btn-outline-primary" (click)="update(evenement.id)"><i class="pe-7s-pen btn-icon-wrapper"> </i></button>
-                        <button class="mr-2 btn-icon btn-icon-only btn btn-outline-success" ><i class="pe-7s-info btn-icon-wrapper"> </i></button>
-                        <button class="mr-2 btn-icon btn-icon-only btn btn-outline-danger" (click)="delete(evenement.id)"><i class="pe-7s-trash btn-icon-wrapper"> </i></button>
-                    </td>
-                 </tr>
-            
+                    <tr *ngFor="let evenement of evenements">
+                        <td>{{evenement.id}}</td>
+                        <td>{{evenement.name}}</td>
+                        <td>{{evenement.description}}</td>
+                        <td>{{evenement.created_at}}</td>
+                        <td style="width: 25%">
+                            <button class="mr-2 btn-icon btn-icon-only btn btn-outline-primary"
+                                (click)="update(evenement.id)"><i class="pe-7s-pen btn-icon-wrapper"> </i></button>
+                            <button class="mr-2 btn-icon btn-icon-only btn btn-outline-success"><i
+                                    (click)="detail(evenement.id)" class="pe-7s-info btn-icon-wrapper"> </i></button>
+                            <button class="mr-2 btn-icon btn-icon-only btn btn-outline-danger"
+                                (click)="delete(evenement.id)"><i class="pe-7s-trash btn-icon-wrapper"> </i></button>
+                        </td>
+                    </tr>
+
                 </tbody>
                 <tfoot>
-               
+
                 </tfoot>
             </table>
         </div>
