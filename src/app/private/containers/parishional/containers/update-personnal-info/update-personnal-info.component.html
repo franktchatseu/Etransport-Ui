@@ -139,11 +139,13 @@
                                 
                                 <div class="col-md-6">
                                     <div class="position-relative form-group">
-                                        <label for="exampleEmail" class=""><span
-                                                class="text-danger">*</span>{{ 'UpdatePersonnalInfo.YourProfessionField' | translate }}</label>
-                                        <input name="email" id="exampleEmail" placeholder="{{ 'UpdatePersonnalInfo.YourProfessionField' | translate }}" type="text"
-                                            formControlName="profession"
-                                            class="form-control {{ form.profession.errors && isSubmitted ? 'invalid': '' }}" value="{{ user.infos.profession }}">
+                                        <label for="exampleEmail" class="">{{ 'UpdatePersonnalInfo.YourProfessionField' | translate }}</label>
+                                        <select formControlName="profession_id"
+                                            class="form-control {{ form.profession_id.errors && isSubmitted ? 'invalid': '' }}">
+                                            <option value="" disabled selected hidden>{{ 'Register.YourProfessionField'| translate }}</option>
+                                            <option value="{{ profession.id }}" *ngFor="let profession of professions">
+                                                {{  profession.name }}</option>
+                                        </select>
                                         <small class="form-text text-muted info-error info-error-danger" *ngIf="handleError?.profession">
                                             {{ handleError?.profession }}
                                         </small>
@@ -372,7 +374,7 @@
                                                 <div class="widget-heading">{{ 'UpdatePersonnalInfo.ChooseYourProfessionField' | translate }}</div>
                                             </div>
                                             <div class="widget-content-right">
-                                               {{ user.infos.profession}}
+                                               {{ displayProfession() }}
                                             </div>
                                         </div>
                                     </div>
@@ -382,7 +384,7 @@
                                         <div class="widget-content-wrapper">
                                             <div class="widget-content-left center-elem mr-2"><i class="pe-7s-like text-muted fsize-2"></i></div>
                                             <div class="widget-content-left">
-                                                <div class="widget-heading">{{ 'UpdatePersonnalInfo.AreYouMarriedField' | translate }}</div>
+                                                <div class="widget-heading">{{ 'UpdatePersonnalInfo.AreYouMarried' | translate }}</div>
                                             </div>
                                             <div class="widget-content-right">
                                                {{ computeMarriedStatus() | translate }}

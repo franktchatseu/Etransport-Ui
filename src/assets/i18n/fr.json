@@ -186,6 +186,7 @@
 		"DistrictField": "Quartier",
 		"TelephoneField": "Téléphone",
 		"AreYouMarriedField": "Êtes-vous marié ?",
+		"AreYouMarried": "Êtes-vous marié",
 		"Yes": "Oui",
 		"No": "Non",
 		"Required": "les champs avec * sont requis",

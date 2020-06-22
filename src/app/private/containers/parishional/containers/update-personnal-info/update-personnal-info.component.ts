@@ -25,9 +25,6 @@ export class UpdatePersonnalInfoComponent implements OnInit {
   isSubmitted = false;
   isBaptisted = false;
   professions: any[] = [];
-  cebs: any[] = [];
-  groupes: any[] = [];
-  postes: any[] = [];
   file: File = null;
   isSpa = false;
   user: any = null;
@@ -43,8 +40,8 @@ export class UpdatePersonnalInfoComponent implements OnInit {
     private router: Router,
     private internationalizationService: InternationalizationService,
     private userService: UserService,
-    private  professionService: ProfessionService,
-    private  extraService: ExtraService,
+    private professionService: ProfessionService,
+    private extraService: ExtraService,
     private notificationService: NotificationService,
     private formBuilder: FormBuilder) {}
 
@@ -70,7 +67,7 @@ export class UpdatePersonnalInfoComponent implements OnInit {
       birth_place: [this.user.infos.birth_place],
       district: [this.user.infos.district],
       // profession_id: ['', [Validators.required]],
-      profession: [this.user.infos.profession],
+      profession_id: [this.user.infos.profession_id],
       language: [this.user.infos.language],
       tel: [this.user.infos.tel],
       is_married: [this.user.infos.is_married],
@@ -79,7 +76,8 @@ export class UpdatePersonnalInfoComponent implements OnInit {
   }
 
   initAvatar() {
-    this.avatarPath = (JSON.parse(this.user.infos.avatar)).images;
+    if(this.user.infos.avatar !== null)
+      this.avatarPath = (JSON.parse(this.user.infos.avatar)).images;
   }
 
   onSelectfile(event) {
@@ -113,9 +111,16 @@ export class UpdatePersonnalInfoComponent implements OnInit {
   getProfessions() {
     this.professionService.getProfessions(10000).subscribe((response) => {
       this.professions = response.data;
+      console.log(response.data);
     }, (error) => {
       this.notificationService.danger(this.translations.UpdatePersonnalInfo.ServerUnavailable);
     });
+  }
+
+  displayProfession() {
+    return (this.professions.length > 0) ?
+      this.professions.find(pro => pro.id === parseInt(this.user.infos.profession_id)).name
+      : '';
   }
 
   /*checkPasswords(group: FormGroup) {
