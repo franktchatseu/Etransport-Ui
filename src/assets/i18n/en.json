@@ -186,5 +186,20 @@
 		"InvalidPhoneNumber": "Invalid phone number",
 		"ViewProfile": "view my profile",
 		"ChooseFileTitle": "Browser your profile picture"
+	},
+
+	"priests": {
+		"WriteToPriests": "The Priests answer to you",
+		"WritsToPriestsDesc": "From this interface",
+		"SendMessageButton":"Send",
+		"TextAreaPlaceHolder":"Enter you message here...",
+		"AT":"at",
+		"Previous": "Previous",
+		"Next": "Next",
+		"ServerUnavailable": "Server unavailable",
+		"EndOfListMessage": "End of the list",
+		"AProbleOccured":"A problem occured",
+		"ElementSelectedNotAvailable": "The selected element is unavailable",
+		"MessageSendSuccessfully" : "The message was successfully send"
 	}
 }
