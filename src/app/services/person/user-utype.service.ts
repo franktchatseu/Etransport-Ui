@@ -9,7 +9,7 @@ import { map } from 'rxjs/operators';
 export class UserUtypeService {
 
   constructor(private http: HttpClient) {
-    config.apiUrl += '/persons';
+   
   }
 
   async post(formData) {
@@ -22,11 +22,11 @@ export class UserUtypeService {
 
   public async put(id: number, parishId: number): Promise<any> {
     return await this.http
-        .put(`${config.apiUrl}/user-utypes/${id}/activate-parishs?parish_id=${parishId}`, null).toPromise();
+        .put(`${config.apiUrl}/persons/user-utypes/${id}/activate-parishs?parish_id=${parishId}`, null).toPromise();
   }
 
   public getUserParishs(userId: number) {
-    return this.http.get<any>(`${config.apiUrl}/user-utypes/${userId}/parishs`)
+    return this.http.get<any>(`${config.apiUrl}/persons/user-utypes/${userId}/parishs`)
       .pipe(map(data => data));
   }
 

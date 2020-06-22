@@ -105,5 +105,21 @@
 		"DoneWithSuccess": "Inscription réussie avec succès",
 		"FileLabel": "Choisir votre photo de profile",
 		"InvalidPhoneNumber": "Numéro de téléphone invalide"
+	},
+
+	"priests": {
+		"WriteToPriests": "Les Pères vous écrivent",
+		"WritsToPriestsDesc": "Depuis cette interface",
+		"SendMessageButton":"Envoyer",
+		"TextAreaPlaceHolder":"Entrez votre message ici...",
+		"AT":"à",
+		"Previous": "Précédent",
+		"Next": "Suivant",
+		"ServerUnavailable": "Serveur indisponible",
+		"EndOfListMessage": "Fin de la liste",
+		"AProbleOccured":"Un probleme est survenue",
+		"ElementSelectedNotAvailable": "L'élément selectionné est indisponible",
+		"MessageSendSuccessfully" : "le Message a été envoyer avec succès"
+
 	}
 }

@@ -9,16 +9,22 @@ import { NavBarComponent } from './containers/index/nav-bar/nav-bar.component';
 import { MessageService } from 'src/app/services/message.service';
 import { MyParishComponent } from './containers/my-parish/my-parish.component';
 import { Info1Component } from './containers/info1/info1.component';
+import { WriteToPriestComponent } from './containers/write-to-priest/write-to-priest.component';
+import { FormGroup, FormsModule, ReactiveFormsModule } from '@angular/forms';
+
+
 
 @NgModule({
   declarations: [
     IndexComponent, RandomNumberComponent, NavBarComponent, LeftSideComponent,
-    MyParishComponent, Info1Component
+    MyParishComponent, Info1Component, WriteToPriestComponent,
   ],
   imports: [
     CommonModule,
     ParishionalRoutingModule,
     TranslateModule,
+    FormsModule,
+    ReactiveFormsModule
   ],
   providers: [
     MessageService
