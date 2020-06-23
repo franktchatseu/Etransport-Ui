@@ -72,7 +72,8 @@ export class EvenementsAllComponent implements OnInit {
   ngOnInit(): void {
     this.user = this.authService.getUserInfos();
     this.changeLanguage(this.currentLanguage);
-    this.getEvenementByUser(this.user.infos.id);
+    //this.getEvenementByUser(this.user.infos.id);
+    this.getAll();
     console.log(this.user);
   }
 
@@ -85,9 +86,17 @@ export class EvenementsAllComponent implements OnInit {
       this.notificationService.danger(this.translations.Parishionals.ServerUnavailable);
     });
   }
+  getAll() {
+    this.evenementService.get().subscribe((res) => {
+      this.evenements = res.data;
+      console.log(res)
+    }, (error) => {
+      this.notificationService.danger(this.translations.Parishionals.ServerUnavailable);
+    });
+  }
 
   getPage(url) {
-    this.evenementService.get(url).subscribe((res) => {
+    this.evenementService.getPage(url).subscribe((res) => {
       this.evenements = res.data;
       console.log(res)
     }, (error) => {
