@@ -175,7 +175,7 @@ export class EvenementsAllComponent implements OnInit {
   }
   //methode qui recupere ju ste une partie de la description
   getPartOfcontent(content: string) {
-    return content.substring(1, 100) + '...';
+    return content.substring(0, 100) + '...';
   }
 
 }

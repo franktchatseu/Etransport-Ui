@@ -4,6 +4,11 @@ import { RandomNumberComponent } from './containers/random-number/random-number.
 import { IndexComponent } from './containers/index/index.component';
 import { MyParishComponent } from './containers/my-parish/my-parish.component';
 import { Info1Component } from './containers/info1/info1.component';
+import { CathechistAllComponent } from './containers/cathechists/cathechist-all/cathechist-all.component';
+import { CathechistAddComponent } from './containers/cathechists/cathechist-add/cathechist-add.component';
+import { CathechumenAddComponent } from './containers/cathechumen/cathechumen-add/cathechumen-add.component';
+import { CathechumenAllComponent } from './containers/cathechumen/cathechumen-all/cathechumen-all.component';
+import { CathechumenDetailComponent } from './containers/cathechumen/cathechumen-detail/cathechumen-detail.component'
 
 const routes: Routes = [
   {
@@ -21,6 +26,34 @@ const routes: Routes = [
       {
         path: 'info1',
         component: Info1Component,
+      }
+      ,
+      {
+        path: 'cathechists',
+        children: [
+          {
+            path: 'add',
+            component: CathechistAddComponent,
+          },
+          {
+            path: 'all',
+            component: CathechistAllComponent,
+          }
+        ]
+      }
+      ,
+      {
+        path: 'cathechumen',
+        children: [
+          {
+            path: 'add',
+            component: CathechumenAddComponent,
+          },
+          {
+            path: 'all',
+            component: CathechumenAllComponent,
+          }
+        ]
       }
     ]
   },
