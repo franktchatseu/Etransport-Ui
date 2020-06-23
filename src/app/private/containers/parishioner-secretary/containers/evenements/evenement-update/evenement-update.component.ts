@@ -46,10 +46,10 @@ export class EvenementUpdateComponent implements OnInit {
       }
     ).catch(
       error => {
-        console.log(error);
-        this.translate.get('ProSituation.' + error.error.code)
-          .subscribe(val => this.notifService.danger(val));
-        this.router.navigate(['/private/parishionals/evenements/all'])
+        console.log(error.error.message);
+        this.translate.get(error.error.message)
+          .subscribe(val => this.notifService.danger(error.error.message));
+        this.router.navigate(['/private/parishioner-secretary/evenements/all'])
       }
     )
   }

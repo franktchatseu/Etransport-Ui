@@ -37,7 +37,7 @@
                 <tr *ngFor="let evenement of evenements">
                     <td>{{evenement.id}}</td>
                     <td>{{evenement.name}}</td>
-                    <td>{{evenement.description}}</td>
+                    <td>{{ getPartOfcontent(evenement.description)}}</td>
                     <td>{{evenement.created_at}}</td>
                     <td style="width: 25%">
                         <button class="mr-2 btn-icon btn-icon-only btn btn-outline-primary"
