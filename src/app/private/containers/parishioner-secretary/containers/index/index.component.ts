@@ -23,12 +23,13 @@ export class IndexComponent implements OnInit {
     private notificationService: NotificationService,
     private router: Router) {
 
-    }
+  }
 
   ngOnInit() {
     console.log(this.authService.getUserInfos());
     this.isAuthenticated = this.authService.getUserInfos() ? true : false;
-    this.router.navigate(['/private/parishioner-secretary/info1']);
+    this.router.navigate(['/private/parishioner-secretary/evenements/all']);
+
   }
 
   logout() {

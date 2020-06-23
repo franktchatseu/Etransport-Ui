@@ -5,6 +5,7 @@ import { EvenementService } from 'src/app/services/person/evenement.service';
 import { TranslateService } from '@ngx-translate/core';
 import { NotificationService } from 'src/app/services/notification.service';
 import { MatDialog } from '@angular/material';
+import { AuthService } from 'src/app/auth/services/auth.service';
 
 @Component({
   selector: 'app-evenement-add',
@@ -13,22 +14,27 @@ import { MatDialog } from '@angular/material';
 })
 export class EvenementAddComponent implements OnInit {
 
+  //attribut pour la sauvegarde du fichier
+  myfile: File = null;
   formEvenement: FormGroup;
   isLoading = false;
+  user: any;
   public isError: boolean = false;
   public isSuccess: boolean = false;
   public isSubmitted: boolean = false;
   public errorMessages: any = {};
   constructor(
+    private authService: AuthService,
     private formbuilder: FormBuilder,
     private router: Router,
     private evenementService: EvenementService,
     private translate: TranslateService,
     private notifService: NotificationService,
-    private dialog:MatDialog
+    private dialog: MatDialog
   ) { }
 
   ngOnInit(): void {
+    this.user = this.authService.getUserInfos();
     this.initForm();
   }
 
@@ -49,6 +55,13 @@ export class EvenementAddComponent implements OnInit {
     return this.formEvenement.controls;
   }
   //methode ajout
+
+  //recuperation du fichier de evenement
+
+  detectfile(event) {
+    this.myfile = event.target.files[0];
+    console.log(this.myfile)
+  }
   add() {
     this.isSubmitted = true;
     this.isError = false;
@@ -61,12 +74,12 @@ export class EvenementAddComponent implements OnInit {
         .subscribe(val => this.notifService.danger(val));
       return;
     }
-
     this.isLoading = true;
     const formData = new FormData();
     formData.append('name', '' + this.form.nom.value);
     formData.append('description', '' + this.form.description.value);
-    formData.append('user_utype_id',"1");
+    formData.append('files', this.myfile);
+    formData.append('user_utype_id', '1');
     console.log(formData)
     this.evenementService.add(formData)
       .then(resp => {
@@ -83,7 +96,7 @@ export class EvenementAddComponent implements OnInit {
       .finally(() => this.isLoading = false);
   }
 
-  close(){
+  close() {
     this.dialog.closeAll();
   }
 }

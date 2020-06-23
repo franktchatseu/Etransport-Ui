@@ -14,7 +14,9 @@ import { MAT_DIALOG_DATA, MatDialogRef } from '@angular/material';
 })
 export class EvenementUpdateComponent implements OnInit {
 
-  evenement:any;
+  //attribut pour la sauvegarde du fichier
+  myfile: File = null;
+  evenement: any;
   formEvenement: FormGroup;
   isLoading = false;
   public isError: boolean = false;
@@ -27,15 +29,15 @@ export class EvenementUpdateComponent implements OnInit {
     private evenementService: EvenementService,
     private translate: TranslateService,
     private notifService: NotificationService,
-    private activeRoute:ActivatedRoute,
-    private dialog:MatDialogRef<EvenementsAllComponent>,@Inject(MAT_DIALOG_DATA) public evenement_id:number
-    
+    private activeRoute: ActivatedRoute,
+    private dialog: MatDialogRef<EvenementsAllComponent>, @Inject(MAT_DIALOG_DATA) public evenement_id: number
+
   ) { }
 
   ngOnInit(): void {
     this.initForm();
     //recuperation de evenement à modifier
-   // const evenemnet_id = +this.activeRoute.snapshot.paramMap.get("id");
+    // const evenemnet_id = +this.activeRoute.snapshot.paramMap.get("id");
     this.evenementService.find(this.evenement_id).then(
       data => {
         this.evenement = data;
@@ -44,10 +46,10 @@ export class EvenementUpdateComponent implements OnInit {
       }
     ).catch(
       error => {
-        console.log(error);
-        this.translate.get('ProSituation.' + error.error.code)
-        .subscribe(val => this.notifService.danger(val));
-        this.router.navigate(['/private/parishionals/evenements/all'])
+        console.log(error.error.message);
+        this.translate.get(error.error.message)
+          .subscribe(val => this.notifService.danger(error.error.message));
+        this.router.navigate(['/private/parishioner-secretary/evenements/all'])
       }
     )
   }
@@ -57,14 +59,12 @@ export class EvenementUpdateComponent implements OnInit {
     this.formEvenement = this.formbuilder.group(
       {
         nom: ["", [Validators.required]],
-
         description: ["", [Validators.required]],
-
       }
     )
 
   }
-  initFormWithData(){
+  initFormWithData() {
     this.formEvenement = this.formbuilder.group(
       {
         nom: [this.evenement.name, [Validators.required]],
@@ -77,6 +77,11 @@ export class EvenementUpdateComponent implements OnInit {
 
   get form() {
     return this.formEvenement.controls;
+  }
+
+  detectfile(event) {
+    this.myfile = event.target.files[0];
+    console.log(this.myfile)
   }
 
   update() {
@@ -96,16 +101,17 @@ export class EvenementUpdateComponent implements OnInit {
     const formData = new FormData();
     formData.append('name', '' + this.form.nom.value);
     formData.append('description', '' + this.form.description.value);
-    formData.append('user_utype_id',"1");
+    formData.append('files', this.myfile);
+    formData.append('user_utype_id', "1");
     console.log(formData)
-    this.evenementService.update(formData,this.evenement_id)
+    this.evenementService.update(formData, this.evenement_id)
       .then(resp => {
         this.translate.get('Parishionals.Evenement.SubmitSucessEdit')
           .subscribe(val => this.notifService.success(val));
         this.isSubmitted = false;
         console.log(resp)
         this.formEvenement.reset();
-        
+
       })
       .catch(error => {
         console.log(error);
@@ -114,7 +120,7 @@ export class EvenementUpdateComponent implements OnInit {
       .finally(() => this.isLoading = false);
   }
 
-  close(){
+  close() {
     this.dialog.close();
   }
 }
