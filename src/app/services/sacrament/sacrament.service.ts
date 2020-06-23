@@ -10,29 +10,31 @@ export class SacramentService {
 
   constructor(private http: HttpClient) {}
 
-  async post(formData) {
-
-    return await this.http.post(`${config.apiUrl}/suggestions`, formData, {
-      reportProgress: true,
-      observe: 'events'
-    }).pipe(map(data => data));
-  }
-
-  public async put(id: number, formData): Promise<any> {
-    return await this.http
-        .put(`${config.apiUrl}/suggestions/${id}`, formData)
-        .pipe(map(data => data));
-  }
-
-  public get() {
-    return this.http.get<any>(`${config.apiUrl}/suggestions/page`)
+  public getPage(url) {
+    return this.http.get<any>(`${url}`)
       .pipe(map(data => data));
   }
 
-  public async delete(id) {
-    return await this.http
-        .delete(`${config.apiUrl}/suggestions/${id}`)
-        .pipe(map(data => data));
+  public get() {
+    return this.http.get<any>(`${config.apiUrl}/sacrament/sacraments`)
+      .pipe(map(data => data));
+  }
+  add(formData: FormData): Promise<any> {
+    return this.http.post<any>(`${config.apiUrl}/sacrament/sacraments`, formData).toPromise();
+  }
+  
+  find(id: number): Promise<any> {
+    return this.http.get<any>(`${config.apiUrl}/sacrament/sacraments/${id}`).toPromise();
+  }
+
+  update(formData: FormData, sacrament_id): Promise<any> {
+    return this.http.post<any>(`${config.apiUrl}/sacrament/sacraments/${sacrament_id}`, formData).toPromise();
+  }
+
+
+  delete(id: number) {
+    return this.http.delete(`${config.apiUrl}/sacrament/sacraments/${id}`).toPromise();
+
   }
 
 }

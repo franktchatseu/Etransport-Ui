@@ -1,1 +1,56 @@
-<p>list-sacraments works!</p>
+<div class="container">
+    <div class="row">
+        <div class="app-page-title" style="margin: 0%; width: auto;">
+            <div class="page-title-wrapper">
+                <div class="page-title-heading">
+                    <div class="page-title-icon">
+                        <i class="pe-7s-phone icon-gradient bg-premium-dark">
+                        </i>
+                    </div>
+                    <div>{{ 'CathechesisCoordinator.Sacrament.MySacrament' | translate }}
+                        <div class="page-title-subheading">{{ 'CathechesisCoordinator.Sacrament.Describe' | translate }}.
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</div>
+<br>
+<div class=" mb-3 card col-md-11">
+    <div class="card-body">
+        <button type="button" class="btn mr-2 mb-2 btn-primary" (click)="add()">
+            {{ 'CathechesisCoordinator.Sacrament.ButtonAdd' | translate }}</button>
+        <br>
+        <table style="width: 100%;" id="example" class="table ">
+            <thead>
+                <tr>
+                    <th>#</th>
+                    <th>{{ 'CathechesisCoordinator.Sacrament.LabelName' | translate }}</th>
+                    <th>Description</th>
+                    <th>Action</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let sacrament of sacraments, let i = index" id="tr{{ sacrament.id }}">
+                    <td>{{i+1}}</td>
+                    <td>{{sacrament.title}}</td>
+                    <td>{{ computeDescription(sacrament.description)}}</td>
+                    <td style="width: 25%">
+                        <button class="mr-2 btn-icon btn-icon-only btn btn-outline-primary"
+                            (click)="update(sacrament.id)"><i class="pe-7s-pen btn-icon-wrapper"> </i></button>
+                        <button class="mr-2 btn-icon btn-icon-only btn btn-outline-success" (click)="detail(sacrament.id)" >
+                            <i class="pe-7s-info btn-icon-wrapper"> </i></button>
+                        <button class="mr-2 btn-icon btn-icon-only btn btn-outline-danger"
+                            (click)="delete(sacrament.id)"><i class="pe-7s-trash btn-icon-wrapper"> </i></button>
+                    </td>
+                </tr>
+
+            </tbody>
+            <tfoot>
+
+            </tfoot>
+        </table>
+    </div>
+</div>

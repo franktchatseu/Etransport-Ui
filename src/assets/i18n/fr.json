@@ -103,6 +103,23 @@
 	"CathechesisCoordinator": {
 		"Info1": {
 			"Title": "Informations"
+		},
+		"Sacrament": {
+			"Title": "Sacrements",
+			"MySacrament": "Mes Sacrements",
+			"Describe": " il s'agit ici de tout les sacrements dont vous avez enregistré",
+			"ButtonAdd": "Ajouter un Sacrement",
+			"ButtonEdit": "Editer un Sacrement",
+			"ButtonClose": "Fermer",
+			"LabelAdd": "Nouvel Sacrement",
+			"LabelEdit": "Editer Sacrement",
+			"LabelDetail": "Detail Sur Sacrement",
+			"LabelName": "Nom",
+			"SubmitError": "veuillez remplir tous les champs",
+			"SubmitSucessAdd": "evement ajouter avec success",
+			"SubmitSucessEdit": "evement modifier avec success",
+			"SubmitErrorEdit": "echec de modification de Sacrement ",
+			"SubmitErrorAdd": "echec de ajout de Sacrement "
 		}
 	},
 	"Cathechesis": {

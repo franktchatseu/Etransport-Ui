@@ -93,6 +93,23 @@
 	"CathechesisCoordinator": {
 		"Info1": {
 			"Title": "Informations"
+		},
+		"Sacrament": {
+			"Title": "Sacraments",
+			"MySacrament": "My Sacraments",
+			"Describe": " here, you have all the sacrament that you have save",
+			"ButtonAdd": "Add a sacrament",
+			"ButtonEdit": "Edit a sacrament",
+			"ButtonClose": "Close",
+			"LabelAdd": "New Sacrament",
+			"LabelEdit": "Edit Sacrament",
+			"LabelDetail": "Detail Sacrament",
+			"LabelName": "name",
+			"SubmitError": "please fill in all fields",
+			"SubmitSucessAdd": "Sacrament add successfully",
+			"SubmitSucessEdit": "Sacrament Edit successfully",
+			"SubmitErrorEdit": "failure to modify a Sacrament ",
+			"SubmitErrorAdd": "failure to add a Sacrament "
 		}
 	},
 	"Cathechesis": {
