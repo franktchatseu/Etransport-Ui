@@ -374,7 +374,7 @@
                                                 <div class="widget-heading">{{ 'UpdatePersonnalInfo.ChooseYourProfessionField' | translate }}</div>
                                             </div>
                                             <div class="widget-content-right">
-                                               {{ displayProfession() }}
+                                               {{ displayProfession() == null ? '' : displayProfession().name }}
                                             </div>
                                         </div>
                                     </div>

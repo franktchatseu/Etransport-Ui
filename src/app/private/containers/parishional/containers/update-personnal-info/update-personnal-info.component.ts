@@ -120,8 +120,8 @@ export class UpdatePersonnalInfoComponent implements OnInit {
 
   displayProfession() {
     return (this.professions.length > 0) ?
-      this.professions.find(pro => pro.id === parseInt(this.user.infos.profession_id)).name
-      : '';
+      this.professions.find(pro => pro.id === parseInt(this.user.infos.profession_id, 10))
+      : null;
   }
 
   /*checkPasswords(group: FormGroup) {
