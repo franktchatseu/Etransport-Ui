@@ -1,11 +1,11 @@
 import { Component, OnInit } from '@angular/core';
-import { Observable } from 'rxjs/Observable';
-import { AuthService } from '../../../../../auth/services/auth.service';
+import { Observable } from 'rxjs';
+import { AuthService } from 'src/app/auth/services/auth.service';
 import { Router } from '@angular/router';
-import { UserUtypeService } from '../../../../../services/person/user-utype.service';
-import { NotificationService } from '../../../../../services/notification.service';
-import { InternationalizationService } from '../../../../../services/features/internationalization.service';
-import { Lang } from '../../../../../services/config/lang';
+import { UserUtypeService } from 'src/app/services/person/user-utype.service';
+import { NotificationService } from 'src/app/services/notification.service';
+import { InternationalizationService } from 'src/app/services/features/internationalization.service';
+import { Lang } from 'src/app/services/config/lang';
 
 @Component({
   selector: 'app-my-parish',
@@ -23,10 +23,10 @@ export class MyParishComponent implements OnInit {
   translations: any = null;
 
   constructor(private authService: AuthService,
-              private router: Router,
-              private internationalizationService: InternationalizationService,
-              private notificationService: NotificationService,
-              private userTypeService: UserUtypeService) {}
+    private router: Router,
+    private internationalizationService: InternationalizationService,
+    private notificationService: NotificationService,
+    private userTypeService: UserUtypeService) { }
 
   ngOnInit() {
     this.user = this.authService.getUserInfos();
@@ -45,8 +45,8 @@ export class MyParishComponent implements OnInit {
   }
 
   getPage(url) {
-    if ( url ) {
-      this.userTypeService.get(url).subscribe( (res) => {
+    if (url) {
+      this.userTypeService.get(url).subscribe((res) => {
         this.parishs = res;
       }, (error) => {
         this.notificationService.danger(this.translations.Parishionals.ServerUnavailable);
