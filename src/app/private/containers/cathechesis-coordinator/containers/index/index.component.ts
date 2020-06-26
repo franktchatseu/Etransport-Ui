@@ -23,7 +23,7 @@ export class IndexComponent implements OnInit {
     private notificationService: NotificationService,
     private router: Router) {
 
-    }
+  }
 
   ngOnInit() {
     console.log(this.authService.getUserInfos());

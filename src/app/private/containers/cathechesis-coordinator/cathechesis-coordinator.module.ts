@@ -12,13 +12,22 @@ import { CreateSacramentComponent } from './containers/sacraments/create-sacrame
 import { UpdateSacramentComponent } from './containers/sacraments/update-sacrament/update-sacrament.component';
 import { ListSacramentsComponent } from './containers/sacraments/list-sacraments/list-sacraments.component';
 import { DetailsSacramentComponent } from './containers/sacraments/details-sacrament/details-sacrament.component';
-import { MatDialogModule } from '@angular/material';
+import { CathechistAllComponent } from './containers/cathechists/cathechist-all/cathechist-all.component';
+import { CathechistAddComponent } from './containers/cathechists/cathechist-add/cathechist-add.component';
+import { CathechistDetailComponent } from './containers/cathechists/cathechist-detail/cathechist-detail.component';
+import { CathechumenAddComponent } from './containers/cathechumen/cathechumen-add/cathechumen-add.component';
+import { CathechumenAllComponent } from './containers/cathechumen/cathechumen-all/cathechumen-all.component';
+import { CathechumenDetailComponent } from './containers/cathechumen/cathechumen-detail/cathechumen-detail.component'
+
+import { MatDialog, MatDialogModule } from '@angular/material';
 
 @NgModule({
   declarations: [
     IndexComponent, RandomNumberComponent, NavBarComponent, LeftSideComponent,
     MyParishComponent, Info1Component,
-    CreateSacramentComponent,UpdateSacramentComponent,ListSacramentsComponent,DetailsSacramentComponent
+    CreateSacramentComponent,UpdateSacramentComponent,ListSacramentsComponent,DetailsSacramentComponent,
+    CathechistAddComponent, CathechistAllComponent, CathechistDetailComponent,
+    CathechumenAddComponent, CathechumenAllComponent, CathechumenDetailComponent
   ],
   imports: [
     CommonModule,

@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { config } from '../../../../../../config';
+import { config } from '../../../../config';
 import { HttpClient } from '@angular/common/http';
 import { map } from 'rxjs/operators';
 
@@ -8,7 +8,7 @@ import { map } from 'rxjs/operators';
 })
 export class SuggestionService {
 
-  constructor(private http: HttpClient) {}
+  constructor(private http: HttpClient) { }
 
   async post(formData) {
 
@@ -20,8 +20,8 @@ export class SuggestionService {
 
   public async put(id: number, formData): Promise<any> {
     return await this.http
-        .put(`${config.apiUrl}/suggestions/${id}`, formData)
-        .pipe(map(data => data));
+      .put(`${config.apiUrl}/suggestions/${id}`, formData)
+      .pipe(map(data => data));
   }
 
   public get() {
@@ -31,8 +31,8 @@ export class SuggestionService {
 
   public async delete(id) {
     return await this.http
-        .delete(`${config.apiUrl}/suggestions/${id}`)
-        .pipe(map(data => data));
+      .delete(`${config.apiUrl}/suggestions/${id}`)
+      .pipe(map(data => data));
   }
 
 }
