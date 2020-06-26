@@ -26,7 +26,8 @@ export class IndexComponent implements OnInit {
   ngOnInit() {
     console.log(this.authService.getUserInfos());
     this.isAuthenticated = this.authService.getUserInfos() ? true : false;
-    this.router.navigate(['/private/cathecumene/info1']);
+    //this.router.navigate(['/private/cathecumene/info1']);
+    this.router.navigate(['/private/cathecumene/apply-for-permission']);
   }
 
   logout() {
