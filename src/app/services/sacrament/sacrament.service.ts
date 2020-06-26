@@ -19,6 +19,13 @@ export class SacramentService {
     return this.http.get<any>(`${config.apiUrl}/sacrament/sacraments`)
       .pipe(map(data => data));
   }
+  
+  public getCategory() {
+    return this.http.get<any>(`${config.apiUrl}/sacrament/sacrament_categories`)
+      .pipe(map(data => data));
+  }
+
+
   add(formData: FormData): Promise<any> {
     return this.http.post<any>(`${config.apiUrl}/sacrament/sacraments`, formData).toPromise();
   }
