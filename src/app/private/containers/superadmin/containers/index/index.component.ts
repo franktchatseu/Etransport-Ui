@@ -22,13 +22,7 @@ export class IndexComponent implements OnInit {
     private messageService: MessageService,
     private notificationService: NotificationService,
     private router: Router) {
-      this.subscription = this.messageService.getMessage().subscribe(message => {
-        const data = JSON.parse(message.text);
-        if (data.code === 'new-translation') {
-          this.translations = data.data;
-        }
-        console.log( this.translations );
-      });
+
     }
 
   ngOnInit() {
@@ -46,6 +40,6 @@ export class IndexComponent implements OnInit {
   }
 
   goTo(url) {
-    this.router.navigate(['/private/parishionals']);
+    this.router.navigate(['/private/superadmins']);
   }
 }

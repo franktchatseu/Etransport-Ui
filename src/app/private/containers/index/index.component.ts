@@ -22,15 +22,6 @@ export class IndexComponent implements OnInit {
     private messageService: MessageService,
     private notificationService: NotificationService,
     private router: Router) {
-      this.messageService.sendMessage(JSON.stringify({code: 'get-translation', data: null}));
-      this.subscription = this.messageService.getMessage().subscribe(message => {
-        const data = JSON.parse(message.text);
-        if (data.code === 'new-translation') {
-          this.translations = data.data;
-          console.log( 'Rien hein => ', this.translations );
-          alert('Hi');
-        }
-      });
     }
 
   ngOnInit() {
@@ -47,7 +38,7 @@ export class IndexComponent implements OnInit {
       SUPERADMIN: 'superadmins'
     };
     if (this.user && this.user.types) {
-      this.router.navigate(['/private/parishionals']);
+      this.router.navigate(['/private/superadmins']);
     } else {
       this.router.navigate(['/private/login']);
     }
