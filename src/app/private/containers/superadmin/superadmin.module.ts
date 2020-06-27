@@ -10,6 +10,8 @@ import { ArticlesComponent } from './containers/articles/articles.component';
 import { AttributesComponent } from './containers/attributes/attributes.component';
 import { MenusComponent } from './containers/menus/menus.component';
 import { SubmenusComponent } from './containers/submenus/submenus.component';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import {MatDialog, MatDialogModule } from '@angular/material';
 
 @NgModule({
   declarations: [
@@ -26,6 +28,9 @@ import { SubmenusComponent } from './containers/submenus/submenus.component';
     CommonModule,
     SuperadminRoutingModule,
     TranslateModule,
+    MatDialogModule,
+    FormsModule,
+    ReactiveFormsModule
   ]
 })
 export class SuperadminModule { }

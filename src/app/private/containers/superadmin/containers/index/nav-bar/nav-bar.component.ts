@@ -1,10 +1,12 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
-import { Subscription } from 'rxjs';
+import { Subscription } from 'rxjs/Subscription';
 import { AuthService } from '../../../../../../auth/services/auth.service';
 import { MessageService } from '../../../../../../services/message.service';
 import { NotificationService } from '../../../../../../services/notification.service';
-
+import { TranslateService } from '@ngx-translate/core';
+import { InternationalizationService } from '../../../../../../services/features/internationalization.service';
+declare var $;
 @Component({
   selector: 'app-nav-bar',
   templateUrl: './nav-bar.component.html',
@@ -13,34 +15,57 @@ import { NotificationService } from '../../../../../../services/notification.ser
 export class NavBarComponent implements OnInit {
 
   isAuthenticated = false;
-  subscription: Subscription;
   translations: any = null;
+  currentLanguage = 'fr';
+  user: any = null;
 
   constructor(
+    private translate: TranslateService,
     private authService: AuthService,
-    private messageService: MessageService,
     private notificationService: NotificationService,
-    private router: Router) {
-      this.subscription = this.messageService.getMessage().subscribe(message => {
-        const data = JSON.parse(message.text);
-        if (data.code === 'new-translation') {
-          this.translations = data.data;
-        }
-        console.log( this.translations );
-      });
-    }
+    private internationalizationService: InternationalizationService,
+    private router: Router) { }
 
 
   ngOnInit() {
-    console.log('Load data for component');
+    this.user = this.authService.getUserInfos();
+    console.log(this.user);
   }
 
   logout() {
-    console.log('make logout here');
+    this.authService.logout()
+      .subscribe(success => {
+        if (success) {
+          this.router.navigate(['/private/login']);
+        }
+      });
   }
 
+  changeState() {
+    const button = $('#app-container-truth');
+    if (!button.hasClass('closed-sidebar')) {
+      button.addClass('closed-sidebar');
+    } else {
+      button.removeClass('closed-sidebar');
+    }
+  }
+
+  showUserFirstAndLastName() {
+    return this.user.infos.first_name.split(' ')[0] + ' ' + this.user.infos.last_name.split(' ')[0];
+  }
+
+  isInProfiles(value: string): boolean {
+    return this.user.types.includes(value);
+  }
+
+  goTo(url) {
+    this.router.navigate(['/private/parishionals/' + url]);
+  }
+
+  /* Reactive translation */
   changeLanguage(value) {
-    console.log('change language !');
+    this.currentLanguage = value;
+    this.internationalizationService.changeLanguage(this.currentLanguage, (res) => { this.translations = res; });
   }
 
 }

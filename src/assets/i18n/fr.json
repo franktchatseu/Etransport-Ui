@@ -230,15 +230,59 @@
 		"ChooseFileTitle": "Choisir votre photo de profile"
 	},
 	"Superadmins" : {
+		"ServerUnavailable": "Server unavailable",
+		"EndOfListMessage": "End of the list",
+		"AllFieldsAreRequired": "All fields are required",
+		"ReallyDelete": "Voulez-vous vraiment supprimer ?",
+		"DeleteWithSuccess": "Delete with succes",
+		"DeleteWithError": "Delete with error",
+		"DoneWithSuccess": "Done with succes",
+		"DescriptionField": "Description",
+		"SaveField": "Save",
+		"UpdateField": "Update",
+		"CancelField": "Cancel",
+		"Edit": "Edit",
+		"Delete": "Delete",
+		"Previous": "Previous",
+		"Next": "Next",
+		"List": "List",
 		"LeftMenu": {
-			"Actualities": "Actualités",
-			"Attributes": "Attributs",
+			"Actualities": "Actualities",
+			"Attributes": "Attributes",
 			"Menus": "Menus",
-			"SubMenus": "Sous Menus",
+			"SubMenus": "Sub Menus",
 			"Articles": "Articles"
 		},
 		"Info1": {
 			"Title": "Informations"
+		},
+		"Attributes" : {
+			"Title": "Attributes système",
+			"DescribeAttributes": "Permit to set the actualities attributes",
+			"AddElement": "Add element",
+			"NameField": "Name",
+			"TypeField": "Type"
+		},
+		"Menus" : {
+			"Title": "Attributes système",
+			"DescribeMenus": "Permit to set the actualities attributes",
+			"AddElement": "Add element",
+			"NameField": "Name",
+			"DescriptionField": "Description",
+			"LogoField": "Avatar",
+			"SlugField": "Slug",
+			"TypeField": "Type"
+		},
+		"SubMenus" : {
+			"Title": "Attributes système",
+			"DescribeSubMenus": "Permit to set the actualities attributes",
+			"AddElement": "Add element",
+			"NameField": "Name",
+			"DescriptionField": "Description",
+			"LogoField": "Avatar",
+			"SlugField": "Slug",
+			"TypeField": "Type",
+			"Menu": "Menus"
 		}
 	}
 }

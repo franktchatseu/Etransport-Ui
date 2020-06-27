@@ -20,8 +20,20 @@ export class SubmenusService {
         .toPromise();
   }
 
-  public get() {
-    return this.http.get<any>(`${config.apiUrl}/actualities/submenus`)
+  public gets(page, id) {
+    // console.log(slugMenu);
+    // return this.http.get<any>(`${config.apiUrl}/actualities/submenus?page=${page}`)
+    return this.http.get<any>(`${config.apiUrl}/actualities/submenus/${id}/menus?page=${page}`)
+      .toPromise();
+  }
+
+  public getMenus(limit = 1000) {
+    return this.http.get<any>(`${config.apiUrl}/actualities/menus?limit=${limit}`)
+      .toPromise();
+  }
+
+  public get(url) {
+    return this.http.get<any>(`${url}`)
       .toPromise();
   }
 

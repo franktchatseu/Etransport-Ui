@@ -20,8 +20,13 @@ export class ArticlesService {
         .toPromise();
   }
 
-  public get() {
-    return this.http.get<any>(`${config.apiUrl}/actualities/articles`)
+  public gets(page) {
+    return this.http.get<any>(`${config.apiUrl}/actualities/articles?page=${page}`)
+      .toPromise();
+  }
+
+  public get(url) {
+    return this.http.get<any>(`${url}`)
       .toPromise();
   }
 

@@ -1,17 +1,21 @@
-button {
-  right: 10px;
-  position: absolute;
+.form-container-css {
+  padding: 20px !important;
 }
 
-p {
-  font-size: 30px;
-  top: 40%;
-  position: absolute;
-  text-align: center;
-  width: 100%;
+.invalid {
+  border: 1px solid red;
 }
 
-.number {
-  font-weight: bold;
-  color: darkblue;
+.info-error-danger {
+  color: red !important;
+}
+
+.close-icon {
+  font-size: 35px;
+  margin-top: -20%;
+  cursor: pointer;
+}
+
+.icon-type {
+  font-size: 20px;
 }
