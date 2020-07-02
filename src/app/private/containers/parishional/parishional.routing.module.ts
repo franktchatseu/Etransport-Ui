@@ -31,6 +31,10 @@ const routes: Routes = [
       {
         path: 'write-to-priest',
         component: WriteToPriestComponent,
+      },
+      {
+        path: 'modify-personnal-informations',
+        component: UpdatePersonnalInfoComponent,
       }
 
     ]
