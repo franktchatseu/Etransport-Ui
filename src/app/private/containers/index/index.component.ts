@@ -39,6 +39,8 @@ export class IndexComponent implements OnInit {
     };
     if (this.user && this.user.types) {
       this.router.navigate(['/private/superadmins']);
+      // this.router.navigate(['/private/cathecumenes']);
+      // this.router.navigate(['/private/parishionals']);
     } else {
       this.router.navigate(['/private/login']);
     }
