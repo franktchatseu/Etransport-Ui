@@ -161,15 +161,17 @@
 
                                 <div class="col-md-6">
                                     <div class="position-relative form-group">
-                                        <label for="exampleEmail" class=""><span
-                                                class="text-danger">*</span>{{ 'UpdatePersonnalInfo.YourProfessionField' | translate }}</label>
-                                        <input name="email" id="exampleEmail"
-                                            placeholder="{{ 'UpdatePersonnalInfo.YourProfessionField' | translate }}"
-                                            type="text" formControlName="profession"
-                                            class="form-control {{ form.profession.errors && isSubmitted ? 'invalid': '' }}"
-                                            value="{{ user.infos.profession }}">
-                                        <small class="form-text text-muted info-error info-error-danger"
-                                            *ngIf="handleError?.profession">
+                                        <label for="exampleEmail" class="">{{ 'UpdatePersonnalInfo.YourProfessionField' | translate }}</label>
+                                        <!-- <select formControlName="profession_id"
+                                            class="form-control {{ form.profession_id.errors && isSubmitted ? 'invalid': '' }}">
+                                            <option value="" disabled selected hidden>{{ 'Register.YourProfessionField'| translate }}</option>
+                                            <option value="{{ profession.id }}" *ngFor="let profession of professions">
+                                                {{  profession.name }}</option>
+                                        </select> -->
+                                        <input name="profession" id="exampleEmail" placeholder="{{ 'UpdatePersonnalInfo.YourProfessionField' | translate }}" type="text"
+                                                formControlName="profession"
+                                                class="form-control {{ form.profession.errors && isSubmitted ? 'invalid': '' }}" value="{{ user.infos.profession }}">
+                                        <small class="form-text text-muted info-error info-error-danger" *ngIf="handleError?.profession">
                                             {{ handleError?.profession }}
                                         </small>
                                     </div>
@@ -248,7 +250,7 @@
                                 <div *ngIf="file !== null" class="col-sm-12 col-md-12 text-center ">
                                     <div class="avatar-icon-wrapper avatar-icon-lg bg-secondary">
                                         <div class="avatar-icon rounded btn-hover-shine"
-                                            style="height: 10% width: 10%;"><img [src]="avatarPreviewPath" alt="Avatar">
+                                            style="height: 10%; width: 10%;"><img [src]="avatarPreviewPath" alt="Avatar">
                                         </div>
                                     </div>
                                 </div>
@@ -420,7 +422,7 @@
                                                     {{ 'UpdatePersonnalInfo.Language' | translate }}</div>
                                             </div>
                                             <div class="widget-content-right">
-                                                {{ displayUserLanguage() }}
+                                               {{ displayUserLanguage() | translate }}
                                             </div>
                                         </div>
                                     </div>
@@ -436,7 +438,8 @@
                                                 </div>
                                             </div>
                                             <div class="widget-content-right">
-                                                {{ user.infos.profession}}
+                                               <!-- {{ displayProfession() }} -->
+                                               {{ user.infos.profession ? user.infos.profession : '' }}
                                             </div>
                                         </div>
                                     </div>
@@ -447,8 +450,7 @@
                                             <div class="widget-content-left center-elem mr-2"><i
                                                     class="pe-7s-like text-muted fsize-2"></i></div>
                                             <div class="widget-content-left">
-                                                <div class="widget-heading">
-                                                    {{ 'UpdatePersonnalInfo.AreYouMarriedField' | translate }}</div>
+                                                <div class="widget-heading">{{ 'UpdatePersonnalInfo.AreYouMarried' | translate }}</div>
                                             </div>
                                             <div class="widget-content-right">
                                                 {{ computeMarriedStatus() | translate }}

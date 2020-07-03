@@ -1,18 +1,18 @@
 import { Component, OnInit } from '@angular/core';
 import { Observable } from 'rxjs/Observable';
-import { AuthService } from '../../../../../auth/services/auth.service';
 import { Router } from '@angular/router';
 import { UserUtypeService } from '../../../../../services/person/user-utype.service';
 import { NotificationService } from '../../../../../services/notification.service';
 import { InternationalizationService } from '../../../../../services/features/internationalization.service';
 import { Lang } from '../../../../../services/config/lang';
+import { AuthService } from '../../../../../auth/services/auth.service';
 
 @Component({
-  selector: 'app-my-parish',
-  templateUrl: './my-parish.component.html',
-  styleUrls: ['./my-parish.component.css']
+  selector: 'app-ask-permission',
+  templateUrl: './ask-permission.component.html',
+  styleUrls: ['./ask-permission.component.css']
 })
-export class MyParishComponent implements OnInit {
+export class AskPermissionComponent implements OnInit {
 
   parishs: any;
   activeParish: any;
@@ -22,12 +22,11 @@ export class MyParishComponent implements OnInit {
   currentLanguage = Lang.currentLang;
   translations: any = null;
 
-  constructor(
-    private authService: AuthService,
-    private router: Router,
-    private internationalizationService: InternationalizationService,
-    private notificationService: NotificationService,
-    private userTypeService: UserUtypeService) { }
+  constructor(private authService: AuthService,
+              private router: Router,
+              private internationalizationService: InternationalizationService,
+              private notificationService: NotificationService,
+              private userTypeService: UserUtypeService) {}
 
   ngOnInit() {
     this.user = this.authService.getUserInfos();
@@ -46,8 +45,8 @@ export class MyParishComponent implements OnInit {
   }
 
   getPage(url) {
-    if (url) {
-      this.userTypeService.get(url).subscribe((res) => {
+    if ( url ) {
+      this.userTypeService.get(url).subscribe( (res) => {
         this.parishs = res;
       }, (error) => {
         this.notificationService.danger(this.translations.Parishionals.ServerUnavailable);

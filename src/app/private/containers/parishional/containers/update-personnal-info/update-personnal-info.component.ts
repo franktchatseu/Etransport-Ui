@@ -25,9 +25,6 @@ export class UpdatePersonnalInfoComponent implements OnInit {
   isSubmitted = false;
   isBaptisted = false;
   professions: any[] = [];
-  cebs: any[] = [];
-  groupes: any[] = [];
-  postes: any[] = [];
   file: File = null;
   isSpa = false;
   user: any = null;
@@ -43,8 +40,8 @@ export class UpdatePersonnalInfoComponent implements OnInit {
     private router: Router,
     private internationalizationService: InternationalizationService,
     private userService: UserService,
-    private  professionService: ProfessionService,
-    private  extraService: ExtraService,
+    private professionService: ProfessionService,
+    private extraService: ExtraService,
     private notificationService: NotificationService,
     private formBuilder: FormBuilder) {}
 
@@ -52,9 +49,7 @@ export class UpdatePersonnalInfoComponent implements OnInit {
     this.user = this.authService.getUserInfos();
     this.initForm();
     this.initAvatar();
-   // }, {validator: this.checkPasswords });
     this.changeLanguage(this.currentLanguage);
-    this.getProfessions();
   }
 
   initForm() {
@@ -69,7 +64,7 @@ export class UpdatePersonnalInfoComponent implements OnInit {
       birth_date: [this.user.infos.birth_date],
       birth_place: [this.user.infos.birth_place],
       district: [this.user.infos.district],
-      // profession_id: ['', [Validators.required]],
+      // profession_id: [this.user.infos.profession_id],
       profession: [this.user.infos.profession],
       language: [this.user.infos.language],
       tel: [this.user.infos.tel],
@@ -79,8 +74,7 @@ export class UpdatePersonnalInfoComponent implements OnInit {
   }
 
   initAvatar() {
-    const value = (JSON.parse(this.user.infos.avatar));
-    this.avatarPath = value ? value.images : '';
+    this.avatarPath = this.user.infos.avatar ? (JSON.parse(this.user.infos.avatar)) : '';
   }
 
   onSelectfile(event) {
@@ -111,20 +105,6 @@ export class UpdatePersonnalInfoComponent implements OnInit {
   computeMarriedStatus() {
     return (this.user.infos.is_married === '1') ? 'UpdatePersonnalInfo.Yes' : 'UpdatePersonnalInfo.No';
   }
-
-  getProfessions() {
-    this.professionService.getProfessions(10000).subscribe((response) => {
-      this.professions = response.data;
-    }, (error) => {
-      this.notificationService.danger(this.translations.UpdatePersonnalInfo.ServerUnavailable);
-    });
-  }
-
-  /*checkPasswords(group: FormGroup) {
-    const pass = group.get('password').value;
-    const confirmPass = group.get('confirm_password').value;
-    return pass === confirmPass ? null : { notSame: true };
-  }*/
 
   get form() {
     return this.registerForm.controls;
@@ -186,11 +166,11 @@ export class UpdatePersonnalInfoComponent implements OnInit {
   displayUserLanguage() {
     if (this.user.infos.language) {
       if (this.user.infos.language === 'fr') {
-        return 'Français';
+        return 'UpdatePersonnalInfo.FrenchValue';
       } else if (this.user.infos.language === 'en') {
-        return 'Anglais';
+        return 'UpdatePersonnalInfo.EnglishValue';
       } else {
-        return 'langue inconnue';
+        return 'UpdatePersonnalInfo.UnknowLanguage';
       }
     }
   }

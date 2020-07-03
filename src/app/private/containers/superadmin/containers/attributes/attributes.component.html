@@ -1,0 +1,136 @@
+<div class="container">
+    <div class="row">
+        <div class="app-page-title" style="margin: 0%; width: 100%;">
+            <div class="page-title-wrapper">
+                <div class="page-title-heading">
+                    <div class="page-title-icon">
+                        <i class="pe-7s-phone icon-gradient bg-premium-dark">
+                        </i>
+                    </div>
+                    <div>{{ 'Superadmins.Attributes.Title' | translate }}
+                        <div class="page-title-subheading">{{ 'Superadmins.Attributes.DescribeAttributes' | translate }}.
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-lg-6">
+            <div class="main-card mb-3 card">
+                <div class="card-body">
+                    <h5 class="card-title" style="text-align: center">
+                        {{ 'Superadmins.Attributes.AddElement' | translate }}</h5>
+                    <div class="row container-details">
+                        <form [formGroup]="createForm" (submit)="create()">
+                            <div class="form-row form-container-css">
+                                <div class="col-md-12">
+                                    <div class="position-relative form-group"><label for="exampleEmail"
+                                            class="">{{ 'Superadmins.Attributes.NameField' | translate }}</label>
+                                        <input name="name" placeholder="{{ 'Superadmins.Attributes.NameField' | translate }}..."
+                                            type="text"
+                                            class="form-control {{ form.name.errors && isSubmitted ? 'invalid': '' }}"
+                                            formControlName="name" required>
+                                        <small class="form-text text-muted info-error info-error-danger"
+                                            *ngIf="handleError?.name">
+                                            {{ handleError?.name }}
+                                        </small>
+                                    </div>
+                                </div>
+                                <div class="col-md-12">
+                                    <div class="position-relative form-group"><label for="examplePassword"
+                                            class="">{{ 'Superadmins.Attributes.TypeField' | translate }}</label>
+                                        <small class="form-text text-muted info-error info-error-danger"
+                                            *ngIf="handleError?.type">
+                                            {{ handleError?.type }}
+                                        </small>
+                                        <select formControlName="type" class="form-control {{ isSubmitted && form.type.errors ? 'invalid' : '' }}" required>
+                                            <option value="" selected>Selectionnez le type du champs</option>
+                                            <option value="text">Texte</option>
+                                            <option value="textarea">Long texte</option>
+                                            <option value="select">Select</option>
+                                            <option value="email">Email</option>
+                                            <option value="date">Date</option>
+                                            <option value="url">Site web</option>
+                                            <option value="password">Mot de passe</option>
+                                            <option value="number">Nombre</option>
+                                            <option value="file">Fichier</option>
+                                            <option value="galerie">Galérie</option>
+                                        </select>
+                                    </div>
+                                </div>
+                                <div class="d-flex align-items-center">
+                                    <div class="ml-auto" *ngIf="active == null">
+                                        <input type="submit" class="btn btn-primary btn-lg"
+                                            value="{{ 'Superadmins.SaveField' | translate }}" />
+                                    </div>
+                                    <div class="ml-auto" *ngIf="active!=null" style="margin-right: 10px">
+                                        <input (click)="update()" type="button" class="btn btn-primary btn-lg"
+                                            value="{{ 'Superadmins.UpdateField' | translate }}" />
+                                    </div>
+                                    <div class="ml-auto" *ngIf="active!=null"  style="margin-left: 10px">
+                                        <input (click)="cancel()" type="button" class="btn btn-warning btn-lg"
+                                            value="{{ 'Superadmins.CancelField' | translate }}" />
+                                    </div>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                    <!-- <p class="bg-dark text-white">Etiam porta sem malesuada ultricies vehicula.</p> -->
+                </div>
+            </div>
+        </div>
+        <div class="col-lg-6">
+            <div class="main-card mb-3 card">
+                <h5 class="card-title" style="text-align: center; margin-top: 4%;"> {{ 'Superadmins.List' | translate }}</h5>
+                <ul class="list-group list-group-flush">
+                    <li class="list-group-item" *ngFor="let type of data?.data">
+                        <div class="widget-content p-0" style="cursor: pointer" >
+                            <div class="widget-content-wrapper">
+                                <div class="widget-content-left mr-3">
+                                    <!--<img width="42" class="rounded-circle" src="assets/images/avatars/1.jpg" alt="">
+                                    --><i class="pe-7s-anchor icon-type"></i>
+                                </div>
+                                <div class="widget-content-left" (click)="showDetails(type)">
+                                    <div class="widget-heading">{{ type.name }}</div>
+                                    <div class="widget-subheading" style="padding-right: 5%; width: 185%;">
+                                        <span>{{ type.type }}</span></div>
+                                </div>
+                                <div class="widget-content-right">
+                                    <div role="group" class="btn-group-sm btn-group">
+                                        <button type="button" class="btn-shadow btn btn-success"
+                                            (click)="activate(type)" title="{{ 'Superadmins.Edit' | translate }}"><i
+                                                class="pe-7s-note"></i></button>
+                                        <button type="button" (click)="delete(type)" class="btn-shadow btn btn-danger"
+                                            title="{{ 'Superadmins.Delete' | translate }}"><i
+                                                class="pe-7s-trash"></i></button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+                </ul>
+                <div class="row" style="margin-top: 4%">
+                    <div class="col-md-4"></div>
+                    <div class="col-md-4">
+                        <ul class="pagination">
+                            <li class="paginate_button page-item previous" id="example_previous">
+                                <a (click)="getPage(data.prev_page_url)" aria-controls="example" data-dt-idx="0"
+                                    tabindex="0" class="page-link">{{ 'Superadmins.Previous' | translate }}</a>
+                            </li>
+                            <li class="paginate_button page-item next" id="example_next">
+                                <a (click)="getPage(data.next_page_url)" aria-controls="example" data-dt-idx="7"
+                                    tabindex="0" class="page-link">{{ 'Superadmins.Next' | translate }}</a>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="col-md-4"></div>
+                </div>
+            </div>
+        </div>
+
+
+    </div>
+</div>
+
+<!-- Tabs -->

@@ -9,6 +9,7 @@ import { map } from 'rxjs/operators';
 export class UserUtypeService {
 
   constructor(private http: HttpClient) {
+   
   }
 
   async post(formData) {

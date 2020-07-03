@@ -200,6 +200,7 @@
 		"TypeDistrict": "Enter your neighborhood",
 		"TelephoneField": "Phone number",
 		"AreYouMarriedField": "Are you married ?",
+		"AreYouMarried": "Are you married",
 		"AreYouSpaParishional": "Etes vous paroissien de St Paul Apôtre de Foréké-Dschang?",
 		"Yes": "Yes",
 		"No": "No",
@@ -208,6 +209,7 @@
 		"ChooseYourLanguageField": "Select your language",
 		"EnglishValue": "English",
 		"FrenchValue": "French",
+		"UnknowLanguage": "Unknow Language",
 		"ChooseYourProfessionField": "Your profession",
 		"YourProfessionField": "Type your profession",
 		"AreYouBaptistedField": "Are you baptisted ?",
@@ -218,11 +220,81 @@
 		"ModifyAccountField": "Modify your personnal informations",
 		"ChooseYourCebField": "Select your CEB",
 		"ChooseYourPostField": "Select your poste",
-		"ChooseYourGroupField": "Select your group",
-		"DoneWithSuccess": "Inscription done with success",
+		"ChooseYourGroupField": "Select your group",	
+		"DoneWithSuccess": "Your personnal informations have been updated with success",
 		"FileLabel": "Choose your picture profile",
 		"InvalidPhoneNumber": "Invalid phone number",
 		"ViewProfile": "view my profile",
 		"ChooseFileTitle": "Browser your profile picture"
+	},
+
+	"priests": {
+		"WriteToPriests": "The Priests answer to you",
+		"WritsToPriestsDesc": "From this interface",
+		"SendMessageButton":"Send",
+		"TextAreaPlaceHolder":"Enter you message here...",
+		"AT":"at",
+		"Previous": "Previous",
+		"Next": "Next",
+		"ServerUnavailable": "Server unavailable",
+		"EndOfListMessage": "End of the list",
+		"AProbleOccured":"A problem occured",
+		"ElementSelectedNotAvailable": "The selected element is unavailable",
+		"MessageSendSuccessfully" : "The message was successfully send"
+	},
+	"Superadmins" : {
+		"ServerUnavailable": "Server unavailable",
+		"EndOfListMessage": "End of the list",
+		"AllFieldsAreRequired": "All fields are required",
+		"ReallyDelete": "Voulez-vous vraiment supprimer ?",
+		"DeleteWithSuccess": "Delete with succes",
+		"DeleteWithError": "Delete with error",
+		"DoneWithSuccess": "Done with succes",
+		"SaveField": "Save",
+		"UpdateField": "Update",
+		"CancelField": "Cancel",
+		"Edit": "Edit",
+		"Delete": "Delete",
+		"Previous": "Previous",
+		"Next": "Next",
+		"List": "List",
+		"LeftMenu": {
+			"Actualities": "Actualities",
+			"Attributes": "Attributes",
+			"Menus": "Menus",
+			"SubMenus": "Sub Menus",
+			"Articles": "Articles"
+		},
+		"Info1": {
+			"Title": "Informations"
+		},
+		"Attributes" : {
+			"Title": "Attributes système",
+			"DescribeAttributes": "Permit to set the actualities attributes",
+			"AddElement": "Add element",
+			"NameField": "Name",
+			"TypeField": "Type"
+		},
+		"Menus" : {
+			"Title": "Attributes système",
+			"DescribeMenus": "Permit to set the actualities attributes",
+			"AddElement": "Add element",
+			"NameField": "Name",
+			"DescriptionField": "Description",
+			"LogoField": "Avatar",
+			"SlugField": "Slug",
+			"TypeField": "Type"
+		},
+		"SubMenus" : {
+			"Title": "Attributes système",
+			"DescribeSubMenus": "Permit to set the actualities attributes",
+			"AddElement": "Add element",
+			"NameField": "Name",
+			"DescriptionField": "Description",
+			"LogoField": "Avatar",
+			"SlugField": "Slug",
+			"TypeField": "Type",
+			"Menu": "Menus"
+		}
 	}
 }

@@ -163,6 +163,7 @@
 		"ChooseYourLanguageField": "Selectionner votre langue",
 		"EnglishValue": "Anglais",
 		"FrenchValue": "Français",
+		"UnknowLanguage": "Langue inconnue",
 		"ChooseYourProfessionField": "Votre profession",
 		"YourProfessionField": "Votre profession",
 		"AreYouBaptistedField": "Êtes-vous Déjà Baptisé ?",
@@ -179,6 +180,22 @@
 		"FileLabel": "Choisir votre photo de profile",
 		"InvalidPhoneNumber": "Numéro de téléphone invalide"
 	},
+
+	"priests": {
+		"WriteToPriests": "Les Pères vous écrivent",
+		"WritsToPriestsDesc": "Depuis cette interface",
+		"SendMessageButton":"Envoyer",
+		"TextAreaPlaceHolder":"Entrez votre message ici...",
+		"AT":"à",
+		"Previous": "Précédent",
+		"Next": "Suivant",
+		"ServerUnavailable": "Serveur indisponible",
+		"EndOfListMessage": "Fin de la liste",
+		"AProbleOccured":"Un probleme est survenue",
+		"ElementSelectedNotAvailable": "L'élément selectionné est indisponible",
+		"MessageSendSuccessfully" : "le Message a été envoyer avec succès"
+	},
+
 	"UpdatePersonnalInfo": {
 		"ServerUnavailable": "Serveur indisponible",
 		"MyPersonnalInfo": "Mes infos personnelles",
@@ -207,6 +224,7 @@
 		"DistrictField": "Quartier",
 		"TelephoneField": "Téléphone",
 		"AreYouMarriedField": "Êtes-vous marié ?",
+		"AreYouMarried": "Êtes-vous marié",
 		"Yes": "Oui",
 		"No": "Non",
 		"Required": "les champs avec * sont requis",
@@ -217,19 +235,67 @@
 		"ChooseYourProfessionField": "Votre profession",
 		"YourProfessionField": "Votre profession",
 		"MatrimonialStatus": "Statut matrimonial",
-		"AreYouBaptistedField": "Êtes-vous Déjà Baptisé ?",
-		"AreYouSpaParishional": "Are you parishioner of St. Paul the Apostle of Foréké-Dschang?",
-		"BaptistDateField": "Date de Baptême",
-		"PlaceBaptistField": "Lieu de Baptême",
-		"AlreadyHaveAnAccount": "Avez-vous déjà un compte ?",
 		"ModifyAccountField": "mettre mes infos à jour",
-		"ChooseYourCebField": "Sélectionner votre CEB",
-		"ChooseYourPostField": "Sélectionner votre poste",
-		"ChooseYourGroupField": "Sélectionner votre groupe",
 		"DoneWithSuccess": "Vos informations personnelles ont été mis à jour avec succès",
 		"FileLabel": "Choisir votre photo de profile",
 		"InvalidPhoneNumber": "Numéro de téléphone invalide",
 		"ViewProfile": "voir mon profile",
 		"ChooseFileTitle": "Choisir votre photo de profile"
+	},
+	"Superadmins" : {
+		"ServerUnavailable": "Server unavailable",
+		"EndOfListMessage": "End of the list",
+		"AllFieldsAreRequired": "All fields are required",
+		"ReallyDelete": "Voulez-vous vraiment supprimer ?",
+		"DeleteWithSuccess": "Delete with succes",
+		"DeleteWithError": "Delete with error",
+		"DoneWithSuccess": "Done with succes",
+		"DescriptionField": "Description",
+		"SaveField": "Save",
+		"UpdateField": "Update",
+		"CancelField": "Cancel",
+		"Edit": "Edit",
+		"Delete": "Delete",
+		"Previous": "Previous",
+		"Next": "Next",
+		"List": "List",
+		"LeftMenu": {
+			"Actualities": "Actualities",
+			"Attributes": "Attributes",
+			"Menus": "Menus",
+			"SubMenus": "Sub Menus",
+			"Articles": "Articles"
+		},
+		"Info1": {
+			"Title": "Informations"
+		},
+		"Attributes" : {
+			"Title": "Attributes système",
+			"DescribeAttributes": "Permit to set the actualities attributes",
+			"AddElement": "Add element",
+			"NameField": "Name",
+			"TypeField": "Type"
+		},
+		"Menus" : {
+			"Title": "Attributes système",
+			"DescribeMenus": "Permit to set the actualities attributes",
+			"AddElement": "Add element",
+			"NameField": "Name",
+			"DescriptionField": "Description",
+			"LogoField": "Avatar",
+			"SlugField": "Slug",
+			"TypeField": "Type"
+		},
+		"SubMenus" : {
+			"Title": "Attributes système",
+			"DescribeSubMenus": "Permit to set the actualities attributes",
+			"AddElement": "Add element",
+			"NameField": "Name",
+			"DescriptionField": "Description",
+			"LogoField": "Avatar",
+			"SlugField": "Slug",
+			"TypeField": "Type",
+			"Menu": "Menus"
+		}
 	}
 }
