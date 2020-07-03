@@ -12,6 +12,10 @@ import { MenusComponent } from './containers/menus/menus.component';
 import { SubmenusComponent } from './containers/submenus/submenus.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import {MatDialog, MatDialogModule } from '@angular/material';
+import { EntryTypesComponent } from './containers/liturgical/entry-types/entry-types.component';
+import { LiturgicalTypesComponent } from './containers/liturgical/liturgical-types/liturgical-types.component'; 
+import { LiturgicalEntryTypesComponent } from './containers/liturgical/liturgical-entry-types/liturgical-entry-types.component';
+import { LiturgicalTextsComponent } from './containers/liturgical/liturgical-texts/liturgical-texts.component';
 
 @NgModule({
   declarations: [
@@ -22,7 +26,11 @@ import {MatDialog, MatDialogModule } from '@angular/material';
     ArticlesComponent,
     AttributesComponent,
     MenusComponent,
-    SubmenusComponent
+    SubmenusComponent,
+    EntryTypesComponent,
+    LiturgicalTypesComponent,
+    LiturgicalEntryTypesComponent,
+    LiturgicalTextsComponent
   ],
   imports: [
     CommonModule,

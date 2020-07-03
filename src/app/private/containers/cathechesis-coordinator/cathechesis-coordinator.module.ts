@@ -20,6 +20,7 @@ import { CathechumenAllComponent } from './containers/cathechumen/cathechumen-al
 import { CathechumenDetailComponent } from './containers/cathechumen/cathechumen-detail/cathechumen-detail.component'
 
 import { MatDialog, MatDialogModule } from '@angular/material';
+import { ReactiveFormsModule, FormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -33,8 +34,10 @@ import { MatDialog, MatDialogModule } from '@angular/material';
     CommonModule,
     CathechesisCoordinatorRoutingModule,
     TranslateModule,
-    MatDialogModule
-  ],
+    MatDialogModule,
+    ReactiveFormsModule,
+    FormsModule
+    ],
   providers: [
   ]
 })

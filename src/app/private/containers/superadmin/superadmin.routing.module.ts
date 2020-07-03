@@ -6,6 +6,10 @@ import { AttributesComponent } from './containers/attributes/attributes.componen
 import { ArticlesComponent } from './containers/articles/articles.component';
 import { MenusComponent } from './containers/menus/menus.component';
 import { SubmenusComponent } from './containers/submenus/submenus.component';
+import { LiturgicalEntryTypesComponent } from './containers/liturgical/liturgical-entry-types/liturgical-entry-types.component';
+import { LiturgicalTextsComponent } from './containers/liturgical/liturgical-texts/liturgical-texts.component';
+import { EntryTypesComponent } from './containers/liturgical/entry-types/entry-types.component';
+import { LiturgicalTypesComponent } from './containers/liturgical/liturgical-types/liturgical-types.component';
 
 const routes: Routes = [
   {
@@ -31,7 +35,23 @@ const routes: Routes = [
       {
         path: 'submenus',
         component: SubmenusComponent,
-      }
+      },
+      {
+        path: 'entry-types',
+        component: LiturgicalEntryTypesComponent,
+      },
+      {
+        path: 'liturgical-texts',
+        component: LiturgicalTextsComponent,
+      },
+      {
+        path: 'liturgicals',
+        component: EntryTypesComponent,
+      },
+      {
+        path: 'types',
+        component: LiturgicalTypesComponent,
+      },
     ]
   }
 ];

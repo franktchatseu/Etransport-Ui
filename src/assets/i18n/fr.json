@@ -264,7 +264,12 @@
 			"Attributes": "Attributes",
 			"Menus": "Menus",
 			"SubMenus": "Sub Menus",
-			"Articles": "Articles"
+			"Articles": "Articles",
+			"Liturgical":"Liturgie",
+			"Liturgical_type":"Type Liturgique",
+			"Entry_Type":"Type Chants et Prieres",
+			"Liturgical_text":"Texte Liturgique",
+			"Liturgical_Type_Entry":"Liturgique et Type"
 		},
 		"Info1": {
 			"Title": "Informations"

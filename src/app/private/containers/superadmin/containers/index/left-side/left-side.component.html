@@ -81,31 +81,44 @@
                 <li class="mm-active">
                     <a href="javascript:void(0);" aria-expanded="false" (click)="showChildren('.today')">
                         <i class="metismenu-icon pe-7s-rocket"></i>
-                        Ajourd'hui
+                        {{ 'Superadmins.LeftMenu.Liturgical' | translate }}
                         <i class="metismenu-state-icon pe-7s-angle-down caret-left"></i>
                     </a>
                     <ul class="today mm-collapse">
                         <li>
-                            <a href="javascript:void(0);" (click)="activeMenu.menu1=0;"
+                            <a href="javascript:void(0);" (click)="activeMenu.menu1=1;goTo('types')"
                                 class="{{ activeMenu.menu1 == 1 ? 'mm-active': ''}}">
                                 <i class="metismenu-icon">
-                                </i>...
+                                </i>               
+                             {{ 'Superadmins.LeftMenu.Liturgical_type' | translate }}
+
                             </a>
                         </li>
-                    </ul>
-                </li>
-                <li class="mm-active">
-                    <a href="javascript:void(0);" aria-expanded="false" (click)="showChildren('.today2')">
-                        <i class="metismenu-icon pe-7s-rocket"></i>
-                        Ajourd'hui 2
-                        <i class="metismenu-state-icon pe-7s-angle-down caret-left"></i>
-                    </a>
-                    <ul class="today2 mm-collapse">
                         <li>
-                            <a href="javascript:void(0);" (click)="activeMenu.menu2=0;"
-                                class="{{ activeMenu.menu2 == 1 ? 'mm-active': ''}}">
+                            <a href="javascript:void(0);" (click)="activeMenu.menu1=2;goTo('entry-types')"
+                                class="{{ activeMenu.menu1 == 2 ? 'mm-active': ''}}">
                                 <i class="metismenu-icon">
-                                </i>...
+                                </i>               
+                             {{ 'Superadmins.LeftMenu.Entry_Type' | translate }}
+
+                            </a>
+                        </li>
+                        <li>
+                            <a href="javascript:void(0);" (click)="activeMenu.menu1=3;goTo('liturgicals')"
+                                class="{{ activeMenu.menu1 == 3 ? 'mm-active': ''}}">
+                                <i class="metismenu-icon">
+                                </i>               
+                             {{ 'Superadmins.LeftMenu.Liturgical_Type_Entry' | translate }}
+
+                            </a>
+                        </li>
+                        <li>
+                            <a href="javascript:void(0);" (click)="activeMenu.menu1=4;goTo('liturgical-texts')"
+                                class="{{ activeMenu.menu1 == 4 ? 'mm-active': ''}}">
+                                <i class="metismenu-icon">
+                                </i>               
+                             {{ 'Superadmins.LeftMenu.Liturgical_text' | translate }}
+
                             </a>
                         </li>
                     </ul>
