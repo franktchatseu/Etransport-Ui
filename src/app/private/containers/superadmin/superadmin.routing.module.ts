@@ -2,10 +2,9 @@ import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { RandomNumberComponent } from './containers/random-number/random-number.component';
 import { IndexComponent } from './containers/index/index.component';
-import { AttributesComponent } from './containers/attributes/attributes.component';
-import { ArticlesComponent } from './containers/articles/articles.component';
-import { MenusComponent } from './containers/menus/menus.component';
-import { SubmenusComponent } from './containers/submenus/submenus.component';
+import { ArticlesComponent } from './containers/actualities/articles/articles.component';
+import { MenusComponent } from './containers/actualities/menus/menus.component';
+import { SubmenusComponent } from './containers/actualities/submenus/submenus.component';
 
 const routes: Routes = [
   {
@@ -15,10 +14,6 @@ const routes: Routes = [
       {
         path: 'random-number',
         component: RandomNumberComponent,
-      },
-      {
-        path: 'attributes',
-        component: AttributesComponent,
       },
       {
         path: 'articles',

@@ -1,34 +1,31 @@
 import { Component, OnInit } from '@angular/core';
 import { Observable } from 'rxjs/Observable';
-import { AuthService } from '../../../../../auth/services/auth.service';
+import { AuthService } from '../../../../../../auth/services/auth.service';
 import { Router } from '@angular/router';
-import { Lang } from '../../../../../services/config/lang';
-import { InternationalizationService } from '../../../../../services/features/internationalization.service';
-import { NotificationService } from '../../../../../services/notification.service';
-import { SubmenusService } from '../../../../../services/actualities/submenus.service';
-import { FormGroup, FormBuilder, Validators } from '@angular/forms';
-import { MenusService } from '../../../../../services/actualities/menus.service';
+import { NotificationService } from '../../../../../../services/notification.service';
+import { InternationalizationService } from '../../../../../../services/features/internationalization.service';
+import { Lang } from '../../../../../../services/config/lang';
+import { MenusService } from '../../../../../../services/actualities/menus.service';
+import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 
 @Component({
-  selector: 'app-submenus',
-  templateUrl: './submenus.component.html',
-  styleUrls: ['./submenus.component.css']
+  selector: 'app-menus',
+  templateUrl: './menus.component.html',
+  styleUrls: ['./menus.component.css']
 })
-export class SubmenusComponent implements OnInit {
+export class MenusComponent implements OnInit {
 
   data: any = null;
   user: any = null;
   errors: any = null;
   handleError: any = null;
   createForm: FormGroup;
-  menus: any = null;
   page: any = 1;
   active: any = null;
   detail: any = null;
   isSubmitted = false;
   attributes: any = null;
   file: File = null;
-  idMenu: any = null;
 
   // language
   currentLanguage = Lang.currentLang;
@@ -40,17 +37,13 @@ export class SubmenusComponent implements OnInit {
     private internationalizationService: InternationalizationService,
     private notificationService: NotificationService,
     private formBuilder: FormBuilder,
-    private dataService: SubmenusService
-    ) {}
+    private dataService: MenusService) {}
 
   ngOnInit() {
     this.user = this.authService.getUserInfos();
     this.changeLanguage(this.currentLanguage);
-    this.initForm({name: '', description: '', slug: '', logo: '', menu_id: ''});
-    setTimeout( () => {
-      this.gets(this.page, this.idMenu);
-      this.getMenus();
-    }, 2000);
+    this.initForm({name: '', description: '', slug: '', logo: ''});
+    this.gets(this.page);
   }
 
   initForm(obj) {
@@ -58,8 +51,7 @@ export class SubmenusComponent implements OnInit {
       name: [obj.name, Validators.required],
       description: [obj.description, Validators.required],
       slug: [obj.slug, Validators.required],
-      logo: [obj.logo, Validators.required],
-      menu_id: [obj.menu_id, Validators.required],
+      logo: [obj.logo, Validators.required]
     });
   }
 
@@ -96,7 +88,7 @@ export class SubmenusComponent implements OnInit {
         console.log(resp);
         this.notificationService.success(this.translations.Superadmins.DoneWithSuccess);
         this.initForm({name: '', description: '', slug: '', logo: ''});
-        this.gets(this.page, this.idMenu);
+        this.gets(this.page);
       })
       .catch(err => {
         this.errors = err.error.errors;
@@ -124,7 +116,7 @@ export class SubmenusComponent implements OnInit {
         this.notificationService.success(this.translations.Superadmins.DoneWithSuccess);
         this.initForm({name: '', description: '', slug: '', logo: ''});
         this.active = null;
-        this.gets(this.page, this.idMenu);
+        this.gets(this.page);
       })
       .catch(err => {
         this.errors = err.error.errors;
@@ -135,8 +127,8 @@ export class SubmenusComponent implements OnInit {
       });
   }
 
-  gets(page, idMenu) {
-    this.dataService.gets(page, idMenu).then((response) => {
+  gets(page) {
+    this.dataService.gets(page).then((response) => {
       this.data = response;
       console.log(this.data);
     }).catch((error) => {
@@ -172,30 +164,15 @@ export class SubmenusComponent implements OnInit {
     if (confirm) {
       this.dataService.delete(item.id).then((res) => {
         this.notificationService.success(this.translations.Superadmins.DeleteWithSuccess);
-        this.gets(this.page, this.idMenu);
+        this.gets(this.page);
       }).catch((error) => {
         this.notificationService.danger(this.translations.Superadmins.DeleteWithError);
       });
     }
   }
 
-  chooseMenu(idMenu) {
-    this.idMenu = idMenu;
-    this.gets(this.page, this.idMenu);
-  }
-
   showDetails(item: any) {
     this.detail = item;
-  }
-
-  /* Attributes */
-  getMenus() {
-    this.dataService.getMenus().then((response) => {
-      this.menus = response;
-      console.log(this.data);
-    }).catch((error) => {
-      this.notificationService.danger(this.translations.Superadmins.ServerUnavailable);
-    });
   }
 
   /* Reactive translation */
@@ -203,5 +180,4 @@ export class SubmenusComponent implements OnInit {
     this.currentLanguage = value;
     this.internationalizationService.changeLanguage(this.currentLanguage, (res) => { this.translations = res; });
   }
-
 }

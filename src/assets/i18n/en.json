@@ -230,6 +230,7 @@
 		"DeleteWithError": "Delete with error",
 		"DoneWithSuccess": "Done with succes",
 		"SaveField": "Save",
+		"AddField": "Value",
 		"UpdateField": "Update",
 		"CancelField": "Cancel",
 		"Edit": "Edit",
@@ -252,12 +253,13 @@
 			"DescribeAttributes": "Permit to set the actualities attributes",
 			"AddElement": "Add element",
 			"NameField": "Name",
+			"ValueField": "Value",
 			"TypeField": "Type"
 		},
 		"Menus" : {
-			"Title": "Attributes système",
-			"DescribeMenus": "Permit to set the actualities attributes",
-			"AddElement": "Add element",
+			"Title": "Menus system",
+			"DescribeMenus": "Permit to set the menu of system",
+			"AddElement": "Add Menu",
 			"NameField": "Name",
 			"DescriptionField": "Description",
 			"LogoField": "Avatar",
@@ -265,15 +267,33 @@
 			"TypeField": "Type"
 		},
 		"SubMenus" : {
-			"Title": "Attributes système",
-			"DescribeSubMenus": "Permit to set the actualities attributes",
-			"AddElement": "Add element",
+			"Title": "Submenus of system",
+			"DescribeSubMenus": "Permit to set the submenus of system",
+			"AddElement": "Add submenu",
 			"NameField": "Name",
 			"DescriptionField": "Description",
 			"LogoField": "Avatar",
 			"SlugField": "Slug",
 			"TypeField": "Type",
 			"Menu": "Menus"
+		},
+		"Articles" : {
+			"Title": "Articles of system",
+			"ShowDetails": "Details",
+			"FirstContentTitle": "First content",
+			"SecondContentTitle": "Second content",
+			"Describe": "Permit to set the articles of system",
+			"AddElement": "Add article",
+			"NameField": "Name",
+			"DescriptionField": "Description",
+			"Menu": "Menus",
+			"FileLabel": "All Files of articles",
+			"SubMenu": "Sub menus",
+			"TitleField":"Title of article",
+			"Contenu1Field": "First content of article",
+			"Contenu2Field": "Second content of article",
+			"PhotoField": "Picture of article",
+			"FileField": "File of article"
 		}
 	}
 }

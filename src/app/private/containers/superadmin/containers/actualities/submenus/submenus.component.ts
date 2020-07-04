@@ -1,29 +1,34 @@
 import { Component, OnInit } from '@angular/core';
-import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Observable } from 'rxjs/Observable';
-import { AuthService } from '../../../../../auth/services/auth.service';
+import { AuthService } from '../../../../../../auth/services/auth.service';
 import { Router } from '@angular/router';
-import { AttributesService } from '../../../../../services/actualities/attributes.service';
-import { InternationalizationService } from '../../../../../services/features/internationalization.service';
-import { NotificationService } from '../../../../../services/notification.service';
-import { Lang } from '../../../../../services/config/lang';
+import { Lang } from '../../../../../../services/config/lang';
+import { InternationalizationService } from '../../../../../../services/features/internationalization.service';
+import { NotificationService } from '../../../../../../services/notification.service';
+import { SubmenusService } from '../../../../../../services/actualities/submenus.service';
+import { FormGroup, FormBuilder, Validators } from '@angular/forms';
+import { MenusService } from '../../../../../../services/actualities/menus.service';
 
 @Component({
-  selector: 'app-attributes',
-  templateUrl: './attributes.component.html',
-  styleUrls: ['./attributes.component.css']
+  selector: 'app-submenus',
+  templateUrl: './submenus.component.html',
+  styleUrls: ['./submenus.component.css']
 })
-export class AttributesComponent implements OnInit {
+export class SubmenusComponent implements OnInit {
 
   data: any = null;
   user: any = null;
   errors: any = null;
   handleError: any = null;
   createForm: FormGroup;
+  menus: any = null;
   page: any = 1;
   active: any = null;
   detail: any = null;
   isSubmitted = false;
+  attributes: any = null;
+  file: File = null;
+  idMenu: any = null;
 
   // language
   currentLanguage = Lang.currentLang;
@@ -35,24 +40,42 @@ export class AttributesComponent implements OnInit {
     private internationalizationService: InternationalizationService,
     private notificationService: NotificationService,
     private formBuilder: FormBuilder,
-    private dataService: AttributesService) {}
+    private dataService: SubmenusService
+    ) {}
 
   ngOnInit() {
     this.user = this.authService.getUserInfos();
     this.changeLanguage(this.currentLanguage);
-    this.initForm({name: '', type: ''});
-    this.gets(this.page);
+    this.initForm({name: '', description: '', slug: '', logo: '', menu_id: ''});
+    setTimeout( () => {
+      this.getMenus();
+    }, 2000);
   }
 
   initForm(obj) {
     this.createForm = this.formBuilder.group({
       name: [obj.name, Validators.required],
-      type: [obj.type, Validators.required]
+      description: [obj.description, Validators.required],
+      slug: [obj.slug, Validators.required],
+      logo: [obj.logo, Validators.required],
+      menu_id: [obj.menu_id, Validators.required],
     });
   }
 
   get form() {
     return this.createForm.controls;
+  }
+
+  onSelectfile(event) {
+    this.file = event.target.files[0];
+  }
+
+  getImage(logo) {
+    if (logo && logo.lastIndexOf('images') > 0 ) {
+      const image = JSON.parse(logo);
+      return image.images;
+    }
+    return logo;
   }
 
   create() {
@@ -63,15 +86,16 @@ export class AttributesComponent implements OnInit {
     const data = this.form;
     for (const k in data) {
       if (k) {
-          formData.append(k + '', data[k].value);
+        if (k === 'logo') { formData.append(k + '', this.file, data[k].value); }
+        else { formData.append(k + '', data[k].value); }
       }
     }
     this.dataService.post(formData)
       .then(resp => {
         console.log(resp);
         this.notificationService.success(this.translations.Superadmins.DoneWithSuccess);
-        this.initForm({name: '', type: ''});
-        this.gets(this.page);
+        this.initForm({name: '', description: '', slug: '', logo: ''});
+        this.gets(this.page, this.idMenu);
       })
       .catch(err => {
         this.errors = err.error.errors;
@@ -90,17 +114,16 @@ export class AttributesComponent implements OnInit {
     const data = this.form;
     for (const k in data) {
       if (k) {
-          formData.append(k, data[k].value);
-          console.log(k, data[k].value);
+        formData.append(k + '', data[k].value);
       }
     }
     this.dataService.put(this.active.id, formData)
       .then(resp => {
         console.log(resp);
         this.notificationService.success(this.translations.Superadmins.DoneWithSuccess);
-        this.initForm({name: '', type: ''});
+        this.initForm({name: '', description: '', slug: '', logo: ''});
         this.active = null;
-        this.gets(this.page);
+        this.gets(this.page, this.idMenu);
       })
       .catch(err => {
         this.errors = err.error.errors;
@@ -111,8 +134,8 @@ export class AttributesComponent implements OnInit {
       });
   }
 
-  gets(page) {
-    this.dataService.gets(page).then((response) => {
+  gets(page, idMenu) {
+    this.dataService.gets(page, idMenu).then((response) => {
       this.data = response;
       console.log(this.data);
     }).catch((error) => {
@@ -148,15 +171,30 @@ export class AttributesComponent implements OnInit {
     if (confirm) {
       this.dataService.delete(item.id).then((res) => {
         this.notificationService.success(this.translations.Superadmins.DeleteWithSuccess);
-        this.gets(this.page);
+        this.gets(this.page, this.idMenu);
       }).catch((error) => {
         this.notificationService.danger(this.translations.Superadmins.DeleteWithError);
       });
     }
   }
 
+  chooseMenu(idMenu) {
+    this.idMenu = idMenu;
+    this.gets(this.page, this.idMenu);
+  }
+
   showDetails(item: any) {
     this.detail = item;
+  }
+
+  /* Attributes */
+  getMenus() {
+    this.dataService.getMenus().then((response) => {
+      this.menus = response;
+      console.log(this.data);
+    }).catch((error) => {
+      this.notificationService.danger(this.translations.Superadmins.ServerUnavailable);
+    });
   }
 
   /* Reactive translation */
