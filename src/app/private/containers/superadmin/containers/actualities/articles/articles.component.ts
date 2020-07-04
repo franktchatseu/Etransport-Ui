@@ -63,7 +63,7 @@ export class ArticlesComponent implements OnInit {
 
   ngOnInit() {
     this.user = this.authService.getUserInfos();
-    this.user.profiles.parishioner.parish.parish_id = 1;
+    // this.user.profiles.parishioner.parish.parish_id = 1;
     console.log( this.user );
     this.changeLanguage(this.currentLanguage);
     this.initForm(this.emptyObj);
@@ -229,7 +229,6 @@ export class ArticlesComponent implements OnInit {
   Visualize(value) {
     this.toShow = value;
     window.open(value);
-    console.log( value );
   }
 
   getSubMenus(idMenu) {
