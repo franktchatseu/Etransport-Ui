@@ -46,6 +46,8 @@ export class LiturgicalTypesComponent implements OnInit {
       this.gets(this.page);
     }, 2000);
   }
+
+  
   initForm(obj) {
     this.createForm = this.formBuilder.group({
       title: [obj.title, Validators.required],

@@ -34,4 +34,9 @@ export class LiturgicaltypeService {
         .delete(`${config.apiUrl}/liturgicals/liturgical_types/${id}`)
         .toPromise();
   }
+
+  public getTypes(limit = 1000) {
+    return this.http.get<any>(`${config.apiUrl}/liturgicals/liturgical_types?limit=${limit}`)
+      .toPromise();
+  }
 }

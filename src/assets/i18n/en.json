@@ -264,7 +264,7 @@
 			"Menus": "Menus",
 			"SubMenus": "Sub Menus",
 			"Articles": "Articles",
-			"Liturgical":"Liturgie",
+			"Liturgical":"Liturgicals",
 			"Liturgical_type":"Liturgical Type",
 			"Entry_Type":"Type Songs and Prayers",
 			"Liturgical_text":"Liturgical Text",
@@ -300,6 +300,36 @@
 			"SlugField": "Slug",
 			"TypeField": "Type",
 			"Menu": "Menus"
+		},
+		"Liturgical_type" : {
+			"Title": "Type Liturgique",
+			"Describetype": "Permit to set the liturgical types",
+			"AddElement": "Add element",
+			"NameField": "Title",
+			"DescriptionField": "Description",
+			"SlugField": "Slug"
+		},
+		"Entry_Type" : {
+			"Title": "Type Songs and Prayers",
+			"Describetype": "Permit to set the Type of Songs and Prayers",
+			"AddElement": "Add element",
+			"NameField": "Title",
+			"DescriptionField": "Description"
+		},
+		"Liturgical_text" : {
+			"Title": "Liturgical Text",
+			"Describetype": "Permit to set the Liturgical Text",
+			"AddElement": "Add element",
+			"NameField": "Title",
+			"DescriptionField": "Description",
+			"SlugField": "Slug"
+		},
+		"Liturgical_Type_Entry" : {
+			"Title": "Liturgical and Type",
+			"Describetype": "Permit to set the Liturgical and Type",
+			"AddElement": "Add element",
+			"TypeField": "Liturgical type",
+			"DescriptionField": "Type Entry"
 		}
 	}
 }

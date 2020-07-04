@@ -34,4 +34,9 @@ export class EntrytypeService {
         .delete(`${config.apiUrl}/liturgicals/entry_types/${id}`)
         .toPromise();
   }
+
+  public getEntries(limit = 1000) {
+    return this.http.get<any>(`${config.apiUrl}/liturgicals/entry_types?limit=${limit}`)
+      .toPromise();
+  }
 }

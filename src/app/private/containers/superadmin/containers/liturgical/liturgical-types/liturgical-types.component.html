@@ -7,8 +7,8 @@
                         <i class="pe-7s-phone icon-gradient bg-premium-dark">
                         </i>
                     </div>
-                    <div>{{ 'Superadmins.SubMenus.Title' | translate }}
-                        <div class="page-title-subheading">{{ 'Superadmins.SubMenus.DescribeSubMenus' | translate }}.
+                    <div>{{ 'Superadmins.Liturgical_type.Title' | translate }}
+                        <div class="page-title-subheading">{{ 'Superadmins.Liturgical_type.Describetype' | translate }}.
                         </div>
                     </div>
                 </div>
@@ -20,14 +20,14 @@
             <div class="main-card mb-3 card">
                 <div class="card-body">
                     <h5 class="card-title" style="text-align: center">
-                        {{ 'Superadmins.SubMenus.AddElement' | translate }}</h5>
+                        {{ 'Superadmins.Liturgical_type.AddElement' | translate }}</h5>
                     <div class="row container-details">
                         <form [formGroup]="createForm" (submit)="create()">
                             <div class="form-row form-container-css">
                                 <div class="col-md-12">
                                     <div class="position-relative form-group"><label for="exampleEmail"
-                                            class="">{{ 'Superadmins.SubMenus.NameField' | translate }}</label>
-                                        <input name="title" placeholder="{{ 'Superadmins.SubMenus.NameField' | translate }}..."
+                                            class="">{{ 'Superadmins.Liturgical_type.NameField' | translate }}</label>
+                                        <input name="title" placeholder="{{ 'Superadmins.Liturgical_type.NameField' | translate }}..."
                                             type="text"
                                             class="form-control {{ form.title.errors && isSubmitted ? 'invalid': '' }}"
                                             formControlName="title" required>
@@ -39,8 +39,8 @@
                                 </div>
                                 <div class="col-md-12">
                                     <div class="position-relative form-group"><label for="exampleEmail"
-                                            class="">{{ 'Superadmins.SubMenus.DescriptionField' | translate }}</label>
-                                        <textarea name="description" placeholder="{{ 'Superadmins.SubMenus.DescriptionField' | translate }}..."
+                                            class="">{{ 'Superadmins.Liturgical_type.DescriptionField' | translate }}</label>
+                                        <textarea name="description" placeholder="{{ 'Superadmins.Liturgical_type.DescriptionField' | translate }}..."
                                             type="text"
                                             class="form-control {{ form.description.errors && isSubmitted ? 'invalid': '' }}"
                                             formControlName="description" required></textarea>
@@ -52,8 +52,8 @@
                                 </div>
                                 <div class="col-md-12">
                                     <div class="position-relative form-group"><label for="exampleEmail"
-                                            class="">{{ 'Superadmins.SubMenus.SlugField' | translate }}</label>
-                                        <input name="slug" placeholder="{{ 'Superadmins.SubMenus.SlugField' | translate }}..."
+                                            class="">{{ 'Superadmins.Liturgical_type.SlugField' | translate }}</label>
+                                        <input name="slug" placeholder="{{ 'Superadmins.Liturgical_type.SlugField' | translate }}..."
                                             type="text"
                                             class="form-control {{ form.slug.errors && isSubmitted ? 'invalid': '' }}"
                                             formControlName="slug" required>
