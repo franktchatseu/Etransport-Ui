@@ -24,7 +24,8 @@
                     <div class="row container-details">
                         <form [formGroup]="createForm" (submit)="create()">
                             <div class="form-row form-container-css">
-                                <div class="position-relative form-group"><label for="exampleEmail"
+                                <div class="col-md-12">
+                             <div class="position-relative form-group"><label for="exampleEmail"
                                     class="">{{ 'Superadmins.Liturgical_Type_Entry.TypeField' | translate }}</label>
                                 <select formControlName="type_id" 
                                     class="form-control {{ form.type_id.errors && isSubmitted ? 'invalid': '' }}">
@@ -36,7 +37,11 @@
                                     {{ handleError?.type_id }}
                                 </small>
                             </div>
-                             <div class="position-relative form-group"><label for="exampleEmail"
+                                </div>
+                              
+                             
+                        <div class="col-md-12" *ngIf="typ.title == PRIERES">
+                           <div class="position-relative form-group"><label for="exampleEmail"
                                 class="">{{ 'Superadmins.Liturgical_Type_Entry.DescriptionField' | translate }}</label>
                             <select formControlName="entry_type_id" 
                                 class="form-control">
@@ -44,20 +49,21 @@
                                     title="{{ entry.description }}">{{ entry.title }}</option>
                             </select>
                         </div>
-                                <div class="d-flex align-items-center">
-                                    <div class="ml-auto" *ngIf="active == null">
-                                        <input type="submit" class="btn btn-primary btn-lg"
-                                            value="{{ 'Superadmins.SaveField' | translate }}" />
-                                    </div>
-                                    <div class="ml-auto" *ngIf="active!=null" style="margin-right: 10px">
-                                        <input (click)="update()" type="button" class="btn btn-primary btn-lg"
-                                            value="{{ 'Superadmins.UpdateField' | translate }}" />
-                                    </div>
-                                    <div class="ml-auto" *ngIf="active!=null"  style="margin-left: 10px">
-                                        <input (click)="cancel()" type="button" class="btn btn-warning btn-lg"
-                                            value="{{ 'Superadmins.CancelField' | translate }}" />
-                                    </div>
-                                </div>
+                        </div>
+                        <div class="d-flex align-items-center">
+                            <div class="ml-auto" *ngIf="active == null">
+                                <input type="submit" class="btn btn-primary btn-lg"
+                                    value="{{ 'Superadmins.SaveField' | translate }}" />
+                            </div>
+                            <div class="ml-auto" *ngIf="active!=null" style="margin-right: 10px">
+                                <input (click)="update()" type="button" class="btn btn-primary btn-lg"
+                                    value="{{ 'Superadmins.UpdateField' | translate }}" />
+                            </div>
+                            <div class="ml-auto" *ngIf="active!=null"  style="margin-left: 10px">
+                                <input (click)="cancel()" type="button" class="btn btn-warning btn-lg"
+                                    value="{{ 'Superadmins.CancelField' | translate }}" />
+                            </div>
+                        </div>
                             </div>
                         </form>
                     </div>
@@ -72,9 +78,9 @@
                         <div class="widget-content p-0" style="cursor: pointer" >
                             <div class="widget-content-wrapper">
                                 <div class="widget-content-left" (click)="showDetails(type)">
-                                    <div class="widget-heading">{{ type.title }}</div>
+                                    <div class="widget-heading">{{ type.type_id }}</div>
                                     <div class="widget-subheading" style="padding-right: 5%; width: 185%;">
-                                        <span>{{ type.description }}</span></div>
+                                        <span>{{ type.entry_type_id }}</span></div>
                                 </div>
                                 <div class="widget-content-right">
                                     <div role="group" class="btn-group-sm btn-group">

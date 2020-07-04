@@ -52,11 +52,10 @@ export class LiturgicalEntryTypesComponent implements OnInit {
     this.user = this.authService.getUserInfos();
     this.changeLanguage(this.currentLanguage);
     this.initForm({type_id:'', entry_type_id: ''});
-    setTimeout( () => {
-      this.gets(this.page);
+    this.gets(this.page);
       this.getTypes();
       this.getEntries();
-    }, 2000);
+    
   }
 
 
@@ -112,7 +111,6 @@ export class LiturgicalEntryTypesComponent implements OnInit {
       .then(resp => {
         console.log(resp);
         this.notificationService.success(this.translations.Superadmins.DoneWithSuccess);
-        this.initForm({title: '', description: ''});
         this.active = null;
         this.gets(this.page);
       })
