@@ -85,6 +85,7 @@ export class LiturgicalEntryTypesComponent implements OnInit {
       .then(resp => {
         console.log(resp);
         this.notificationService.success(this.translations.Superadmins.DoneWithSuccess);
+        this.initForm({type_id:'', entry_type_id: ''});
         this.gets(this.page);
       })
       .catch(err => {
@@ -112,6 +113,7 @@ export class LiturgicalEntryTypesComponent implements OnInit {
         console.log(resp);
         this.notificationService.success(this.translations.Superadmins.DoneWithSuccess);
         this.active = null;
+        this.initForm({type_id:'', entry_type_id: ''});
         this.gets(this.page);
       })
       .catch(err => {

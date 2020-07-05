@@ -323,7 +323,9 @@
 			"AddElement": "Ajouter un element",
 			"NameField": "Titre",
 			"DescriptionField": "Description",
-			"SlugField": "Slug"
+			"ParishField":"Paroisse",
+			"TypeField":"Type",
+			"ImageField":"Image"
 		},
 		"Liturgical_Type_Entry" : {
 			"Title": "Type Liturgique",

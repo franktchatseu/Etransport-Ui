@@ -321,8 +321,10 @@
 			"Describetype": "Permit to set the Liturgical Text",
 			"AddElement": "Add element",
 			"NameField": "Title",
-			"DescriptionField": "Description",
-			"SlugField": "Slug"
+			"DescriptionField": "Contenu",
+			"ParishField":"Parish",
+			"TypeField":"Type",
+			"ImageFied":"Image"
 		},
 		"Liturgical_Type_Entry" : {
 			"Title": "Liturgical and Type",

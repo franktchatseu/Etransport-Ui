@@ -20,7 +20,12 @@ export class LiturgicalentrytypeService {
   }
 
   public gets(page) {
-    return this.http.get<any>(`${config.apiUrl}/liturgicals/liturgical_type_entry_types?page=${page}`)
+    return this.http.get<any>(`${config.apiUrl}/liturgicals/liturgical_type_entry_types/types?page=${page}`)
+      .toPromise();
+  }
+
+  public getTypes() {
+    return this.http.get<any>(`${config.apiUrl}/liturgicals/liturgical_type_entry_types/types`)
       .toPromise();
   }
 
