@@ -20,8 +20,8 @@ export class ArticlesService {
         .toPromise();
   }
 
-  public gets(page) {
-    return this.http.get<any>(`${config.apiUrl}/actualities/articles?page=${page}`)
+  public gets(page, slug, parishId) {
+    return this.http.get<any>(`${config.apiUrl}/actualities/submenus/${slug}/articles?page=${page}&parish_id=${parishId}`)
       .toPromise();
   }
 
@@ -35,5 +35,21 @@ export class ArticlesService {
         .delete(`${config.apiUrl}/actualities/articles/${id}`)
         .toPromise();
   }
+
+  public getMenus(limit = 100) {
+    return this.http.get<any>(`${config.apiUrl}/actualities/menus?limit=${limit}`)
+      .toPromise();
+  }
+
+  public getSubMenus(menu, limit = 1000) {
+    return this.http.get<any>(`${config.apiUrl}/actualities/submenus/${menu}/menu?limit=${limit}`)
+      .toPromise();
+  }
+
+  public getParishs(limit = 100) {
+    return this.http.get<any>(`${config.apiUrl}/actualities/menus?limit=${limit}`)
+      .toPromise();
+  }
+
 
 }
