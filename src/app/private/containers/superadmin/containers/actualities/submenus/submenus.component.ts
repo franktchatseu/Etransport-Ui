@@ -33,6 +33,7 @@ export class SubmenusComponent implements OnInit {
   // language
   currentLanguage = Lang.currentLang;
   translations: any = null;
+  dataBase: any = {name: '', description: '', slug: '', logo: '', menu_id: ''};
 
   constructor(
     private authService: AuthService,
@@ -46,7 +47,7 @@ export class SubmenusComponent implements OnInit {
   ngOnInit() {
     this.user = this.authService.getUserInfos();
     this.changeLanguage(this.currentLanguage);
-    this.initForm({name: '', description: '', slug: '', logo: '', menu_id: ''});
+    this.initForm(this.dataBase);
     setTimeout( () => {
       this.getMenus();
     }, 2000);
@@ -121,7 +122,7 @@ export class SubmenusComponent implements OnInit {
       .then(resp => {
         console.log(resp);
         this.notificationService.success(this.translations.Superadmins.DoneWithSuccess);
-        this.initForm({name: '', description: '', slug: '', logo: ''});
+        this.initForm(this.dataBase);
         this.active = null;
         this.gets(this.page, this.idMenu);
       })
@@ -164,6 +165,7 @@ export class SubmenusComponent implements OnInit {
 
   cancel() {
     this.active = null;
+    this.initForm(this.dataBase);
   }
 
   delete(item) {

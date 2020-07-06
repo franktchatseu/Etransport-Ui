@@ -31,6 +31,8 @@ export class MenusComponent implements OnInit {
   currentLanguage = Lang.currentLang;
   translations: any = null;
 
+  dataBase: any = {name: '', description: '', slug: '', logo: ''};
+
   constructor(
     private authService: AuthService,
     private router: Router,
@@ -42,7 +44,7 @@ export class MenusComponent implements OnInit {
   ngOnInit() {
     this.user = this.authService.getUserInfos();
     this.changeLanguage(this.currentLanguage);
-    this.initForm({name: '', description: '', slug: '', logo: ''});
+    this.initForm(this.dataBase);
     this.gets(this.page);
   }
 
@@ -87,7 +89,7 @@ export class MenusComponent implements OnInit {
       .then(resp => {
         console.log(resp);
         this.notificationService.success(this.translations.Superadmins.DoneWithSuccess);
-        this.initForm({name: '', description: '', slug: '', logo: ''});
+        this.initForm(this.dataBase);
         this.gets(this.page);
       })
       .catch(err => {
@@ -114,7 +116,7 @@ export class MenusComponent implements OnInit {
       .then(resp => {
         console.log(resp);
         this.notificationService.success(this.translations.Superadmins.DoneWithSuccess);
-        this.initForm({name: '', description: '', slug: '', logo: ''});
+        this.initForm(this.dataBase);
         this.active = null;
         this.gets(this.page);
       })
@@ -157,6 +159,7 @@ export class MenusComponent implements OnInit {
 
   cancel() {
     this.active = null;
+    this.initForm(this.dataBase);
   }
 
   delete(item) {

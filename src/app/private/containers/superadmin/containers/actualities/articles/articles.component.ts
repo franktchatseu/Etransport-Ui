@@ -175,11 +175,42 @@ export class ArticlesComponent implements OnInit {
     this.detail = null;
     this.active = item;
     this.page = this.data.current_page;
+    item.fichier = '';
+    item.photo = '';
     this.initForm(item);
+  }
+
+  update() {
+    if (this.form.invalid) {
+      this.notificationService.danger(this.translations.Superadmins.AllFieldsAreRequired);
+    }
+    const formData = new FormData();
+    const data = this.form;
+    for (const k in data) {
+      if (k) {
+        formData.append(k + '', data[k].value);
+      }
+    }
+    this.dataService.put(this.active.id, formData)
+      .then(resp => {
+        console.log(resp);
+        this.notificationService.success(this.translations.Superadmins.DoneWithSuccess);
+        this.initForm(this.emptyObj);
+        this.active = null;
+        this.gets(this.page, this.idMenu);
+      })
+      .catch(err => {
+        this.errors = err.error.errors;
+        this.handleError = err.error.errors;
+      })
+      .finally(() => {
+        // this.isLoading = false;
+      });
   }
 
   cancel() {
     this.active = null;
+    this.initForm(this.emptyObj);
   }
 
   delete(item) {
@@ -220,10 +251,6 @@ export class ArticlesComponent implements OnInit {
     }).catch((error) => {
       this.notificationService.danger(this.translations.Superadmins.ServerUnavailable);
     });
-  }
-
-  update() {
-    console.log( this.detail );
   }
 
   Visualize(value) {

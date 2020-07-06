@@ -79,11 +79,11 @@
                                 <div class="col-md-12">
                                     <div class="position-relative form-group"><label for="exampleEmail"
                                             class="">{{ 'Superadmins.Articles.Contenu1Field' | translate }}</label>
-                                        <input name="name"
+                                        <textarea name="name"
                                             placeholder="{{ 'Superadmins.Articles.Contenu1Field' | translate }}..."
                                             type="text"
                                             class="form-control {{ form.contenu_1.errors && isSubmitted ? 'invalid': '' }}"
-                                            formControlName="contenu_1" required>
+                                            formControlName="contenu_1" required></textarea>
                                         <small class="form-text text-muted info-error info-error-danger"
                                             *ngIf="handleError?.contenu_1">
                                             {{ handleError?.contenu_1 }}
@@ -93,11 +93,11 @@
                                 <div class="col-md-12">
                                     <div class="position-relative form-group"><label for="exampleEmail"
                                             class="">{{ 'Superadmins.Articles.Contenu2Field' | translate }}</label>
-                                        <input name="name"
+                                        <textarea name="name"
                                             placeholder="{{ 'Superadmins.Articles.Contenu2Field' | translate }}..."
                                             type="text"
                                             class="form-control {{ form.contenu_2.errors && isSubmitted ? 'invalid': '' }}"
-                                            formControlName="contenu_2" required>
+                                            formControlName="contenu_2" required></textarea>
                                         <small class="form-text text-muted info-error info-error-danger"
                                             *ngIf="handleError?.contenu_2">
                                             {{ handleError?.contenu_2 }}
@@ -138,6 +138,15 @@
                                         <input type="submit" class="btn btn-primary btn-lg"
                                             value="{{ 'Superadmins.SaveField' | translate }}" />
                                     </div>
+                                    <div class="ml-auto" *ngIf="active!=null" style="margin-right: 10px">
+                                        <input (click)="update()" type="button" class="btn btn-primary btn-lg"
+                                            value="{{ 'Superadmins.UpdateField' | translate }}" />
+                                    </div>
+                                    <div class="ml-auto" *ngIf="active!=null"  style="margin-left: 10px">
+                                        <input (click)="cancel()" type="button" class="btn btn-warning btn-lg"
+                                            value="{{ 'Superadmins.CancelField' | translate }}" />
+                                    </div>
+
                                 </div>
                             </div>
                         </form>
@@ -177,22 +186,22 @@
                         </div>
                         <div class="row content-one" *ngIf="detail.contenu_1">
                             <div class="col-md-12">
-                                <div class="content-one-title" *ngIf="detail.contenu_1">
+                                <h1 class="content-one-title" *ngIf="detail.contenu_1">
                                     {{ 'Superadmins.Articles.FirstContentTitle' | translate }}
-                                </div>
+                                </h1>
                             </div>
                             <div class="col-md-12">
-                                {{ detail.contenu_1 }}
+                                <div [innerHTML]="detail.contenu_1"></div>
                             </div>
                         </div>
                         <div class="row content-two" *ngIf="detail.contenu_2">
                             <div class="col-md-12">
-                                <div class="content-two-title">
+                                <h1 class="content-two-title">
                                     {{ 'Superadmins.Articles.SecondContentTitle' | translate }}
-                                </div>
+                                </h1>
                             </div>
                             <div class="col-md-12">
-                                {{  detail.contenu_2 }}
+                                <div [innerHTML]="detail.contenu_2"></div>
                             </div>
                         </div>
                         <div class="col-md-12 content-file" *ngIf="detail.fichier">
@@ -232,7 +241,7 @@
                                 <div class="widget-content-right">
                                     <div role="group" class="btn-group-sm btn-group">
                                         <button type="button" class="btn-shadow btn btn-success"
-                                            (click)="showDetails(article)" title="{{ 'Superadmins.Edit' | translate }}"><i
+                                            (click)="activate(article)" title="{{ 'Superadmins.Edit' | translate }}"><i
                                                 class="pe-7s-note"></i></button>
                                         <button type="button" (click)="delete(article)"
                                             class="btn-shadow btn btn-danger"
