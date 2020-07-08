@@ -1,7 +1,7 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { IndexComponent } from './containers/index/index.component';
 import { RandomNumberComponent } from './containers/random-number/random-number.component';
+import { IndexComponent } from './containers/index/index.component';
 // import { RegisterComponent } from './containers/register/register.component';
 
 const routes: Routes = [
