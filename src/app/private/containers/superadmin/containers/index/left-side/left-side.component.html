@@ -35,179 +35,145 @@
             <ul class="vertical-nav-menu metismenu">
                 <li class="app-sidebar__heading">Menu</li>
                 <li class="mm-active">
-                    <a href="javascript:void(0);" aria-expanded="false" (click)="showChildren('.actualities')">
-                        <i class="metismenu-icon pe-7s-rocket"></i>
-                        {{ 'Superadmins.LeftMenu.Actualities' | translate }}
+                    <a href="javascript:void(0);" aria-expanded="false" (click)="showChildren('.today')">
+                        <i class="metismenu-icon pe-7s-way"></i>
+                        Transporteur
                         <i class="metismenu-state-icon pe-7s-angle-down caret-left"></i>
                     </a>
-                    <ul class="actualities mm-collapse">
+                    <ul class="today mm-collapse">
                         <li>
-                            <a href="javascript:void(0);" (click)="activeMenu.menu0=1;goTo('info1')"
+                            <a href="javascript:void(0);" (click)="activeMenu.menu0=1;goTo('')"
                                 class="{{ activeMenu.menu0 == 1 ? 'mm-active': ''}}">
                                 <i class="metismenu-icon">
-                                </i>{{ 'Superadmins.Info1.Title' | translate }}
+                                </i>Entreprise
                             </a>
                         </li>
                         <li>
-                            <a href="javascript:void(0);" (click)="activeMenu.menu0=3;goTo('menus')"
-                                class="{{ activeMenu.menu0 == 3 ? 'mm-active': ''}}">
+                            <a href="javascript:void(0);" (click)="activeMenu.menu0=2;goTo('')"
+                                class="{{ activeMenu.menu0 == 2 ? 'mm-active': ''}}">
                                 <i class="metismenu-icon">
-                                </i>{{ 'Superadmins.LeftMenu.Menus' | translate }}
-                            </a>
-                        </li>
-                        <li>
-                            <a href="javascript:void(0);" (click)="activeMenu.menu0=4;goTo('submenus')"
-                                class="{{ activeMenu.menu0 == 4 ? 'mm-active': ''}}">
-                                <i class="metismenu-icon">
-                                </i>{{ 'Superadmins.LeftMenu.SubMenus' | translate }}
-                            </a>
-                        </li>
-                        <li>
-                            <a href="javascript:void(0);" (click)="activeMenu.menu0=5;goTo('articles')"
-                                class="{{ activeMenu.menu0 == 5 ? 'mm-active': ''}}">
-                                <i class="metismenu-icon">
-                                </i>{{ 'Superadmins.LeftMenu.Articles' | translate }}
+                                </i>Particulier
                             </a>
                         </li>
                     </ul>
                 </li>
                 <li class="mm-active">
-                    <a href="javascript:void(0);" aria-expanded="false" (click)="showChildren('.today')">
-                        <i class="metismenu-icon pe-7s-rocket"></i>
-                        {{ 'Superadmins.LeftMenu.Liturgical' | translate }}
+                    <a href="javascript:void(0);" aria-expanded="false" (click)="showChildren('.today1')">
+                        <i class="metismenu-icon pe-7s-users"></i>
+                        Chauffeur
                         <i class="metismenu-state-icon pe-7s-angle-down caret-left"></i>
                     </a>
-                    <ul class="today mm-collapse">
+                    <ul class="today1 mm-collapse">
                         <li>
-                            <a href="javascript:void(0);" (click)="activeMenu.menu1=1;goTo('types')"
+                            <a href="javascript:void(0);" (click)="activeMenu.menu1=1;goTo('')"
                                 class="{{ activeMenu.menu1 == 1 ? 'mm-active': ''}}">
                                 <i class="metismenu-icon">
-                                </i>               
-                             {{ 'Superadmins.LeftMenu.Liturgical_type' | translate }}
+                                </i>Consulter
 
                             </a>
                         </li>
                         <li>
-                            <a href="javascript:void(0);" (click)="activeMenu.menu1=2;goTo('entry-types')"
+                            <a href="javascript:void(0);" (click)="activeMenu.menu1=2;goTo('')"
                                 class="{{ activeMenu.menu1 == 2 ? 'mm-active': ''}}">
                                 <i class="metismenu-icon">
-                                </i>               
-                             {{ 'Superadmins.LeftMenu.Liturgical_Type_Entry' | translate }}
-
+                                </i>Ajouter               
+                            </a>
+                        </li>
+                    </ul>
+                </li>
+                <li class="mm-active">
+                    <a href="javascript:void(0);" aria-expanded="false" (click)="showChildren('.today2')">
+                        <i class="metismenu-icon pe-7s-car"></i>
+                         Engin
+                        <i class="metismenu-state-icon pe-7s-angle-down caret-left"></i>
+                    </a>
+                    <ul class="today2 mm-collapse">
+                        <li>
+                            <a href="javascript:void(0);" (click)="activeMenu.menu2=1;goTo('')"
+                                class="{{ activeMenu.menu2 == 1 ? 'mm-active': ''}}">
+                                <i class="metismenu-icon">
+                                </i>Consulter
                             </a>
                         </li>
                         <li>
-                            <a href="javascript:void(0);" (click)="activeMenu.menu1=3;goTo('liturgicals')"
-                                class="{{ activeMenu.menu1 == 3 ? 'mm-active': ''}}">
+                            <a href="javascript:void(0);" (click)="activeMenu.menu2=2;goTo('')"
+                                class="{{ activeMenu.menu2 == 2 ? 'mm-active': ''}}">
                                 <i class="metismenu-icon">
-                                </i>               
-                             {{ 'Superadmins.LeftMenu.Entry_Type' | translate }}
-
-                            </a>
-                        </li>
-                        <li>
-                            <a href="javascript:void(0);" (click)="activeMenu.menu1=4;goTo('liturgical-texts')"
-                                class="{{ activeMenu.menu1 == 4 ? 'mm-active': ''}}">
-                                <i class="metismenu-icon">
-                                </i>               
-                             {{ 'Superadmins.LeftMenu.Liturgical_text' | translate }}
-
+                                </i>Ajouter
                             </a>
                         </li>
                     </ul>
                 </li>
                 <li class="mm-active">
                     <a href="javascript:void(0);" aria-expanded="false" (click)="showChildren('.today3')">
-                        <i class="metismenu-icon pe-7s-rocket"></i>
-                        Ajourd'hui 3
+                        <i class="metismenu-icon pe-7s-users"></i>
+                        Element Intervenant
                         <i class="metismenu-state-icon pe-7s-angle-down caret-left"></i>
                     </a>
                     <ul class="today3 mm-collapse">
                         <li>
-                            <a href="javascript:void(0);" (click)="activeMenu.menu3=0;"
+                            <a href="javascript:void(0);" (click)="activeMenu.menu3=1;goTo('')"
                                 class="{{ activeMenu.menu3 == 1 ? 'mm-active': ''}}">
                                 <i class="metismenu-icon">
-                                </i>...
+                                </i>Consulter
+                            </a>
+                        </li>
+                        <li>
+                            <a href="javascript:void(0);" (click)="activeMenu.menu3=2;goTo('')"
+                                class="{{ activeMenu.menu3 == 2 ? 'mm-active': ''}}">
+                                <i class="metismenu-icon">
+                                </i>Ajouter
                             </a>
                         </li>
                     </ul>
                 </li>
                 <li class="mm-active">
                     <a href="javascript:void(0);" aria-expanded="false" (click)="showChildren('.today4')">
-                        <i class="metismenu-icon pe-7s-rocket"></i>
-                        Ajourd'hui 4
+                        <i class="metismenu-icon pe-7s-config"></i>
+                        Parametres
                         <i class="metismenu-state-icon pe-7s-angle-down caret-left"></i>
                     </a>
                     <ul class="today4 mm-collapse">
                         <li>
-                            <a href="javascript:void(0);" (click)="activeMenu.menu4=0;"
+                            <a href="javascript:void(0);" (click)="activeMenu.menu4=1;goTo('type')"
                                 class="{{ activeMenu.menu4 == 1 ? 'mm-active': ''}}">
                                 <i class="metismenu-icon">
-                                </i>...
+                                </i>Type
                             </a>
                         </li>
-                    </ul>
-                </li>
-                <li class="mm-active">
-                    <a href="javascript:void(0);" aria-expanded="false" (click)="showChildren('.today5')">
-                        <i class="metismenu-icon pe-7s-rocket"></i>
-                        Ajourd'hui 5
-                        <i class="metismenu-state-icon pe-7s-angle-down caret-left"></i>
-                    </a>
-                    <ul class="today5 mm-collapse">
                         <li>
-                            <a href="javascript:void(0);" (click)="activeMenu.menu5=0;"
-                                class="{{ activeMenu.menu5 == 1 ? 'mm-active': ''}}">
+                            <a href="javascript:void(0);" (click)="activeMenu.menu4=2;goTo('modele')"
+                                class="{{ activeMenu.menu4 == 2 ? 'mm-active': ''}}">
                                 <i class="metismenu-icon">
-                                </i>...
+                                </i>Modele
                             </a>
                         </li>
-                    </ul>
-                </li>
-                <li class="mm-active">
-                    <a href="javascript:void(0);" aria-expanded="false" (click)="showChildren('.today6')">
-                        <i class="metismenu-icon pe-7s-rocket"></i>
-                        Ajourd'hui 6
-                        <i class="metismenu-state-icon pe-7s-angle-down caret-left"></i>
-                    </a>
-                    <ul class="today6 mm-collapse">
                         <li>
-                            <a href="javascript:void(0);" (click)="activeMenu.menu6=0;"
-                                class="{{ activeMenu.menu6 == 1 ? 'mm-active': ''}}">
+                            <a href="javascript:void(0);" (click)="activeMenu.menu4=3;goTo('marque')"
+                                class="{{ activeMenu.menu4 == 3 ? 'mm-active': ''}}">
                                 <i class="metismenu-icon">
-                                </i>...
+                                </i>Marque
                             </a>
                         </li>
-                    </ul>
-                </li>
-                <li class="mm-active">
-                    <a href="javascript:void(0);" aria-expanded="false" (click)="showChildren('.today7')">
-                        <i class="metismenu-icon pe-7s-rocket"></i>
-                        Ajourd'hui 7
-                        <i class="metismenu-state-icon pe-7s-angle-down caret-left"></i>
-                    </a>
-                    <ul class="today7 mm-collapse">
                         <li>
-                            <a href="javascript:void(0);" (click)="activeMenu.menu7=0;"
-                                class="{{ activeMenu.menu7 == 1 ? 'mm-active': ''}}">
+                            <a href="javascript:void(0);" (click)="activeMenu.menu4=4;goTo('carosserie')"
+                                class="{{ activeMenu.menu4 == 4 ? 'mm-active': ''}}">
                                 <i class="metismenu-icon">
-                                </i>...
+                                </i>Carosserie
                             </a>
                         </li>
-                    </ul>
-                </li>
-                <li class="mm-active">
-                    <a href="javascript:void(0);" aria-expanded="false" (click)="showChildren('.today8')">
-                        <i class="metismenu-icon pe-7s-rocket"></i>
-                        Ajourd'hui 8
-                        <i class="metismenu-state-icon pe-7s-angle-down caret-left"></i>
-                    </a>
-                    <ul class="today8 mm-collapse">
                         <li>
-                            <a href="javascript:void(0);" (click)="activeMenu.menu8=0;"
-                                class="{{ activeMenu.menu8 == 1 ? 'mm-active': ''}}">
+                            <a href="javascript:void(0);" (click)="activeMenu.menu4=5;goTo('type-intervenant')"
+                                class="{{ activeMenu.menu4 == 5 ? 'mm-active': ''}}">
                                 <i class="metismenu-icon">
-                                </i>...
+                                </i>Type Intervenant
+                            </a>
+                        </li>
+                        <li>
+                            <a href="javascript:void(0);" (click)="activeMenu.menu4=6;goTo('nationalite')"
+                                class="{{ activeMenu.menu4 == 6 ? 'mm-active': ''}}">
+                                <i class="metismenu-icon">
+                                </i>Nationalite
                             </a>
                         </li>
                     </ul>
