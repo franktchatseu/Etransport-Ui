@@ -6,7 +6,10 @@ import { TranslateModule } from '@ngx-translate/core';
 import { NavBarComponent } from './containers/index/nav-bar/nav-bar.component';
 import { LeftSideComponent } from './containers/index/left-side/left-side.component';
 import { IndexComponent } from './containers/index/index.component';
+import { DriverAddComponent} from './containers/driver/driver-add/driver-add.component';
+
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+<<<<<<< HEAD
 import {MatDialog, MatDialogModule } from '@angular/material';
 import { CarosserieComponent } from "src/app/private/containers/superadmin/containers/parametres/carosserie/carosserie.component";
 import { MarqueComponent } from "src/app/private/containers/superadmin/containers/parametres/marque/marque.component";
@@ -14,6 +17,9 @@ import { ModeleComponent } from "src/app/private/containers/superadmin/container
 import { NationaliteComponent } from "src/app/private/containers/superadmin/containers/parametres/nationalite/nationalite.component";
 import { TypeComponent } from "src/app/private/containers/superadmin/containers/parametres/type/type.component";
 import { TypeIntervenantComponent } from "src/app/private/containers/superadmin/containers/parametres/type-intervenant/type-intervenant.component";
+=======
+import {MatDialog, MatDialogModule,MatStepperModule } from '@angular/material';
+>>>>>>> d89fc66d601a6ed990c188ed017639997896b02b
 
 @NgModule({
   declarations: [
@@ -21,18 +27,23 @@ import { TypeIntervenantComponent } from "src/app/private/containers/superadmin/
     RandomNumberComponent,
     NavBarComponent,
     LeftSideComponent,
+<<<<<<< HEAD
     CarosserieComponent,
     MarqueComponent,
     ModeleComponent,
     NationaliteComponent,
     TypeComponent,
     TypeIntervenantComponent,
+=======
+    DriverAddComponent
+>>>>>>> d89fc66d601a6ed990c188ed017639997896b02b
   ],
   imports: [
     CommonModule,
     SuperadminRoutingModule,
     TranslateModule,
     MatDialogModule,
+    MatStepperModule,
     FormsModule,
     ReactiveFormsModule
   ]

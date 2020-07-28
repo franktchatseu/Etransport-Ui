@@ -18,8 +18,8 @@ const routes: Routes = [
         path: 'superadmins',
         loadChildren:
           () => import('./containers/superadmin/superadmin.module').then(m => m.SuperadminModule),
-        canActivate: [SuperadminGuard],
-        canLoad: [SuperadminGuard] /* */
+       // canActivate: [SuperadminGuard],
+        //canLoad: [SuperadminGuard] /* */
       }
     ]
   }
