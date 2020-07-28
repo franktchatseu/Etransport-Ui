@@ -21,9 +21,13 @@ export class DriverAddComponent implements OnInit {
   fileInformation: any
   fileInformationAvatar: any
 
+
   // mes fichiers
   //attribut pour rendre optionnel ou pas
-  isOptional: true;
+  isEditable = false;
+  isOptionalStep1: false;
+  isOptionalStep2: true;
+  isOptionalStep3: true;
   durationInSeconds = 5;
   //initialisation des differentes initForm
   step1Form: FormGroup;
@@ -63,6 +67,14 @@ export class DriverAddComponent implements OnInit {
     }
   }
   ngOnInit(): void {
+
+    this.firstFormGroup = this.formBuilder.group({
+      firstCtrl: ['', Validators.required]
+    });
+    this.secondFormGroup = this.formBuilder.group({
+      secondCtrl: ['', Validators.required]
+    });
+  
     this.initStep1();
     this.initStep2();
     this.initStep3();
@@ -73,7 +85,7 @@ export class DriverAddComponent implements OnInit {
   initStep1() {
     this.step1Form = this.formBuilder.group(
       {
-        nom: ['', [Validators.required]],
+        nom: ['', Validators.required],
         prenom: ['', [Validators.required]],
         date_naissance: ['', [Validators.required]],
         lieu_naissance: ['', [Validators.required]],
