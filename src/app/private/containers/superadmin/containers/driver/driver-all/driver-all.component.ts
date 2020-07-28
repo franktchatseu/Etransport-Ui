@@ -74,7 +74,7 @@ export class DriverAllComponent implements OnInit {
         this.drivers = res;
         console.log(this.drivers)
       }, (error) => {
-        this.notificationService.danger(this.translations.Parishionals.ServerUnavailable);
+        this.notificationService.danger(this.translations.Drivers.NoDriver);
       });
     }
 
@@ -83,7 +83,7 @@ export class DriverAllComponent implements OnInit {
         console.log(res)
         this.drivers = res;
       }, (error) => {
-        this.notificationService.danger(this.translations.Parishionals.ServerUnavailable);
+        this.notificationService.danger(this.translations.Drivers.NoPage);
       });
     }
 

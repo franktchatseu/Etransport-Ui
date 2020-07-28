@@ -11,7 +11,7 @@ import { map } from 'rxjs/operators';
     constructor(private http: HttpClient) { }
 
     public getDrivers() {
-        return this.http.get<any>(`${config.apiUrl}/module2/general_informations/`)
+        return this.http.get<any>(`${config.apiUrl}/module2/general_informations/allWithName`)
           .pipe(map(data => data));
       }
 
