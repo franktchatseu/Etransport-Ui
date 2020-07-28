@@ -10,6 +10,8 @@ import { ModeleComponent } from './containers/parametres/modele/modele.component
 import { CarosserieComponent } from './containers/parametres/carosserie/carosserie.component';
 import { DriverAddComponent} from './containers/driver/driver-add/driver-add.component';
 import { DriverAllComponent } from "./containers/driver/driver-all/driver-all.component";
+import { DriverDetailsComponent} from './containers/driver/driver-details/driver-details.component';
+
 
 
 const routes: Routes = [
@@ -20,6 +22,14 @@ const routes: Routes = [
       {
         path: 'random-number',
         component: RandomNumberComponent,
+      },
+      {
+        path: 'driver',
+        component: DriverAddComponent,
+      },
+      {
+        path: 'driver-detail/:id',
+        component: DriverDetailsComponent,
       },
       {
         path: 'type',

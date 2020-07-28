@@ -16,9 +16,8 @@ export class StepperService {
      ) {}
 
   //recuperation du stepper dans la base de donnee
-  public get(numero) {
-    return this.http.get<any>(`${config.apiUrl}/module2/stepper_driver/${numero}`)
-      .pipe(map(data => data));
+  public find(numero) {
+    return this.http.get<any>(`${config.apiUrl}/module2/stepper_driver/${numero}`).toPromise();
   }
   //initialisation d'un stepper
   add(formData: FormData): Promise<any> {
@@ -26,7 +25,7 @@ export class StepperService {
   }
   //mise a jour des valeurs du stepper
   update(formData: FormData, numero): Promise<any> {
-    return this.http.put<any>(`${config.apiUrl}/module2/stepper_driver/${numero}`, formData).toPromise();
+    return this.http.post<any>(`${config.apiUrl}/module2/stepper_driver/${numero}`, formData).toPromise();
   }
   
   //gestion du local storage pour le stepper

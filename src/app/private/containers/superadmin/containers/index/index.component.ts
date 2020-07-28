@@ -28,7 +28,8 @@ export class IndexComponent implements OnInit {
   ngOnInit() {
     console.log(this.authService.getUserInfos());
     this.isAuthenticated = this.authService.getUserInfos() ? true : false;
-    this.router.navigate(['/private/superadmins/driver-all']);
+    //this.router.navigate(['/private/superadmins']);
+    this.goTo('driver-detail/2')
   }
 
   logout() {
@@ -41,6 +42,6 @@ export class IndexComponent implements OnInit {
   }
 
   goTo(url) {
-    this.router.navigate(['/private/superadmins']);
+    this.router.navigate(['/private/superadmins/'+ url]);
   }
 }
