@@ -84,6 +84,8 @@ export class ListTransportElementsComponent implements OnInit {
   }
 
   showDetails(item: any) {
+
+
     this.detail = item;
   }
 
