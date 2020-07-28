@@ -8,11 +8,17 @@ import { MarqueComponent } from './containers/parametres/marque/marque.component
 import { NationaliteComponent } from './containers/parametres/nationalite/nationalite.component';
 import { ModeleComponent } from './containers/parametres/modele/modele.component';
 import { CarosserieComponent } from './containers/parametres/carosserie/carosserie.component';
+<<<<<<< HEAD
 import { DriverAddComponent} from './containers/driver/driver-add/driver-add.component';
 import { DriverAllComponent } from "./containers/driver/driver-all/driver-all.component";
 import { DriverDetailsComponent} from './containers/driver/driver-details/driver-details.component';
 
 
+=======
+import { TransportElementComponent } from './containers/element-transport/transport-element/transport-element.component';
+import { ListTransportElementsComponent } from './containers/element-transport/list-transport-elements/list-transport-elements.component';
+//import { AddTransportElementComponent } from './containers/element-transport/add-transport-element/add-transport-element.component';
+>>>>>>> ebe2f8d245be65dc2e88a29ce3392937a089fe0c
 
 const routes: Routes = [
   {
@@ -62,6 +68,18 @@ const routes: Routes = [
         path: 'driver',
         component: DriverAddComponent,
       },
+      {
+        path: 'element',
+        component: TransportElementComponent,
+      },
+      {
+        path: 'list-element',
+        component: ListTransportElementsComponent,
+      },
+      // {
+      //   path: 'add-element',
+      //   component: AddTransportElementComponent,
+      // },
     ]
   }
 ];

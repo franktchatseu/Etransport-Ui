@@ -5,22 +5,22 @@ import { HttpClient } from '@angular/common/http';
 @Injectable({
   providedIn: 'root'
 })
-export class ModeleService {
+export class TransportelementService {
 
   constructor(private http: HttpClient) {}
 
   async post(formData): Promise<any> {
-    return await this.http.post(`${config.apiUrl}/module3/modeles`, formData).toPromise();
+    return await this.http.post(`${config.apiUrl}/module4/transportElement`, formData).toPromise();
   }
 
   public async put(id: number, formData): Promise<any> {
     return await this.http
-        .post(`${config.apiUrl}/module3/modeles/${id}`, formData)
+        .post(`${config.apiUrl}/module4/transportElement/${id}`, formData)
         .toPromise();
   }
 
   public gets(page) {
-    return this.http.get<any>(`${config.apiUrl}/module3/modeles?page=${page}`)
+    return this.http.get<any>(`${config.apiUrl}/module4/transportElement?page=${page}`)
       .toPromise();
   }
 
@@ -31,7 +31,7 @@ export class ModeleService {
 
   public async delete(id) {
     return await this.http
-        .delete(`${config.apiUrl}/module3/modeles/${id}`)
+        .delete(`${config.apiUrl}/module4/transportElement/${id}`)
         .toPromise();
   }
 
