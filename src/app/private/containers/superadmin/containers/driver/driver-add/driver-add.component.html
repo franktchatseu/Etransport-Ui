@@ -2,7 +2,7 @@
     {{!isEditable ? 'Enable edit mode' : 'Disable edit mode'}}
 </button>
 
-<mat-horizontal-stepper linear #stepper>
+<mat-horizontal-stepper linear #stepper [selectedIndex]="currentStepper">
     <mat-step [stepControl]="step1Form" [editable]="isEditable">
         <form class="example-form" [formGroup]="step1Form">
             <ng-template matStepLabel>Informations Generale</ng-template>
@@ -148,6 +148,15 @@
                         <input matInput placeholder="Ex. 1 Main St, New York, NY" formControlName="piece_identite"
                             required>
                     </mat-form-field>
+                    <!--  <mat-form-field appearance="fill">
+                        <mat-label>Select</mat-label>
+                        <mat-select formControlName="piece_identite">
+                          <mat-option value="passport">PASSPORT</mat-option>
+                          <mat-option value="cni">CNI</mat-option>
+                          <mat-option value="recepice">RECEPICE</mat-option>
+                          <mat-option value="autre piece">AUTRE PIECE</mat-option>
+                        </mat-select>
+                      </mat-form-field>-->
                 </div>
             </div>
             <div class="row">
@@ -200,7 +209,7 @@
                     <mat-form-field>
                         <input matInput formControlName="filename" placeholder="Fichier" readonly>
                     </mat-form-field>
-                    <button mat-button (click)="selectFile()">Selectionner</button>
+                    <button mat-button (click)="selectFile()">Importer une Piece Justificative</button>
                 </div>
             </div>
             <div>

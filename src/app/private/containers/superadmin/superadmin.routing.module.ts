@@ -11,6 +11,9 @@ import { CarosserieComponent } from './containers/parametres/carosserie/carosser
 import { DriverAddComponent} from './containers/driver/driver-add/driver-add.component';
 import { DriverAllComponent } from "./containers/driver/driver-all/driver-all.component";
 
+import { TransportElementComponent } from './containers/element-transport/transport-element/transport-element.component';
+import { ListTransportElementsComponent } from './containers/element-transport/list-transport-elements/list-transport-elements.component';
+//import { AddTransportElementComponent } from './containers/element-transport/add-transport-element/add-transport-element.component';
 
 const routes: Routes = [
   {
@@ -51,9 +54,20 @@ const routes: Routes = [
       },
       {
         path: 'carosserie',
-        component: CarosserieComponent}
-        ,
-       
+        component: CarosserieComponent,
+      },
+      {
+        path: 'element',
+        component: TransportElementComponent,
+      },
+      {
+        path: 'list-element',
+        component: ListTransportElementsComponent,
+      },
+      // {
+      //   path: 'add-element',
+      //   component: AddTransportElementComponent,
+      // },
     ]
   }
 ];
