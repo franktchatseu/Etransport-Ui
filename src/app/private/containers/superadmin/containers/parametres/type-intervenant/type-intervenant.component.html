@@ -31,10 +31,6 @@
                                         <input name="name" placeholder="entrez un nom..." type="text"
                                             class="form-control {{ form.name.errors && isSubmitted ? 'invalid': '' }}"
                                             formControlName="name" required>
-                                        <small class="form-text text-muted info-error info-error-danger"
-                                            *ngIf="handleError?.name">
-                                            {{ handleError?.name }}
-                                        </small>
                                     </div>
                                 </div>
                                 <div class="col-md-12">
@@ -43,10 +39,6 @@
                                         <textarea name="description" placeholder="Entrez une description..." type="text"
                                             class="form-control {{ form.description.errors && isSubmitted ? 'invalid': '' }}"
                                             formControlName="description" required></textarea>
-                                        <small class="form-text text-muted info-error info-error-danger"
-                                            *ngIf="handleError?.description">
-                                            {{ handleError?.description }}
-                                        </small>
                                     </div>
                                 </div>
                                 <div class="d-flex align-items-center">
