@@ -8,12 +8,13 @@ import { map } from 'rxjs/operators';
 })
 export class StepperService {
 
-    private STEPPER_DRIVER_NUMBER ='stepper_driver_number';
-    private STEPPER_DRIVER_VALUE = 'stepper_driver_value';
-    private STEPPER_DRIVER_STATUS = 'stepper_driver_status'
+  private STEPPER_DRIVER_ID = 'stepper_driver_id';
+  private STEPPER_DRIVER_NUMBER = 'stepper_driver_number';
+  private STEPPER_DRIVER_VALUE = 'stepper_driver_value';
+  private STEPPER_DRIVER_STATUS = 'stepper_driver_status'
   constructor(
-      private http: HttpClient,
-     ) {}
+    private http: HttpClient,
+  ) { }
 
   //recuperation du stepper dans la base de donnee
   public find(numero) {
@@ -27,22 +28,28 @@ export class StepperService {
   update(formData: FormData, numero): Promise<any> {
     return this.http.post<any>(`${config.apiUrl}/module2/stepper_driver/${numero}`, formData).toPromise();
   }
-  
+
   //gestion du local storage pour le stepper
   public storeStepper(stepper: any) {
+    localStorage.setItem(this.STEPPER_DRIVER_ID, stepper.id);
     localStorage.setItem(this.STEPPER_DRIVER_NUMBER, stepper.number);
     localStorage.setItem(this.STEPPER_DRIVER_VALUE, stepper.value);
     localStorage.setItem(this.STEPPER_DRIVER_STATUS, stepper.status);
   }
-  public getNumber(){
-      return localStorage.getItem(this.STEPPER_DRIVER_NUMBER)
+
+
+  public getStepperId() {
+    return localStorage.getItem(this.STEPPER_DRIVER_ID)
   }
-  public getValue(){
+  public getNumber() {
+    return localStorage.getItem(this.STEPPER_DRIVER_NUMBER)
+  }
+  public getValue() {
     return localStorage.getItem(this.STEPPER_DRIVER_VALUE)
- }
- public getStatus(){
+  }
+  public getStatus() {
     return localStorage.getItem(this.STEPPER_DRIVER_STATUS)
- }
+  }
 
 
   public removeTokens() {
