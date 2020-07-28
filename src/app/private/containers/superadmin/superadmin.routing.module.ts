@@ -22,7 +22,7 @@ const routes: Routes = [
         component: RandomNumberComponent,
       },
       {
-        path: 'driver',
+        path: 'driver-add',
         component: DriverAddComponent,
       },
       {
@@ -51,11 +51,9 @@ const routes: Routes = [
       },
       {
         path: 'carosserie',
-        component: CarosserieComponent},
-        {
-        path: 'driver',
-        component: DriverAddComponent,
-      },
+        component: CarosserieComponent}
+        ,
+       
     ]
   }
 ];

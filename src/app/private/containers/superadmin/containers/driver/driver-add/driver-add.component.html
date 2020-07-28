@@ -8,7 +8,7 @@
             <ng-template matStepLabel>Informations Generale</ng-template>
             <div class="row">
                 <div class="col-md-10">
-                    <input type="file" id="userFile" (change)="onSelectFileAvatar($event)" #fileInput
+                    <input type="file" id="userFile" (change)="onSelectFileAvatar($event)" #fileInputAvatar
                         style="display: none">
                     <mat-form-field class="example-full-width">
                         <input matInput formControlName="avatar" placeholder="Fichier" readonly>
@@ -214,7 +214,7 @@
         <p>You are now done.</p>
         <div>
             <button mat-button matStepperPrevious>Back</button>
-            <button mat-button (click)="stepper.reset()">Reset</button>
+            <button mat-button (click)="reset()">Reset</button>
         </div>
     </mat-step>
 </mat-horizontal-stepper>

@@ -93,7 +93,7 @@ export class DriverAllComponent implements OnInit {
     }
 
     add() {
-      this.router.navigate(['/private/superadmins/driver/add/']);
+      this.router.navigate(['/private/superadmins/driver-add']);
     }
 
     update(id) {

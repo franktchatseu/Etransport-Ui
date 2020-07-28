@@ -4,6 +4,7 @@ import { StepperService } from 'src/app/services/stepper/stepper.service';
 import { STEPPER_GLOBAL_OPTIONS } from '@angular/cdk/stepper';
 import { MatSnackBar } from '@angular/material';
 import { DriverService } from '../../../services/driver.service';
+import { Router } from '@angular/router';
 @Component({
   selector: 'app-driver-add',
   templateUrl: './driver-add.component.html',
@@ -14,7 +15,7 @@ export class DriverAddComponent implements OnInit {
 
   @ViewChild('fileInput')
   fileInput: ElementRef;
-  @ViewChild('fileInput')
+  @ViewChild('fileInputAvatar')
   fileInputAvatar: ElementRef;
   file: any
   fileAvatar: any;
@@ -42,6 +43,7 @@ export class DriverAddComponent implements OnInit {
     private stepperService: StepperService,
     private _snackBar: MatSnackBar,
     private driverService: DriverService,
+    private router:Router
 
   ) { }
   selectFile(): void {
@@ -230,7 +232,8 @@ export class DriverAddComponent implements OnInit {
    //recuperation des champs du stepper 3
    const formData: FormData = new FormData();
    formData.append("name", '' + this.Formation.name_formation.value);
-   formData.append("file", '' + this.file);
+   console.log(this.file)
+   formData.append("file",  this.file);
 
    // on recupere le stepper id
     const sept_id= this.stepperService.getStepperId()
@@ -304,6 +307,12 @@ export class DriverAddComponent implements OnInit {
       },
 
     )
+  }
+  //reinitialisation
+  reset(){
+    this.stepperService.removeTokens();
+    this.router.navigate(['/private/superadmins/driver-all']);
+
   }
 
 }
