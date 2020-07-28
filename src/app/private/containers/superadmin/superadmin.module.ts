@@ -9,7 +9,7 @@ import { IndexComponent } from './containers/index/index.component';
 import { DriverAddComponent} from './containers/driver/driver-add/driver-add.component';
 
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
-import {MatDialog, MatDialogModule,MatStepperModule } from '@angular/material';
+import {MatDialog, MatDialogModule,MatStepperModule,MatFormFieldModule,MatInputModule,MatButtonModule } from '@angular/material';
 
 @NgModule({
   declarations: [
@@ -25,6 +25,9 @@ import {MatDialog, MatDialogModule,MatStepperModule } from '@angular/material';
     TranslateModule,
     MatDialogModule,
     MatStepperModule,
+    MatFormFieldModule,
+    MatInputModule,
+    MatButtonModule,
     FormsModule,
     ReactiveFormsModule
   ]
