@@ -22,8 +22,12 @@ export class TypeIntervenantComponent implements OnInit {
   page: any = 1;
   active: any = null;
   detail: any = null;
-  isSubmitted = false;
   toShow: any = null;
+
+  isLoading = false;
+  isError = false;
+  isSuccess = false;
+  isSubmitted = false;
 
   // language
   currentLanguage = Lang.currentLang;
@@ -59,9 +63,15 @@ export class TypeIntervenantComponent implements OnInit {
   }
 
   create() {
+    this.isSubmitted = true;
+    this.isError = false;
+    this.isSuccess = false;
+    this.isLoading = false
     if (this.form.invalid) {
       this.notificationService.danger(this.translations.Superadmins.AllFieldsAreRequired);
     }
+
+    this.isLoading = true;
     const formData = new FormData();
     const data = this.form;
     for (const k in data) {
@@ -73,6 +83,7 @@ export class TypeIntervenantComponent implements OnInit {
       .then(resp => {
         console.log(resp);
         this.notificationService.success(this.translations.Superadmins.DoneWithSuccess);
+        this.isSubmitted = false;
         this.initForm({name: '', description: ''});
         this.gets(this.page);
       })
@@ -81,14 +92,20 @@ export class TypeIntervenantComponent implements OnInit {
         this.handleError = err.error.errors;
       })
       .finally(() => {
-        // this.isLoading = false;
+          this.isLoading = false;
       });
   }
 
   update() {
+    this.isSubmitted = true;
+    this.isError = false;
+    this.isSuccess = false;
+    this.isLoading = false
     if (this.form.invalid) {
       this.notificationService.danger(this.translations.Superadmins.AllFieldsAreRequired);
     }
+
+    this.isLoading = true;
     const formData = new FormData();
     const data = this.form;
     for (const k in data) {
@@ -100,6 +117,7 @@ export class TypeIntervenantComponent implements OnInit {
       .then(resp => {
         console.log(resp);
         this.notificationService.success(this.translations.Superadmins.DoneWithSuccess);
+        this.isSubmitted = false;
         this.initForm({name: '', description: ''});
         this.active = null;
         this.gets(this.page);
@@ -109,7 +127,7 @@ export class TypeIntervenantComponent implements OnInit {
         this.handleError = err.error.errors;
       })
       .finally(() => {
-        // this.isLoading = false;
+        this.isLoading = false;
       });
   }
 
@@ -167,8 +185,8 @@ export class TypeIntervenantComponent implements OnInit {
     window.open(value);
   }
 
-  getPartOfcontent(content: string) {
-    return content.substring(0, 50) + '...';
+  getPartOfcontent(content: string): string {
+    return (content.length < 50)? content: (content.substr(0,50) + '...');
   }
   
 
@@ -177,6 +195,5 @@ export class TypeIntervenantComponent implements OnInit {
     this.currentLanguage = value;
     this.internationalizationService.changeLanguage(this.currentLanguage, (res) => { this.translations = res; });
   }
-
 
 }
