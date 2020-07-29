@@ -11,6 +11,8 @@ import { CarosserieComponent } from './containers/parametres/carosserie/carosser
 import { DriverAddComponent} from './containers/driver/driver-add/driver-add.component';
 import { DriverAllComponent } from "./containers/driver/driver-all/driver-all.component";
 
+import { EnginAddComponent} from './containers/engin/engin-add/engin-add.component';
+
 import { TransportElementComponent } from './containers/element-transport/transport-element/transport-element.component';
 import { ListTransportElementsComponent } from './containers/element-transport/list-transport-elements/list-transport-elements.component';
 //import { AddTransportElementComponent } from './containers/element-transport/add-transport-element/add-transport-element.component';
@@ -63,6 +65,19 @@ const routes: Routes = [
       {
         path: 'list-element',
         component: ListTransportElementsComponent,
+      },
+      {
+        path: 'engin',
+        children: [
+          {
+            path: 'engin-add',
+            component: EnginAddComponent,
+          },
+          {
+            path: 'engin-all',
+            component: EnginAddComponent,
+          },
+        ]
       },
       // {
       //   path: 'add-element',

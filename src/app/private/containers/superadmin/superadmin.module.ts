@@ -7,6 +7,7 @@ import { NavBarComponent } from './containers/index/nav-bar/nav-bar.component';
 import { LeftSideComponent } from './containers/index/left-side/left-side.component';
 import { IndexComponent } from './containers/index/index.component';
 import { DriverAddComponent} from './containers/driver/driver-add/driver-add.component';
+import { EnginAddComponent} from './containers/engin/engin-add/engin-add.component';
 
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { DriverAllComponent } from "./containers/driver/driver-all/driver-all.component";
@@ -39,6 +40,7 @@ import { ListTransportElementsComponent } from "src/app/private/containers/super
     TransportElementComponent,
    // AddTransportElementComponent,
     ListTransportElementsComponent,
+    EnginAddComponent
   ],
   imports: [
     CommonModule,
