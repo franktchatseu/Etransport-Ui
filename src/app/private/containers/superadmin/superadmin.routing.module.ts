@@ -8,6 +8,9 @@ import { MarqueComponent } from './containers/parametres/marque/marque.component
 import { NationaliteComponent } from './containers/parametres/nationalite/nationalite.component';
 import { ModeleComponent } from './containers/parametres/modele/modele.component';
 import { CarosserieComponent } from './containers/parametres/carosserie/carosserie.component';
+import { DriverAddComponent} from './containers/driver/driver-add/driver-add.component';
+import { DriverAllComponent } from "./containers/driver/driver-all/driver-all.component";
+
 import { TransportElementComponent } from './containers/element-transport/transport-element/transport-element.component';
 import { ListTransportElementsComponent } from './containers/element-transport/list-transport-elements/list-transport-elements.component';
 import { AddTransportElementComponent } from './containers/element-transport/add-transport-element/add-transport-element.component';
@@ -22,6 +25,10 @@ const routes: Routes = [
         component: RandomNumberComponent,
       },
       {
+        path: 'driver-add',
+        component: DriverAddComponent,
+      },
+      {
         path: 'type',
         component: TypeComponent,
       },
@@ -32,6 +39,10 @@ const routes: Routes = [
       {
         path: 'marque',
         component: MarqueComponent,
+      },
+      {
+        path: 'driver-all',
+        component: DriverAllComponent,
       },
       {
         path: 'nationalite',

@@ -6,10 +6,9 @@ import { map } from 'rxjs/operators';
 @Injectable({
   providedIn: 'root'
 })
-export class ProfessionService {
+export class SuggestionService {
 
-  constructor(private http: HttpClient) {
-  }
+  constructor(private http: HttpClient) {}
 
   async post(formData) {
 
@@ -19,18 +18,14 @@ export class ProfessionService {
     }).pipe(map(data => data));
   }
 
-  public async put(id: number, parishId: number): Promise<any> {
+  public async put(id: number, formData): Promise<any> {
     return await this.http
-        .put(`${config.apiUrl}/persons/user-utypes/${id}/activate-parishs?parish_id=${parishId}`, null).toPromise();
+        .put(`${config.apiUrl}/suggestions/${id}`, formData)
+        .pipe(map(data => data));
   }
 
-  public getProfessions(limit) {
-    return this.http.get<any>(`${config.apiUrl}/persons/professions?limit=${limit}`)
-      .pipe(map(data => data));
-  }
-
-  public get(url) {
-    return this.http.get<any>(`${url}`)
+  public get() {
+    return this.http.get<any>(`${config.apiUrl}/suggestions/page`)
       .pipe(map(data => data));
   }
 
