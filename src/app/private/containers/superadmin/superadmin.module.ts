@@ -11,7 +11,7 @@ import { DriverAddComponent} from './containers/driver/driver-add/driver-add.com
 import { DriverAllComponent} from './containers/driver/driver-all/driver-all.component';
 import { DriverDetailsComponent} from './containers/driver/driver-details/driver-details.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
-import {MatDialog, MatDialogModule, MatStepperModule, MatFormFieldModule, MatInputModule, MatButtonModule, MatDatepickerModule, MatSnackBarModule } from '@angular/material';
+import {MatDialog, MatDialogModule, MatStepperModule, MatFormFieldModule, MatInputModule, MatButtonModule, MatDatepickerModule, MatSnackBarModule, MatSelectModule } from '@angular/material';
 import { CarosserieComponent } from "./containers/parametres/carosserie/carosserie.component";
 import { MarqueComponent } from "./containers/parametres/marque/marque.component";
 import { ModeleComponent } from "./containers/parametres/modele/modele.component";
@@ -38,10 +38,7 @@ import { ListTransportElementsComponent } from "./containers/element-transport/l
     NationaliteComponent,
     TypeComponent,
     TypeIntervenantComponent,
-<<<<<<< HEAD
-=======
     DriverAddComponent,
->>>>>>> 7b29c492f5120391d6ae75301e8122c2a58e4ad1
     TransportElementComponent,
    // AddTransportElementComponent,
     ListTransportElementsComponent,

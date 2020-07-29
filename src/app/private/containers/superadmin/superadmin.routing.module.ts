@@ -12,10 +12,7 @@ import { DriverAddComponent} from './containers/driver/driver-add/driver-add.com
 import { DriverAllComponent } from "./containers/driver/driver-all/driver-all.component";
 import { DriverDetailsComponent} from './containers/driver/driver-details/driver-details.component';
 
-<<<<<<< HEAD
 import { EnginAllComponent} from './containers/engin/engin-all/engin-all.component';
-=======
->>>>>>> 7b29c492f5120391d6ae75301e8122c2a58e4ad1
 import { TransportElementComponent } from './containers/element-transport/transport-element/transport-element.component';
 import { ListTransportElementsComponent } from './containers/element-transport/list-transport-elements/list-transport-elements.component';
 //import { AddTransportElementComponent } from './containers/element-transport/add-transport-element/add-transport-element.component';
