@@ -15,7 +15,7 @@ import { NationaliteComponent } from "src/app/private/containers/superadmin/cont
 import { TypeComponent } from "src/app/private/containers/superadmin/containers/parametres/type/type.component";
 import { TypeIntervenantComponent } from "src/app/private/containers/superadmin/containers/parametres/type-intervenant/type-intervenant.component";
 import { TransportElementComponent } from "src/app/private/containers/superadmin/containers/element-transport/transport-element/transport-element.component";
-//import { AddTransportElementComponent } from "src/app/private/containers/superadmin/containers/element-transport/add-transport-element/add-transport-element.component";
+import { AddTransportElementComponent } from "src/app/private/containers/superadmin/containers/element-transport/add-transport-element/add-transport-element.component";
 import { ListTransportElementsComponent } from "src/app/private/containers/superadmin/containers/element-transport/list-transport-elements/list-transport-elements.component";
 
 @NgModule({
@@ -31,7 +31,7 @@ import { ListTransportElementsComponent } from "src/app/private/containers/super
     TypeComponent,
     TypeIntervenantComponent,
     TransportElementComponent,
-   // AddTransportElementComponent,
+    AddTransportElementComponent,
     ListTransportElementsComponent,
   ],
   imports: [
