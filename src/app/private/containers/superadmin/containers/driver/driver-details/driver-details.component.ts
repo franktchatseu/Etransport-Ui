@@ -33,7 +33,7 @@ export class DriverDetailsComponent implements OnInit {
 
   ) { }
 
-  ngOnInit() {
+  async ngOnInit() {
     const driver_id = +this.route.snapshot.paramMap.get("id");
 
     this.driverService.finds(driver_id).then(
