@@ -38,6 +38,10 @@ import { ListTransportElementsComponent } from "./containers/element-transport/l
     NationaliteComponent,
     TypeComponent,
     TypeIntervenantComponent,
+<<<<<<< HEAD
+=======
+    DriverAddComponent,
+>>>>>>> 7b29c492f5120391d6ae75301e8122c2a58e4ad1
     TransportElementComponent,
    // AddTransportElementComponent,
     ListTransportElementsComponent,
@@ -52,6 +56,7 @@ import { ListTransportElementsComponent } from "./containers/element-transport/l
     MatInputModule,
     MatButtonModule,
     MatDatepickerModule,
+    MatSelectModule,
     MatSnackBarModule,
     FormsModule,
     ReactiveFormsModule

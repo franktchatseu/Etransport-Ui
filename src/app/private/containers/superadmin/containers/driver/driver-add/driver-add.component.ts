@@ -4,6 +4,7 @@ import { StepperService } from 'src/app/services/stepper/stepper.service';
 import { STEPPER_GLOBAL_OPTIONS } from '@angular/cdk/stepper';
 import { MatSnackBar } from '@angular/material';
 import { DriverService } from '../../../services/driver.service';
+import { Router } from '@angular/router';
 @Component({
   selector: 'app-driver-add',
   templateUrl: './driver-add.component.html',
@@ -14,16 +15,22 @@ export class DriverAddComponent implements OnInit {
 
   @ViewChild('fileInput')
   fileInput: ElementRef;
-  @ViewChild('fileInput')
+  @ViewChild('fileInputAvatar')
   fileInputAvatar: ElementRef;
   file: any
   fileAvatar: any;
   fileInformation: any
   fileInformationAvatar: any
 
+  //initialisation du stepper
+  initStepper: any;
+  currentStepper: number;
   // mes fichiers
   //attribut pour rendre optionnel ou pas
-  isOptional: true;
+  isEditable = false;
+  isOptionalStep1: false;
+  isOptionalStep2: true;
+  isOptionalStep3: true;
   durationInSeconds = 5;
   //initialisation des differentes initForm
   step1Form: FormGroup;
@@ -31,14 +38,13 @@ export class DriverAddComponent implements OnInit {
   step3Form: FormGroup;
   step4Form: FormGroup;
   stepperApi: any;
-  firstFormGroup: FormGroup;
-  secondFormGroup: FormGroup;
   picker: any
   constructor(
     private formBuilder: FormBuilder,
     private stepperService: StepperService,
     private _snackBar: MatSnackBar,
     private driverService: DriverService,
+    private router: Router
 
   ) { }
   selectFile(): void {
@@ -63,17 +69,30 @@ export class DriverAddComponent implements OnInit {
     }
   }
   ngOnInit(): void {
+
     this.initStep1();
     this.initStep2();
     this.initStep3();
     this.initStep4()
+
+    //recuperation du stepper actif en fonction
+    const value = +this.stepperService.getValue();
+    if (value == null || value == 0) {
+      this.currentStepper = 0;
+    }
+    else {
+      console.log(value)
+      const number = this.stepperService.getNumber();
+      this.currentStepper = value
+    }
+    
 
   }
   //initialisation des formulaires
   initStep1() {
     this.step1Form = this.formBuilder.group(
       {
-        nom: ['', [Validators.required]],
+        nom: ['', Validators.required],
         prenom: ['', [Validators.required]],
         date_naissance: ['', [Validators.required]],
         lieu_naissance: ['', [Validators.required]],
@@ -135,36 +154,53 @@ export class DriverAddComponent implements OnInit {
   }
   addStep1() {
 
-    //recuperation des champs du stepper 1
-    const formData: FormData = new FormData();
-    formData.append("first_name", '' + this.InfoGenerale.nom.value);
-    formData.append("last_name", '' + this.InfoGenerale.prenom.value);
-    formData.append("date_birth", '' + this.InfoGenerale.date_naissance.value);
-    formData.append("place_birth", '' + this.InfoGenerale.lieu_naissance.value);
-    formData.append("email", '' + this.InfoGenerale.email.value);
-    formData.append("tel1", '' + this.InfoGenerale.adresse.value);
-    formData.append("tel2", '' + this.InfoGenerale.telephone1.value);
-    formData.append("address", '' + this.InfoGenerale.telephone2.value);
-    formData.append("tel2", '' + this.InfoGenerale.telephone1.value);
-    const file: File = null
-    formData.append("avatar", this.InfoGenerale.avatar.value);
-    formData.append("stepper_id", '' + 1);
-    formData.append("nationality_id", '' + 1);
-
-    //ajout des infos generales de utilisateurs
-    this.driverService.add(formData).then(
+    const formDataStep: FormData = new FormData();
+    formDataStep.append("value", '' + 1);
+    formDataStep.append("status", '' + 0);
+    formDataStep.append("stepper_main_id", '' + 1);
+    this.stepperService.add(formDataStep).then(
       (Response) => {
         console.log(Response)
+        this.initStepper = Response;
         //sauvegarde dans le local storage
-        this.openSnackBar("Ajout Reussi", "Etape 1")
-        console.log("stepper 1 termine");
-        this.createStepper();
+        this.stepperService.storeStepper(Response)
+        //recuperation des champs du stepper 1
+        const formData: FormData = new FormData();
+        formData.append("first_name", '' + this.InfoGenerale.nom.value);
+        formData.append("last_name", '' + this.InfoGenerale.prenom.value);
+        formData.append("date_birth", '' + this.InfoGenerale.date_naissance.value);
+        formData.append("place_birth", '' + this.InfoGenerale.lieu_naissance.value);
+        formData.append("email", '' + this.InfoGenerale.email.value);
+        formData.append("tel1", '' + this.InfoGenerale.telephone1.value);
+        formData.append("tel2", '' + this.InfoGenerale.telephone2.value);
+        formData.append("address", '' + this.InfoGenerale.adresse.value);
+        formData.append("tel2", '' + this.InfoGenerale.telephone1.value);
+        const file: File = null
+        formData.append("avatar", this.fileAvatar);
+        formData.append("stepper_id", '' + this.initStepper.id);
+        formData.append("nationality_id", '' + 1);
+
+        //ajout des infos generales de utilisateurs
+
+        this.driverService.add(formData).then(
+          (Response) => {
+            console.log(Response)
+            //sauvegarde dans le local storage
+            this.openSnackBar("Ajout Reussi", "Etape 1")
+            console.log("stepper 1 termine");
+
+          },
+          (error) => {
+            console.log(error)
+          })
       },
       (error) => {
         console.log(error)
       },
 
     )
+
+
 
   }
   addStep2() {
@@ -174,8 +210,9 @@ export class DriverAddComponent implements OnInit {
     formData.append("date_issue", '' + this.drivingPermit.date_delivrance.value);
     formData.append("place_issue", '' + this.drivingPermit.lieu_delivrance.value);
     // on recupere le stepper id
-    const number = this.stepperService.getNumber();
-    formData.append("stepper_id", '' + number);
+    const sept_id = this.stepperService.getStepperId()
+    console.log(sept_id)
+    formData.append("stepper_id", '' + sept_id);
 
     //ajout des infos generales de utilisateurs
     this.driverService.addPermis(formData).then(
@@ -195,55 +232,56 @@ export class DriverAddComponent implements OnInit {
   }
 
   addStep3() {
-   //recuperation des champs du stepper 3
-   const formData: FormData = new FormData();
-   formData.append("identical_piece", '' + this.PieceIndentite.piece_identite.value);
-   formData.append("piece_number", '' + this.PieceIndentite.num_piece.value);
-   formData.append("date_issue", '' + this.PieceIndentite.date_delivrance.value);
-   formData.append("place_issue", '' + this.PieceIndentite.lieu_delivrance.value);
-   // on recupere le stepper id
-   const number = this.stepperService.getNumber();
-   formData.append("stepper_id", '' + number);
+    //recuperation des champs du stepper 3
+    const formData: FormData = new FormData();
+    formData.append("identical_piece", '' + this.PieceIndentite.piece_identite.value);
+    formData.append("piece_number", '' + this.PieceIndentite.num_piece.value);
+    formData.append("date_issue", '' + this.PieceIndentite.date_delivrance.value);
+    formData.append("place_issue", '' + this.PieceIndentite.lieu_delivrance.value);
+    // on recupere le stepper id
+    const sept_id = this.stepperService.getStepperId()
+    formData.append("stepper_id", '' + sept_id);
 
-   //ajout des infos generales de utilisateurs
-   this.driverService.addPiece(formData).then(
-     (Response) => {
-       console.log(Response)
-       //sauvegarde dans le local storage
-       this.openSnackBar("Ajout Reussi", "Etape 1")
-       console.log("stepper 2 termine");
-       this.updateStepper();
-     },
-     (error) => {
-       console.log(error)
-     },
+    //ajout des infos generales de utilisateurs
+    this.driverService.addPiece(formData).then(
+      (Response) => {
+        console.log(Response)
+        //sauvegarde dans le local storage
+        this.openSnackBar("Ajout Reussi", "Etape 1")
+        console.log("stepper 2 termine");
+        this.updateStepper();
+      },
+      (error) => {
+        console.log(error)
+      },
 
-   )
+    )
 
   }
   addStep4() {
-   //recuperation des champs du stepper 3
-   const formData: FormData = new FormData();
-   formData.append("name", '' + this.Formation.name_formation.value);
-   formData.append("file", '' + this.Formation.filename.value);
+    //recuperation des champs du stepper 3
+    const formData: FormData = new FormData();
+    formData.append("name", '' + this.Formation.name_formation.value);
+    console.log(this.file)
+    formData.append("file", this.file);
 
-   // on recupere le stepper id
-   const number = this.stepperService.getNumber();
-   formData.append("stepper_id", '' + number);
+    // on recupere le stepper id
+    const sept_id = this.stepperService.getStepperId()
+    formData.append("stepper_id", '' + sept_id);
 
-   //ajout des infos generales de utilisateurs
-   this.driverService.addFormations(formData).then(
-     (Response) => {
-       console.log(Response)
-       //sauvegarde dans le local storage
-       this.openSnackBar("Ajout Reussi", "Etape 1")
-       console.log("stepper 4 termine");
-       this.updateStepper();
-     },
-     (error) => {
-       console.log(error)
-     }
-   )
+    //ajout des infos generales de utilisateurs
+    this.driverService.addFormations(formData).then(
+      (Response) => {
+        console.log(Response)
+        //sauvegarde dans le local storage
+        this.openSnackBar("Ajout Reussi", "Etape 1")
+        console.log("stepper 4 termine");
+        this.updateStepper();
+      },
+      (error) => {
+        console.log(error)
+      }
+    )
 
   }
   createStepper() {
@@ -254,9 +292,9 @@ export class DriverAddComponent implements OnInit {
     this.stepperService.add(formData).then(
       (Response) => {
         console.log(Response)
+        this.initStepper = Response;
         //sauvegarde dans le local storage
         this.stepperService.storeStepper(Response)
-        this.openSnackBar("Ajout Reussi", "Etape 1")
       },
       (error) => {
         console.log(error)
@@ -299,6 +337,12 @@ export class DriverAddComponent implements OnInit {
       },
 
     )
+  }
+  //reinitialisation
+  reset() {
+    this.stepperService.removeTokens();
+    this.router.navigate(['/private/superadmins/driver-all']);
+
   }
 
 }
