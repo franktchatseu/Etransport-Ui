@@ -16,10 +16,10 @@ import { NotificationService } from '../../../../../../services/notification.ser
 export class DriverDetailsComponent implements OnInit {
 
   drivers : any[] =[];
-  permits : any[] =[];
-  infos : any[] =[];
-  nationalites : any[] =[];
-  formations : any[] =[];
+  permit : any;
+  info: any;
+  nationalite : any;
+  formation : any;
   members: any;
   imagePath: any;
 
@@ -33,13 +33,14 @@ export class DriverDetailsComponent implements OnInit {
 
   ) { }
 
-  ngOnInit() {
+  async ngOnInit() {
     const driver_id = +this.route.snapshot.paramMap.get("id");
 
-    this.driverService.finds(driver_id).then(
+
+    this.driverService.getPermis(driver_id).then(
       data => {
-        this.drivers = data.data;
-        console.log("1")
+        this.permit = data;
+        console.log(this.permit)
       }
     ).catch(
       error => {
@@ -49,10 +50,10 @@ export class DriverDetailsComponent implements OnInit {
       }
     )
 
-    this.driverService.getPermis(driver_id).then(
+    this.driverService.finds(driver_id).then(
       data => {
-        this.permits = data.data;
-        console.log("2")
+        this.drivers = data.data;
+        console.log(this.drivers)
       }
     ).catch(
       error => {
@@ -64,8 +65,8 @@ export class DriverDetailsComponent implements OnInit {
 
     this.driverService.getFormations(driver_id).then(
       data => {
-        this.formations = data.data;
-        console.log("3")
+        this.formation = data;
+        console.log(this.formation)
       }
     ).catch(
       error => {
@@ -77,8 +78,8 @@ export class DriverDetailsComponent implements OnInit {
 
     this.driverService.getNationationalities(driver_id).then(
       data => {
-        this.nationalites = data.data;
-        console.log(this.nationalites)
+        this.nationalite = data;
+        console.log(this.nationalite.name)
       }
     ).catch(
       error => {
@@ -90,8 +91,7 @@ export class DriverDetailsComponent implements OnInit {
 
     this.driverService.getDocInfos(driver_id).then(
       data => {
-        this.infos = data.data;
-        console.log("4")
+        this.info = data;
       }
     ).catch(
       error => {

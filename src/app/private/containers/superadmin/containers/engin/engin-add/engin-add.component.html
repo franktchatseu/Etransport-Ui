@@ -104,14 +104,20 @@
             <div class="row">
                 <div class="col-md-4">
                     <mat-form-field >
-                        <mat-label>PPOIDS TOTAL EN CHARGE</mat-label>
+                        <mat-label>POIDS TOTAL EN CHARGE</mat-label>
                         <input matInput formControlName="ptc" matInput placeholder="555">
                     </mat-form-field>
                 </div>
                 <div class="col-md-4">
                     <mat-form-field >
                         <mat-label>Volume</mat-label>
-                        <input matInputformControlName="volume" matInput placeholder="555">
+                        <input matInput formControlName="volume" matInput placeholder="555">
+                    </mat-form-field>
+                </div>
+                <div class="col-md-4">
+                    <mat-form-field >
+                        <mat-label>Puissance</mat-label>
+                        <input matInput formControlName="power" matInput placeholder="555">
                     </mat-form-field>
                 </div>
 
@@ -239,38 +245,20 @@
     </mat-step>
     <mat-step [stepControl]="step3Form">
         <form class="example-form" [formGroup]="step3Form">
-            <ng-template matStepLabel>Information Piece identite</ng-template>
+            <ng-template matStepLabel>Description</ng-template>
+
             <div class="row">
-                <div class="col-md-10">
-                    <mat-form-field class="example-full-width">
-                        <mat-label>Piece Identite </mat-label>
-                        <input matInput placeholder="Ex. 1 Main St, New York, NY" formControlName="piece_identite"
+                <div class="col-md-6" >
+                    <mat-form-field >
+                        <mat-label>Jour de travail Requis</mat-label>
+                        <input matInput placeholder="10" formControlName="jour_taf"
                             required>
                     </mat-form-field>
-                    <!--  <mat-form-field appearance="fill">
-                        <mat-label>Select</mat-label>
-                        <mat-select formControlName="piece_identite">
-                          <mat-option value="passport">PASSPORT</mat-option>
-                          <mat-option value="cni">CNI</mat-option>
-                          <mat-option value="recepice">RECEPICE</mat-option>
-                          <mat-option value="autre piece">AUTRE PIECE</mat-option>
-                        </mat-select>
-                      </mat-form-field>-->
                 </div>
-            </div>
-            <div class="row">
-                <div class="col-md-10">
-                    <mat-form-field class="example-full-width">
-                        <mat-label>Numero Piece Identite</mat-label>
-                        <input matInput placeholder="Ex. 1 Main St, New York, NY" formControlName="num_piece" required>
-                    </mat-form-field>
-                </div>
-            </div>
-            <div class="row">
-                <div class="col-md-10">
-                    <mat-form-field class="example-full-width">
-                        <mat-label>Date de Delivrance</mat-label>
-                        <input matInput placeholder="Ex. 1 Main St, New York, NY" formControlName="date_delivrance"
+                <div class="col-md-6" >
+                    <mat-form-field >
+                        <mat-label>Temps Requis (Heure/mois)</mat-label>
+                        <input matInput placeholder="entrer la duree" formControlName="temps_taf"
                             required>
                     </mat-form-field>
                 </div>
@@ -278,8 +266,43 @@
             <div class="row">
                 <div class="col-md-10">
                     <mat-form-field class="example-full-width">
-                        <mat-label>Lieu de Delivrance </mat-label>
-                        <input matInput placeholder="Ex. 1 Main St, New York, NY" formControlName="lieu_delivrance"
+                        <mat-label>Equipement </mat-label>
+                        <input matInput placeholder="azue" formControlName="equipement"
+                            required>
+                    </mat-form-field>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-10">
+                    <mat-form-field class="example-full-width">
+                        <mat-label>usage</mat-label>
+                        <input matInput placeholder="Ex. 1 Main St, New York, NY" formControlName="usage" required>
+                    </mat-form-field>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-10">
+                    <mat-form-field class="example-full-width">
+                        <mat-label>Localisation</mat-label>
+                        <input matInput placeholder="Ex. 1 Main St, New York, NY" formControlName="localisation"
+                            required>
+                    </mat-form-field>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-10">
+                    <mat-form-field class="example-full-width">
+                        <mat-label>Observation </mat-label>
+                        <input matInput placeholder="Ex. 1 Main St, New York, NY" formControlName="observation"
+                            required>
+                    </mat-form-field>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-10">
+                    <mat-form-field class="example-full-width">
+                        <mat-label>Proprietaire </mat-label>
+                        <input matInput placeholder="Ex. 1 Main St, New York, NY" formControlName="proprietaire"
                             required>
                     </mat-form-field>
                 </div>
@@ -292,28 +315,99 @@
     </mat-step>
     <mat-step [stepControl]="step4Form">
         <form class="example-form" [formGroup]="step4Form">
-            <ng-template matStepLabel>Formations</ng-template>
+           
+            <ng-template matStepLabel>Papier Du Vehicule</ng-template>
             <div class="row">
                 <div class="col-md-10">
                     <mat-form-field class="example-full-width">
-                        <mat-label>Nom de la Formation </mat-label>
-                        <input matInput placeholder="Ex. 1 Main St, New York, NY" formControlName="name_formation"
+                        <mat-label>Date de validite Patente </mat-label>
+                        <input matInput placeholder="2020-10-10" formControlName="validite_patente"
                             required>
                     </mat-form-field>
                 </div>
-            </div>
-            <div class="row">
                 <div class="col-md-10">
-                    <input type="file" id="userFile" (change)="onSelectFile($event)" #fileInput style="display: none">
-                    <mat-form-field>
-                        <input matInput formControlName="filename" placeholder="Fichier" readonly>
+                    <mat-form-field class="example-full-width">
+                        <mat-label>Date de Validite de Assurance </mat-label>
+                        <input matInput placeholder="Ex. 1 Main St, New York, NY" formControlName="validite_assurance"
+                            required>
                     </mat-form-field>
-                    <button mat-button (click)="selectFile()">Importer une Piece Justificative</button>
+                </div>
+                <div class="col-md-10">
+                    <mat-form-field class="example-full-width">
+                        <mat-label>Date de Visite Technique </mat-label>
+                        <input matInput placeholder="Ex. 1 Main St, New York, NY" formControlName="validite_visite"
+                            required>
+                    </mat-form-field>
                 </div>
             </div>
             <div>
                 <button mat-button matStepperPrevious>Back</button>
                 <button (click)="addStep4()" mat-button matStepperNext>Next</button>
+            </div>
+        </form>
+    </mat-step>
+    <mat-step [stepControl]="step5Form">
+        <form class="example-form" [formGroup]="step5Form">
+           
+            <ng-template matStepLabel>Papier Du Vehicule</ng-template>
+           
+            <div class="row">
+                <div class="col-md-10">
+                    <input type="file" id="userFile" (change)="onSelectFile1($event)" #fileInput1 style="display: none">
+                    <mat-form-field>
+                        <input matInput formControlName="avant_engin" placeholder="Fichier" readonly>
+                    </mat-form-field>
+                    <button mat-button (click)="selectFile1()">Importer Photo Avant Engin</button>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-10">
+                    <input type="file" id="userFile" (change)="onSelectFile2($event)" #fileInput2 style="display: none">
+                    <mat-form-field>
+                        <input matInput formControlName="arriere_engin" placeholder="Fichier" readonly>
+                    </mat-form-field>
+                    <button mat-button (click)="selectFile2()">Importer Photo Arriere Engin</button>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-10">
+                    <input type="file" id="userFile" (change)="onSelectFile3($event)" #fileInput3 style="display: none">
+                    <mat-form-field>
+                        <input matInput formControlName="gauche_engin" placeholder="Fichier" readonly>
+                    </mat-form-field>
+                    <button mat-button (click)="selectFile3()">Importer Photo Cote Gauche Engin</button>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-10">
+                    <input type="file" id="userFile" (change)="onSelectFile4($event)" #fileInput4 style="display: none">
+                    <mat-form-field>
+                        <input matInput formControlName="droit_engin" placeholder="Fichier" readonly>
+                    </mat-form-field>
+                    <button mat-button (click)="selectFile4()">Importer Photo Cote Droit Engin</button>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-10">
+                    <input type="file" id="userFile" (change)="onSelectFile5($event)" #fileInput5 style="display: none">
+                    <mat-form-field>
+                        <input matInput formControlName="insurance_patente" placeholder="Fichier" readonly>
+                    </mat-form-field>
+                    <button mat-button (click)="selectFile5()">Importer Photo Assurance</button>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-10">
+                    <input type="file" id="userFile" (change)="onSelectFile6($event)" #fileInput6 style="display: none">
+                    <mat-form-field>
+                        <input matInput formControlName="grey_card" placeholder="Fichier" readonly>
+                    </mat-form-field>
+                    <button mat-button (click)="selectFile6()">Importer Photo Carte Grise</button>
+                </div>
+            </div>
+            <div>
+                <button mat-button matStepperPrevious>Back</button>
+                <button (click)="addStep5()" mat-button matStepperNext>Next</button>
             </div>
         </form>
     </mat-step>

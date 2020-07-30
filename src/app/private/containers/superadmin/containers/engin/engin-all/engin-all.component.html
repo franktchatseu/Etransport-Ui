@@ -1,0 +1,88 @@
+<div class="container">
+        <div class="row">
+            <div class="app-page-title" style="margin: 0%; width: 100%;">
+                <div class="page-title-wrapper">
+                    <div class="page-title-heading">
+                        <div class="page-title-icon">
+                            <i class="pe-7s-phone icon-gradient bg-premium-dark">
+                            </i>
+                        </div>
+                        <div>LISTING DE Engins
+                            <div class="page-title-subheading">Liste des Engins enregistrees.
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    
+    </div>
+    <br>
+    
+    <div class="main-card mb-3 card">
+        <div class="card-body">
+            <div>
+                <button type="button" class="btn mr-2 mb-2 btn-primary" (click)="add()">
+                    Ajouter un Engin
+                </button>
+            </div>
+    
+            <br>
+            <table style="width: 100%;" id="example" class="table table-hover table-striped table-bordered">
+                <thead>
+                    <tr>
+                     
+                        <th>Immatriculation</th>
+                        <th >Modele</th>
+                        <th >Marque</th>
+                        <th >Puissance</th>
+                        <th >Couleur</th>
+                        <th >Pays_Immatriculation</th>
+                        <th>Action</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr *ngFor="let engin of engins.data,let i = index">
+                       
+                        <td >{{engin.registration}}</td>
+                        <td >{{engin.model_name}}</td>
+                        <td >{{engin.mark_name}}</td>
+                        <td >{{engin.power}}</td>
+                        <td >{{engin.color}}</td>
+                        <td >{{engin.country_registration}}</td>
+                        <td >
+                            <button class="mr-2 btn-icon btn-icon-only btn btn-outline-primary"
+                                (click)="update(engin.id)"><i class="pe-7s-pen btn-icon-wrapper"> </i></button>
+                            <button class="mr-2 btn-icon btn-icon-only btn btn-outline-success"
+                                (click)="detail(engin.id)">
+                                <i class="pe-7s-info btn-icon-wrapper"> </i></button>
+                            <button class="mr-2 btn-icon btn-icon-only btn btn-outline-danger"
+                                (click)="delete(engin.id)"><i class="pe-7s-trash btn-icon-wrapper"> </i></button>
+    
+                        </td>
+                    </tr>
+    
+                </tbody>
+    
+                <br>
+    
+                <tfoot>
+                    <div class="row" style="margin-top: 4%">
+                        <div class="col-md-4"></div>
+                        <div class="col-md-4">
+                            <ul class="pagination">
+                                <li class="paginate_button page-item previous" id="example_previous">
+                                    <a  (click)="getPage(drivers.prev_page_url)" aria-controls="example" data-dt-idx="0" tabindex="0"
+                                        class="page-link">PRECEDENT</a>
+                                </li>
+                                <li class="paginate_button page-item next" id="example_next">
+                                    <a (click)="getPage(drivers.next_page_url)" aria-controls="example" data-dt-idx="7" tabindex="0"
+                                        class="page-link">SUIVANT</a>
+                                </li> 
+                            </ul>
+                        </div>
+                    </div>
+                </tfoot>
+            </table>
+        </div>
+    </div>

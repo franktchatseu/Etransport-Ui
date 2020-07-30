@@ -15,6 +15,7 @@ import { DriverDetailsComponent} from './containers/driver/driver-details/driver
 
 import { EnginAddComponent} from './containers/engin/engin-add/engin-add.component';
 
+import { EnginAllComponent} from './containers/engin/engin-all/engin-all.component';
 import { TransportElementComponent } from './containers/element-transport/transport-element/transport-element.component';
 import { ListTransportElementsComponent } from './containers/element-transport/list-transport-elements/list-transport-elements.component';
 //import { AddTransportElementComponent } from './containers/element-transport/add-transport-element/add-transport-element.component';
@@ -53,6 +54,10 @@ const routes: Routes = [
         component: DriverAllComponent,
       },
       {
+        path: 'engin-all',
+        component: EnginAllComponent,
+      },
+      {
         path: 'nationalite',
         component: NationaliteComponent,
       },
@@ -81,7 +86,7 @@ const routes: Routes = [
           },
           {
             path: 'engin-all',
-            component: EnginAddComponent,
+            component: EnginAllComponent,
           },
         ]
       },

@@ -199,9 +199,6 @@ export class DriverAddComponent implements OnInit {
       },
 
     )
-
-
-
   }
   addStep2() {
     //recuperation des champs du stepper 2
