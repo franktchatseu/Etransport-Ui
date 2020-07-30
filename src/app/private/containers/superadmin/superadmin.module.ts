@@ -8,7 +8,7 @@ import { LeftSideComponent } from './containers/index/left-side/left-side.compon
 import { IndexComponent } from './containers/index/index.component';
 import { DriverAddComponent} from './containers/driver/driver-add/driver-add.component';
 import { EnginAddComponent} from './containers/engin/engin-add/engin-add.component';
-
+import { DriverDetailsComponent} from './containers/driver/driver-details/driver-details.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { DriverAllComponent } from "./containers/driver/driver-all/driver-all.component";
 import {MatSelectModule, MatDialogModule,MatStepperModule,MatFormFieldModule,MatInputModule,MatButtonModule,MatDatepickerModule,MatSnackBarModule, MatSnackBar } from '@angular/material';
@@ -31,6 +31,7 @@ import { ListTransportElementsComponent } from "src/app/private/containers/super
     DriverAddComponent,
     CarosserieComponent,
     MarqueComponent,
+    DriverDetailsComponent,
     DriverAllComponent,
     ModeleComponent,
     NationaliteComponent,

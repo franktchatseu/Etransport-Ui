@@ -10,6 +10,8 @@ import { ModeleComponent } from './containers/parametres/modele/modele.component
 import { CarosserieComponent } from './containers/parametres/carosserie/carosserie.component';
 import { DriverAddComponent} from './containers/driver/driver-add/driver-add.component';
 import { DriverAllComponent } from "./containers/driver/driver-all/driver-all.component";
+import { DriverDetailsComponent} from './containers/driver/driver-details/driver-details.component';
+
 
 import { EnginAddComponent} from './containers/engin/engin-add/engin-add.component';
 
@@ -29,6 +31,10 @@ const routes: Routes = [
       {
         path: 'driver-add',
         component: DriverAddComponent,
+      },
+      {
+        path: 'driver-detail/:id',
+        component: DriverDetailsComponent,
       },
       {
         path: 'type',
