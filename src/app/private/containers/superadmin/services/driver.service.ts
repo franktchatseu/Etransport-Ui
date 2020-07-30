@@ -11,7 +11,7 @@ export class DriverService {
   constructor(private http: HttpClient) { }
 
     public getDrivers() {
-        return this.http.get<any>(`${config.apiUrl}/Module2/general_informations/allWithName`)
+        return this.http.get<any>(`${config.apiUrl}/module2/general_informations`)
           .pipe(map(data => data));
       }
 
