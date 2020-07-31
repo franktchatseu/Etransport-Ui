@@ -16,6 +16,7 @@ import { EnginAllComponent} from './containers/engin/engin-all/engin-all.compone
 import { TransportElementComponent } from './containers/element-transport/transport-element/transport-element.component';
 import { ListTransportElementsComponent } from './containers/element-transport/list-transport-elements/list-transport-elements.component';
 //import { AddTransportElementComponent } from './containers/element-transport/add-transport-element/add-transport-element.component';
+import { ElementTransportDetailComponent} from './containers/element-transport/element-transport-detail/element-transport-detail.component';
 
 const routes: Routes = [
   {
@@ -33,6 +34,10 @@ const routes: Routes = [
       {
         path: 'driver-detail/:id',
         component: DriverDetailsComponent,
+      },
+      {
+        path: 'element-detail/:id',
+        component: ElementTransportDetailComponent,
       },
       {
         path: 'type',
