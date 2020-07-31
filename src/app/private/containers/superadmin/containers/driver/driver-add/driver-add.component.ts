@@ -4,7 +4,7 @@ import { StepperService } from 'src/app/services/stepper/stepper.service';
 import { STEPPER_GLOBAL_OPTIONS } from '@angular/cdk/stepper';
 import { MatSnackBar } from '@angular/material';
 import { DriverService } from '../../../services/driver.service';
-import { Router } from '@angular/router';
+import { Router, ActivatedRoute } from '@angular/router';
 @Component({
   selector: 'app-driver-add',
   templateUrl: './driver-add.component.html',
@@ -25,6 +25,8 @@ export class DriverAddComponent implements OnInit {
   //initialisation du stepper
   initStepper: any;
   currentStepper: number;
+  currentStepperNumber: any;
+
   // mes fichiers
   //attribut pour rendre optionnel ou pas
   isEditable = false;
@@ -44,6 +46,7 @@ export class DriverAddComponent implements OnInit {
     private stepperService: StepperService,
     private _snackBar: MatSnackBar,
     private driverService: DriverService,
+    private activatedRoute: ActivatedRoute,
     private router: Router
 
   ) { }
@@ -69,24 +72,34 @@ export class DriverAddComponent implements OnInit {
     }
   }
   ngOnInit(): void {
+      //recuperation du stepper actif en fonction
+      this.currentStepperNumber = this.activatedRoute.snapshot.params['stepper_number'];
+      if(this.currentStepperNumber == '0'){
+          this.currentStepper = 0;
+          this.stepperService.removeTokens()
+      }
+      else{
+          this.currentStepper = this.currentStepperNumber;
 
+      this.stepperService.find(this.currentStepperNumber).then(
+        (Response) => {
+          console.log(Response)
+          this.stepperApi = Response;
+          this.stepperService.storeStepper(this.stepperApi)
+          this.currentStepper = 2;
+        },
+        (error) => {
+          console.log(error)
+          return;
+        },
+      )
+      }
+
+      
     this.initStep1();
     this.initStep2();
     this.initStep3();
-    this.initStep4()
-
-    //recuperation du stepper actif en fonction
-    const value = +this.stepperService.getValue();
-    if (value == null || value == 0) {
-      this.currentStepper = 0;
-    }
-    else {
-      console.log(value)
-      const number = this.stepperService.getNumber();
-      this.currentStepper = value
-    }
-    
-
+    this.initStep4();
   }
   //initialisation des formulaires
   initStep1() {
@@ -335,6 +348,7 @@ export class DriverAddComponent implements OnInit {
 
     )
   }
+
   //reinitialisation
   reset() {
     this.stepperService.removeTokens();

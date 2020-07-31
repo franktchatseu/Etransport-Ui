@@ -31,7 +31,7 @@ const routes: Routes = [
         component: RandomNumberComponent,
       },
       {
-        path: 'driver-add',
+        path: 'driver-add/:stepper_number',
         component: DriverAddComponent,
       },
       {

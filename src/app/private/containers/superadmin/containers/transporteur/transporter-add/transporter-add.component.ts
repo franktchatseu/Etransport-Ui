@@ -12,11 +12,23 @@ import { Router } from '@angular/router';
 })
 export class TransporterAddComponent implements OnInit {
 
-  @ViewChild('fileInput')
-  fileInput: ElementRef;
+  @ViewChild('fileInput1')
+  fileInput1: ElementRef;
+  @ViewChild('fileInput2')
+  fileInput2: ElementRef;
+  @ViewChild('fileInput3')
+  fileInput3: ElementRef;
+  @ViewChild('fileInput4')
+  fileInput4: ElementRef;
   @ViewChild('fileInputAvatar')
   fileInputAvatar: ElementRef;
-  file: any
+   //les differentes photos
+   file1: any;
+   file2: any;
+   file3: any;
+   file4: any;
+   file5: any;
+   file6: any;
   fileAvatar: any;
   fileInformation: any
   fileInformationAvatar: any
@@ -46,16 +58,34 @@ export class TransporterAddComponent implements OnInit {
     private router: Router
 
   ) { }
-  selectFile(): void {
-    this.fileInput.nativeElement.click();
-  }
-  onSelectFile(event) {
+  onSelectFile1(event) {
     if (event.target.files && event.target.files.length > 0) {
-      this.file = event.target.files[0];
-      this.step4Form.get('filename').setValue(this.file.name); (1)
+      this.file1 = event.target.files[0];
+      this.step2Form.get('image1').setValue(this.file1.name);
       this.fileInformation = null;
     }
   }
+  onSelectFile2(event) {
+    if (event.target.files && event.target.files.length > 0) {
+      this.file2 = event.target.files[0];
+      this.step2Form.get('image2').setValue(this.file2.name);
+    }
+  }
+  onSelectFile3(event) {
+    if (event.target.files && event.target.files.length > 0) {
+      this.file3 = event.target.files[0];
+      this.step2Form.get('image3').setValue(this.file3.name);
+      this.fileInformation = null;
+    }
+  }
+  onSelectFile4(event) {
+    if (event.target.files && event.target.files.length > 0) {
+      this.file4 = event.target.files[0];
+      this.step2Form.get('image4').setValue(this.file4.name);
+      this.fileInformation = null;
+    }
+  }
+
   //image de avatar
   selectFileAvatar(): void {
     this.fileInputAvatar.nativeElement.click();
@@ -67,12 +97,25 @@ export class TransporterAddComponent implements OnInit {
       this.fileInformationAvatar = null;
     }
   }
+
+    //le click sur le button
+    selectFile1(): void {
+      this.fileInput1.nativeElement.click();
+    }
+    selectFile2(): void {
+      this.fileInput2.nativeElement.click();
+    }
+    selectFile3(): void {
+      this.fileInput3.nativeElement.click();
+    }
+    selectFile4(): void {
+      this.fileInput4.nativeElement.click();
+    }
+
   ngOnInit(): void {
 
     this.initStep1();
     this.initStep2();
-    this.initStep3();
-    this.initStep4()
 
     //recuperation du stepper actif en fonction
     const value = +this.stepperService.getValue();
@@ -108,43 +151,32 @@ export class TransporterAddComponent implements OnInit {
   initStep2() {
     this.step2Form = this.formBuilder.group(
       {
-        num_permis: ['', [Validators.required]],
-        date_delivrance: ['', [Validators.required]],
-        lieu_delivrance: ['', [Validators.required]],
+        localisation: ['', [Validators.required]],
+        telephone1: ['', [Validators.required]],
+        telephone2: ['', [Validators.required]],
+        email: ['', [Validators.required,Validators.email]],
+        langue: ['', [Validators.required]],
+        description: ['', [Validators.required]],
+        mission: ['', [Validators.required]],
+        ambition: ['', [Validators.required]],
+        heure_ouverture: ['', [Validators.required]],
+        partenaire: ['', [Validators.required]],
+        valeur: ['', [Validators.required]],
+        image1: ['', [Validators.required]],
+        image2: ['', [Validators.required]],
+        image3: ['', [Validators.required]],
+        image4: ['', [Validators.required]],
       }
     )
   }
-  //initialisation des formulaires
-  initStep3() {
-    this.step3Form = this.formBuilder.group(
-      {
-        piece_identite: ['', [Validators.required]],
-        num_piece: ['', [Validators.required]],
-        date_delivrance: ['', [Validators.required]],
-        lieu_delivrance: ['', [Validators.required]],
-      }
-    )
-  }
-  initStep4() {
-    this.step4Form = this.formBuilder.group(
-      {
-        name_formation: ['', [Validators.required]],
-        filename: ''
-      }
-    )
-  }
+
   get InfoGenerale() {
     return this.step1Form.controls;
   }
   get drivingPermit() {
     return this.step2Form.controls;
   }
-  get PieceIndentite() {
-    return this.step3Form.controls;
-  }
-  get Formation() {
-    return this.step4Form.controls;
-  }
+
   openSnackBar(message: string, action: string) {
     this._snackBar.open(message, action, {
       duration: 5000,
@@ -199,13 +231,23 @@ export class TransporterAddComponent implements OnInit {
   addStep2() {
     //recuperation des champs du stepper 2
     const formData: FormData = new FormData();
-    formData.append("number", '' + this.drivingPermit.num_permis.value);
-    formData.append("date_issue", '' + this.drivingPermit.date_delivrance.value);
-    formData.append("place_issue", '' + this.drivingPermit.lieu_delivrance.value);
+        
+    formData.append("localisation", '' + this.drivingPermit.localisation.value);
+    formData.append("phone1", '' + this.drivingPermit.telephone1.value);
+    formData.append("phone2", '' + this.drivingPermit.telephone2.value);
+    formData.append("langue", '' + this.drivingPermit.langue.value);
+    formData.append("email", '' + this.drivingPermit.email.value);
+    formData.append("description_services", '' + this.drivingPermit.description.value);
+    formData.append("enterprise_mission", '' + this.drivingPermit.mission.value);
+    formData.append("enterprise_ambition", '' + this.drivingPermit.ambition.value);
+    formData.append("opening_hours", '' + this.drivingPermit.heure_ouverture.value);
+    formData.append("enterprise_partner", '' + this.drivingPermit.partenaire.value);
+    formData.append("enterprise_value", '' + this.drivingPermit.valeur.value);
+    formData.append("image", '' + this.drivingPermit.image1.value);
     // on recupere le stepper id
     const sept_id = this.stepperService.getStepperId()
     console.log(sept_id)
-    formData.append("stepper_id", '' + sept_id);
+    formData.append("stepper_main_id", '' + sept_id);
 
     //ajout des infos generales de utilisateurs
     this.driverService.addInfoGenerale2(formData).then(
@@ -224,59 +266,6 @@ export class TransporterAddComponent implements OnInit {
 
   }
 
-  addStep3() {
-    //recuperation des champs du stepper 3
-    const formData: FormData = new FormData();
-    formData.append("identical_piece", '' + this.PieceIndentite.piece_identite.value);
-    formData.append("piece_number", '' + this.PieceIndentite.num_piece.value);
-    formData.append("date_issue", '' + this.PieceIndentite.date_delivrance.value);
-    formData.append("place_issue", '' + this.PieceIndentite.lieu_delivrance.value);
-    // on recupere le stepper id
-    const sept_id = this.stepperService.getStepperId()
-    formData.append("stepper_id", '' + sept_id);
-
-    //ajout des infos generales de utilisateurs
-    this.driverService.addInfoPersonnelle(formData).then(
-      (Response) => {
-        console.log(Response)
-        //sauvegarde dans le local storage
-        this.openSnackBar("Ajout Reussi", "Etape 1")
-        console.log("stepper 2 termine");
-        this.updateStepper();
-      },
-      (error) => {
-        console.log(error)
-      },
-
-    )
-
-  }
-  addStep4() {
-    //recuperation des champs du stepper 3
-    const formData: FormData = new FormData();
-    formData.append("name", '' + this.Formation.name_formation.value);
-    console.log(this.file)
-    formData.append("file", this.file);
-
-    // on recupere le stepper id
-    const sept_id = this.stepperService.getStepperId()
-    formData.append("stepper_id", '' + sept_id);
-
-    //ajout des infos generales de utilisateurs
-    this.driverService.addFormations(formData).then(
-      (Response) => {
-        console.log(Response)
-        //sauvegarde dans le local storage
-        this.openSnackBar("Ajout Reussi", "Etape 1")
-        console.log("stepper 4 termine");
-        this.updateStepper();
-      },
-      (error) => {
-        console.log(error)
-      }
-    )
-
-  }
   createStepper() {
     const formData: FormData = new FormData();
     formData.append("value", '' + 1);

@@ -42,10 +42,17 @@
                     </a>
                     <ul class="today mm-collapse">
                         <li>
-                            <a href="javascript:void(0);" (click)="activeMenu.menu0=1;goTo('')"
+                            <a href="javascript:void(0);" (click)="activeMenu.menu0=1;goTo('transporter/transporter-add')"
                                 class="{{ activeMenu.menu0 == 1 ? 'mm-active': ''}}">
                                 <i class="metismenu-icon">
-                                </i>Entreprise
+                                </i>Consulter Entreprise
+                            </a>
+                        </li>
+                         <li>
+                            <a href="javascript:void(0);" (click)="activeMenu.menu0=1;goTo('transporter/transporter-add')"
+                                class="{{ activeMenu.menu0 == 1 ? 'mm-active': ''}}">
+                                <i class="metismenu-icon">
+                                </i>Ajouter Entreprise
                             </a>
                         </li>
                         <li>
@@ -65,7 +72,7 @@
                     </a>
                     <ul class="today1 mm-collapse">
                         <li>
-                            <a href="javascript:void(0);" (click)="activeMenu.menu1=1;goTo('')"
+                            <a href="javascript:void(0);" (click)="activeMenu.menu1=1;goTo('driver-all')"
                                 class="{{ activeMenu.menu1 == 1 ? 'mm-active': ''}}">
                                 <i class="metismenu-icon">
                                 </i>Consulter
@@ -73,7 +80,7 @@
                             </a>
                         </li>
                         <li>
-                            <a href="javascript:void(0);" (click)="activeMenu.menu1=2;goTo('')"
+                            <a href="javascript:void(0);" (click)="activeMenu.menu1=2;goTo('driver-add/0')"
                                 class="{{ activeMenu.menu1 == 2 ? 'mm-active': ''}}">
                                 <i class="metismenu-icon">
                                 </i>Ajouter               
@@ -89,14 +96,14 @@
                     </a>
                     <ul class="today2 mm-collapse">
                         <li>
-                            <a href="javascript:void(0);" (click)="activeMenu.menu2=1;goTo('')"
+                            <a href="javascript:void(0);" (click)="activeMenu.menu2=1;goTo('engin/engin-all')"
                                 class="{{ activeMenu.menu2 == 1 ? 'mm-active': ''}}">
                                 <i class="metismenu-icon">
                                 </i>Consulter
                             </a>
                         </li>
                         <li>
-                            <a href="javascript:void(0);" (click)="activeMenu.menu2=2;goTo('')"
+                            <a href="javascript:void(0);" (click)="activeMenu.menu2=2;goTo('engin/engin-add')"
                                 class="{{ activeMenu.menu2 == 2 ? 'mm-active': ''}}">
                                 <i class="metismenu-icon">
                                 </i>Ajouter

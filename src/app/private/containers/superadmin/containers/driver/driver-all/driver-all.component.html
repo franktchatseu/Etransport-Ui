@@ -7,8 +7,8 @@
                         <i class="pe-7s-phone icon-gradient bg-premium-dark">
                         </i>
                     </div>
-                    <div>LISTING DE CHAUFFEURS
-                        <div class="page-title-subheading">Liste des chauffeurs enregistrees.
+                    <div>Liste des chauffeurs
+                        <div class="page-title-subheading">consulter la liste des chauffeurs.
                         </div>
                     </div>
                 </div>
@@ -42,7 +42,7 @@
                 </tr>
             </thead>
             <tbody>
-                <tr *ngFor="let driver of drivers.data,let i = index">
+                <tr *ngFor="let driver of drivers?.data,let i = index">
                     
                    <td>
                        <img [src]="driver.avatar" width="90px" height="90px" alt="image du chauffeur" srcset="">
@@ -60,7 +60,10 @@
                             <i class="pe-7s-info btn-icon-wrapper"> </i></button>
                         <button class="mr-2 btn-icon btn-icon-only btn btn-outline-danger"
                             (click)="delete(driver.id)"><i class="pe-7s-trash btn-icon-wrapper"> </i></button>
-
+                        <button *ngIf="driver.status !=1" class="mr-2 btn btn-success"
+                        (click)="completeProfil(driver.number)" >completer votre profil</button>
+                        <em *ngIf="driver.status ==1" class=""
+                           >profil totalement renseigne</em>
                     </td>
                 </tr>
 

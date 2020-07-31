@@ -101,7 +101,7 @@ export class DriverAllComponent implements OnInit {
     }
 
     detail(id) {
-      this.router.navigate(['/private/superadmins/driver-detail/' + id]);
+      this.router.navigate(['/private/superadmins/driver-detail/' , id]);
     }
 
     delete(assoc_id) {
@@ -143,6 +143,10 @@ export class DriverAllComponent implements OnInit {
         }
       })
     }
-  
+    completeProfil(step_number){
+     
+      this.router.navigate(['/private/superadmins/driver-add/' , step_number]);
+
+   }
 
 }
