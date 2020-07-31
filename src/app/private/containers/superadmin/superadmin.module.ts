@@ -9,6 +9,7 @@ import { IndexComponent } from './containers/index/index.component';
 import { TransporterAddComponent} from './containers/transporteur/transporter-add/transporter-add.component';
 import { EnginAllComponent} from './containers/engin/engin-all/engin-all.component';
 import { DriverAddComponent} from './containers/driver/driver-add/driver-add.component';
+import { DriverUpdateComponent} from './containers/driver/driver-update/driver-update.component';
 import { EnginAddComponent} from './containers/engin/engin-add/engin-add.component';
 import { DriverAllComponent} from './containers/driver/driver-all/driver-all.component';
 import { DriverDetailsComponent} from './containers/driver/driver-details/driver-details.component';
@@ -42,6 +43,7 @@ import { from } from 'rxjs';
     TypeComponent,
     TypeIntervenantComponent,
     DriverAddComponent,
+    DriverUpdateComponent,
     TransportElementComponent,
    // AddTransportElementComponent,
     ListTransportElementsComponent,
