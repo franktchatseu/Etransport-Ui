@@ -7,6 +7,7 @@ import { NavBarComponent } from './containers/index/nav-bar/nav-bar.component';
 import { LeftSideComponent } from './containers/index/left-side/left-side.component';
 import { IndexComponent } from './containers/index/index.component';
 import { EnginAllComponent} from './containers/engin/engin-all/engin-all.component';
+import { EnginDetailComponent} from './containers/engin/engin-detail/engin-detail.component';
 import { DriverAddComponent} from './containers/driver/driver-add/driver-add.component';
 import { DriverAllComponent} from './containers/driver/driver-all/driver-all.component';
 import { DriverDetailsComponent} from './containers/driver/driver-details/driver-details.component';
@@ -38,6 +39,7 @@ import { ListTransportElementsComponent } from "./containers/element-transport/l
     NationaliteComponent,
     TypeComponent,
     TypeIntervenantComponent,
+    EnginDetailComponent,
     DriverAddComponent,
     TransportElementComponent,
    // AddTransportElementComponent,
