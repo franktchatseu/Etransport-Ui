@@ -11,6 +11,7 @@ import { CarosserieComponent } from './containers/parametres/carosserie/carosser
 import { DriverAddComponent} from './containers/driver/driver-add/driver-add.component';
 import { DriverAllComponent } from "./containers/driver/driver-all/driver-all.component";
 import { DriverDetailsComponent} from './containers/driver/driver-details/driver-details.component';
+import { TransporterAddComponent} from './containers/transporteur/transporter-add/transporter-add.component';
 
 
 import { EnginAddComponent} from './containers/engin/engin-add/engin-add.component';
@@ -90,10 +91,15 @@ const routes: Routes = [
           },
         ]
       },
-      // {
-      //   path: 'add-element',
-      //   component: AddTransportElementComponent,
-      // },
+      {
+        path: 'transporter',
+        children: [
+          {
+            path: 'transporter-add',
+            component: TransporterAddComponent,
+          }
+        ]
+      }
     ]
   }
 ];

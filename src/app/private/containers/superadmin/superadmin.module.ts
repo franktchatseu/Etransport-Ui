@@ -6,6 +6,7 @@ import { TranslateModule } from '@ngx-translate/core';
 import { NavBarComponent } from './containers/index/nav-bar/nav-bar.component';
 import { LeftSideComponent } from './containers/index/left-side/left-side.component';
 import { IndexComponent } from './containers/index/index.component';
+import { TransporterAddComponent} from './containers/transporteur/transporter-add/transporter-add.component';
 import { EnginAllComponent} from './containers/engin/engin-all/engin-all.component';
 import { DriverAddComponent} from './containers/driver/driver-add/driver-add.component';
 import { EnginAddComponent} from './containers/engin/engin-add/engin-add.component';
@@ -22,6 +23,7 @@ import { TypeIntervenantComponent } from "./containers/parametres/type-intervena
 import { TransportElementComponent } from "./containers/element-transport/transport-element/transport-element.component";
 //import { AddTransportElementComponent } from "src/app/private/containers/superadmin/containers/element-transport/add-transport-element/add-transport-element.component";
 import { ListTransportElementsComponent } from "./containers/element-transport/list-transport-elements/list-transport-elements.component";
+import { from } from 'rxjs';
 
 @NgModule({
   declarations: [
@@ -43,7 +45,8 @@ import { ListTransportElementsComponent } from "./containers/element-transport/l
     TransportElementComponent,
    // AddTransportElementComponent,
     ListTransportElementsComponent,
-    EnginAddComponent
+    EnginAddComponent,
+    TransporterAddComponent,
   ],
   imports: [
     CommonModule,
