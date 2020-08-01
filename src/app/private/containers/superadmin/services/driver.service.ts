@@ -10,10 +10,10 @@ export class DriverService {
 
   constructor(private http: HttpClient) { }
 
-  public getDrivers() {
-    return this.http.get<any>(`${config.apiUrl}/module2/general_informations`)
-      .pipe(map(data => data));
-  }
+    public getDrivers() {
+        return this.http.get<any>(`${config.apiUrl}/module2/general_informations/allWithName`)
+          .pipe(map(data => data));
+      }
 
   public getPage(url) {
     return this.http.get<any>(`${url}`)

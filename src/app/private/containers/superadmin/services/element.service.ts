@@ -12,15 +12,15 @@ export class ElementService {
   constructor(private http: HttpClient) { }
 
   getEnterprise1(id: number): Promise<any> {
-    return this.http.get<any>(`${config.apiUrl}/Module1/info_entreprise_one/${id}`).toPromise();
+    return this.http.get<any>(`${config.apiUrl}/module1/info_entreprise_one/${id}`).toPromise();
   }
 
   getEnterprise2(id: number): Promise<any> {
-    return this.http.get<any>(`${config.apiUrl}/Module1/info_entreprise_two/${id}`).toPromise();
+    return this.http.get<any>(`${config.apiUrl}/module1/info_entreprise_two/${id}`).toPromise();
   }
 
   getDocPersos(id: number): Promise<any> {
-    return this.http.get<any>(`${config.apiUrl}/Module1/personalcomputingspecial/${id}`).toPromise();
+    return this.http.get<any>(`${config.apiUrl}/module1/personalcomputingspecial/${id}`).toPromise();
   }
 
 }
