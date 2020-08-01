@@ -8,6 +8,8 @@ import { LeftSideComponent } from './containers/index/left-side/left-side.compon
 import { IndexComponent } from './containers/index/index.component';
 import { TransporterAddComponent} from './containers/transporteur/transporter-add/transporter-add.component';
 import { EnginAllComponent} from './containers/engin/engin-all/engin-all.component';
+import { ElementTransportDetailComponent} from './containers/element-transport/element-transport-detail/element-transport-detail.component';
+import { EnginDetailComponent} from './containers/engin/engin-detail/engin-detail.component';
 import { DriverAddComponent} from './containers/driver/driver-add/driver-add.component';
 import { DriverUpdateComponent} from './containers/driver/driver-update/driver-update.component';
 import { EnginAddComponent} from './containers/engin/engin-add/engin-add.component';
@@ -42,6 +44,8 @@ import { from } from 'rxjs';
     NationaliteComponent,
     TypeComponent,
     TypeIntervenantComponent,
+    EnginDetailComponent,
+    ElementTransportDetailComponent,
     DriverAddComponent,
     DriverUpdateComponent,
     TransportElementComponent,
