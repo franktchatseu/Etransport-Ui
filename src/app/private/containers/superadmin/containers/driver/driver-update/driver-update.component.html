@@ -3,7 +3,7 @@
 </button>
 
 <mat-horizontal-stepper linear #stepper [selectedIndex]="currentStepper">
-    <mat-step [stepControl]="step1Form" [editable]="isEditable">
+    <mat-step [stepControl]="step1Form" [optional]="true">
         <form class="example-form" [formGroup]="step1Form">
             <ng-template matStepLabel>Informations Generale</ng-template>
             <div class="row">
@@ -103,7 +103,7 @@
             </div>
         </form>
     </mat-step>
-    <mat-step [stepControl]="step2Form">
+    <mat-step [stepControl]="step2Form" [optional]="true">
         <form class="example-form" [formGroup]="step2Form">
             <ng-template matStepLabel>Information sur le Permis</ng-template>
             <div class="row">
@@ -138,7 +138,7 @@
             </div>
         </form>
     </mat-step>
-    <mat-step [stepControl]="step3Form">
+    <mat-step [stepControl]="step3Form" [optional]="true">
         <form class="example-form" [formGroup]="step3Form">
             <ng-template matStepLabel>Information Piece identite</ng-template>
             <div class="row">
@@ -191,7 +191,7 @@
             </div>
         </form>
     </mat-step>
-    <mat-step [stepControl]="step4Form">
+    <mat-step [stepControl]="step4Form" [optional]="true">
         <form class="example-form" [formGroup]="step4Form">
             <ng-template matStepLabel>Formations</ng-template>
             <div class="row">

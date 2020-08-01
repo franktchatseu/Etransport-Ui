@@ -19,10 +19,12 @@ import { EnginAddComponent} from './containers/engin/engin-add/engin-add.compone
 
 import { EnginDetailComponent} from './containers/engin/engin-detail/engin-detail.component';
 import { EnginAllComponent} from './containers/engin/engin-all/engin-all.component';
-import { TransportElementComponent } from './containers/element-transport/transport-element/transport-element.component';
-import { ListTransportElementsComponent } from './containers/element-transport/list-transport-elements/list-transport-elements.component';
+
 //import { AddTransportElementComponent } from './containers/element-transport/add-transport-element/add-transport-element.component';
 import { ElementTransportDetailComponent} from './containers/element-transport/element-transport-detail/element-transport-detail.component';
+import { TransportElementComponent } from './containers/element-transport/transport-element/transport-element.component';
+import { ListTransportElementsComponent } from './containers/element-transport/list-transport-elements/list-transport-elements.component';
+import { AddTransportElementComponent } from './containers/element-transport/add-transport-element/add-transport-element.component';
 
 const routes: Routes = [
   {
@@ -114,7 +116,11 @@ const routes: Routes = [
             component: TransporterAddComponent,
           }
         ]
-      }
+      },
+      {
+        path: 'add-element',
+        component: AddTransportElementComponent,
+      },
     ]
   }
 ];

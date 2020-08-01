@@ -97,7 +97,7 @@ export class DriverAllComponent implements OnInit {
     }
 
     update(id) {
-      this.router.navigate(['/private/superadmins/driver/update/' + id]);
+      this.router.navigate(['/private/superadmins/driver-update/' + id]);
     }
 
     detail(id) {
