@@ -59,7 +59,7 @@ export class AddTransportElementComponent implements OnInit {
       description: [obj.description, Validators.required],
       type_id: [obj.type_id, Validators.required],
       localisation: [obj.localisation, Validators.required],
-      phone1: [obj.phone1, [Validators.pattern(phone_patern)]],
+      phone1: [obj.phone1],
       phone2: [obj.phone2],
       email: [obj.email,Validators.required],
       function: [obj.function, Validators.required],
@@ -107,8 +107,8 @@ export class AddTransportElementComponent implements OnInit {
         console.log(resp);
         this.notificationService.success(this.translations.Superadmins.DoneWithSuccess);
         this.isSubmitted = false;
-       // this.initForm({ name: '', description: '', type_id: '', localisation: '', phone1: '', phone2: '', email: '', function: '', presentation_file: '' });
-       this.createForm.reset();
+        this.initForm({ name: '', description: '', type_id: '', localisation: '', phone1: '', phone2: '', email: '', function: '', presentation_file: '' });
+      //  this.createForm.reset();
       })
       .catch(err => {
         this.errors = err.error.errors;
@@ -119,40 +119,40 @@ export class AddTransportElementComponent implements OnInit {
       });
   }
 
-  // update() {
-  //   this.isSubmitted = true;
-  //   this.isError = false;
-  //   this.isSuccess = false;
-  //   this.isLoading = false
-  //   if (this.form.invalid) {
-  //     this.notificationService.danger(this.translations.Superadmins.AllFieldsAreRequired);
-  //   }
+  update() {
+    this.isSubmitted = true;
+    this.isError = false;
+    this.isSuccess = false;
+    this.isLoading = false
+    if (this.form.invalid) {
+      this.notificationService.danger(this.translations.Superadmins.AllFieldsAreRequired);
+    }
 
-  //   this.isLoading = true;
-  //   const formData = new FormData();
-  //   const data = this.form;
-  //   for (const k in data) {
-  //     if (k) {
-  //       formData.append(k + '', data[k].value);
-  //     }
-  //   }
-  //   this.dataService.put(this.active.id, formData)
-  //     .then(resp => {
-  //       console.log(resp);
-  //       this.notificationService.success(this.translations.Superadmins.DoneWithSuccess);
-  //       this.isSubmitted = false;
-  //       this.initForm({color: '', description: ''});
-  //       this.active = null;
-  //       this.gets(this.page);
-  //     })
-  //     .catch(err => {
-  //       this.errors = err.error.errors;
-  //       this.handleError = err.error.errors;
-  //     })
-  //     .finally(() => {
-  //       this.isLoading = false;
-  //     });
-  // }
+    this.isLoading = true;
+    const formData = new FormData();
+    const data = this.form;
+    for (const k in data) {
+      if (k) {
+        if (k === 'presentation_file') { formData.append(k + '', this.file, data[k].value); }
+        else { formData.append(k + '', data[k].value); }
+      }
+    }
+    this.dataService.put(this.active.id, formData)
+      .then(resp => {
+        console.log(resp);
+        this.notificationService.success(this.translations.Superadmins.DoneWithSuccess);
+        this.isSubmitted = false;
+        this.initForm({ name: '', description: '', type_id: '', localisation: '', phone1: '', phone2: '', email: '', function: '', presentation_file: '' });
+        this.active = null;
+      })
+      .catch(err => {
+        this.errors = err.error.errors;
+        this.handleError = err.error.errors;
+      })
+      .finally(() => {
+        this.isLoading = false;
+      });
+  }
 
   activate(item) {
     this.detail = null;

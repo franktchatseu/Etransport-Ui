@@ -10,7 +10,6 @@ import { ModeleComponent } from './containers/parametres/modele/modele.component
 import { CarosserieComponent } from './containers/parametres/carosserie/carosserie.component';
 import { DriverAddComponent} from './containers/driver/driver-add/driver-add.component';
 import { DriverAllComponent } from "./containers/driver/driver-all/driver-all.component";
-
 import { TransportElementComponent } from './containers/element-transport/transport-element/transport-element.component';
 import { ListTransportElementsComponent } from './containers/element-transport/list-transport-elements/list-transport-elements.component';
 import { AddTransportElementComponent } from './containers/element-transport/add-transport-element/add-transport-element.component';

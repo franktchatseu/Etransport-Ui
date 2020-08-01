@@ -17,21 +17,40 @@
     <div class="col-md-12">
         <div class="tabs-animation">
             <div class="main-card mb-3 card">
-                <div class="card-header">
-                    <i class="header-icon pe-7s-shield icon-gradient bg-love-kiss"> </i>
-                    Element de Transport
-                </div>
                 <div class="card-body">
                     <div class="row">
                         <div class="col-md-12">
                             <div class="main-card mb-3 card">
                                 <div class="card-body">
                                     <form [formGroup]="createForm" (submit)="create()">
+                                        <ng-template matStepLabel>Element de Transport</ng-template>
                                         <div class="form-row form-container-css">
                                             <div class="row">
+                                                <div class="col-md-10">
+                                                    <mat-form-field class="example-full-width">
+                                                        <mat-label>Nom</mat-label>
+                                                        <input matInput placeholder="Entrez un nom " formControlName="name" required>
+                                                    </mat-form-field>
+                                
+                                                </div>
+                                                <div class="col-md-10">
+                                                    <mat-form-field class="example-full-width">
+                                                        <mat-label>Type d'intervenant</mat-label>
+                                                        <mat-select formControlName="type_id">
+                                                            <mat-option *ngFor="let type of types?.data"
+                                                            value="{{ type.id }}" title="{{ type.description }}">
+                                                            {{ type.name }}
+                                                            </mat-option>
+                                                        </mat-select>                                                       
+                                                    </mat-form-field>
+                                
+                                                </div>
+                                
+                                            </div>
+                                            <!-- <div class="row">
                                                 <div class="col-md-12">
                                                     <div class="position-relative form-group">
-                                                        <label for="exampleEmail" class="">Nom</label>
+                                                        <label for="exampleEmail" class=""></label>
                                                         <input name="name" placeholder="Entrez un Nom" type="text"
                                                             class="form-control {{ form.name.errors && isSubmitted ? 'invalid': '' }}"
                                                             formControlName="name">
@@ -56,8 +75,23 @@
                                                         </small>
                                                     </div>
                                                 </div>
-                                            </div>
+                                            </div> -->
                                             <div class="row">
+                                                <div class="col-md-10">
+                                                    <mat-form-field class="example-full-width">
+                                                        <mat-label>Description</mat-label>
+                                                        <textarea matInput placeholder="Entrez une description" formControlName="description" required></textarea>
+                                                    </mat-form-field>
+                                                </div>
+                                                <div class="col-md-10">
+                                                    <mat-form-field class="example-full-width">
+                                                        <mat-label>Fonction</mat-label>
+                                                        <textarea matInput placeholder="entrez une fonction" formControlName="function" required></textarea>
+                                                        <!-- <input matInput placeholder="Last name, First name" formControlName="adresse" required> -->
+                                                    </mat-form-field>
+                                                </div>                     
+                                            </div>
+                                            <!-- <div class="row">
                                                 <div class="col-md-12">
                                                     <div class="position-relative form-group"><label for="exampleEmail"
                                                             class="">Description</label>
@@ -84,8 +118,22 @@
                                                         </small>
                                                     </div>
                                                 </div>
-                                            </div>
+                                            </div> -->
                                             <div class="row">
+                                                <div class="col-md-10">
+                                                    <mat-form-field class="example-full-width">
+                                                        <mat-label>Localisation</mat-label>
+                                                        <input matInput placeholder="Entrez une localisation" formControlName="localisation" required>
+                                                    </mat-form-field>
+                                                </div>
+                                                <div class="col-md-10">
+                                                    <mat-form-field class="example-full-width">
+                                                        <mat-label>Email</mat-label>
+                                                        <input matInput placeholder="Entrez une email" formControlName="email" required>
+                                                    </mat-form-field>
+                                                </div>                     
+                                            </div>
+                                            <!-- <div class="row">
                                                 <div class="col-md-7">
                                                     <div class="position-relative form-group">
                                                         <label for="exampleEmail" class="">Localisation</label>
@@ -112,9 +160,25 @@
                                                         </small>
                                                     </div>
                                                 </div>
-                                            </div>
-
+                                            </div> -->
                                             <div class="row">
+                                                <div class="col-md-10">
+                                                    <mat-form-field class="example-full-width">
+                                                        <mat-label>Telephone 1</mat-label>
+                                                        <span matPrefix>+1 &nbsp;</span>
+                                                        <input type="tel" formControlName="phone1" matInput placeholder="555-555-1234">
+                                                    </mat-form-field>
+                                
+                                                </div>
+                                                <div class="col-md-6">
+                                                    <mat-form-field class="example-full-width">
+                                                        <mat-label>Telephone 2</mat-label>
+                                                        <span matPrefix>+1 &nbsp;</span>
+                                                        <input type="tel" formControlName="phone2" matInput placeholder="555-555-1234">
+                                                    </mat-form-field>
+                                                </div>
+                                            </div>                                      
+                                            <!-- <div class="row">
                                                 <div class="col-md-6">
                                                     <div class="position-relative form-group">
                                                         <label for="exampleEmail" class="">Tel 1:</label>
@@ -141,8 +205,18 @@
                                                         </small>
                                                     </div>
                                                 </div>
-                                            </div>
-
+                                            </div> -->
+                                            <!-- <div class="row">
+                                                <div class="col-md-10">
+                                                    <input type="file" id="userFile" (change)="onSelectfile($event)" #fileInputAvatar
+                                                        style="display: none">
+                                                    <mat-form-field class="example-full-width">
+                                                        <input matInput formControlName="avatar" placeholder="Fichier" readonly>
+                                                    </mat-form-field>
+                                                    <button mat-button (click)="selectFileAvatar()">Selectionner</button>
+                                                </div>
+                                
+                                            </div> -->
                                             <div class="col-md-12" *ngIf="active == null">
                                                 <div class="position-relative form-group"><label for="exampleEmail"
                                                         class="">Fiche de presentation</label>
