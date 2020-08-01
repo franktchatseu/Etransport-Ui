@@ -1,11 +1,11 @@
 import { Component, OnInit } from '@angular/core';
-import { InternationalizationService } from 'src/app/services/features/internationalization.service';
-import { AuthService } from 'src/app/auth/services/auth.service';
+import { InternationalizationService } from '../../../../../../services/features/internationalization.service';
+import { AuthService } from '../../../../../../auth/services/auth.service';
 import { Router } from '@angular/router';
-import { NotificationService } from 'src/app/services/notification.service';
+import { NotificationService } from '../../../../../..//services/notification.service';
 import { FormBuilder, Validators, FormGroup } from '@angular/forms';
-import { Lang } from 'src/app/services/config/lang';
-import { MarqueService } from "src/app/services/parametre/marque/marque.service";
+import { Lang } from '../../../../../../services/config/lang';
+import { MarqueService } from "../../../../../../services/parametre/marque/marque.service";
 
 @Component({
   selector: 'app-marque',
