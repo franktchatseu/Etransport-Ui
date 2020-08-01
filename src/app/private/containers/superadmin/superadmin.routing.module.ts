@@ -88,7 +88,7 @@ const routes: Routes = [
         component: CarosserieComponent,
       },
       {
-        path: 'element',
+        path: 'update-element/:id',
         component: TransportElementComponent,
       },
       {

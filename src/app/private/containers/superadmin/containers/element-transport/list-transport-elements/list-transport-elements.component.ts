@@ -22,7 +22,6 @@ export class ListTransportElementsComponent implements OnInit {
   handleError: any = null;
   page: any = 1;
   active: any = null;
-  detail: any = null;
   toShow: any = null;
 
   loading = false;
@@ -83,17 +82,15 @@ export class ListTransportElementsComponent implements OnInit {
     }
   }
 
-  showDetails(item: any) {
-
-
-    this.detail = item;
+  update(id) {
+    this.router.navigate(['/private/superadmins/update-element/' + id]);
   }
 
-  Visualize(value) {
-    this.toShow = value;
-    window.open(value);
+  detail(id) {
+    this.router.navigate(['/private/superadmins/element-detail/' , id]);
   }
 
+  
   getPartOfcontent(content: string): string {
     return (content.length < 50)? content: (content.substr(0,50) + '...');
   }

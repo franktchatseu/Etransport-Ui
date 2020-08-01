@@ -47,9 +47,12 @@ export class AddTransportElementComponent implements OnInit {
   ) { }
 
   ngOnInit() {
+
     this.user = this.authService.getUserInfos();
     this.initForm({ name: '', description: '', type_id: '', localisation: '', phone1: '', phone2: '', email: '', function: '', presentation_file: '' });
     this.getTypes();
+    this.notificationService.success(this.translations.Superadmins.DoneWithSuccess);
+
   }
 
   initForm(obj) {
@@ -85,6 +88,8 @@ export class AddTransportElementComponent implements OnInit {
   }
 
   create() {
+    this.notificationService.success(this.translations.Superadmins.DoneWithSuccess);
+
     this.isSubmitted = true;
     this.isError = false;
     this.isSuccess = false;
@@ -105,7 +110,6 @@ export class AddTransportElementComponent implements OnInit {
     this.dataService.post(formData)
       .then(resp => {
         console.log(resp);
-        this.notificationService.success(this.translations.Superadmins.DoneWithSuccess);
         this.isSubmitted = false;
         this.initForm({ name: '', description: '', type_id: '', localisation: '', phone1: '', phone2: '', email: '', function: '', presentation_file: '' });
       //  this.createForm.reset();
@@ -113,47 +117,14 @@ export class AddTransportElementComponent implements OnInit {
       .catch(err => {
         this.errors = err.error.errors;
         this.handleError = err.error.errors;
+        this.isLoading = false;
       })
       .finally(() => {
         this.isLoading = false;
       });
   }
 
-  update() {
-    this.isSubmitted = true;
-    this.isError = false;
-    this.isSuccess = false;
-    this.isLoading = false
-    if (this.form.invalid) {
-      this.notificationService.danger(this.translations.Superadmins.AllFieldsAreRequired);
-    }
-
-    this.isLoading = true;
-    const formData = new FormData();
-    const data = this.form;
-    for (const k in data) {
-      if (k) {
-        if (k === 'presentation_file') { formData.append(k + '', this.file, data[k].value); }
-        else { formData.append(k + '', data[k].value); }
-      }
-    }
-    this.dataService.put(this.active.id, formData)
-      .then(resp => {
-        console.log(resp);
-        this.notificationService.success(this.translations.Superadmins.DoneWithSuccess);
-        this.isSubmitted = false;
-        this.initForm({ name: '', description: '', type_id: '', localisation: '', phone1: '', phone2: '', email: '', function: '', presentation_file: '' });
-        this.active = null;
-      })
-      .catch(err => {
-        this.errors = err.error.errors;
-        this.handleError = err.error.errors;
-      })
-      .finally(() => {
-        this.isLoading = false;
-      });
-  }
-
+ 
   activate(item) {
     this.detail = null;
     this.active = item;
@@ -167,7 +138,7 @@ export class AddTransportElementComponent implements OnInit {
 
   cancel() {
     this.active = null;
-    this.initForm({color: '', description: ''});
+    this.initForm({ name: '', description: '', type_id: '', localisation: '', phone1: '', phone2: '', email: '', function: '', presentation_file: '' });
   }
 
 
