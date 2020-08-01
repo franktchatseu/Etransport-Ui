@@ -10,17 +10,17 @@ export class MarqueService {
   constructor(private http: HttpClient) {}
 
   async post(formData): Promise<any> {
-    return await this.http.post(`${config.apiUrl}/Module3/marks`, formData).toPromise();
+    return await this.http.post(`${config.apiUrl}/module3/marks`, formData).toPromise();
   }
 
   public async put(id: number, formData): Promise<any> {
     return await this.http
-        .post(`${config.apiUrl}/Module3/marks/${id}`, formData)
+        .post(`${config.apiUrl}/module3/marks/${id}`, formData)
         .toPromise();
   }
 
   public gets(page) {
-    return this.http.get<any>(`${config.apiUrl}/Module3/marks?page=${page}`)
+    return this.http.get<any>(`${config.apiUrl}/module3/marks?page=${page}`)
       .toPromise();
   }
 
@@ -31,7 +31,7 @@ export class MarqueService {
 
   public async delete(id) {
     return await this.http
-        .delete(`${config.apiUrl}/Module3/marks/${id}`)
+        .delete(`${config.apiUrl}/module3/marks/${id}`)
         .toPromise();
   }
 

@@ -106,7 +106,7 @@ export class DriverUpdateComponent implements OnInit {
     ).catch(
       error => {
         this.translate.get("aucun permis enregistre")
-          .subscribe(val => this.notificationService.danger(val));
+          .subscribe(val => this.notificationService.warning(val));
 
       }
     )
@@ -120,7 +120,7 @@ export class DriverUpdateComponent implements OnInit {
     ).catch(
       error => {
         this.translate.get("aucune information principale enregistrees")
-          .subscribe(val => this.notificationService.danger(val));
+          .subscribe(val => this.notificationService.warning(val));
 
       }
     )
@@ -134,7 +134,7 @@ export class DriverUpdateComponent implements OnInit {
     ).catch(
       error => {
         this.translate.get("aucune formation enregistrée")
-          .subscribe(val => this.notificationService.danger(val));
+          .subscribe(val => this.notificationService.warning(val));
 
       }
     )
@@ -149,7 +149,7 @@ export class DriverUpdateComponent implements OnInit {
     ).catch(
       error => {
         this.translate.get("aucun document identite")
-          .subscribe(val => this.notificationService.danger(val));
+          .subscribe(val => this.notificationService.warning(val));
 
       }
     )

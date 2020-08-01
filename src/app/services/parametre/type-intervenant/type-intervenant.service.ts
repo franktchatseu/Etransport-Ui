@@ -10,17 +10,17 @@ export class TypeIntervenantService {
   constructor(private http: HttpClient) {}
 
   async post(formData): Promise<any> {
-    return await this.http.post(`${config.apiUrl}/Module4/actorType`, formData).toPromise();
+    return await this.http.post(`${config.apiUrl}/module4/actorType`, formData).toPromise();
   }
 
   public async put(id: number, formData): Promise<any> {
     return await this.http
-        .post(`${config.apiUrl}/Module4/actorType/${id}`, formData)
+        .post(`${config.apiUrl}/module4/actorType/${id}`, formData)
         .toPromise();
   }
 
   public gets(page) {
-    return this.http.get<any>(`${config.apiUrl}/Module4/actorType?page=${page}`)
+    return this.http.get<any>(`${config.apiUrl}/module4/actorType?page=${page}`)
       .toPromise();
   }
 
@@ -31,7 +31,7 @@ export class TypeIntervenantService {
 
   public async delete(id) {
     return await this.http
-        .delete(`${config.apiUrl}/Module4/actorType/${id}`)
+        .delete(`${config.apiUrl}/module4/actorType/${id}`)
         .toPromise();
   }
 

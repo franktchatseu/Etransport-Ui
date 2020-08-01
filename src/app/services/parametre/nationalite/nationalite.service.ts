@@ -10,17 +10,17 @@ export class NationaliteService {
   constructor(private http: HttpClient) {}
 
   async post(formData): Promise<any> {
-    return await this.http.post(`${config.apiUrl}/Module2/nationalities`, formData).toPromise();
+    return await this.http.post(`${config.apiUrl}/module2/nationalities`, formData).toPromise();
   }
 
   public async put(id: number, formData): Promise<any> {
     return await this.http
-        .post(`${config.apiUrl}/Module2/nationalities/${id}`, formData)
+        .post(`${config.apiUrl}/module2/nationalities/${id}`, formData)
         .toPromise();
   }
 
   public gets(page) {
-    return this.http.get<any>(`${config.apiUrl}/Module2/nationalities?page=${page}`)
+    return this.http.get<any>(`${config.apiUrl}/module2/nationalities?page=${page}`)
       .toPromise();
   }
 
@@ -31,7 +31,7 @@ export class NationaliteService {
 
   public async delete(id) {
     return await this.http
-        .delete(`${config.apiUrl}/Module2/nationalities/${id}`)
+        .delete(`${config.apiUrl}/module2/nationalities/${id}`)
         .toPromise();
   }
 
