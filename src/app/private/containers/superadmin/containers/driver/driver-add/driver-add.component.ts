@@ -5,6 +5,7 @@ import { STEPPER_GLOBAL_OPTIONS } from '@angular/cdk/stepper';
 import { MatSnackBar } from '@angular/material';
 import { DriverService } from '../../../services/driver.service';
 import { Router, ActivatedRoute } from '@angular/router';
+import { NotificationService } from 'src/app/services/notification.service';
 @Component({
   selector: 'app-driver-add',
   templateUrl: './driver-add.component.html',
@@ -22,6 +23,7 @@ export class DriverAddComponent implements OnInit {
   fileInformation: any
   fileInformationAvatar: any
 
+  nationalities:any = null;
   //initialisation du stepper
   initStepper: any;
   currentStepper: number;
@@ -41,10 +43,14 @@ export class DriverAddComponent implements OnInit {
   step4Form: FormGroup;
   stepperApi: any;
   picker: any
+  translations: any = null;
+
+
   constructor(
     private formBuilder: FormBuilder,
     private stepperService: StepperService,
     private _snackBar: MatSnackBar,
+    private notificationService: NotificationService,
     private driverService: DriverService,
     private activatedRoute: ActivatedRoute,
     private router: Router
@@ -72,6 +78,7 @@ export class DriverAddComponent implements OnInit {
     }
   }
   ngOnInit(): void {
+    this.getNationalities();
       //recuperation du stepper actif en fonction
       this.currentStepperNumber = this.activatedRoute.snapshot.params['stepper_number'];
       if(this.currentStepperNumber == '0'){
@@ -348,6 +355,15 @@ export class DriverAddComponent implements OnInit {
       },
 
     )
+  }
+
+  getNationalities() {
+    this.driverService.getNationalities().then((response) => {
+      this.nationalities = response;
+      console.log(this.nationalities);
+    }).catch((error) => {
+      this.notificationService.danger(this.translations.Superadmins.ServerUnavailable);
+    });
   }
 
   //reinitialisation

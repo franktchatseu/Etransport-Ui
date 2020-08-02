@@ -36,4 +36,12 @@ export class TransporteurService {
     return this.http.get<any>(`${config.apiUrl}/module1/info_entreprise_two/${id}`).toPromise();
   }
 
+
+  //update entreprise
+  updateinfo1(formData: FormData, id): Promise<any> {
+    return this.http.post<any>(`${config.apiUrl}/module1/info_entreprise_one/${id}`, formData).toPromise();
+  }
+  updateinfo2(formData: FormData, id): Promise<any> {
+    return this.http.post<any>(`${config.apiUrl}/module1/info_entreprise_two/${id}`, formData).toPromise();
+  }
 }

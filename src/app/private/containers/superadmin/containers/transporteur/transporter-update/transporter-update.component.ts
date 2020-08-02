@@ -280,12 +280,11 @@ export class TransporterUpdateComponent implements OnInit {
         formData.append("gear_number", '' + 0);
 
         //ajout des infos generales de utilisateurs
-
-        this.transportService.addInfoGenerale1(formData).then(
+        this.transportService.updateinfo1(formData,this.transporter_stepper_id).then(
           (Response) => {
             console.log(Response)
             //sauvegarde dans le local storage
-            this.openSnackBar("Ajout Reussi", "Etape 1")
+            this.openSnackBar("modification Reussi", "Etape 1")
             console.log("stepper 1 termine");
 
           },
@@ -315,19 +314,29 @@ export class TransporterUpdateComponent implements OnInit {
     formData.append("enterprise_partner", '' + this.drivingPermit.partenaire.value);
     formData.append("enterprise_value", '' + this.drivingPermit.valeur.value);
     formData.append("image", '' + this.drivingPermit.image1.value);
-    // on recupere le stepper id
-    const sept_id = this.stepperService.getStepperId()
-    console.log(sept_id)
-    formData.append("stepper_main_id", '' + sept_id);
 
     //ajout des infos generales de utilisateurs
-    this.transportService.addInfoGenerale2(formData).then(
+    if(this.info2 == null){
+      formData.append("stepper_main_id", '' + this.transporter_stepper_id);
+      this.transportService.addInfoGenerale1(formData).then(
+        (Response) => {
+          console.log(Response)
+          //sauvegarde dans le local storage
+          this.openSnackBar("Modification Reussi", "Etape 2")
+          console.log("stepper 2 termine");
+        },
+        (error) => {
+          console.log(error)
+        },
+  
+      )
+    }
+    this.transportService.updateinfo2(formData,this.transporter_stepper_id).then(
       (Response) => {
         console.log(Response)
         //sauvegarde dans le local storage
-        this.openSnackBar("Ajout Reussi", "Etape 1")
+        this.openSnackBar("Modificatio Reussi", "Etape 2")
         console.log("stepper 2 termine");
-        this.updateStepper();
       },
       (error) => {
         console.log(error)

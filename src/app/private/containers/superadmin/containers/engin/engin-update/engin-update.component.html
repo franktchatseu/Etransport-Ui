@@ -124,7 +124,7 @@
             </div>
 
             <div>
-                <button (click)="addStep1()" mat-button matStepperNext>Next</button>
+                <button class="btn btn-info" (click)="addStep1()" mat-button matStepperNext>Mdifier</button>
             </div>
         </form>
     </mat-step>
@@ -238,8 +238,8 @@
                 </div>
             </div>
             <div>
-                <button mat-button matStepperPrevious>Back</button>
-                <button (click)="addStep2()" mat-button matStepperNext>Next</button>
+                <button class="btn btn-warning" mat-button matStepperPrevious>Back</button>
+                <button class="btn btn-info" (click)="addStep2()" mat-button matStepperNext>Modifier</button>
             </div>
         </form>
     </mat-step>
@@ -308,8 +308,8 @@
                 </div>
             </div>
             <div>
-                <button mat-button matStepperPrevious>Back</button>
-                <button (click)="addStep3()" mat-button matStepperNext>Next</button>
+                <button class="btn btn-warning" mat-button matStepperPrevious>Back</button>
+                <button class="btn btn-info" (click)="addStep3()" mat-button matStepperNext>Modifier</button>
             </div>
         </form>
     </mat-step>
@@ -341,8 +341,8 @@
                 </div>
             </div>
             <div>
-                <button mat-button matStepperPrevious>Back</button>
-                <button (click)="addStep4()" mat-button matStepperNext>Next</button>
+                <button class="btn btn-warning" mat-button matStepperPrevious>Back</button>
+                <button class="btn btn-info" (click)="addStep4()" mat-button matStepperNext>Modifier</button>
             </div>
         </form>
     </mat-step>
@@ -406,8 +406,8 @@
                 </div>
             </div>
             <div>
-                <button mat-button matStepperPrevious>Back</button>
-                <button (click)="addStep5()" mat-button matStepperNext>Next</button>
+                <button class="btn btn-warning" mat-button matStepperPrevious>Back</button>
+                <button class="btn btn-info"(click)="addStep5()" mat-button matStepperNext>Modifier</button>
             </div>
         </form>
     </mat-step>
@@ -415,8 +415,8 @@
         <ng-template matStepLabel>Done</ng-template>
         <p>You are now done.</p>
         <div>
-            <button mat-button matStepperPrevious>Back</button>
-            <button mat-button (click)="reset()">Reset</button>
+            <button class="btn btn-warning" mat-button matStepperPrevious>Back</button>
+            <button class="btn btn-primary" mat-button (click)="reset()">Terminer</button>
         </div>
     </mat-step>
 </mat-horizontal-stepper>
