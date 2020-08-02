@@ -99,7 +99,8 @@ export class EnginAllComponent implements OnInit {
     }
 
     update(id) {
-      this.router.navigate(['/private/superadmins/engin-update/' + id]);
+      console.log("le stepper id est: "+ id)
+      this.router.navigate(['/private/superadmins/engin/engin-update/' + id]);
     }
 
     detail(id) {

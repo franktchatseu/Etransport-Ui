@@ -29,7 +29,7 @@ export class IndexComponent implements OnInit {
     console.log(this.authService.getUserInfos());
     this.isAuthenticated = this.authService.getUserInfos() ? true : false;
     //this.router.navigate(['/private/superadmins']);
-    this.goTo('driver-update/1')
+    this.goTo('transporter/transporter-update')
   }
 
   logout() {

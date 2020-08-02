@@ -23,32 +23,54 @@
         </div>
         <div class="card-body">
 
-            <table style="width: 100%;" id="example2" class="table table-hover table-striped table-bordered">
+            <table style="width: 100%;" id="example1" class="table table-hover table-striped table-bordered">
                 <thead>
                     <tr>
                         <th>#</th>   
                         <th>Nom</th>
-                        <th>Localisations</th>
+                        <th>Email</th>
+                        <th>Localisation</th>
+                        <th>Telephone</th>
                         <th>Description</th>
-                        <th>Date de creation</th>
                         <th>Actions</th>
                     </tr>
                 </thead>
                 <tbody>
                     <tr *ngFor="let element of data?.data ,let i = index" id="tr{{ element.id }}">
-                        <td>{{ i+1 }}</td>
-                        <td style="width: 20%">{{element.name}}</td>
-                        <td style="width: 15%">{{element.localisation}}</td>
-                        <td style="width: 25%">{{element.description}}</td>
-                        <td style="width: 15%">{{element?.created_at| date:'dd-MM-yyyy'}}</td>
-                        <td style="width: 20%">
-                            <button class="mr-2 btn-icon btn-icon-only btn btn-outline-primary" ><i class="pe-7s-pen btn-icon-wrapper"> </i></button>
-                            <button class="mr-2 btn-icon btn-icon-only btn btn-outline-success"><i class="pe-7s-info btn-icon-wrapper"> </i></button>
-                            <button class="mr-2 btn-icon btn-icon-only btn btn-outline-danger"><i class="pe-7s-trash btn-icon-wrapper"> </i></button>
+                        <td style="width:5%">{{ i+1 }}</td>
+                        <td style="width: 10%">{{element.name}}</td>
+                        <td style="width: 10%">{{element.email}}</td>
+                        <td style="width: 15%">{{getPartOfcontent(element.localisation)}}</td>
+                        <td style="width: 10%">{{element.phone1}}</td>
+                        <td style="width: 25%">{{getPartOfcontent(element.description)}}</td>
+                        <td style="width: 25%">
+                            <button class="mr-2 btn-icon btn-icon-only btn btn-outline-primary"
+                            (click)="update(element.id)"><i class="pe-7s-pen btn-icon-wrapper"> </i></button>
+                        <button class="mr-2 btn-icon btn-icon-only btn btn-outline-success"
+                            (click)="detail(element.id)">
+                            <i class="pe-7s-info btn-icon-wrapper"> </i></button>
+                        <button class="mr-2 btn-icon btn-icon-only btn btn-outline-danger"
+                            (click)="delete(element)"><i class="pe-7s-trash btn-icon-wrapper"> </i></button>
                         </td>
                     </tr>
                 </tbody>
-               
+                <tfoot>
+                    <div class="row" style="margin-top: 4%">
+                        <div class="col-md-4"></div>
+                        <div class="col-md-4">
+                            <ul class="pagination">
+                                <li class="paginate_button page-item previous" id="example_previous">
+                                    <a (click)="getPage(data.prev_page_url)" aria-controls="example" data-dt-idx="0"
+                                        tabindex="0" class="page-link">precedent</a>
+                                </li>
+                                <li class="paginate_button page-item next" id="example_next">
+                                    <a (click)="getPage(data.next_page_url)" aria-controls="example" data-dt-idx="7"
+                                        tabindex="0" class="page-link">suivant</a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </tfoot>
             </table>
         </div>
     </div>

@@ -4,8 +4,7 @@ import { Router } from '@angular/router';
 import { NotificationService } from 'src/app/services/notification.service';
 import { Lang } from 'src/app/services/config/lang';
 import { TransportelementService } from "src/app/services/element-transport/transportelement.service";
-
-
+import { BlockUI, NgBlockUI } from 'ng-block-ui';
 
 @Component({
   selector: 'app-list-transport-elements',
@@ -14,7 +13,8 @@ import { TransportelementService } from "src/app/services/element-transport/tran
 })
 export class ListTransportElementsComponent implements OnInit {
 
-
+  loading: boolean = true;
+  @BlockUI() blockUI: NgBlockUI; lockUI: NgBlockUI;
 
 
   data: any = null;
@@ -22,10 +22,8 @@ export class ListTransportElementsComponent implements OnInit {
   handleError: any = null;
   page: any = 1;
   active: any = null;
-  detail: any = null;
   toShow: any = null;
 
-  loading = false;
   isError = false;
   isSuccess = false;
   isSubmitted = false;
@@ -83,16 +81,14 @@ export class ListTransportElementsComponent implements OnInit {
     }
   }
 
-  showDetails(item: any) {
-
-
-    this.detail = item;
+  update(id) {
+    this.router.navigate(['/private/superadmins/update-element/' + id]);
   }
 
-  Visualize(value) {
-    this.toShow = value;
-    window.open(value);
+  detail(id) {
+    this.router.navigate(['/private/superadmins/element-detail/' , id]);
   }
+
 
   getPartOfcontent(content: string): string {
     return (content.length < 50)? content: (content.substr(0,50) + '...');

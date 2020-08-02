@@ -13,10 +13,9 @@ import { DriverUpdateComponent} from './containers/driver/driver-update/driver-u
 import { DriverAllComponent } from "./containers/driver/driver-all/driver-all.component";
 import { DriverDetailsComponent} from './containers/driver/driver-details/driver-details.component';
 import { TransporterAddComponent} from './containers/transporteur/transporter-add/transporter-add.component';
-
-
+import { TransporterUpdateComponent} from './containers/transporteur/transporter-update/transporter-update.component';
 import { EnginAddComponent} from './containers/engin/engin-add/engin-add.component';
-
+import { EnginUpdateComponent} from './containers/engin/engin-update/engin-update.component';
 import { EnginDetailComponent} from './containers/engin/engin-detail/engin-detail.component';
 import { EnginAllComponent} from './containers/engin/engin-all/engin-all.component';
 
@@ -88,7 +87,7 @@ const routes: Routes = [
         component: CarosserieComponent,
       },
       {
-        path: 'element',
+        path: 'update-element/:id',
         component: TransportElementComponent,
       },
       {
@@ -103,6 +102,10 @@ const routes: Routes = [
             component: EnginAddComponent,
           },
           {
+            path: 'engin-update/:id',
+            component: EnginUpdateComponent,
+          },
+          {
             path: 'engin-all',
             component: EnginAllComponent,
           },
@@ -114,6 +117,10 @@ const routes: Routes = [
           {
             path: 'transporter-add',
             component: TransporterAddComponent,
+          },
+          {
+            path: 'transporter-update/:id',
+            component: TransporterUpdateComponent,
           }
         ]
       },

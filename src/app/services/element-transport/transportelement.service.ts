@@ -34,6 +34,10 @@ export class TransportelementService {
       .toPromise();
   }
 
+  find(id: number): Promise<any> {
+    return this.http.get<any>(`${config.apiUrl}/module4/transportElement/${id}`).toPromise();
+  }
+
   public async delete(id) {
     return await this.http
         .delete(`${config.apiUrl}/module4/transportElement/${id}`)

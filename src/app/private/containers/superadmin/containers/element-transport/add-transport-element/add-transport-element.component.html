@@ -217,7 +217,16 @@
                                                 </div>
                                 
                                             </div> -->
-                                            <div class="col-md-12" *ngIf="active == null">
+                                            <div class="row">
+                                                <div class="col-md-10">
+                                                    <input type="file" (change)="onSelectFile($event)" #fileInput style="display: none">
+                                                    <mat-form-field>
+                                                        <input matInput formControlName="presentation_file" placeholder="Fichier" readonly>
+                                                    </mat-form-field>
+                                                    <button type="button" mat-button (click)="selectFile()">Importer une fiche de presentation</button>
+                                                </div>
+                                            </div>
+                                            <!-- <div class="col-md-12" *ngIf="active == null">
                                                 <div class="position-relative form-group"><label for="exampleEmail"
                                                         class="">Fiche de presentation</label>
                                                     <input name="presentation_file"
@@ -231,14 +240,14 @@
                                                     </small>
                                                 </div>
 
-                                            </div>
+                                            </div> -->
                                             <div class="d-flex align-items-center">
-                                                <div class="ml-auto" *ngIf="active == null">
+                                                <div class="ml-auto">
                                                     <input [disabled]="isLoading" type="submit"
                                                         class="btn btn-primary btn-lg"
                                                         value="Ajouter" />
-                                                    <div *ngIf="isLoading" style="padding: 15px; margin-left: 45%;">
-                                                        <div class="ball-rotate">
+                                                    <div *ngIf="isLoading" style="padding: 5px;">
+                                                        <div class="ball-scale-multiple">
                                                             <div style="background-color: white;"></div>
                                                             <div style="background-color: white;"></div>
                                                             <div style="background-color: white;"></div>
