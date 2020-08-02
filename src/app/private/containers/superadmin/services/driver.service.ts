@@ -20,6 +20,12 @@ export class DriverService {
       .pipe(map(data => data));
   }
 
+  public getNationalities() {
+    return this.http.get<any>(`${config.apiUrl}/module2/nationalities`)
+      .toPromise();
+  }
+
+  
   finds(id: number): Promise<any> {
     return this.http.get<any>(`${config.apiUrl}/module2/general_informations/finds/${id}`).toPromise();
   }
