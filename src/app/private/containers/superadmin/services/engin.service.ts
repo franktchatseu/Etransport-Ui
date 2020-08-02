@@ -110,7 +110,6 @@ export class EnginService {
   updateCaractere1(formData: FormData, id): Promise<any> {
     return this.http.post<any>(`${config.apiUrl}/module3/caractere_tech_ones/${id}`, formData).toPromise();
   }
-
   updateCaractere2(formData: FormData, id): Promise<any> {
     return this.http.post<any>(`${config.apiUrl}/module3/caractertechtwos/${id}`, formData).toPromise();
   }

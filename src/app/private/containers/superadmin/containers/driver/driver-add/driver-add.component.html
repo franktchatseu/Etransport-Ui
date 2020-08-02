@@ -13,7 +13,7 @@
                     <mat-form-field class="example-full-width">
                         <input matInput formControlName="avatar" placeholder="Fichier" readonly>
                     </mat-form-field>
-                    <button mat-button (click)="selectFileAvatar()">Selectionner</button>
+                    <button mat-button (click)="selectFileAvatar()">Choisir la photo</button>
                 </div>
 
             </div>
@@ -114,7 +114,7 @@
             </div>
 
             <div>
-                <button (click)="addStep1()" mat-button matStepperNext>Next</button>
+                <button class="btn btn-success" (click)="addStep1()" mat-button matStepperNext>Enregistrer</button>
             </div>
         </form>
     </mat-step>
@@ -148,8 +148,7 @@
                 </div>
             </div>
             <div>
-                <button mat-button matStepperPrevious>Back</button>
-                <button (click)="addStep2()" mat-button matStepperNext>Next</button>
+                <button (click)="addStep2()" mat-button matStepperNext>Enregistrer</button>
             </div>
         </form>
     </mat-step>
@@ -201,8 +200,7 @@
                 </div>
             </div>
             <div>
-                <button mat-button matStepperPrevious>Back</button>
-                <button (click)="addStep3()" mat-button matStepperNext>Next</button>
+                <button class="btn btn-success" (click)="addStep3()" mat-button matStepperNext>Enregistrer</button>
             </div>
         </form>
     </mat-step>
@@ -228,17 +226,15 @@
                 </div>
             </div>
             <div>
-                <button mat-button matStepperPrevious>Back</button>
-                <button (click)="addStep4()" mat-button matStepperNext>Next</button>
+                <button class="btn btn-success" (click)="addStep4()" mat-button matStepperNext>Enregistrer</button>
             </div>
         </form>
     </mat-step>
     <mat-step>
         <ng-template matStepLabel>Done</ng-template>
-        <p>You are now done.</p>
+        <p class="finish"> Good. enregistrement de tout les informations de engin effectuees avec sucess.</p>
         <div>
-            <button mat-button matStepperPrevious>Back</button>
-            <button mat-button (click)="reset()">Reset</button>
+            <button class="btn btn-primary" mat-button (click)="reset()">Terminer</button>
         </div>
     </mat-step>
 </mat-horizontal-stepper>

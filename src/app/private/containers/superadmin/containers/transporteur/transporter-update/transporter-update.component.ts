@@ -4,7 +4,9 @@ import { StepperMainService } from 'src/app/services/stepper/stepper_main.servic
 import { STEPPER_GLOBAL_OPTIONS } from '@angular/cdk/stepper';
 import { MatSnackBar } from '@angular/material';
 import { TransporteurService} from '../../../services/transporteur.service';
-import { Router } from '@angular/router';
+import { Router, ActivatedRoute } from '@angular/router';
+import { NotificationService } from 'src/app/services/notification.service';
+import { TranslateService } from '@ngx-translate/core';
 
 @Component({
   selector: 'app-transporter-update',
@@ -52,13 +54,20 @@ export class TransporterUpdateComponent implements OnInit {
   step4Form: FormGroup;
   stepperApi: any;
   picker: any
+
+  //mes datas pour entreprise
+  transporter_stepper_id: any;
+  info1: any;
+  info2: any;
   constructor(
     private formBuilder: FormBuilder,
     private stepperService: StepperMainService,
     private _snackBar: MatSnackBar,
-    private driverService: TransporteurService,
-    private router: Router
-
+    private transportService: TransporteurService,
+    private router: Router,
+    private activatedRoute: ActivatedRoute,
+    private notificationService: NotificationService,
+    private translate: TranslateService,
   ) { }
   onSelectFile1(event) {
     if (event.target.files && event.target.files.length > 0) {
@@ -119,17 +128,37 @@ export class TransporterUpdateComponent implements OnInit {
     this.initStep1();
     this.initStep2();
 
-    //recuperation du stepper actif en fonction
-    const value = +this.stepperService.getValue();
-    if (value == null || value == 0) {
-      this.currentStepper = 0;
-    }
-    else {
-      console.log(value)
-      const number = this.stepperService.getNumber();
-      this.currentStepper = value
-    }
-    
+    //recuperaton du transporteur (entreprise)
+    const engin_step_id = +this.activatedRoute.snapshot.paramMap.get("id");
+    this.transporter_stepper_id = engin_step_id;
+    //recuperation
+    this.transportService.findInfo1(this.transporter_stepper_id).then(
+      data => {
+        this.info1 = data;
+        this.initWithDataStep1()
+        console.log(this.info1)
+      }
+    ).catch(
+      error => {
+        this.translate.get("aucun information principale  enregistree")
+          .subscribe(val => this.notificationService.warning(val));
+
+      }
+    )
+
+    this.transportService.findInfo2(this.transporter_stepper_id).then(
+      data => {
+        this.info2 = data;
+        this.initWithDataStep2()
+        console.log(this.info1)
+      }
+    ).catch(
+      error => {
+        this.translate.get("aucun information secondaire enregistree")
+          .subscribe(val => this.notificationService.warning(val));
+
+      }
+    )
 
   }
   //initialisation des formulaires
@@ -149,6 +178,24 @@ export class TransporterUpdateComponent implements OnInit {
       }
     )
   }
+
+    //initialisation des formulaires
+    initWithDataStep1() {
+      this.step1Form = this.formBuilder.group(
+        {
+          nom_entreprise: [this.info1.name, Validators.required],
+          num_contribuable: [this.info1.taxpayer_number, [Validators.required]],
+          num_rccm: [this.info1.rccm_number, [Validators.required]],
+          adresse_facturation: [this.info1.billing_address, [Validators.required]],
+          nom_respo: [this.info1.manager_name, [Validators.required, Validators.email]],
+          fonction_resp: [this.info1.manager_function, [Validators.required]],
+          tel_respo: [this.info1.manager_phone, [Validators.required]],
+          avatar: [this.info1.manager_picture, [Validators.required]],
+          //nbr_engin: ['', [Validators.required]],
+         // nbr_chauffeur: ['', [Validators.required]],
+        }
+      )
+    }
   //initialisation des formulaires
   initStep2() {
     this.step2Form = this.formBuilder.group(
@@ -168,6 +215,28 @@ export class TransporterUpdateComponent implements OnInit {
         image2: ['', [Validators.required]],
         image3: ['', [Validators.required]],
         image4: ['', [Validators.required]],
+      }
+    )
+  }
+
+  initWithDataStep2() {
+    this.step2Form = this.formBuilder.group(
+      {
+        localisation: [this.info2.localisation, [Validators.required]],
+        telephone1: [this.info2.phone1, [Validators.required]],
+        telephone2: [this.info2.phone2, [Validators.required]],
+        email: [this.info2.email, [Validators.required,Validators.email]],
+        langue: [this.info2.langue, [Validators.required]],
+        description: [this.info2.description_services, [Validators.required]],
+        mission: [this.info2.enterprise_mission, [Validators.required]],
+        ambition: [this.info2.enterprise_ambition, [Validators.required]],
+        heure_ouverture: [this.info2.opening_hours, [Validators.required]],
+        partenaire: [this.info2.enterprise_partner, [Validators.required]],
+        valeur: [this.info2.enterprise_value, [Validators.required]],
+        image1: [this.info2.image, [Validators.required]],
+        image2: [this.info2.image, [Validators.required]],
+        image3: [this.info2.image, [Validators.required]],
+        image4: [this.info2.image, [Validators.required]],
       }
     )
   }
@@ -211,12 +280,11 @@ export class TransporterUpdateComponent implements OnInit {
         formData.append("gear_number", '' + 0);
 
         //ajout des infos generales de utilisateurs
-
-        this.driverService.addInfoGenerale1(formData).then(
+        this.transportService.updateinfo1(formData,this.transporter_stepper_id).then(
           (Response) => {
             console.log(Response)
             //sauvegarde dans le local storage
-            this.openSnackBar("Ajout Reussi", "Etape 1")
+            this.openSnackBar("modification Reussi", "Etape 1")
             console.log("stepper 1 termine");
 
           },
@@ -246,19 +314,29 @@ export class TransporterUpdateComponent implements OnInit {
     formData.append("enterprise_partner", '' + this.drivingPermit.partenaire.value);
     formData.append("enterprise_value", '' + this.drivingPermit.valeur.value);
     formData.append("image", '' + this.drivingPermit.image1.value);
-    // on recupere le stepper id
-    const sept_id = this.stepperService.getStepperId()
-    console.log(sept_id)
-    formData.append("stepper_main_id", '' + sept_id);
 
     //ajout des infos generales de utilisateurs
-    this.driverService.addInfoGenerale2(formData).then(
+    if(this.info2 == null){
+      formData.append("stepper_main_id", '' + this.transporter_stepper_id);
+      this.transportService.addInfoGenerale1(formData).then(
+        (Response) => {
+          console.log(Response)
+          //sauvegarde dans le local storage
+          this.openSnackBar("Modification Reussi", "Etape 2")
+          console.log("stepper 2 termine");
+        },
+        (error) => {
+          console.log(error)
+        },
+  
+      )
+    }
+    this.transportService.updateinfo2(formData,this.transporter_stepper_id).then(
       (Response) => {
         console.log(Response)
         //sauvegarde dans le local storage
-        this.openSnackBar("Ajout Reussi", "Etape 1")
+        this.openSnackBar("Modificatio Reussi", "Etape 2")
         console.log("stepper 2 termine");
-        this.updateStepper();
       },
       (error) => {
         console.log(error)

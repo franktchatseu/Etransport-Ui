@@ -119,7 +119,7 @@ const routes: Routes = [
             component: TransporterAddComponent,
           },
           {
-            path: 'transporter-update',
+            path: 'transporter-update/:id',
             component: TransporterUpdateComponent,
           }
         ]

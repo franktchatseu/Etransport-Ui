@@ -10,9 +10,6 @@ export class TransporteurService {
 
   constructor(private http: HttpClient) { }
 
-   
-
-
 
   delete(id: number) {
     return this.http.delete(`${config.apiUrl}/module2/general_informations/${id}`).toPromise();
@@ -31,4 +28,20 @@ export class TransporteurService {
     return this.http.post<any>(`${config.apiUrl}/module1/formations`, formData).toPromise();
   }
 
+  findInfo1(id: number): Promise<any> {
+    return this.http.get<any>(`${config.apiUrl}/module1/info_entreprise_one/${id}`).toPromise();
+  }
+
+  findInfo2(id: number): Promise<any> {
+    return this.http.get<any>(`${config.apiUrl}/module1/info_entreprise_two/${id}`).toPromise();
+  }
+
+
+  //update entreprise
+  updateinfo1(formData: FormData, id): Promise<any> {
+    return this.http.post<any>(`${config.apiUrl}/module1/info_entreprise_one/${id}`, formData).toPromise();
+  }
+  updateinfo2(formData: FormData, id): Promise<any> {
+    return this.http.post<any>(`${config.apiUrl}/module1/info_entreprise_two/${id}`, formData).toPromise();
+  }
 }
