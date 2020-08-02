@@ -1,10 +1,8 @@
-
-
 <mat-horizontal-stepper linear #stepper [selectedIndex]="currentStepper">
-    <mat-step [stepControl]="step1Form" [editable]="isEditable">
+    <mat-step [stepControl]="step1Form" [optional]="true">
         <form class="example-form" [formGroup]="step1Form">
             <ng-template matStepLabel>Informations Sur Entreprise</ng-template>
-            
+
             <div class="row">
                 <div class="col-md-12">
                     <mat-form-field class="example-full-width">
@@ -33,7 +31,8 @@
                 <div class="col-md-4">
                     <mat-form-field class="example-full-width">
                         <mat-label>Adresse Facturation</mat-label>
-                        <input matInput placeholder="Last name, First name" formControlName="adresse_facturation" required>
+                        <input matInput placeholder="Last name, First name" formControlName="adresse_facturation"
+                            required>
                     </mat-form-field>
                 </div>
             </div>
@@ -66,11 +65,11 @@
                 </div>
             </div>
             <div>
-                <button (click)="addStep1()" mat-button matStepperNext>Next</button>
+                <button class="btn btn-info" (click)="addStep1()" mat-button matStepperNext>Modifier</button>
             </div>
         </form>
     </mat-step>
-    <mat-step [stepControl]="step2Form">
+    <mat-step [stepControl]="step2Form" [optional]="true">
         <form class="example-form" [formGroup]="step2Form">
             <ng-template matStepLabel>Information sur l'entreprise 2</ng-template>
             <div class="row">
@@ -92,8 +91,7 @@
                 <div class="col-md-5">
                     <mat-form-field class="example-full-width">
                         <mat-label>Telephone2 (email)</mat-label>
-                        <input matInput placeholder="Ex. 1 Main St, New York, NY" formControlName="telephone2"
-                            required>
+                        <input matInput placeholder="Ex. 1 Main St, New York, NY" formControlName="telephone2" required>
                     </mat-form-field>
                 </div>
             </div>
@@ -101,8 +99,7 @@
                 <div class="col-md-10">
                     <mat-form-field class="example-full-width">
                         <mat-label>Email </mat-label>
-                        <input matInput placeholder="Ex. 1 Main St, New York, NY" formControlName="email"
-                            required>
+                        <input matInput placeholder="Ex. 1 Main St, New York, NY" formControlName="email" required>
                     </mat-form-field>
                 </div>
             </div>
@@ -110,8 +107,7 @@
                 <div class="col-md-10">
                     <mat-form-field class="example-full-width">
                         <mat-label>Langue </mat-label>
-                        <input matInput placeholder="Ex. 1 Main St, New York, NY" formControlName="langue"
-                            required>
+                        <input matInput placeholder="Ex. 1 Main St, New York, NY" formControlName="langue" required>
                     </mat-form-field>
                 </div>
             </div>
@@ -124,21 +120,12 @@
                     </mat-form-field>
                 </div>
             </div>
-            <div class="row">
-                <div class="col-md-10">
-                    <mat-form-field class="example-full-width">
-                        <mat-label>Description de l'entreprise et service </mat-label>
-                        <input matInput placeholder="Ex. 1 Main St, New York, NY" formControlName="description"
-                            required>
-                    </mat-form-field>
-                </div>
-            </div>
+
             <div class="row">
                 <div class="col-md-10">
                     <mat-form-field class="example-full-width">
                         <mat-label>Mission de l'entreprise</mat-label>
-                        <input matInput placeholder="Ex. 1 Main St, New York, NY" formControlName="mission"
-                            required>
+                        <input matInput placeholder="Ex. 1 Main St, New York, NY" formControlName="mission" required>
                     </mat-form-field>
                 </div>
             </div>
@@ -146,17 +133,15 @@
                 <div class="col-md-10">
                     <mat-form-field class="example-full-width">
                         <mat-label>Ambitions de l'entreprise </mat-label>
-                        <input matInput placeholder="Ex. 1 Main St, New York, NY" formControlName="ambition"
-                            required>
+                        <input matInput placeholder="Ex. 1 Main St, New York, NY" formControlName="ambition" required>
                     </mat-form-field>
                 </div>
-            </div>
+            </div>  
             <div class="row">
                 <div class="col-md-10">
                     <mat-form-field class="example-full-width">
                         <mat-label>Valeurs de l'entreprise </mat-label>
-                        <input matInput placeholder="Ex. 1 Main St, New York, NY" formControlName="valeur"
-                            required>
+                        <input matInput placeholder="Ex. 1 Main St, New York, NY" formControlName="valeur" required>
                     </mat-form-field>
                 </div>
             </div>
@@ -173,8 +158,7 @@
                 <div class="col-md-10">
                     <mat-form-field class="example-full-width">
                         <mat-label>Partenaire </mat-label>
-                        <input matInput placeholder="Ex. 1 Main St, New York, NY" formControlName="partenaire"
-                            required>
+                        <input matInput placeholder="Ex. 1 Main St, New York, NY" formControlName="partenaire" required>
                     </mat-form-field>
                 </div>
             </div>
@@ -211,17 +195,16 @@
                 </div>
             </div>
             <div>
-                <button mat-button matStepperPrevious>Back</button>
-                <button (click)="addStep2()" mat-button matStepperNext>Next</button>
+                <button class="btn btn-warning" mat-button matStepperPrevious>Back</button>
+                <button class="btn btn-info" (click)="addStep2()" mat-button matStepperNext>Modifier</button>
             </div>
         </form>
     </mat-step>
     <mat-step>
         <ng-template matStepLabel>Done</ng-template>
-        <p>You are now done.</p>
+        <p class="finish">.Good!! toutes les information sur entreprise ont ete enregistrees</p>
         <div>
-            <button mat-button matStepperPrevious>Back</button>
-            <button mat-button (click)="reset()">Reset</button>
+            <button class="btn btn-primary" mat-button (click)="reset()">Terminer</button>
         </div>
     </mat-step>
 </mat-horizontal-stepper>

@@ -13,7 +13,7 @@
                     <mat-form-field class="example-full-width">
                         <input matInput formControlName="avatar" placeholder="Fichier" readonly>
                     </mat-form-field>
-                    <button mat-button (click)="selectFileAvatar()">Selectionner</button>
+                    <button mat-button (click)="selectFileAvatar()">Choisir la photo</button>
                 </div>
 
             </div>
@@ -21,7 +21,13 @@
                 <div class="col-md-10">
                     <mat-form-field class="example-full-width">
                         <mat-label>Nationalite</mat-label>
-                        <input matInput placeholder="Last name, First name" formControlName="nationality_id" required>
+                        <mat-select formControlName="nationality_id">
+                            <mat-option *ngFor="let nationalitie of nationalities?.data"
+                            value="{{ nationalitie.id }}" title="{{ nationalitie.description }}">
+                            {{ nationalitie.name }}
+                            </mat-option>
+                        </mat-select>   
+                        <!-- <input matInput placeholder="Last name, First name" formControlName="nationality_id" required> -->
                     </mat-form-field>
 
                 </div>
@@ -53,7 +59,7 @@
                 <div class="col-md-10">
                     <mat-form-field class="example-full-width">
                         <mat-label>Date de Naissance</mat-label>
-                        <input matInput placeholder="Last name, First name" formControlName="date_naissance" required>
+                        <input matInput  type="date" placeholder="Last name, First name" formControlName="date_naissance" required>
                     </mat-form-field>
 
                 </div>
@@ -109,7 +115,7 @@
             </div>
 
             <div>
-                <button (click)="addStep1()" mat-button matStepperNext>Next</button>
+                <button class="btn btn-success" (click)="addStep1()" mat-button matStepperNext>Enregistrer</button>
             </div>
         </form>
     </mat-step>
@@ -128,7 +134,7 @@
                 <div class="col-md-10">
                     <mat-form-field class="example-full-width">
                         <mat-label>Date de Delivrance</mat-label>
-                        <input matInput placeholder="Ex. 1 Main St, New York, NY" formControlName="date_delivrance"
+                        <input matInput type="date" placeholder="Ex. 1 Main St, New York, NY" formControlName="date_delivrance"
                             required>
                     </mat-form-field>
                 </div>
@@ -143,8 +149,7 @@
                 </div>
             </div>
             <div>
-                <button mat-button matStepperPrevious>Back</button>
-                <button (click)="addStep2()" mat-button matStepperNext>Next</button>
+                <button (click)="addStep2()" mat-button matStepperNext>Enregistrer</button>
             </div>
         </form>
     </mat-step>
@@ -181,7 +186,7 @@
                 <div class="col-md-10">
                     <mat-form-field class="example-full-width">
                         <mat-label>Date de Delivrance</mat-label>
-                        <input matInput placeholder="Ex. 1 Main St, New York, NY" formControlName="date_delivrance"
+                        <input matInput type="date" placeholder="Ex. 1 Main St, New York, NY" formControlName="date_delivrance"
                             required>
                     </mat-form-field>
                 </div>
@@ -196,8 +201,7 @@
                 </div>
             </div>
             <div>
-                <button mat-button matStepperPrevious>Back</button>
-                <button (click)="addStep3()" mat-button matStepperNext>Next</button>
+                <button class="btn btn-success" (click)="addStep3()" mat-button matStepperNext>Enregistrer</button>
             </div>
         </form>
     </mat-step>
@@ -223,17 +227,15 @@
                 </div>
             </div>
             <div>
-                <button mat-button matStepperPrevious>Back</button>
-                <button (click)="addStep4()" mat-button matStepperNext>Next</button>
+                <button class="btn btn-success" (click)="addStep4()" mat-button matStepperNext>Enregistrer</button>
             </div>
         </form>
     </mat-step>
     <mat-step>
         <ng-template matStepLabel>Done</ng-template>
-        <p>You are now done.</p>
+        <p class="finish"> Good. enregistrement de tout les informations de engin effectuees avec sucess.</p>
         <div>
-            <button mat-button matStepperPrevious>Back</button>
-            <button mat-button (click)="reset()">Reset</button>
+            <button class="btn btn-primary" mat-button (click)="reset()">Terminer</button>
         </div>
     </mat-step>
 </mat-horizontal-stepper>

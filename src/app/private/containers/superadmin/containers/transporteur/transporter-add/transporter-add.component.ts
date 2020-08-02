@@ -209,7 +209,6 @@ export class TransporterAddComponent implements OnInit {
         formData.append("gear_number", '' + 0);
 
         //ajout des infos generales de utilisateurs
-
         this.driverService.addInfoGenerale1(formData).then(
           (Response) => {
             console.log(Response)
@@ -256,7 +255,6 @@ export class TransporterAddComponent implements OnInit {
         //sauvegarde dans le local storage
         this.openSnackBar("Ajout Reussi", "Etape 1")
         console.log("stepper 2 termine");
-        this.updateStepper();
       },
       (error) => {
         console.log(error)
