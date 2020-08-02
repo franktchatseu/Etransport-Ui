@@ -32,14 +32,38 @@
                 <div class="col-md-6">
                     <mat-form-field class="example-full-width">
                         <mat-label>Marque</mat-label>
-                        <input matInput placeholder="Last name, First name" formControlName="marque" required>
+                        <mat-select formControlName="marque">
+                            <mat-option value="" disabled hidden>
+                                Choisissez la mark
+                            </mat-option>
+                            <mat-option *ngFor="let mark of marks?.data"
+                            value="{{ mark.id }}" title="{{ mark.description }}">
+                            {{ mark.name }}
+                            </mat-option>
+                        </mat-select>                                                       
                     </mat-form-field>
+                    <!-- <mat-form-field class="example-full-width">
+                        <mat-label>Marque</mat-label>
+                        <input matInput placeholder="Last name, First name" formControlName="marque" required>
+                    </mat-form-field> -->
                 </div>
                 <div class="col-md-6">
                     <mat-form-field class="example-full-width">
                         <mat-label>Modele</mat-label>
-                        <input matInput placeholder="Last name, First name" formControlName="modele" required>
+                        <mat-select formControlName="modele">
+                            <mat-option value="" disabled hidden>
+                                Choisissez le model
+                            </mat-option>
+                            <mat-option *ngFor="let model of models?.data"
+                            value="{{ model.id }}" title="{{ model.description }}">
+                            {{ model.name }}
+                            </mat-option>
+                        </mat-select>                                                       
                     </mat-form-field>
+                    <!-- <mat-form-field class="example-full-width">
+                        <mat-label>Modele</mat-label>
+                        <input matInput placeholder="Last name, First name" formControlName="modele" required>
+                    </mat-form-field> -->
 
                 </div>
             </div>
@@ -48,18 +72,37 @@
                 <div class="col-md-6">
                     <mat-form-field class="example-full-width">
                         <mat-label>Type</mat-label>
-                        <input matInput placeholder="Last name, First name" formControlName="type" required>
+                        <mat-select formControlName="type">
+                            <mat-option value="" disabled hidden>
+                                Choisissez le type
+                            </mat-option>
+                            <mat-option *ngFor="let type of types?.data"
+                            value="{{ type.id }}" title="{{ type.description }}">
+                            {{ type.name }}
+                            </mat-option>
+                        </mat-select>                                                       
                     </mat-form-field>
+                    <!-- <mat-form-field class="example-full-width">
+                        <mat-label>Type</mat-label>
+                        <input matInput placeholder="Last name, First name" formControlName="type" required>
+                    </mat-form-field> -->
 
                 </div>
                 <div class="col-md-6">
                     <mat-form-field class="example-full-width">
                         <mat-label>Carosserie</mat-label>
-                        <input matInput placeholder="Last name, First name" formControlName="carosserie" required>
+                        <mat-select formControlName="carosserie">
+                            <mat-option value="" disabled hidden>
+                                Choisissez la carosserie
+                            </mat-option>
+                            <mat-option *ngFor="let carosserie of carosseries?.data"
+                            value="{{ carosserie.id }}" title="{{ carosserie.description }}">
+                            {{ carosserie.color }}
+                            </mat-option>
+                        </mat-select>                                                       
                     </mat-form-field>
-
                 </div>
-
+               
             </div>
             <div class="row">
                     <div class="col-md-4">
@@ -168,7 +211,7 @@
                 <div class="col-md-6" >
                     <mat-form-field >
                         <mat-label>Date de Mise en Circulation</mat-label>
-                        <input matInput placeholder="Ex. 1 Main St, New York, NY" formControlName="date_circulation"
+                        <input matInput type="date" placeholder="Ex. 1 Main St, New York, NY" formControlName="date_circulation"
                             required>
                     </mat-form-field>
                 </div>
@@ -193,8 +236,9 @@
                 <div class="col-md-6" >
                     <mat-form-field >
                         <mat-label>Option</mat-label>
-                        <input matInput placeholder="Ex. 1 Main St, New York, NY" formControlName="option"
-                            required>
+                        <textarea matInput placeholder="entrez une option" formControlName="option" required></textarea>
+                        <!-- <input matInput placeholder="Ex. 1 Main St, New York, NY" formControlName="option"
+                            required> -->
                     </mat-form-field>
                 </div>
                 <div class="col-md-6" >
@@ -267,8 +311,9 @@
                 <div class="col-md-10">
                     <mat-form-field class="example-full-width">
                         <mat-label>Equipement </mat-label>
-                        <input matInput placeholder="azue" formControlName="equipement"
-                            required>
+                        <textarea matInput placeholder="entrez les equipement" formControlName="equipement" required></textarea>
+                        <!-- <input matInput placeholder="azue" formControlName="equipement"
+                            required> -->
                     </mat-form-field>
                 </div>
             </div>
@@ -276,7 +321,8 @@
                 <div class="col-md-10">
                     <mat-form-field class="example-full-width">
                         <mat-label>usage</mat-label>
-                        <input matInput placeholder="Ex. 1 Main St, New York, NY" formControlName="usage" required>
+                        <textarea matInput placeholder="entrez l'usage" formControlName="usage" required></textarea>
+                        <!-- <input matInput placeholder="Ex. 1 Main St, New York, NY" formControlName="usage" required> -->
                     </mat-form-field>
                 </div>
             </div>
@@ -284,8 +330,9 @@
                 <div class="col-md-10">
                     <mat-form-field class="example-full-width">
                         <mat-label>Localisation</mat-label>
-                        <input matInput placeholder="Ex. 1 Main St, New York, NY" formControlName="localisation"
-                            required>
+                        <textarea matInput placeholder="entrez la localisation" formControlName="localisation" required></textarea>
+                        <!-- <input matInput placeholder="Ex. 1 Main St, New York, NY" formControlName="localisation"
+                            required> -->
                     </mat-form-field>
                 </div>
             </div>
@@ -293,8 +340,9 @@
                 <div class="col-md-10">
                     <mat-form-field class="example-full-width">
                         <mat-label>Observation </mat-label>
-                        <input matInput placeholder="Ex. 1 Main St, New York, NY" formControlName="observation"
-                            required>
+                        <textarea matInput placeholder="entrez les Observations" formControlName="observation" required></textarea>
+                        <!-- <input matInput placeholder="Ex. 1 Main St, New York, NY" formControlName="observation"
+                            required> -->
                     </mat-form-field>
                 </div>
             </div>

@@ -7,6 +7,11 @@ import { EnginService } from '../../../services/engin.service';
 
 import Swal from 'sweetalert2';
 import { StepperEnginService } from 'src/app/services/stepper/stepper_engin.service';
+import { CarosserieService } from 'src/app/services/parametre/carosserie/carosserie.service';
+import { MarqueService } from 'src/app/services/parametre/marque/marque.service';
+import { TypeService } from 'src/app/services/parametre/type/type.service';
+import { ModeleService } from 'src/app/services/parametre/modele/modele.service';
+import { NotificationService } from 'src/app/services/notification.service';
 
 @Component({
   selector: 'app-engin-add',
@@ -15,7 +20,11 @@ import { StepperEnginService } from 'src/app/services/stepper/stepper_engin.serv
 })
 export class EnginAddComponent implements OnInit {
 
-
+  types: any = null;
+  marks: any = null;
+  models: any = null;
+  carosseries: any = null;
+  translations: any = null;
 
   @ViewChild('fileInput1')
   fileInput1: ElementRef;
@@ -39,6 +48,7 @@ export class EnginAddComponent implements OnInit {
   fileInformation: any
   fileInformationAvatar: any
 
+
   //initialisation du stepper
   initStepper: any;
   currentStepper: number;
@@ -57,13 +67,15 @@ export class EnginAddComponent implements OnInit {
   step5Form: FormGroup;
   stepperApi: any;
   picker: any
+
+
   constructor(
     private formBuilder: FormBuilder,
     private stepperService: StepperEnginService,
     private _snackBar: MatSnackBar,
     private enginService: EnginService,
+    private notificationService: NotificationService,
     private router: Router
-
   ) { }
 
   onSelectFile1(event) {
@@ -131,7 +143,10 @@ export class EnginAddComponent implements OnInit {
 
 
   ngOnInit(): void {
-
+    this.getCarosseries();
+    this.getMarks();
+    this.getModels();
+    this.getTypes();
     this.initStep1();
     this.initStep2();
     this.initStep3();
@@ -494,4 +509,39 @@ export class EnginAddComponent implements OnInit {
 
   }
 
+  getTypes() {
+    this.enginService.getTypes().then((response) => {
+      this.types = response;
+      console.log(this.types);
+    }).catch((error) => {
+      this.notificationService.danger(this.translations.Superadmins.ServerUnavailable);
+    });
+  }
+
+  getModels() {
+    this.enginService.getModels().then((response) => {
+      this.models = response;
+      console.log(this.models);
+    }).catch((error) => {
+      this.notificationService.danger(this.translations.Superadmins.ServerUnavailable);
+    });
+  }
+
+  getMarks() {
+    this.enginService.getMarks().then((response) => {
+      this.marks = response;
+      console.log(this.marks);
+    }).catch((error) => {
+      this.notificationService.danger(this.translations.Superadmins.ServerUnavailable);
+    });
+  }
+
+  getCarosseries() {
+    this.enginService.getCarosseries().then((response) => {
+      this.carosseries = response;
+      console.log(this.carosseries);
+    }).catch((error) => {
+      this.notificationService.danger(this.translations.Superadmins.ServerUnavailable);
+    });
+  }
 }

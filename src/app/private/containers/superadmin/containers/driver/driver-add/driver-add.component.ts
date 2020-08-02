@@ -114,6 +114,7 @@ export class DriverAddComponent implements OnInit {
         telephone1: ['', [Validators.required]],
         telephone2: '',
         avatar: ['', [Validators.required]],
+        nationality_id: ['', [Validators.required]],
 
 
       }
@@ -191,7 +192,7 @@ export class DriverAddComponent implements OnInit {
         const file: File = null
         formData.append("avatar", this.fileAvatar);
         formData.append("stepper_id", '' + this.initStepper.id);
-        formData.append("nationality_id", '' + 1);
+        formData.append("nationality_id", '' + this.InfoGenerale.nationality_id.value);
 
         //ajout des infos generales de utilisateurs
 

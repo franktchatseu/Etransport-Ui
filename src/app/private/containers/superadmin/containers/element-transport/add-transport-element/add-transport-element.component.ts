@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ElementRef, ViewChild} from '@angular/core';
 import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 import { TranslateService } from '@ngx-translate/core';
 import { Router } from '@angular/router';
@@ -6,6 +6,7 @@ import { TransportelementService } from 'src/app/services/element-transport/tran
 import { NotificationService } from 'src/app/services/notification.service';
 import { InternationalizationService } from 'src/app/services/features/internationalization.service';
 import { AuthService } from 'src/app/auth/services/auth.service';
+import { MatDialog, MatSnackBar } from '@angular/material';
 
 
 @Component({
@@ -14,6 +15,15 @@ import { AuthService } from 'src/app/auth/services/auth.service';
   styleUrls: ['./add-transport-element.component.scss']
 })
 export class AddTransportElementComponent implements OnInit {
+
+  @ViewChild('fileInput')
+  fileInput: ElementRef;
+  @ViewChild('fileInputAvatar')
+  fileInputAvatar: ElementRef;
+  file: any
+  fileAvatar: any;
+  fileInformation: any
+  fileInformationAvatar: any
 
   data: any = null;
   types: any = null;
@@ -25,7 +35,6 @@ export class AddTransportElementComponent implements OnInit {
   active: any = null;
   detail: any = null;
   toShow: any = null;
-  file: File = null;
 
 
   isLoading = false;
@@ -43,13 +52,21 @@ export class AddTransportElementComponent implements OnInit {
     private internationalizationService: InternationalizationService,
     private notificationService: NotificationService,
     private formBuilder: FormBuilder,
-    private dataService: TransportelementService
+    private dataService: TransportelementService,
+    private _snackBar: MatSnackBar
   ) { }
 
   ngOnInit() {
+
     this.user = this.authService.getUserInfos();
     this.initForm({ name: '', description: '', type_id: '', localisation: '', phone1: '', phone2: '', email: '', function: '', presentation_file: '' });
     this.getTypes();
+  }
+
+  openSnackBar(message: string, action: string) {
+    this._snackBar.open(message, action, {
+      duration: 5000,
+    });
   }
 
   initForm(obj) {
@@ -80,10 +97,20 @@ export class AddTransportElementComponent implements OnInit {
     return this.createForm.controls;
   }
 
-  onSelectfile(event) {
-    this.file = event.target.files[0];
+  
+
+  selectFile(): void {
+    this.fileInput.nativeElement.click();
+  }
+  onSelectFile(event) {
+    if (event.target.files && event.target.files.length > 0) {
+      this.file = event.target.files[0];
+      this.createForm.get('presentation_file').setValue(this.file.name); (1)
+      this.fileInformation = null;
+    }
   }
 
+  
   create() {
     this.isSubmitted = true;
     this.isError = false;
@@ -105,55 +132,23 @@ export class AddTransportElementComponent implements OnInit {
     this.dataService.post(formData)
       .then(resp => {
         console.log(resp);
-        this.notificationService.success(this.translations.Superadmins.DoneWithSuccess);
         this.isSubmitted = false;
+        //this.notificationService.success(this.translations.Superadmins.DoneWithSuccess);
+        this.openSnackBar("Ajout Reussi", "element de transport");
         this.initForm({ name: '', description: '', type_id: '', localisation: '', phone1: '', phone2: '', email: '', function: '', presentation_file: '' });
       //  this.createForm.reset();
       })
       .catch(err => {
         this.errors = err.error.errors;
         this.handleError = err.error.errors;
+        this.isLoading = false;
       })
       .finally(() => {
         this.isLoading = false;
       });
   }
 
-  update() {
-    this.isSubmitted = true;
-    this.isError = false;
-    this.isSuccess = false;
-    this.isLoading = false
-    if (this.form.invalid) {
-      this.notificationService.danger(this.translations.Superadmins.AllFieldsAreRequired);
-    }
-
-    this.isLoading = true;
-    const formData = new FormData();
-    const data = this.form;
-    for (const k in data) {
-      if (k) {
-        if (k === 'presentation_file') { formData.append(k + '', this.file, data[k].value); }
-        else { formData.append(k + '', data[k].value); }
-      }
-    }
-    this.dataService.put(this.active.id, formData)
-      .then(resp => {
-        console.log(resp);
-        this.notificationService.success(this.translations.Superadmins.DoneWithSuccess);
-        this.isSubmitted = false;
-        this.initForm({ name: '', description: '', type_id: '', localisation: '', phone1: '', phone2: '', email: '', function: '', presentation_file: '' });
-        this.active = null;
-      })
-      .catch(err => {
-        this.errors = err.error.errors;
-        this.handleError = err.error.errors;
-      })
-      .finally(() => {
-        this.isLoading = false;
-      });
-  }
-
+ 
   activate(item) {
     this.detail = null;
     this.active = item;
@@ -167,7 +162,7 @@ export class AddTransportElementComponent implements OnInit {
 
   cancel() {
     this.active = null;
-    this.initForm({color: '', description: ''});
+    this.initForm({ name: '', description: '', type_id: '', localisation: '', phone1: '', phone2: '', email: '', function: '', presentation_file: '' });
   }
 
 

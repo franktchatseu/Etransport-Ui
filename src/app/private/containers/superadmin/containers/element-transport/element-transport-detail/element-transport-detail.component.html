@@ -1,599 +1,168 @@
 <div class="col-md-18">
-    <div id="accordion" class="accordion-wrapper mb-3" >
+    <div id="accordion" class="accordion-wrapper mb-3">
         <div class="card">
-            <div id="headingOne" class="card-header" >
-                <button type="button" data-toggle="collapse" data-target="#collapseOne1" aria-expanded="true" aria-controls="collapseOne" class="text-left m-0 p-0 btn btn-link btn-block">
-                    <h5 class="m-0 p-0">Informations Sur La Premiere Entreprise</h5>
+            <div id="headingOne" class="card-header">
+                <button type="button" data-toggle="collapse" data-target="#collapseOne1" aria-expanded="true"
+                    aria-controls="collapseOne" class="text-left m-0 p-0 btn btn-link btn-block">
+                    <h5 class="m-0 p-0">Informations Sur L'element Intervenant</h5>
                 </button>
             </div>
             <div data-parent="#accordion" id="collapseOne1" aria-labelledby="headingOne" class="collapse show">
-                <div class="card-body" > 
-                        <ul class="list-group list-group-flush">
-                                <li class="list-group-item">
-                                        <div class="card-body" > 
-                                                <img [src]="enterprise1.manager_picture" width="90px" height="90px" alt="image de  l engin" srcset="">
-                                        </div>
-                                </li>
-                                <li class="list-group-item">
-                                    <div class="widget-content p-0">
-                                        <div class="widget-content-wrapper">
-                                            <div class="widget-content-left mr-3">
-                                                <div class="icon-wrapper border-light rounded m-0">
-                                                    <div class="icon-wrapper-bg bg-light"></div>
-                                                    <i class="lnr-cog icon-gradient bg-happy-itmeo"></i>
-                                                </div>
-                                            </div>
-                                            <div class="widget-content-left" >
-                                                <div class="widget-heading">Nom  :</div>
-                                                    <div>
-                                                    {{ enterprise1.name}}
-                                                    </div>
-                                            </div>
+                <div class="card-body">
+                    <ul class="list-group list-group-flush">
+                        <li class="list-group-item">
+                            <div class="widget-content p-0">
+                                <div class="widget-content-wrapper">
+                                    <div class="widget-content-left mr-3">
+                                        <div class="icon-wrapper border-light rounded m-0">
+                                            <div class="icon-wrapper-bg bg-light"></div>
+                                            <i class="lnr-cog icon-gradient bg-happy-itmeo"></i>
                                         </div>
                                     </div>
-                                </li>
-                                <li class="list-group-item">
-                                        <div class="widget-content p-0">
-                                            <div class="widget-content-wrapper">
-                                                <div class="widget-content-left mr-3">
-                                                    <div class="icon-wrapper border-light rounded m-0">
-                                                        <div class="icon-wrapper-bg bg-light"></div>
-                                                        <i class="lnr-cog icon-gradient bg-happy-itmeo"></i>
-                                                    </div>
-                                                </div>
-                                                <div class="widget-content-left" >
-                                                    <div class="widget-heading">Numero de La Taxe Paye  :</div>
-                                                        <div>
-                                                        {{ enterprise1.taxpayer_number}}
-                                                        </div>
-                                                </div>
-                                            </div>
+                                    <div class="widget-content-left">
+                                        <div class="widget-heading">Nom :</div>
+                                        <div>
+                                            {{ element?.name }}
                                         </div>
-                                </li>
-
-                                <li class="list-group-item">
-                                        <div class="widget-content p-0">
-                                            <div class="widget-content-wrapper">
-                                                <div class="widget-content-left mr-3">
-                                                    <div class="icon-wrapper border-light rounded m-0">
-                                                        <div class="icon-wrapper-bg bg-light"></div>
-                                                        <i class="lnr-cog icon-gradient bg-happy-itmeo"></i>
-                                                    </div>
-                                                </div>
-                                                <div class="widget-content-left" >
-                                                    <div class="widget-heading">Addresse de Facturation :</div>
-                                                        <div>
-                                                        {{ enterprise1.billing_address}}
-                                                        </div>
-                                                </div>
-                                            </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </li>
+                        <li class="list-group-item">
+                            <div class="widget-content p-0">
+                                <div class="widget-content-wrapper">
+                                    <div class="widget-content-left mr-3">
+                                        <div class="icon-wrapper border-light rounded m-0">
+                                            <div class="icon-wrapper-bg bg-light"></div>
+                                            <i class="lnr-cog icon-gradient bg-happy-itmeo"></i>
                                         </div>
-                                </li>
-
-                                <li class="list-group-item">
-                                        <div class="widget-content p-0">
-                                            <div class="widget-content-wrapper">
-                                                <div class="widget-content-left mr-3">
-                                                    <div class="icon-wrapper border-light rounded m-0">
-                                                        <div class="icon-wrapper-bg bg-light"></div>
-                                                        <i class="lnr-cog icon-gradient bg-happy-itmeo"></i>
-                                                    </div>
-                                                </div>
-                                                <div class="widget-content-left" >
-                                                    <div class="widget-heading">Numero De L Equipement  :</div>
-                                                        <div>
-                                                        {{ enterprise1.gear_number}}
-                                                        </div>
-                                                </div>
-                                            </div>
+                                    </div>
+                                    <div class="widget-content-left">
+                                        <div class="widget-heading">Description :</div>
+                                        <div>
+                                            {{ element?.description}}
                                         </div>
-                                </li>
+                                    </div>
+                                </div>
+                            </div>
+                        </li>
 
-                                <li class="list-group-item">
-                                        <div class="widget-content p-0">
-                                            <div class="widget-content-wrapper">
-                                                <div class="widget-content-left mr-3">
-                                                    <div class="icon-wrapper border-light rounded m-0">
-                                                        <div class="icon-wrapper-bg bg-light"></div>
-                                                        <i class="lnr-cog icon-gradient bg-happy-itmeo"></i>
-                                                    </div>
-                                                </div>
-                                                <div class="widget-content-left" >
-                                                    <div class="widget-heading">Numero du Conducteur  :</div>
-                                                        <div>
-                                                        {{ enterprise1.driver_number}}
-                                                        </div>
-                                                </div>
-                                            </div>
+                        <li class="list-group-item">
+                            <div class="widget-content p-0">
+                                <div class="widget-content-wrapper">
+                                    <div class="widget-content-left mr-3">
+                                        <div class="icon-wrapper border-light rounded m-0">
+                                            <div class="icon-wrapper-bg bg-light"></div>
+                                            <i class="lnr-cog icon-gradient bg-happy-itmeo"></i>
                                         </div>
-                                </li>
-
-                                <li class="list-group-item">
-                                        <div class="widget-content p-0">
-                                            <div class="widget-content-wrapper">
-                                                <div class="widget-content-left mr-3">
-                                                    <div class="icon-wrapper border-light rounded m-0">
-                                                        <div class="icon-wrapper-bg bg-light"></div>
-                                                        <i class="lnr-cog icon-gradient bg-happy-itmeo"></i>
-                                                    </div>
-                                                </div>
-                                                <div class="widget-content-left" >
-                                                    <div class="widget-heading">Nom Du Manager  :</div>
-                                                        <div>
-                                                        {{ enterprise1.manager_name}}
-                                                        </div>
-                                                </div>
-                                            </div>
+                                    </div>
+                                    <div class="widget-content-left">
+                                        <div class="widget-heading">Localisation:</div>
+                                        <div>
+                                            {{ element?.localisation}}
                                         </div>
-                                </li>
+                                    </div>
+                                </div>
+                            </div>
+                        </li>
 
-                                <li class="list-group-item">
-                                        <div class="widget-content p-0">
-                                            <div class="widget-content-wrapper">
-                                                <div class="widget-content-left mr-3">
-                                                    <div class="icon-wrapper border-light rounded m-0">
-                                                        <div class="icon-wrapper-bg bg-light"></div>
-                                                        <i class="lnr-cog icon-gradient bg-happy-itmeo"></i>
-                                                    </div>
-                                                </div>
-                                                <div class="widget-content-left" >
-                                                    <div class="widget-heading">Fonction Du Manager</div>
-                                                        <div>
-                                                        {{ enterprise1.manager_function}}
-                                                        </div>
-                                                </div>
-                                            </div>
+                        <li class="list-group-item">
+                            <div class="widget-content p-0">
+                                <div class="widget-content-wrapper">
+                                    <div class="widget-content-left mr-3">
+                                        <div class="icon-wrapper border-light rounded m-0">
+                                            <div class="icon-wrapper-bg bg-light"></div>
+                                            <i class="lnr-cog icon-gradient bg-happy-itmeo"></i>
                                         </div>
-                                </li>
-
-                                <li class="list-group-item">
-                                        <div class="widget-content p-0">
-                                            <div class="widget-content-wrapper">
-                                                <div class="widget-content-left mr-3">
-                                                    <div class="icon-wrapper border-light rounded m-0">
-                                                        <div class="icon-wrapper-bg bg-light"></div>
-                                                        <i class="lnr-cog icon-gradient bg-happy-itmeo"></i>
-                                                    </div>
-                                                </div>
-                                                <div class="widget-content-left" >
-                                                    <div class="widget-heading">Conctact du Managers</div>
-                                                        <div>
-                                                        {{ enterprise1.manager_phone}}
-                                                        </div>
-                                                </div>
-                                            </div>
+                                    </div>
+                                    <div class="widget-content-left">
+                                        <div class="widget-heading">Telephone 1:</div>
+                                        <div>
+                                            {{ element?.phone1}}
                                         </div>
-                                </li>
+                                    </div>
+                                </div>
+                            </div>
+                        </li>
 
-                                <li class="list-group-item">
-                                        <div class="widget-content p-0">
-                                            <div class="widget-content-wrapper">
-                                                <div class="widget-content-left mr-3">
-                                                    <div class="icon-wrapper border-light rounded m-0">
-                                                        <div class="icon-wrapper-bg bg-light"></div>
-                                                        <i class="lnr-cog icon-gradient bg-happy-itmeo"></i>
-                                                    </div>
-                                                </div>
-                                                <div class="widget-content-left" >
-                                                    <div class="widget-heading">Numero du rccm  :</div>
-                                                        <div>
-                                                        {{ enterprise1.rccm_number}}
-                                                        </div>
-                                                </div>
-                                            </div>
+                        <li class="list-group-item">
+                            <div class="widget-content p-0">
+                                <div class="widget-content-wrapper">
+                                    <div class="widget-content-left mr-3">
+                                        <div class="icon-wrapper border-light rounded m-0">
+                                            <div class="icon-wrapper-bg bg-light"></div>
+                                            <i class="lnr-cog icon-gradient bg-happy-itmeo"></i>
                                         </div>
-                                </li>
+                                    </div>
+                                    <div class="widget-content-left">
+                                        <div class="widget-heading">Numero du Conducteur :</div>
+                                        <div>
+                                            {{ element?.phone2}}
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </li>
 
-                        </ul>
+                        <li class="list-group-item">
+                            <div class="widget-content p-0">
+                                <div class="widget-content-wrapper">
+                                    <div class="widget-content-left mr-3">
+                                        <div class="icon-wrapper border-light rounded m-0">
+                                            <div class="icon-wrapper-bg bg-light"></div>
+                                            <i class="lnr-cog icon-gradient bg-happy-itmeo"></i>
+                                        </div>
+                                    </div>
+                                    <div class="widget-content-left">
+                                        <div class="widget-heading">Telephone 2 :</div>
+                                        <div>
+                                            {{ element?.email}}
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </li>
+
+                        <li class="list-group-item">
+                            <div class="widget-content p-0">
+                                <div class="widget-content-wrapper">
+                                    <div class="widget-content-left mr-3">
+                                        <div class="icon-wrapper border-light rounded m-0">
+                                            <div class="icon-wrapper-bg bg-light"></div>
+                                            <i class="lnr-cog icon-gradient bg-happy-itmeo"></i>
+                                        </div>
+                                    </div>
+                                    <div class="widget-content-left">
+                                        <div class="widget-heading">Fonction de la structure</div>
+                                        <div>
+                                            {{ element?.function}}
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </li>
+
+                        <li class="list-group-item">
+                            <div class="widget-content p-0">
+                                <div class="widget-content-wrapper">
+                                    <div class="widget-content-left mr-3">
+                                        <div class="icon-wrapper border-light rounded m-0">
+                                            <div class="icon-wrapper-bg bg-light"></div>
+                                            <i class="lnr-cog icon-gradient bg-happy-itmeo"></i>
+                                        </div>
+                                    </div>
+                                    <div class="widget-content-left">
+                                        <div class="widget-heading">fiche de presentation</div>
+                                        <div>
+                                            {{ element?.presentation_file}}
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </li>
+                    </ul>
                 </div>
             </div>
         </div>
-
-        <div class="card" >
-                <div id="headingOne" class="card-header">
-                    <button type="button" data-toggle="collapse" data-target="#collapseOne2" aria-expanded="true" aria-controls="collapseOne" class="text-left m-0 p-0 btn btn-link btn-block">
-                        <h5 class="m-0 p-0">Informations Sur La Seconde Entreprise Entreprise</h5>
-                    </button>
-                </div>
-                <div data-parent="#accordion" id="collapseOne2" aria-labelledby="headingOne" class="collapse show">
-                    <div class="card-body"> 
-                        <ul class="list-group list-group-flush">
-                            <li class="list-group-item">
-                                    <div class="widget-content p-0">
-                                        <div class="widget-content-wrapper">
-                                            <div class="widget-content-left mr-3">
-                                                <div class="icon-wrapper border-light rounded m-0">
-                                                    <div class="icon-wrapper-bg bg-light"></div>
-                                                    <i class="lnr-cog icon-gradient bg-happy-itmeo"></i>
-                                                </div>
-                                            </div>
-                                            <div class="widget-content-left" >
-                                                <div class="widget-heading">Numero du Premier Telephone </div>
-                                                    <div>
-                                                    {{ enterprise2.phone1}}
-                                                    </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                            </li>
-
-                            <li class="list-group-item">
-                                    <div class="widget-content p-0">
-                                        <div class="widget-content-wrapper">
-                                            <div class="widget-content-left mr-3">
-                                                <div class="icon-wrapper border-light rounded m-0">
-                                                    <div class="icon-wrapper-bg bg-light"></div>
-                                                    <i class="lnr-cog icon-gradient bg-happy-itmeo"></i>
-                                                </div>
-                                            </div>
-                                            <div class="widget-content-left" >
-                                                <div class="widget-heading">Numero du Second Telephone :</div>
-                                                    <div>
-                                                    {{ enterprise2.phone2}}
-                                                    </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                            </li>
-
-                            <li class="list-group-item">
-                                    <div class="widget-content p-0">
-                                        <div class="widget-content-wrapper">
-                                            <div class="widget-content-left mr-3">
-                                                <div class="icon-wrapper border-light rounded m-0">
-                                                    <div class="icon-wrapper-bg bg-light"></div>
-                                                    <i class="lnr-cog icon-gradient bg-happy-itmeo"></i>
-                                                </div>
-                                            </div>
-                                            <div class="widget-content-left" >
-                                                <div class="widget-heading">Langue :</div>
-                                                    <div>
-                                                    {{ enterprise2.langue}}
-                                                    </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                            </li>
-                            <li class="list-group-item">
-                                    <div class="widget-content p-0">
-                                        <div class="widget-content-wrapper">
-                                            <div class="widget-content-left mr-3">
-                                                <div class="icon-wrapper border-light rounded m-0">
-                                                    <div class="icon-wrapper-bg bg-light"></div>
-                                                    <i class="lnr-cog icon-gradient bg-happy-itmeo"></i>
-                                                </div>
-                                            </div>
-                                            <div class="widget-content-left" >
-                                                <div class="widget-heading">Email :</div>
-                                                    <div>
-                                                    {{ enterprise2.email}}
-                                                    </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                            </li>
-                            <li class="list-group-item">
-                                    <div class="widget-content p-0">
-                                        <div class="widget-content-wrapper">
-                                            <div class="widget-content-left mr-3">
-                                                <div class="icon-wrapper border-light rounded m-0">
-                                                    <div class="icon-wrapper-bg bg-light"></div>
-                                                    <i class="lnr-cog icon-gradient bg-happy-itmeo"></i>
-                                                </div>
-                                            </div>
-                                            <div class="widget-content-left" >
-                                                <div class="widget-heading">Localisation :</div>
-                                                    <div>
-                                                    {{ enterprise2.localisation}}
-                                                    </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                            </li>
-                            <li class="list-group-item">
-                                    <div class="widget-content p-0">
-                                        <div class="widget-content-wrapper">
-                                            <div class="widget-content-left mr-3">
-                                                <div class="icon-wrapper border-light rounded m-0">
-                                                    <div class="icon-wrapper-bg bg-light"></div>
-                                                    <i class="lnr-cog icon-gradient bg-happy-itmeo"></i>
-                                                </div>
-                                            </div>
-                                            <div class="widget-content-left" >
-                                                <div class="widget-heading">Heure D ouverture :</div>
-                                                    <div>
-                                                    {{ enterprise2.opening_hours}}
-                                                    </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                            </li>
-                            <li class="list-group-item">
-                                    <div class="widget-content p-0">
-                                        <div class="widget-content-wrapper">
-                                            <div class="widget-content-left mr-3">
-                                                <div class="icon-wrapper border-light rounded m-0">
-                                                    <div class="icon-wrapper-bg bg-light"></div>
-                                                    <i class="lnr-cog icon-gradient bg-happy-itmeo"></i>
-                                                </div>
-                                            </div>
-                                            <div class="widget-content-left" >
-                                                <div class="widget-heading">Entreprise Partenaire :</div>
-                                                    <div>
-                                                    {{ enterprise2.enterprise_partner}}
-                                                    </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                            </li>
-                            <li class="list-group-item">
-                                    <div class="widget-content p-0">
-                                        <div class="widget-content-wrapper">
-                                            <div class="widget-content-left mr-3">
-                                                <div class="icon-wrapper border-light rounded m-0">
-                                                    <div class="icon-wrapper-bg bg-light"></div>
-                                                    <i class="lnr-cog icon-gradient bg-happy-itmeo"></i>
-                                                </div>
-                                            </div>
-                                            <div class="widget-content-left" >
-                                                <div class="widget-heading">Ambition de l entreprise  :</div>
-                                                    <div>
-                                                    {{ enterprise2.enterprise_ambition}}
-                                                    </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                            </li>
-                            <li class="list-group-item">
-                                    <div class="widget-content p-0">
-                                        <div class="widget-content-wrapper">
-                                            <div class="widget-content-left mr-3">
-                                                <div class="icon-wrapper border-light rounded m-0">
-                                                    <div class="icon-wrapper-bg bg-light"></div>
-                                                    <i class="lnr-cog icon-gradient bg-happy-itmeo"></i>
-                                                </div>
-                                            </div>
-                                            <div class="widget-content-left" >
-                                                <div class="widget-heading">Description des Services  :</div>
-                                                    <div>
-                                                    {{ enterprise2.description_services}}
-                                                    </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                            </li>
-                            <li class="list-group-item">
-                                    <div class="widget-content p-0">
-                                        <div class="widget-content-wrapper">
-                                            <div class="widget-content-left mr-3">
-                                                <div class="icon-wrapper border-light rounded m-0">
-                                                    <div class="icon-wrapper-bg bg-light"></div>
-                                                    <i class="lnr-cog icon-gradient bg-happy-itmeo"></i>
-                                                </div>
-                                            </div>
-                                            <div class="widget-content-left" >
-                                                <div class="widget-heading">Mission de l entreprise  :</div>
-                                                    <div>
-                                                    {{ enterprise2.enterprise_mission}}
-                                                    </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                            </li>
-                            <li class="list-group-item">
-                                    <div class="widget-content p-0">
-                                        <div class="widget-content-wrapper">
-                                            <div class="widget-content-left mr-3">
-                                                <div class="icon-wrapper border-light rounded m-0">
-                                                    <div class="icon-wrapper-bg bg-light"></div>
-                                                    <i class="lnr-cog icon-gradient bg-happy-itmeo"></i>
-                                                </div>
-                                            </div>
-                                            <div class="widget-content-left" >
-                                                <div class="widget-heading">Valeur de l entreprise  :</div>
-                                                    <div>
-                                                    {{ enterprise2.enterprise_value}}
-                                                    </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                            </li>
-                            <li class="list-group-item">
-                                   
-                                                    <div class="card-body" > 
-                                                            <img [src]="enterprise2.image" width="90px" height="90px" alt="image de  l engin" srcset="">
-                                                    </div>
-                                
-                            </li>
-                        </ul>
-                    </div>
-                             
-                </div>
-        </div>
-
-        <div class="card">
-                <div id="headingOne" class="card-header">
-                    <button type="button" data-toggle="collapse" data-target="#collapseOne3" aria-expanded="true" aria-controls="collapseTwo" class="text-left m-0 p-0 btn btn-link btn-block">
-                        <h5 class="m-0 p-0">Personnel </h5>
-                    </button>
-                </div>
-                <div data-parent="#accordion" id="collapseOne3" aria-labelledby="headingOne" class="collapse show">
-                    <div class="card-body"> 
-                        <ul class="list-group list-group-flush">
-                                <li class="list-group-item">
-                                        <div class="widget-content p-0">
-                                            <div class="widget-content-wrapper">
-                                                <div class="widget-content-left mr-3">
-                                                    <div class="icon-wrapper border-light rounded m-0">
-                                                        <div class="icon-wrapper-bg bg-light"></div>
-                                                        <i class="lnr-cog icon-gradient bg-happy-itmeo"></i>
-                                                    </div>
-                                                </div>
-                                                <div class="widget-content-left" >
-                                                    <div class="widget-heading">Nom :</div>
-                                                        <div>
-                                                        {{ personnel.name}}
-                                                        </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                </li>
-                                <li class="list-group-item">
-                                        <div class="widget-content p-0">
-                                            <div class="widget-content-wrapper">
-                                                <div class="widget-content-left mr-3">
-                                                    <div class="icon-wrapper border-light rounded m-0">
-                                                        <div class="icon-wrapper-bg bg-light"></div>
-                                                        <i class="lnr-cog icon-gradient bg-happy-itmeo"></i>
-                                                    </div>
-                                                </div>
-                                                <div class="widget-content-left" >
-                                                    <div class="widget-heading">PreNom :</div>
-                                                        <div>
-                                                        {{ personnel.surmane}}
-                                                        </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                </li>
-                                <li class="list-group-item">
-                                        <div class="widget-content p-0">
-                                            <div class="widget-content-wrapper">
-                                                <div class="widget-content-left mr-3">
-                                                    <div class="icon-wrapper border-light rounded m-0">
-                                                        <div class="icon-wrapper-bg bg-light"></div>
-                                                        <i class="lnr-cog icon-gradient bg-happy-itmeo"></i>
-                                                    </div>
-                                                </div>
-                                                <div class="widget-content-left" >
-                                                    <div class="widget-heading">Numero D e Telephone :</div>
-                                                        <div>
-                                                        {{ personnel.tel2}}
-                                                        </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                </li>
-                                <li class="list-group-item">
-                                        <div class="widget-content p-0">
-                                            <div class="widget-content-wrapper">
-                                                <div class="widget-content-left mr-3">
-                                                    <div class="icon-wrapper border-light rounded m-0">
-                                                        <div class="icon-wrapper-bg bg-light"></div>
-                                                        <i class="lnr-cog icon-gradient bg-happy-itmeo"></i>
-                                                    </div>
-                                                </div>
-                                                <div class="widget-content-left" >
-                                                    <div class="widget-heading">Email :</div>
-                                                        <div>
-                                                        {{ personnel.email}}
-                                                        </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                </li>
-                                <li class="list-group-item">
-                                        <div class="widget-content p-0">
-                                            <div class="widget-content-wrapper">
-                                                <div class="widget-content-left mr-3">
-                                                    <div class="icon-wrapper border-light rounded m-0">
-                                                        <div class="icon-wrapper-bg bg-light"></div>
-                                                        <i class="lnr-cog icon-gradient bg-happy-itmeo"></i>
-                                                    </div>
-                                                </div>
-                                                <div class="widget-content-left" >
-                                                    <div class="widget-heading">Langue :</div>
-                                                        <div>
-                                                        {{ personnel.langue}}
-                                                        </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                </li>
-                                <li class="list-group-item">
-                                        <div class="widget-content p-0">
-                                            <div class="widget-content-wrapper">
-                                                <div class="widget-content-left mr-3">
-                                                    <div class="icon-wrapper border-light rounded m-0">
-                                                        <div class="icon-wrapper-bg bg-light"></div>
-                                                        <i class="lnr-cog icon-gradient bg-happy-itmeo"></i>
-                                                    </div>
-                                                </div>
-                                                <div class="widget-content-left" >
-                                                    <div class="widget-heading">Second Numero De Telephone :</div>
-                                                        <div>
-                                                        {{ personnel.tel1}}
-                                                        </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                </li>
-                                <li class="list-group-item">
-                                        <div class="widget-content p-0">
-                                            <div class="widget-content-wrapper">
-                                                <div class="widget-content-left mr-3">
-                                                    <div class="icon-wrapper border-light rounded m-0">
-                                                        <div class="icon-wrapper-bg bg-light"></div>
-                                                        <i class="lnr-cog icon-gradient bg-happy-itmeo"></i>
-                                                    </div>
-                                                </div>
-                                                <div class="widget-content-left" >
-                                                    <div class="widget-heading">Addresse :</div>
-                                                        <div>
-                                                        {{ personnel.adress}}
-                                                        </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                </li>
-                                <li class="list-group-item">
-                                        <div class="widget-content p-0">
-                                            <div class="widget-content-wrapper">
-                                                <div class="widget-content-left mr-3">
-                                                    <div class="icon-wrapper border-light rounded m-0">
-                                                        <div class="icon-wrapper-bg bg-light"></div>
-                                                        <i class="lnr-cog icon-gradient bg-happy-itmeo"></i>
-                                                    </div>
-                                                </div>
-                                                <div class="widget-content-left" >
-                                                    <div class="widget-heading">Numero du Conducteur :</div>
-                                                        <div>
-                                                        {{ personnel.driver_number}}
-                                                        </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                </li>
-                                <li class="list-group-item">
-                                    <div class="widget-content p-0">
-                                        <div class="widget-content-wrapper">
-                                            <div class="widget-content-left mr-3">
-                                                <div class="icon-wrapper border-light rounded m-0">
-                                                    <div class="icon-wrapper-bg bg-light"></div>
-                                                    <i class="lnr-cog icon-gradient bg-happy-itmeo"></i>
-                                                </div>
-                                            </div>
-                                            <div class="widget-content-left" >
-                                                <div class="widget-heading">Equipement :</div>
-                                                    <div>
-                                                    {{ personnel.gear_count}}
-                                                    </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </li>
-                                <li class="list-group-item">
-                                                    <div class="card-body" > 
-                                                            <img [src]="personnel.image" width="90px" height="90px" alt="image de  l engin" srcset="">
-                                                    </div>
-                                       
-                                </li>
-                        </ul>
-                    </div>
-                </div>
-        </div>
-
     </div>
 </div>
-     
-                          

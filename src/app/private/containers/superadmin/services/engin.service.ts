@@ -102,4 +102,25 @@ export class EnginService {
   updatePicture(formData: FormData, id): Promise<any> {
     return this.http.post<any>(`${config.apiUrl}/module3/gear_pictures/${id}`, formData).toPromise();
   }
+    public getCarosseries() {
+      return this.http.get<any>(`${config.apiUrl}/module3/carosseries`)
+        .toPromise();
+    }
+
+    public getTypes() {
+      return this.http.get<any>(`${config.apiUrl}/module3/types`)
+        .toPromise();
+    }
+
+    public getMarks() {
+      return this.http.get<any>(`${config.apiUrl}/module3/marks`)
+        .toPromise();
+    }
+
+    public getModels() {
+      return this.http.get<any>(`${config.apiUrl}/module3/modeles`)
+        .toPromise();
+    }
+
+    
 }
