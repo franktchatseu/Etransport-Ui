@@ -1,0 +1,85 @@
+<div class="container">
+    <div class="row">
+        <div class="app-page-title" style="margin: 0%; width: 100%;">
+            <div class="page-title-wrapper">
+                <div class="page-title-heading">
+                    <div class="page-title-icon">
+                        <i class="pe-7s-phone icon-gradient bg-premium-dark">
+                        </i>
+                    </div>
+                    <div>Liste des Transporteurs
+                        <div class="page-title-subheading">consulter la liste des transporteur.
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</div>
+<br>
+
+<div class="main-card mb-3 card">
+    <div class="card-body">
+
+        <br>
+        <table style="width: 100%;" id="example" class="table table-hover table-striped table-bordered">
+            <thead>
+                <tr>
+
+                    <th style="width: 15%;">Photo</th>
+                    <th>Nom</th>
+                    <th>Localisation</th>
+                    <th>telephone</th>
+                    <th>email</th>
+                    <th>Numero du Contribuable</th>
+                    <th>Description des services</th>
+                    <th>Action</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let transporteur of transporteurs?.data,let i = index">
+
+                    <td>
+                        <img [src]="transporteur.image" width="50px" height="50px" alt="image du transporteur" srcset="">
+                    </td>
+                    <td>{{transporteur.name}}</td>
+                    <td>{{transporteur.localisation}}</td>
+                    <td>{{transporteur.phone1}}</td>
+                    <td>{{transporteur.email}}</td>
+                    <td>{{transporteur.description_services}}</td>
+                    <td>{{transporteur.email}}</td>
+                    <td>
+                        <button class="mr-2 btn-icon btn-icon-only btn btn-outline-primary"
+                            (click)="update(transporteur.stepper_main_id)"><i class="pe-7s-pen btn-icon-wrapper"> </i></button>
+                        <button class="mr-2 btn-icon btn-icon-only btn btn-outline-success" (click)="detail(transporteur.stepper_main_id)">
+                            <i class="pe-7s-info btn-icon-wrapper"> </i></button>
+                        <button class="mr-2 btn-icon btn-icon-only btn btn-outline-danger"
+                            (click)="delete(transporteur.id)"><i class="pe-7s-trash btn-icon-wrapper"> </i></button>
+                    </td>
+                </tr>
+
+            </tbody>
+
+            <br>
+
+            <tfoot>
+                <div class="row" style="margin-top: 4%">
+                    <div class="col-md-4"></div>
+                    <div class="col-md-4">
+                        <ul class="pagination">
+                            <li class="paginate_button page-item previous" id="example_previous">
+                                <a (click)="getPage(transporteurs?.prev_page_url)" aria-controls="example" data-dt-idx="0"
+                                    tabindex="0" class="page-link">PRECEDENT</a>
+                            </li>
+                            <li class="paginate_button page-item next" id="example_next">
+                                <a (click)="getPage(transporteurs?.next_page_url)" aria-controls="example" data-dt-idx="7"
+                                    tabindex="0" class="page-link">SUIVANT</a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </tfoot>
+        </table>
+    </div>
+</div>
