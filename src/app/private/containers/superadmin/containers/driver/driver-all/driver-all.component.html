@@ -31,39 +31,40 @@
         <table style="width: 100%;" id="example" class="table table-hover table-striped table-bordered">
             <thead>
                 <tr>
-                    
+
                     <th style="width: 15%;">Photo</th>
                     <th>Nom</th>
                     <th>Prenom</th>
-                    <th >Nationalite</th>
-                    <th >telephone</th>
-                    <th >email</th>
+                    <th>Nationalite</th>
+                    <th>telephone</th>
+                    <th>email</th>
                     <th>Action</th>
+                    <th>Status</th>
                 </tr>
             </thead>
             <tbody>
                 <tr *ngFor="let driver of drivers?.data,let i = index">
-                    
-                   <td>
-                       <img [src]="driver.avatar" width="90px" height="90px" alt="image du chauffeur" srcset="">
+
+                    <td>
+                        <img [src]="driver.avatar" width="50px" height="50px" alt="image du chauffeur" srcset="">
                     </td>
-                    <td >{{driver.first_name}}</td>
-                    <td >{{driver.last_name}}</td>
-                    <td >{{driver.name}}</td>
-                    <td >{{driver.tel2}}</td>
-                    <td >{{driver.email}}</td>
-                    <td >
+                    <td>{{driver.first_name}}</td>
+                    <td>{{driver.last_name}}</td>
+                    <td>{{driver.name}}</td>
+                    <td>{{driver.tel2}}</td>
+                    <td>{{driver.email}}</td>
+                    <td>
                         <button class="mr-2 btn-icon btn-icon-only btn btn-outline-primary"
                             (click)="update(driver.stepper_id)"><i class="pe-7s-pen btn-icon-wrapper"> </i></button>
-                        <button class="mr-2 btn-icon btn-icon-only btn btn-outline-success"
-                            (click)="detail(driver.id)">
+                        <button class="mr-2 btn-icon btn-icon-only btn btn-outline-success" (click)="detail(driver.id)">
                             <i class="pe-7s-info btn-icon-wrapper"> </i></button>
                         <button class="mr-2 btn-icon btn-icon-only btn btn-outline-danger"
                             (click)="delete(driver.id)"><i class="pe-7s-trash btn-icon-wrapper"> </i></button>
-                        <button *ngIf="driver.status !=1" class="mr-2 btn btn-success"
-                        (click)="completeProfil(driver.number)" >completer votre profil</button>
-                        <em *ngIf="driver.status ==1" class=""
-                           >profil totalement renseigne</em>
+                    </td>
+                    <td>
+                        <button *ngIf="driver.status==0 " class="mr-2 btn btn-success"
+                            (click)="completeProfil(driver.number)">completer votre profil</button>
+                        <em *ngIf="driver.status==1" class="">profil totalement renseigne</em>
                     </td>
                 </tr>
 
@@ -77,13 +78,13 @@
                     <div class="col-md-4">
                         <ul class="pagination">
                             <li class="paginate_button page-item previous" id="example_previous">
-                                <a  (click)="getPage(drivers.prev_page_url)" aria-controls="example" data-dt-idx="0" tabindex="0"
-                                    class="page-link">PRECEDENT</a>
+                                <a (click)="getPage(drivers.prev_page_url)" aria-controls="example" data-dt-idx="0"
+                                    tabindex="0" class="page-link">PRECEDENT</a>
                             </li>
                             <li class="paginate_button page-item next" id="example_next">
-                                <a (click)="getPage(drivers.next_page_url)" aria-controls="example" data-dt-idx="7" tabindex="0"
-                                    class="page-link">SUIVANT</a>
-                            </li> 
+                                <a (click)="getPage(drivers.next_page_url)" aria-controls="example" data-dt-idx="7"
+                                    tabindex="0" class="page-link">SUIVANT</a>
+                            </li>
                         </ul>
                     </div>
                 </div>

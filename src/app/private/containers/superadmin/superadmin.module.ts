@@ -13,6 +13,7 @@ import { EnginDetailComponent} from './containers/engin/engin-detail/engin-detai
 import { DriverAddComponent} from './containers/driver/driver-add/driver-add.component';
 import { DriverUpdateComponent} from './containers/driver/driver-update/driver-update.component';
 import { EnginAddComponent} from './containers/engin/engin-add/engin-add.component';
+import { EnginUpdateComponent} from './containers/engin/engin-update/engin-update.component';
 import { DriverAllComponent} from './containers/driver/driver-all/driver-all.component';
 import { DriverDetailsComponent} from './containers/driver/driver-details/driver-details.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
@@ -51,6 +52,7 @@ import { ListTransportElementsComponent } from "src/app/private/containers/super
     AddTransportElementComponent,
     ListTransportElementsComponent,
     EnginAddComponent,
+    EnginUpdateComponent,
     TransporterAddComponent,
   ],
   imports: [
