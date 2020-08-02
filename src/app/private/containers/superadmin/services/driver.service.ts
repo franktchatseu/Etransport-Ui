@@ -10,10 +10,10 @@ export class DriverService {
 
   constructor(private http: HttpClient) { }
 
-    public getDrivers() {
-        return this.http.get<any>(`${config.apiUrl}/module2/general_informations/allWithName`)
-          .pipe(map(data => data));
-      }
+  public getDrivers() {
+    return this.http.get<any>(`${config.apiUrl}/module2/general_informations/allWithName`)
+      .pipe(map(data => data));
+  }
 
   public getPage(url) {
     return this.http.get<any>(`${url}`)
@@ -62,17 +62,17 @@ export class DriverService {
   }
 
   //mise a jnur des  infos du chauf
-  updateInformation(formData: FormData,id): Promise<any> {
+  updateInformation(formData: FormData, id): Promise<any> {
     return this.http.post<any>(`${config.apiUrl}/module2/general_informations/${id}`, formData).toPromise();
   }
 
-  updatePiece(formData: FormData,id): Promise<any> {
+  updatePiece(formData: FormData, id): Promise<any> {
     return this.http.post<any>(`${config.apiUrl}/module2/doc_identity_information/${id}`, formData).toPromise();
   }
-  updatePermis(formData: FormData,id): Promise<any> {
+  updatePermis(formData: FormData, id): Promise<any> {
     return this.http.post<any>(`${config.apiUrl}/module2/drivingpermits/${id}`, formData).toPromise();
   }
-  updateFormations(formData: FormData,id): Promise<any> {
+  updateFormations(formData: FormData, id): Promise<any> {
     return this.http.post<any>(`${config.apiUrl}/module2/formations/${id}`, formData).toPromise();
   }
 }

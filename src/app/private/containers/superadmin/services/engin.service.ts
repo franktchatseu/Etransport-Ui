@@ -78,5 +78,28 @@ export class EnginService {
     }
     addCarpapers(formData: FormData): Promise<any> {
       return this.http.post<any>(`${config.apiUrl}/module3/carpapers`, formData).toPromise();
-    }c
+    }
+
+    findCaractere1(id: number): Promise<any> {
+      return this.http.get<any>(`${config.apiUrl}/module3/caractere_tech_ones/${id}`).toPromise();
+    }
+
+    //mes updates de engin
+      //mise a jnur des  infos du chauf
+  updateCaractere1(formData: FormData, id): Promise<any> {
+    return this.http.post<any>(`${config.apiUrl}/module3/caractere_tech_ones/${id}`, formData).toPromise();
+  }
+
+  updateCaractere2(formData: FormData, id): Promise<any> {
+    return this.http.post<any>(`${config.apiUrl}/module3/caractertechtwos/${id}`, formData).toPromise();
+  }
+  updateDescription(formData: FormData, id): Promise<any> {
+    return this.http.post<any>(`${config.apiUrl}/module3/descriptions/${id}`, formData).toPromise();
+  }
+  updateCarPaper(formData: FormData, id): Promise<any> {
+    return this.http.post<any>(`${config.apiUrl}/module3/carpapers/${id}`, formData).toPromise();
+  }
+  updatePicture(formData: FormData, id): Promise<any> {
+    return this.http.post<any>(`${config.apiUrl}/module3/gear_pictures/${id}`, formData).toPromise();
+  }
 }

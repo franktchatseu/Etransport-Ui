@@ -402,19 +402,34 @@ export class DriverUpdateComponent implements OnInit {
     console.log(this.file)
     formData.append("file", this.file);
 
-    //ajout des infos generales de utilisateurs
-    this.driverService.updateFormations(formData, this.driver_stepper_id).then(
-      (Response) => {
-        console.log(Response)
-        //sauvegarde dans le local storage
-        this.openSnackBar("modification réussie avec succes", "Etape 4")
-        console.log("stepper 4 termine");
-      },
-      (error) => {
-        console.log(error)
-      }
-    )
-
+    if (this.formation == null) {
+      formData.append("stepper_id", '' + this.driver_stepper_id);
+      this.driverService.addFormations(formData).then(
+        (Response) => {
+          console.log(Response)
+          //sauvegarde dans le local storage
+          this.openSnackBar("Ajout Reussi", "Etape 1")
+          console.log("stepper 4 termine");
+        },
+        (error) => {
+          console.log(error)
+        }
+      )
+    }
+    else {
+      //ajout des infos generales de utilisateurs
+      this.driverService.updateFormations(formData, this.driver_stepper_id).then(
+        (Response) => {
+          console.log(Response)
+          //sauvegarde dans le local storage
+          this.openSnackBar("modification réussie avec succes", "Etape 4")
+          console.log("stepper 4 termine");
+        },
+        (error) => {
+          console.log(error)
+        }
+      )
+    }
   }
   //reinitialisation
   reset() {
