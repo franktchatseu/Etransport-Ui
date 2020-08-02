@@ -21,7 +21,13 @@
                 <div class="col-md-10">
                     <mat-form-field class="example-full-width">
                         <mat-label>Nationalite</mat-label>
-                        <input matInput placeholder="Last name, First name" formControlName="nationality_id" required>
+                        <mat-select formControlName="nationality_id">
+                            <mat-option *ngFor="let nationalitie of nationalities?.data"
+                            value="{{ nationalitie.id }}" title="{{ nationalitie.description }}">
+                            {{ nationalitie.name }}
+                            </mat-option>
+                        </mat-select>   
+                        <!-- <input matInput placeholder="Last name, First name" formControlName="nationality_id" required> -->
                     </mat-form-field>
 
                 </div>
@@ -53,7 +59,7 @@
                 <div class="col-md-10">
                     <mat-form-field class="example-full-width">
                         <mat-label>Date de Naissance</mat-label>
-                        <input matInput placeholder="Last name, First name" formControlName="date_naissance" required>
+                        <input matInput  type="date" placeholder="Last name, First name" formControlName="date_naissance" required>
                     </mat-form-field>
 
                 </div>
@@ -128,7 +134,7 @@
                 <div class="col-md-10">
                     <mat-form-field class="example-full-width">
                         <mat-label>Date de Delivrance</mat-label>
-                        <input matInput placeholder="Ex. 1 Main St, New York, NY" formControlName="date_delivrance"
+                        <input matInput type="date" placeholder="Ex. 1 Main St, New York, NY" formControlName="date_delivrance"
                             required>
                     </mat-form-field>
                 </div>
@@ -181,7 +187,7 @@
                 <div class="col-md-10">
                     <mat-form-field class="example-full-width">
                         <mat-label>Date de Delivrance</mat-label>
-                        <input matInput placeholder="Ex. 1 Main St, New York, NY" formControlName="date_delivrance"
+                        <input matInput type="date" placeholder="Ex. 1 Main St, New York, NY" formControlName="date_delivrance"
                             required>
                     </mat-form-field>
                 </div>
