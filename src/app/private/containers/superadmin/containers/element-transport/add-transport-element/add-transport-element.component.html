@@ -2,8 +2,7 @@
     <div class="page-title-wrapper">
         <div class="page-title-heading" style="width: 100%;">
             <div class="page-title-icon">
-                <i class="pe-7s-shield icon-gradient bg-ripe-malin">
-                </i>
+                <i _ngcontent-lhs-c2="" class="metismenu-icon pe-7s-users"></i>
             </div>
             <div>Element de Transport
                 <div class="page-title-subheading">Ajout d'un Element de Transport
@@ -47,35 +46,6 @@
                                                 </div>
                                 
                                             </div>
-                                            <!-- <div class="row">
-                                                <div class="col-md-12">
-                                                    <div class="position-relative form-group">
-                                                        <label for="exampleEmail" class=""></label>
-                                                        <input name="name" placeholder="Entrez un Nom" type="text"
-                                                            class="form-control {{ form.name.errors && isSubmitted ? 'invalid': '' }}"
-                                                            formControlName="name">
-                                                        <small class="form-text text-muted info-error info-error-danger"
-                                                            *ngIf="handleError?.name">
-                                                            {{ handleError?.name }} </small>
-                                                    </div>
-                                                </div>
-                                                <div class="col-md-12">
-                                                    <div class="position-relative form-group">
-                                                        <label for="exampleEmail" class="">Type d'intervenant</label>
-                                                        <select formControlName="type_id"
-                                                            class="form-control {{ form.type_id.errors && isSubmitted ? 'invalid': '' }}">
-                                                            <option *ngFor="let type of types?.data"
-                                                                value="{{ type.id }}" title="{{ type.description }}">
-                                                                {{ type.name }}
-                                                            </option>
-                                                        </select>
-                                                        <small class="form-text text-muted info-error info-error-danger"
-                                                            *ngIf="handleError?.type_id">
-                                                            {{ handleError?.type_id }}
-                                                        </small>
-                                                    </div>
-                                                </div>
-                                            </div> -->
                                             <div class="row">
                                                 <div class="col-md-10">
                                                     <mat-form-field class="example-full-width">
@@ -87,38 +57,9 @@
                                                     <mat-form-field class="example-full-width">
                                                         <mat-label>Fonction</mat-label>
                                                         <textarea matInput placeholder="entrez une fonction" formControlName="function" required></textarea>
-                                                        <!-- <input matInput placeholder="Last name, First name" formControlName="adresse" required> -->
                                                     </mat-form-field>
                                                 </div>                     
                                             </div>
-                                            <!-- <div class="row">
-                                                <div class="col-md-12">
-                                                    <div class="position-relative form-group"><label for="exampleEmail"
-                                                            class="">Description</label>
-                                                        <textarea name="description"
-                                                            placeholder="Entrez une description..." type="text"
-                                                            class="form-control {{ form.description.errors && isSubmitted ? 'invalid': '' }}"
-                                                            formControlName="description"></textarea>
-                                                        <small class="form-text text-muted info-error info-error-danger"
-                                                            *ngIf="handleError?.description">
-                                                            {{ handleError?.description }}
-                                                        </small>
-                                                    </div>
-                                                </div>
-                                                <div class="col-md-6">
-                                                    <div class="position-relative form-group"><label for="exampleEmail"
-                                                            class="">Fonction</label>
-                                                        <textarea name="function" placeholder="Entrez une Fonction..."
-                                                            type="text"
-                                                            class="form-control {{ form.function.errors && isSubmitted ? 'invalid': '' }}"
-                                                            formControlName="function"></textarea>
-                                                        <small class="form-text text-muted info-error info-error-danger"
-                                                            *ngIf="handleError?.function">
-                                                            {{ handleError?.function }}
-                                                        </small>
-                                                    </div>
-                                                </div>
-                                            </div> -->
                                             <div class="row">
                                                 <div class="col-md-10">
                                                     <mat-form-field class="example-full-width">
@@ -178,45 +119,6 @@
                                                     </mat-form-field>
                                                 </div>
                                             </div>                                      
-                                            <!-- <div class="row">
-                                                <div class="col-md-6">
-                                                    <div class="position-relative form-group">
-                                                        <label for="exampleEmail" class="">Tel 1:</label>
-                                                        <input name="phone1" placeholder="Entrez un numero de tel..."
-                                                            type="number"
-                                                            class="form-control {{ form.phone1.errors && isSubmitted ? 'invalid': '' }}"
-                                                            formControlName="phone1">
-                                                        <small class="form-text text-muted info-error info-error-danger"
-                                                            *ngIf="handleError?.phone1">
-                                                            {{ handleError?.phone1 }}
-                                                        </small>
-                                                    </div>
-                                                </div>
-                                                <div class="col-md-6">
-                                                    <div class="position-relative form-group">
-                                                        <label for="exampleEmail" class="">Tel 2:</label>
-                                                        <input name="phone2" placeholder="Entrez un numero de tel..."
-                                                            type="number"
-                                                            class="form-control {{ form.phone2.errors && isSubmitted ? 'invalid': '' }}"
-                                                            formControlName="phone2">
-                                                        <small class="form-text text-muted info-error info-error-danger"
-                                                            *ngIf="handleError?.phone2">
-                                                            {{ handleError?.phone2 }}
-                                                        </small>
-                                                    </div>
-                                                </div>
-                                            </div> -->
-                                            <!-- <div class="row">
-                                                <div class="col-md-10">
-                                                    <input type="file" id="userFile" (change)="onSelectfile($event)" #fileInputAvatar
-                                                        style="display: none">
-                                                    <mat-form-field class="example-full-width">
-                                                        <input matInput formControlName="avatar" placeholder="Fichier" readonly>
-                                                    </mat-form-field>
-                                                    <button mat-button (click)="selectFileAvatar()">Selectionner</button>
-                                                </div>
-                                
-                                            </div> -->
                                             <div class="row">
                                                 <div class="col-md-10">
                                                     <input type="file" (change)="onSelectFile($event)" #fileInput style="display: none">
@@ -254,24 +156,7 @@
                                                         </div>
                                                     </div>
                                                 </div>
-                                                <!-- <div class="ml-auto" *ngIf="active!=null" style="margin-right: 10px">
-                                                    <input (click)="update()" [disabled]="isLoading" type="button"
-                                                        class="btn btn-primary btn-lg"
-                                                        value="{{ 'Superadmins.UpdateField' | translate }}" />
-                                                    <div *ngIf="isLoading" style="padding: 15px; margin-left: 45%;">
-                                                        <div class="ball-rotate">
-                                                            <div style="background-color: white;"></div>
-                                                            <div style="background-color: white;"></div>
-                                                            <div style="background-color: white;"></div>
-                                                        </div>
-                                                    </div>
-                                                </div> -->
-                                                <!-- <div class="ml-auto" *ngIf="active!=null" style="margin-left: 10px">
-                                                    <input (click)="cancel()" type="button"
-                                                        class="btn btn-warning btn-lg"
-                                                        value="Annuler" />
-                                                </div> -->
-                                            </div>
+                                                </div>
                                         </div>
                                     </form>
                                 </div>

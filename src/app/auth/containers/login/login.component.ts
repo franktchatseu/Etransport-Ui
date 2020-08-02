@@ -53,17 +53,12 @@ export class LoginComponent implements OnInit {
       })
       .subscribe(success => {
         const ui = {
-          PRIEST: 'priests',
-          CATECHIST: 'catechists',
-          CATECHUMEN: 'cathecumenes',
-          PARISHIONAL: 'parishionals',
-          OTHER: 'others',
           SUPERADMIN: 'superadmins'
         };
         const user = this.authService.getUserInfos();
         if (success) {
           this.notificationService.success(this.translations.Login.ConnectedWithSuccess);
-          this.router.navigate(['/private/' + ui.PARISHIONAL]);
+          this.router.navigate(['/private/superadmins']);
         } else {
           this.notificationService.danger(this.translations.Login.ErrorIncorrectLoginOrPwd);
         }
