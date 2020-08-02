@@ -51,14 +51,18 @@
                         <td >{{engin.color}}</td>
                         <td >{{engin.country_registration}}</td>
                         <td >
-                            <button class="mr-2 btn-icon btn-icon-only btn btn-outline-primary"
+                            <button *ngIf="engin.status==1" class="mr-2 btn-icon btn-icon-only btn btn-outline-primary"
                                 (click)="update(engin.stepper_id)"><i class="pe-7s-pen btn-icon-wrapper"> </i></button>
                             <button class="mr-2 btn-icon btn-icon-only btn btn-outline-success"
                                 (click)="detail(engin.id)">
                                 <i class="pe-7s-info btn-icon-wrapper"> </i></button>
                             <button class="mr-2 btn-icon btn-icon-only btn btn-outline-danger"
                                 (click)="delete(engin.id)"><i class="pe-7s-trash btn-icon-wrapper"> </i></button>
-    
+                        </td>
+                        <td>
+                            <button *ngIf="engin.status==0 " class="mr-2 btn btn-warning"
+                             (click)="completer(engin)" >completer enregistrement</button>
+                            <div *ngIf="engin.status==1" class="badge badge-pill badge-success">engin totalement renseigne</div>
                         </td>
                     </tr>
     

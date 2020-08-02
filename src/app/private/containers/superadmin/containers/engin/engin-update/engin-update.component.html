@@ -3,7 +3,7 @@
 </button>
 
 <mat-horizontal-stepper linear #stepper [selectedIndex]="currentStepper">
-    <mat-step [stepControl]="step1Form" [optional]="true">
+    <mat-step [stepControl]="step1Form" [optional]="false">
         <form class="example-form" [formGroup]="step1Form">
             
             <ng-template matStepLabel>Caractere Technique 1</ng-template>
@@ -128,7 +128,7 @@
             </div>
         </form>
     </mat-step>
-    <mat-step [stepControl]="step2Form" [optional]="true">
+    <mat-step [stepControl]="step2Form" [optional]="false">
         <form class="example-form" [formGroup]="step2Form">
             <ng-template matStepLabel>Caractere Technique 2</ng-template>
             <div class="row">
@@ -243,7 +243,7 @@
             </div>
         </form>
     </mat-step>
-    <mat-step [stepControl]="step3Form" [optional]="true">
+    <mat-step [stepControl]="step3Form" [optional]="false">
         <form class="example-form" [formGroup]="step3Form" >
             <ng-template matStepLabel>Description</ng-template>
 
@@ -313,7 +313,7 @@
             </div>
         </form>
     </mat-step>
-    <mat-step [stepControl]="step4Form" [optional]="true">
+    <mat-step [stepControl]="step4Form" [optional]="false">
         <form class="example-form" [formGroup]="step4Form">
            
             <ng-template matStepLabel>Papier Du Vehicule</ng-template>
@@ -346,7 +346,7 @@
             </div>
         </form>
     </mat-step>
-    <mat-step [stepControl]="step5Form" [optional]="true" >
+    <mat-step [stepControl]="step5Form" [optional]="false" >
         <form class="example-form" [formGroup]="step5Form" >
            
             <ng-template matStepLabel>Papier Du Vehicule</ng-template>

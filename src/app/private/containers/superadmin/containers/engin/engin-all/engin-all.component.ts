@@ -147,4 +147,15 @@ export class EnginAllComponent implements OnInit {
       })
     }
   
+    //completins enregistrement
+    completer(eng){
+      let engin: any={
+        "id":eng.stepper_id,
+        "value":eng.value,
+        "number":eng.number
+      }
+
+      localStorage.setItem("engin", JSON.stringify(engin));
+      this.router.navigate(['/private/superadmins/engin/engin-add'])
+    }
 }

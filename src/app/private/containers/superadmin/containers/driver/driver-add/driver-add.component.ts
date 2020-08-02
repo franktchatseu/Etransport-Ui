@@ -44,6 +44,7 @@ export class DriverAddComponent implements OnInit {
   stepperApi: any;
   picker: any
   translations: any = null;
+  driver: any
 
 
   constructor(
@@ -80,29 +81,15 @@ export class DriverAddComponent implements OnInit {
   ngOnInit(): void {
     this.getNationalities();
       //recuperation du stepper actif en fonction
-      this.currentStepperNumber = this.activatedRoute.snapshot.params['stepper_number'];
-      if(this.currentStepperNumber == '0'){
-          this.currentStepper = 0;
-          this.stepperService.removeTokens()
+      this.driver= JSON.parse(localStorage.getItem("driver")) ;
+      if (!this.driver) {
+        this.currentStepper = 0;
       }
-      else{
-          this.currentStepper = this.currentStepperNumber;
-
-      this.stepperService.find(this.currentStepperNumber).then(
-        (Response) => {
-          console.log(Response)
-          this.stepperApi = Response;
-          this.stepperService.storeStepper(this.stepperApi)
-          this.currentStepper = 2;
-        },
-        (error) => {
-          console.log(error)
-          return;
-        },
-      )
+      else {
+        this.currentStepper =  this.driver.value;
+        this.initStepper = this.driver;
       }
 
-      
     this.initStep1();
     this.initStep2();
     this.initStep3();
@@ -228,11 +215,7 @@ export class DriverAddComponent implements OnInit {
     formData.append("date_issue", '' + this.drivingPermit.date_delivrance.value);
     formData.append("place_issue", '' + this.drivingPermit.lieu_delivrance.value);
     // on recupere le stepper id
-    const sept_id = this.stepperService.getStepperId()
-    console.log(sept_id)
-    formData.append("stepper_id", '' + sept_id);
-
-    //ajout des infos generales de utilisateurs
+    formData.append("stepper_id", '' + this.initStepper.id);
     this.driverService.addPermis(formData).then(
       (Response) => {
         console.log(Response)
@@ -257,9 +240,7 @@ export class DriverAddComponent implements OnInit {
     formData.append("date_issue", '' + this.PieceIndentite.date_delivrance.value);
     formData.append("place_issue", '' + this.PieceIndentite.lieu_delivrance.value);
     // on recupere le stepper id
-    const sept_id = this.stepperService.getStepperId()
-    formData.append("stepper_id", '' + sept_id);
-
+    formData.append("stepper_id", '' + this.initStepper.id);
     //ajout des infos generales de utilisateurs
     this.driverService.addPiece(formData).then(
       (Response) => {
@@ -274,7 +255,6 @@ export class DriverAddComponent implements OnInit {
       },
 
     )
-
   }
   addStep4() {
     //recuperation des champs du stepper 3
@@ -284,9 +264,7 @@ export class DriverAddComponent implements OnInit {
     formData.append("file", this.file);
 
     // on recupere le stepper id
-    const sept_id = this.stepperService.getStepperId()
-    formData.append("stepper_id", '' + sept_id);
-
+    formData.append("stepper_id", '' + this.initStepper.id);
     //ajout des infos generales de utilisateurs
     this.driverService.addFormations(formData).then(
       (Response) => {
@@ -300,6 +278,8 @@ export class DriverAddComponent implements OnInit {
         console.log(error)
       }
     )
+    localStorage.clear()
+
 
   }
   createStepper() {
@@ -323,10 +303,16 @@ export class DriverAddComponent implements OnInit {
   }
   updateStepper() {
     const formData: FormData = new FormData();
-    const number = this.stepperService.getNumber();
-    const value = +this.stepperService.getValue()
-    const status = this.stepperService.getStatus();
-    const new_value = value + 1;
+    let number;
+    let value;
+    if(!this.driver){
+       number = this.stepperService.getNumber();
+       value = +this.stepperService.getValue()
+    }
+    else{
+       number = this.driver.number;
+       value = +this.driver.value
+    }
     //on recupere la valeur du stepper correspondant dans la base de donnne
     this.stepperService.find(number).then(
       (Response) => {
@@ -338,9 +324,18 @@ export class DriverAddComponent implements OnInit {
         return;
       },
     )
-    console.log(value)
-    formData.append("value", '' + new_value);
-    formData.append("status", '' + status);
+    if(value == 3){
+      formData.append("status", '' + 1);
+      console.log("voici le status 1")
+      formData.append("value", '' + value);
+
+    }
+    else{
+      formData.append("status", '' + 0);
+      console.log("voici le status 0")
+      const new_value = value + 1;
+      formData.append("value", '' + new_value);
+    } 
     formData.append("stepper_main_id", '' + 1);
     this.stepperService.update(formData, number).then(
       (Response) => {
@@ -368,7 +363,7 @@ export class DriverAddComponent implements OnInit {
 
   //reinitialisation
   reset() {
-    this.stepperService.removeTokens();
+    localStorage.clear()
     this.router.navigate(['/private/superadmins/driver-all']);
 
   }
