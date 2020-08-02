@@ -62,9 +62,9 @@
                             (click)="delete(driver.id)"><i class="pe-7s-trash btn-icon-wrapper"> </i></button>
                     </td>
                     <td>
-                        <button *ngIf="driver.status==0 " class="mr-2 btn btn-success"
+                        <button *ngIf="driver.status==0 " class="mr-2 btn btn-warning"
                             (click)="completeProfil(driver.number)">completer votre profil</button>
-                        <em *ngIf="driver.status==1" class="">profil totalement renseigne</em>
+                        <div *ngIf="driver.status==1" class="badge badge-pill badge-success">profil totalement renseigne</div>
                     </td>
                 </tr>
 

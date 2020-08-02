@@ -323,7 +323,6 @@ export class TransporterAddComponent implements OnInit {
   //reinitialisation
   reset() {
     this.stepperService.removeTokens();
-    this.router.navigate(['/private/superadmins/driver-all']);
-
+    this.router.navigate(['/private/superadmins/transporter/transporter-all']);
   }
 }
