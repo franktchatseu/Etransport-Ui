@@ -10,6 +10,7 @@ import { Lang } from '../../../../../../services/config/lang';
 import { BlockUI, NgBlockUI } from 'ng-block-ui';
 import { InternationalizationService } from '../../../../../../services/features/internationalization.service';
 import Swal from 'sweetalert2';
+
 @Component({
   selector: 'app-transporteur-all',
   templateUrl: './transporteur-all.component.html',
@@ -17,7 +18,7 @@ import Swal from 'sweetalert2';
 })
 export class TransporteurAllComponent implements OnInit {
 
-  transporteurs: any[] =[];
+  transporteurs: any;
    // language
    currentLanguage = Lang.currentLang;
    translations: any = null;

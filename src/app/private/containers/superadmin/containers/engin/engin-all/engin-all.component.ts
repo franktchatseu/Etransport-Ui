@@ -104,7 +104,7 @@ export class EnginAllComponent implements OnInit {
     }
 
     detail(id) {
-      this.router.navigate(['/private/superadmins/engin-detail/' + id]);
+      this.router.navigate(['/private/superadmins/engin-detail/' , id]);
     }
 
     delete(assoc_id) {

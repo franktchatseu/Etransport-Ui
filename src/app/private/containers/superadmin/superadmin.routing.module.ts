@@ -123,6 +123,10 @@ const routes: Routes = [
             component: TransporterAddComponent,
           },
           {
+            path: 'transporter-all',
+            component: TransporteurAllComponent,
+          },
+          {
             path: 'transporter-update/:id',
             component: TransporterUpdateComponent,
           }

@@ -35,8 +35,8 @@ export class EnginDetailComponent implements OnInit {
 
   async ngOnInit() {
     const engin_id = +this.route.snapshot.paramMap.get("id");
-
-
+    
+    console.log("ceci est" +engin_id)
     this.enginService.getMarque(engin_id).then(
       data => {
         this.mark = data;
