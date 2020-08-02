@@ -1,7 +1,3 @@
-<button mat-raised-button (click)="isEditable = !isEditable">
-    {{!isEditable ? 'Enable edit mode' : 'Disable edit mode'}}
-</button>
-
 <mat-horizontal-stepper linear #stepper [selectedIndex]="currentStepper">
     <mat-step [stepControl]="step1Form" [editable]="isEditable">
         <form class="example-form" [formGroup]="step1Form">
@@ -391,7 +387,7 @@
                     <mat-form-field>
                         <input matInput formControlName="avant_engin" placeholder="Fichier" readonly>
                     </mat-form-field>
-                    <button mat-button (click)="selectFile1()">Importer Photo Avant Engin</button>
+                    <button type="button" mat-button (click)="selectFile1()">Importer Photo Avant Engin</button>
                 </div>
             </div>
             <div class="row">
@@ -400,7 +396,7 @@
                     <mat-form-field>
                         <input matInput formControlName="arriere_engin" placeholder="Fichier" readonly>
                     </mat-form-field>
-                    <button mat-button (click)="selectFile2()">Importer Photo Arriere Engin</button>
+                    <button type="button" mat-button (click)="selectFile2()">Importer Photo Arriere Engin</button>
                 </div>
             </div>
             <div class="row">
@@ -409,7 +405,7 @@
                     <mat-form-field>
                         <input matInput formControlName="gauche_engin" placeholder="Fichier" readonly>
                     </mat-form-field>
-                    <button mat-button (click)="selectFile3()">Importer Photo Cote Gauche Engin</button>
+                    <button type="button" mat-button (click)="selectFile3()">Importer Photo Cote Gauche Engin</button>
                 </div>
             </div>
             <div class="row">
@@ -418,7 +414,7 @@
                     <mat-form-field>
                         <input matInput formControlName="droit_engin" placeholder="Fichier" readonly>
                     </mat-form-field>
-                    <button mat-button (click)="selectFile4()">Importer Photo Cote Droit Engin</button>
+                    <button type="button" mat-button (click)="selectFile4()">Importer Photo Cote Droit Engin</button>
                 </div>
             </div>
             <div class="row">
@@ -427,7 +423,7 @@
                     <mat-form-field>
                         <input matInput formControlName="insurance_patente" placeholder="Fichier" readonly>
                     </mat-form-field>
-                    <button mat-button (click)="selectFile5()">Importer Photo Assurance</button>
+                    <button type="button" mat-button (click)="selectFile5()">Importer Photo Assurance</button>
                 </div>
             </div>
             <div class="row">
@@ -436,7 +432,7 @@
                     <mat-form-field>
                         <input matInput formControlName="grey_card" placeholder="Fichier" readonly>
                     </mat-form-field>
-                    <button mat-button (click)="selectFile6()">Importer Photo Carte Grise</button>
+                    <button type="button" mat-button (click)="selectFile6()">Importer Photo Carte Grise</button>
                 </div>
             </div>
             <div>
