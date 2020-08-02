@@ -37,6 +37,9 @@
                                                     <mat-form-field class="example-full-width">
                                                         <mat-label>Type d'intervenant</mat-label>
                                                         <mat-select formControlName="type_id">
+                                                            <mat-option value="" disabled hidden>
+                                                                Choisissez un type intervenant
+                                                            </mat-option>
                                                             <mat-option *ngFor="let type of types?.data"
                                                             value="{{ type.id }}" title="{{ type.description }}">
                                                             {{ type.name }}
@@ -47,35 +50,6 @@
                                                 </div>
                                 
                                             </div>
-                                            <!-- <div class="row">
-                                                <div class="col-md-12">
-                                                    <div class="position-relative form-group">
-                                                        <label for="exampleEmail" class=""></label>
-                                                        <input name="name" placeholder="Entrez un Nom" type="text"
-                                                            class="form-control {{ form.name.errors && isSubmitted ? 'invalid': '' }}"
-                                                            formControlName="name">
-                                                        <small class="form-text text-muted info-error info-error-danger"
-                                                            *ngIf="handleError?.name">
-                                                            {{ handleError?.name }} </small>
-                                                    </div>
-                                                </div>
-                                                <div class="col-md-12">
-                                                    <div class="position-relative form-group">
-                                                        <label for="exampleEmail" class="">Type d'intervenant</label>
-                                                        <select formControlName="type_id"
-                                                            class="form-control {{ form.type_id.errors && isSubmitted ? 'invalid': '' }}">
-                                                            <option *ngFor="let type of types?.data"
-                                                                value="{{ type.id }}" title="{{ type.description }}">
-                                                                {{ type.name }}
-                                                            </option>
-                                                        </select>
-                                                        <small class="form-text text-muted info-error info-error-danger"
-                                                            *ngIf="handleError?.type_id">
-                                                            {{ handleError?.type_id }}
-                                                        </small>
-                                                    </div>
-                                                </div>
-                                            </div> -->
                                             <div class="row">
                                                 <div class="col-md-10">
                                                     <mat-form-field class="example-full-width">
@@ -91,35 +65,7 @@
                                                     </mat-form-field>
                                                 </div>                     
                                             </div>
-                                            <!-- <div class="row">
-                                                <div class="col-md-12">
-                                                    <div class="position-relative form-group"><label for="exampleEmail"
-                                                            class="">Description</label>
-                                                        <textarea name="description"
-                                                            placeholder="Entrez une description..." type="text"
-                                                            class="form-control {{ form.description.errors && isSubmitted ? 'invalid': '' }}"
-                                                            formControlName="description"></textarea>
-                                                        <small class="form-text text-muted info-error info-error-danger"
-                                                            *ngIf="handleError?.description">
-                                                            {{ handleError?.description }}
-                                                        </small>
-                                                    </div>
-                                                </div>
-                                                <div class="col-md-6">
-                                                    <div class="position-relative form-group"><label for="exampleEmail"
-                                                            class="">Fonction</label>
-                                                        <textarea name="function" placeholder="Entrez une Fonction..."
-                                                            type="text"
-                                                            class="form-control {{ form.function.errors && isSubmitted ? 'invalid': '' }}"
-                                                            formControlName="function"></textarea>
-                                                        <small class="form-text text-muted info-error info-error-danger"
-                                                            *ngIf="handleError?.function">
-                                                            {{ handleError?.function }}
-                                                        </small>
-                                                    </div>
-                                                </div>
-                                            </div> -->
-                                            <div class="row">
+                                           <div class="row">
                                                 <div class="col-md-10">
                                                     <mat-form-field class="example-full-width">
                                                         <mat-label>Localisation</mat-label>
@@ -133,34 +79,6 @@
                                                     </mat-form-field>
                                                 </div>                     
                                             </div>
-                                            <!-- <div class="row">
-                                                <div class="col-md-7">
-                                                    <div class="position-relative form-group">
-                                                        <label for="exampleEmail" class="">Localisation</label>
-                                                        <input name="localisation"
-                                                            placeholder="Entrez une Localisation..." type="text"
-                                                            class="form-control {{ form.localisation.errors && isSubmitted ? 'invalid': '' }}"
-                                                            formControlName="localisation">
-                                                        <small class="form-text text-muted info-error info-error-danger"
-                                                            *ngIf="handleError?.localisation">
-                                                            {{ handleError?.localisation }}
-                                                        </small>
-                                                    </div>
-                                                </div>
-                                                <div class="col-md-5">
-                                                    <div class="position-relative form-group">
-                                                        <label for="exampleEmail" class="">Email</label>
-                                                        <input name="email" placeholder="Entrez une email..."
-                                                            type="email"
-                                                            class="form-control {{ form.email.errors && isSubmitted ? 'invalid': '' }}"
-                                                            formControlName="email">
-                                                        <small class="form-text text-muted info-error info-error-danger"
-                                                            *ngIf="handleError?.email">
-                                                            {{ handleError?.email }}
-                                                        </small>
-                                                    </div>
-                                                </div>
-                                            </div> -->
                                             <div class="row">
                                                 <div class="col-md-10">
                                                     <mat-form-field class="example-full-width">
@@ -178,91 +96,29 @@
                                                     </mat-form-field>
                                                 </div>
                                             </div>                                      
-                                            <!-- <div class="row">
-                                                <div class="col-md-6">
-                                                    <div class="position-relative form-group">
-                                                        <label for="exampleEmail" class="">Tel 1:</label>
-                                                        <input name="phone1" placeholder="Entrez un numero de tel..."
-                                                            type="number"
-                                                            class="form-control {{ form.phone1.errors && isSubmitted ? 'invalid': '' }}"
-                                                            formControlName="phone1">
-                                                        <small class="form-text text-muted info-error info-error-danger"
-                                                            *ngIf="handleError?.phone1">
-                                                            {{ handleError?.phone1 }}
-                                                        </small>
-                                                    </div>
-                                                </div>
-                                                <div class="col-md-6">
-                                                    <div class="position-relative form-group">
-                                                        <label for="exampleEmail" class="">Tel 2:</label>
-                                                        <input name="phone2" placeholder="Entrez un numero de tel..."
-                                                            type="number"
-                                                            class="form-control {{ form.phone2.errors && isSubmitted ? 'invalid': '' }}"
-                                                            formControlName="phone2">
-                                                        <small class="form-text text-muted info-error info-error-danger"
-                                                            *ngIf="handleError?.phone2">
-                                                            {{ handleError?.phone2 }}
-                                                        </small>
-                                                    </div>
-                                                </div>
-                                            </div> -->
-                                            <!-- <div class="row">
+                                            <div class="row">
                                                 <div class="col-md-10">
-                                                    <input type="file" id="userFile" (change)="onSelectfile($event)" #fileInputAvatar
-                                                        style="display: none">
-                                                    <mat-form-field class="example-full-width">
-                                                        <input matInput formControlName="avatar" placeholder="Fichier" readonly>
+                                                    <input type="file" (change)="onSelectFile($event)" #fileInput style="display: none">
+                                                    <mat-form-field>
+                                                        <input matInput formControlName="presentation_file" placeholder="Fichier" readonly>
                                                     </mat-form-field>
-                                                    <button mat-button (click)="selectFileAvatar()">Selectionner</button>
+                                                    <button type="button" mat-button (click)="selectFile()">Importer une fiche de presentation</button>
                                                 </div>
-                                
-                                            </div> -->
-                                            <div class="col-md-12" *ngIf="active == null">
-                                                <div class="position-relative form-group"><label for="exampleEmail"
-                                                        class="">Fiche de presentation</label>
-                                                    <input name="presentation_file"
-                                                        placeholder="Fiche de presentation..." type="file"
-                                                        (change)="onSelectfile($event)"
-                                                        class="form-control {{ form.presentation_file.errors && isSubmitted ? 'invalid': '' }}"
-                                                        formControlName="presentation_file">
-                                                    <small class="form-text text-muted info-error info-error-danger"
-                                                        *ngIf="handleError?.presentation_file">
-                                                        {{ handleError?.presentation_file }}
-                                                    </small>
-                                                </div>
-
                                             </div>
                                             <div class="d-flex align-items-center">
                                                 <div class="ml-auto" *ngIf="active == null">
                                                     <input [disabled]="isLoading" type="submit"
                                                         class="btn btn-primary btn-lg"
                                                         value="Ajouter" />
-                                                    <div *ngIf="isLoading" style="padding: 15px; margin-left: 45%;">
-                                                        <div class="ball-rotate">
+                                                    <div *ngIf="isLoading" style="padding: 5px; margin-left: 45%;">
+                                                        <div class="ball-scale-multiple">
                                                             <div style="background-color: white;"></div>
                                                             <div style="background-color: white;"></div>
                                                             <div style="background-color: white;"></div>
                                                         </div>
                                                     </div>
                                                 </div>
-                                                <!-- <div class="ml-auto" *ngIf="active!=null" style="margin-right: 10px">
-                                                    <input (click)="update()" [disabled]="isLoading" type="button"
-                                                        class="btn btn-primary btn-lg"
-                                                        value="{{ 'Superadmins.UpdateField' | translate }}" />
-                                                    <div *ngIf="isLoading" style="padding: 15px; margin-left: 45%;">
-                                                        <div class="ball-rotate">
-                                                            <div style="background-color: white;"></div>
-                                                            <div style="background-color: white;"></div>
-                                                            <div style="background-color: white;"></div>
-                                                        </div>
-                                                    </div>
-                                                </div> -->
-                                                <!-- <div class="ml-auto" *ngIf="active!=null" style="margin-left: 10px">
-                                                    <input (click)="cancel()" type="button"
-                                                        class="btn btn-warning btn-lg"
-                                                        value="Annuler" />
-                                                </div> -->
-                                            </div>
+                                              </div>
                                         </div>
                                     </form>
                                 </div>
