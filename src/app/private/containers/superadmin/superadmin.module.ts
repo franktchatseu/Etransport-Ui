@@ -18,7 +18,7 @@ import { EnginUpdateComponent} from './containers/engin/engin-update/engin-updat
 import { DriverAllComponent} from './containers/driver/driver-all/driver-all.component';
 import { DriverDetailsComponent} from './containers/driver/driver-details/driver-details.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
-import {MatSelectModule, MatDialogModule,MatStepperModule,MatFormFieldModule,MatInputModule,MatButtonModule,MatDatepickerModule,MatSnackBarModule, MatSnackBar } from '@angular/material';
+import {MatSelectModule, MatDialogModule,MatStepperModule,MatFormFieldModule,MatInputModule,MatButtonModule,MatDatepickerModule,MatSnackBarModule, MatSnackBar, MatExpansionModule } from '@angular/material';
 import { CarosserieComponent } from "./containers/parametres/carosserie/carosserie.component";
 import { MarqueComponent } from "./containers/parametres/marque/marque.component";
 import { ModeleComponent } from "./containers/parametres/modele/modele.component";
@@ -66,6 +66,7 @@ import { ListTransportElementsComponent } from "./containers/element-transport/l
     MatDialogModule,
     MatStepperModule,
     MatFormFieldModule,
+    MatExpansionModule,
     MatInputModule,
     MatButtonModule,
     MatDatepickerModule,
