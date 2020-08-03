@@ -24,6 +24,7 @@ import { ElementTransportDetailComponent} from './containers/element-transport/e
 import { TransportElementComponent } from './containers/element-transport/transport-element/transport-element.component';
 import { ListTransportElementsComponent } from './containers/element-transport/list-transport-elements/list-transport-elements.component';
 import { AddTransportElementComponent } from './containers/element-transport/add-transport-element/add-transport-element.component';
+import { TransporteurDetailComponent } from "./containers/transporteur/transporteur-detail/transporteur-detail.component";
 
 const routes: Routes = [
   {
@@ -125,6 +126,10 @@ const routes: Routes = [
           {
             path: 'transporter-all',
             component: TransporteurAllComponent,
+          },
+          {
+            path: 'transporter-detail/:id',
+            component: TransporteurDetailComponent
           },
           {
             path: 'transporter-update/:id',
