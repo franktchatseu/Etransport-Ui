@@ -19,89 +19,92 @@
         <div class="card">
             <div id="headingOne" class="card-header">
                 <button type="button" data-toggle="collapse" data-target="#collapseOne1" aria-expanded="true"
-                    aria-controls="collapseOne" class="text-left m-0 p-0 btn btn-link btn-block">
-                    <h5 class="m-0 p-0">Informations Sur L'element Intervenant</h5>
+                    aria-controls="collapseOne" class="text-center m-0 p-0 btn btn-link btn-block">
+                    <h5 class="m-0 p-0 widget-numbers text-success">Informations Sur L'element Intervenant</h5>
                 </button>
             </div>
             <div data-parent="#accordion" id="collapseOne1" aria-labelledby="headingOne" class="collapse show">
                 <div class="card-body">
-                    <ul class="list-group list-group-flush">
-                        <li class="list-group-item">
-                            <div class="widget-content p-0">
-                                <div class="widget-content-wrapper">
-                                    <div class="widget-content-left mr-3">
-                                        <div class="icon-wrapper border-light rounded m-0">
-                                            <div class="icon-wrapper-bg bg-light"></div>
-                                            <i class="lnr-cog icon-gradient bg-happy-itmeo"></i>
+                    <div class="row">
+                        <div class="col-md-6">
+                            <ul class="list-group list-group-flush">
+                                <li class="list-group-item">
+                                    <div class="widget-content p-0">
+                                        <div class="widget-content-wrapper">
+                                            <div class="widget-content-left mr-3">
+                                                <div class="icon-wrapper border-light rounded m-0">
+                                                    <div class="icon-wrapper-bg bg-light"></div>
+                                                    <i class="lnr-cog icon-gradient bg-happy-itmeo"></i>
+                                                </div>
+                                            </div>
+                                            <div class="widget-content-left">
+                                                <div class="widget-heading">Nom :</div>
+                                                <div>
+                                                    {{ element?.name }}
+                                                </div>
+                                            </div>
                                         </div>
                                     </div>
-                                    <div class="widget-content-left">
-                                        <div class="widget-heading">Nom :</div>
-                                        <div>
-                                            {{ element?.name }}
+                                </li>
+                                <li class="list-group-item">
+                                    <div class="widget-content p-0">
+                                        <div class="widget-content-wrapper">
+                                            <div class="widget-content-left mr-3">
+                                                <div class="icon-wrapper border-light rounded m-0">
+                                                    <div class="icon-wrapper-bg bg-light"></div>
+                                                    <i class="lnr-cog icon-gradient bg-happy-itmeo"></i>
+                                                </div>
+                                            </div>
+                                            <div class="widget-content-left">
+                                                <div class="widget-heading">Description :</div>
+                                                <div>
+                                                    {{ element?.description}}
+                                                </div>
+                                            </div>
                                         </div>
                                     </div>
-                                </div>
-                            </div>
-                        </li>
-                        <li class="list-group-item">
-                            <div class="widget-content p-0">
-                                <div class="widget-content-wrapper">
-                                    <div class="widget-content-left mr-3">
-                                        <div class="icon-wrapper border-light rounded m-0">
-                                            <div class="icon-wrapper-bg bg-light"></div>
-                                            <i class="lnr-cog icon-gradient bg-happy-itmeo"></i>
+                                </li>
+                                <li class="list-group-item">
+                                    <div class="widget-content p-0">
+                                        <div class="widget-content-wrapper">
+                                            <div class="widget-content-left mr-3">
+                                                <div class="icon-wrapper border-light rounded m-0">
+                                                    <div class="icon-wrapper-bg bg-light"></div>
+                                                    <i class="lnr-cog icon-gradient bg-happy-itmeo"></i>
+                                                </div>
+                                            </div>
+                                            <div class="widget-content-left">
+                                                <div class="widget-heading">Localisation:</div>
+                                                <div>
+                                                    {{ element?.localisation}}
+                                                </div>
+                                            </div>
                                         </div>
                                     </div>
-                                    <div class="widget-content-left">
-                                        <div class="widget-heading">Description :</div>
-                                        <div>
-                                            {{ element?.description}}
+                                </li>
+                                <li class="list-group-item">
+                                    <div class="widget-content p-0">
+                                        <div class="widget-content-wrapper">
+                                            <div class="widget-content-left mr-3">
+                                                <div class="icon-wrapper border-light rounded m-0">
+                                                    <div class="icon-wrapper-bg bg-light"></div>
+                                                    <i class="lnr-cog icon-gradient bg-happy-itmeo"></i>
+                                                </div>
+                                            </div>
+                                            <div class="widget-content-left">
+                                                <div class="widget-heading">Telephone 1:</div>
+                                                <div>
+                                                    {{ element?.phone1}}
+                                                </div>
+                                            </div>
                                         </div>
                                     </div>
-                                </div>
-                            </div>
-                        </li>
-
-                        <li class="list-group-item">
-                            <div class="widget-content p-0">
-                                <div class="widget-content-wrapper">
-                                    <div class="widget-content-left mr-3">
-                                        <div class="icon-wrapper border-light rounded m-0">
-                                            <div class="icon-wrapper-bg bg-light"></div>
-                                            <i class="lnr-cog icon-gradient bg-happy-itmeo"></i>
-                                        </div>
-                                    </div>
-                                    <div class="widget-content-left">
-                                        <div class="widget-heading">Localisation:</div>
-                                        <div>
-                                            {{ element?.localisation}}
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </li>
-
-                        <li class="list-group-item">
-                            <div class="widget-content p-0">
-                                <div class="widget-content-wrapper">
-                                    <div class="widget-content-left mr-3">
-                                        <div class="icon-wrapper border-light rounded m-0">
-                                            <div class="icon-wrapper-bg bg-light"></div>
-                                            <i class="lnr-cog icon-gradient bg-happy-itmeo"></i>
-                                        </div>
-                                    </div>
-                                    <div class="widget-content-left">
-                                        <div class="widget-heading">Telephone 1:</div>
-                                        <div>
-                                            {{ element?.phone1}}
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </li>
-
-                        <li class="list-group-item">
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="col-md-6">
+                            <ul class="list-group list-group-flush">
+                                <li class="list-group-item">
                             <div class="widget-content p-0">
                                 <div class="widget-content-wrapper">
                                     <div class="widget-content-left mr-3">
@@ -118,65 +121,64 @@
                                     </div>
                                 </div>
                             </div>
-                        </li>
-
-                        <li class="list-group-item">
-                            <div class="widget-content p-0">
-                                <div class="widget-content-wrapper">
-                                    <div class="widget-content-left mr-3">
-                                        <div class="icon-wrapper border-light rounded m-0">
-                                            <div class="icon-wrapper-bg bg-light"></div>
-                                            <i class="lnr-cog icon-gradient bg-happy-itmeo"></i>
+                                </li>
+                                <li class="list-group-item">
+                                    <div class="widget-content p-0">
+                                        <div class="widget-content-wrapper">
+                                            <div class="widget-content-left mr-3">
+                                                <div class="icon-wrapper border-light rounded m-0">
+                                                    <div class="icon-wrapper-bg bg-light"></div>
+                                                    <i class="lnr-cog icon-gradient bg-happy-itmeo"></i>
+                                                </div>
+                                            </div>
+                                            <div class="widget-content-left">
+                                                <div class="widget-heading">Telephone 2 :</div>
+                                                <div>
+                                                    {{ element?.email}}
+                                                </div>
+                                            </div>
                                         </div>
                                     </div>
-                                    <div class="widget-content-left">
-                                        <div class="widget-heading">Telephone 2 :</div>
-                                        <div>
-                                            {{ element?.email}}
+                                </li>
+                                <li class="list-group-item">
+                                    <div class="widget-content p-0">
+                                        <div class="widget-content-wrapper">
+                                            <div class="widget-content-left mr-3">
+                                                <div class="icon-wrapper border-light rounded m-0">
+                                                    <div class="icon-wrapper-bg bg-light"></div>
+                                                    <i class="lnr-cog icon-gradient bg-happy-itmeo"></i>
+                                                </div>
+                                            </div>
+                                            <div class="widget-content-left">
+                                                <div class="widget-heading">Fonction de la structure</div>
+                                                <div>
+                                                    {{ element?.function}}
+                                                </div>
+                                            </div>
                                         </div>
                                     </div>
-                                </div>
-                            </div>
-                        </li>
-
-                        <li class="list-group-item">
-                            <div class="widget-content p-0">
-                                <div class="widget-content-wrapper">
-                                    <div class="widget-content-left mr-3">
-                                        <div class="icon-wrapper border-light rounded m-0">
-                                            <div class="icon-wrapper-bg bg-light"></div>
-                                            <i class="lnr-cog icon-gradient bg-happy-itmeo"></i>
+                                </li>
+                                <li class="list-group-item">
+                                    <div class="widget-content p-0">
+                                        <div class="widget-content-wrapper">
+                                            <div class="widget-content-left mr-3">
+                                                <div class="icon-wrapper border-light rounded m-0">
+                                                    <div class="icon-wrapper-bg bg-light"></div>
+                                                    <i class="lnr-cog icon-gradient bg-happy-itmeo"></i>
+                                                </div>
+                                            </div>
+                                            <div class="widget-content-left">
+                                                <div class="widget-heading">fiche de presentation</div>
+                                                <div>
+                                                    {{ element?.presentation_file}}
+                                                </div>
+                                            </div>
                                         </div>
                                     </div>
-                                    <div class="widget-content-left">
-                                        <div class="widget-heading">Fonction de la structure</div>
-                                        <div>
-                                            {{ element?.function}}
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </li>
-
-                        <li class="list-group-item">
-                            <div class="widget-content p-0">
-                                <div class="widget-content-wrapper">
-                                    <div class="widget-content-left mr-3">
-                                        <div class="icon-wrapper border-light rounded m-0">
-                                            <div class="icon-wrapper-bg bg-light"></div>
-                                            <i class="lnr-cog icon-gradient bg-happy-itmeo"></i>
-                                        </div>
-                                    </div>
-                                    <div class="widget-content-left">
-                                        <div class="widget-heading">fiche de presentation</div>
-                                        <div>
-                                            {{ element?.presentation_file}}
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </li>
-                    </ul>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
