@@ -97,7 +97,7 @@ export class DriverAllComponent implements OnInit {
     }
 
     update(id) {
-      this.router.navigate(['/private/superadmins/driver-update/' + id]);
+      this.router.navigate(['/private/superadmins/driver-update/',id]);
     }
 
     detail(id) {
@@ -143,10 +143,19 @@ export class DriverAllComponent implements OnInit {
         }
       })
     }
-    completeProfil(step_number){
+    completer(driv){
      
-      this.router.navigate(['/private/superadmins/driver-add/' , step_number]);
+      let driver: any={
+        "id":driv.stepper_id,
+        "value":driv.value,
+        "number":driv.number
+      }
+  
+      localStorage.setItem("driver", JSON.stringify(driver));
+      this.router.navigate(['/private/superadmins/driver-add']);
 
    }
+
+
 
 }

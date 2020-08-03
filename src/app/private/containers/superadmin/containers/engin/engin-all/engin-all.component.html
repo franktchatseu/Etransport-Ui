@@ -51,14 +51,18 @@
                         <td >{{engin.color}}</td>
                         <td >{{engin.country_registration}}</td>
                         <td >
-                            <button class="mr-2 btn-icon btn-icon-only btn btn-outline-primary"
+                            <button *ngIf="engin.status==1" class="mr-2 btn-icon btn-icon-only btn btn-outline-primary"
                                 (click)="update(engin.stepper_id)"><i class="pe-7s-pen btn-icon-wrapper"> </i></button>
                             <button class="mr-2 btn-icon btn-icon-only btn btn-outline-success"
-                                (click)="detail(engin.id)">
+                                (click)="detail(engin.stepper_id)">
                                 <i class="pe-7s-info btn-icon-wrapper"> </i></button>
                             <button class="mr-2 btn-icon btn-icon-only btn btn-outline-danger"
                                 (click)="delete(engin.id)"><i class="pe-7s-trash btn-icon-wrapper"> </i></button>
-    
+                        </td>
+                        <td>
+                            <button *ngIf="engin.status==0 " class="mr-2 btn btn-warning"
+                             (click)="completer(engin)" >completer enregistrement</button>
+                            <div *ngIf="engin.status==1" class="badge badge-pill badge-success">engin totalement renseigne</div>
                         </td>
                     </tr>
     
@@ -72,11 +76,11 @@
                         <div class="col-md-4">
                             <ul class="pagination">
                                 <li class="paginate_button page-item previous" id="example_previous">
-                                    <a  (click)="getPage(drivers.prev_page_url)" aria-controls="example" data-dt-idx="0" tabindex="0"
+                                    <a  (click)="getPage(engins?.prev_page_url)" aria-controls="example" data-dt-idx="0" tabindex="0"
                                         class="page-link">PRECEDENT</a>
                                 </li>
                                 <li class="paginate_button page-item next" id="example_next">
-                                    <a (click)="getPage(drivers.next_page_url)" aria-controls="example" data-dt-idx="7" tabindex="0"
+                                    <a (click)="getPage(engins?.next_page_url)" aria-controls="example" data-dt-idx="7" tabindex="0"
                                         class="page-link">SUIVANT</a>
                                 </li> 
                             </ul>

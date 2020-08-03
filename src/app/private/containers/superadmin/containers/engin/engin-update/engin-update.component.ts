@@ -176,7 +176,7 @@ export class EnginUpdateComponent implements OnInit {
       }
     ).catch(
       error => {
-        this.translate.get("aucun information sur le premier caractere technique enregistree")
+        this.translate.get("aucun information sur le deuxiemecaractere technique enregistree")
           .subscribe(val => this.notificationService.warning(val));
 
       }
@@ -190,7 +190,7 @@ export class EnginUpdateComponent implements OnInit {
       }
     ).catch(
       error => {
-        this.translate.get("aucun information sur le premier caractere technique enregistree")
+        this.translate.get("aucun information sur la description enregistree")
           .subscribe(val => this.notificationService.warning(val));
 
       }
@@ -204,7 +204,7 @@ export class EnginUpdateComponent implements OnInit {
       }
     ).catch(
       error => {
-        this.translate.get("aucun information sur le premier caractere technique enregistree")
+        this.translate.get("aucun information sur le papier du vehicule enregistree")
           .subscribe(val => this.notificationService.warning(val));
 
       }
@@ -218,7 +218,7 @@ export class EnginUpdateComponent implements OnInit {
       }
     ).catch(
       error => {
-        this.translate.get("aucun information sur le premier caractere technique enregistree")
+        this.translate.get("aucune photo enregistree")
           .subscribe(val => this.notificationService.warning(val));
 
       }

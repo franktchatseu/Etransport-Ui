@@ -18,7 +18,7 @@ import { EnginAddComponent} from './containers/engin/engin-add/engin-add.compone
 import { EnginUpdateComponent} from './containers/engin/engin-update/engin-update.component';
 import { EnginDetailComponent} from './containers/engin/engin-detail/engin-detail.component';
 import { EnginAllComponent} from './containers/engin/engin-all/engin-all.component';
-
+import { TransporteurAllComponent } from "./containers/transporteur/transporteur-all/transporteur-all.component";
 //import { AddTransportElementComponent } from './containers/element-transport/add-transport-element/add-transport-element.component';
 import { ElementTransportDetailComponent} from './containers/element-transport/element-transport-detail/element-transport-detail.component';
 import { TransportElementComponent } from './containers/element-transport/transport-element/transport-element.component';
@@ -35,7 +35,7 @@ const routes: Routes = [
         component: RandomNumberComponent,
       },
       {
-        path: 'driver-add/:stepper_number',
+        path: 'driver-add',
         component: DriverAddComponent,
       },
       {
@@ -57,6 +57,10 @@ const routes: Routes = [
       {
         path: 'type-intervenant',
         component: TypeIntervenantComponent,
+      },
+      {
+        path: 'transporteur-all/:id',
+        component: TransporteurAllComponent,
       },
       {
         path: 'marque',
@@ -117,6 +121,10 @@ const routes: Routes = [
           {
             path: 'transporter-add',
             component: TransporterAddComponent,
+          },
+          {
+            path: 'transporter-all',
+            component: TransporteurAllComponent,
           },
           {
             path: 'transporter-update/:id',

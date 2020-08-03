@@ -35,7 +35,7 @@ export class DriverDetailsComponent implements OnInit {
 
   async ngOnInit() {
     const driver_id = +this.route.snapshot.paramMap.get("id");
-
+    console.log("ces le drive id" + driver_id)
 
     this.driverService.getPermis(driver_id).then(
       data => {
