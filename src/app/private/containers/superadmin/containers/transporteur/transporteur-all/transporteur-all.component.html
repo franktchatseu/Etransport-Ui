@@ -7,8 +7,8 @@
                         <i class="pe-7s-phone icon-gradient bg-premium-dark">
                         </i>
                     </div>
-                    <div>Liste des chauffeurs
-                        <div class="page-title-subheading">consulter la liste des chauffeurs.
+                    <div>Liste des Transporteurs
+                        <div class="page-title-subheading">consulter la liste des transporteur.
                         </div>
                     </div>
                 </div>
@@ -21,11 +21,6 @@
 
 <div class="main-card mb-3 card">
     <div class="card-body">
-        <div>
-            <button type="button" class="btn mr-2 mb-2 btn-primary" (click)="add()">
-                Ajouter un chauffeur
-            </button>
-        </div>
 
         <br>
         <table style="width: 100%;" id="example" class="table table-hover table-striped table-bordered">
@@ -34,37 +29,33 @@
 
                     <th style="width: 15%;">Photo</th>
                     <th>Nom</th>
-                    <th>Prenom</th>
-                    <th>Nationalite</th>
+                    <th>Localisation</th>
                     <th>telephone</th>
                     <th>email</th>
+                    <th>Numero du Contribuable</th>
+                    <th>Description des services</th>
                     <th>Action</th>
-                    <th>Status</th>
                 </tr>
             </thead>
             <tbody>
-                <tr *ngFor="let driver of drivers?.data,let i = index">
+                <tr *ngFor="let transporteur of transporteurs?.data,let i = index">
 
                     <td>
-                        <img [src]="driver.avatar" width="50px" height="50px" alt="image du chauffeur" srcset="">
+                        <img [src]="transporteur.image" width="50px" height="50px" alt="image du transporteur" srcset="">
                     </td>
-                    <td>{{driver.first_name}}</td>
-                    <td>{{driver.last_name}}</td>
-                    <td>{{driver.name}}</td>
-                    <td>{{driver.tel2}}</td>
-                    <td>{{driver.email}}</td>
+                    <td>{{transporteur.name}}</td>
+                    <td>{{transporteur.localisation}}</td>
+                    <td>{{transporteur.phone1}}</td>
+                    <td>{{transporteur.email}}</td>
+                    <td>{{transporteur.description_services}}</td>
+                    <td>{{transporteur.email}}</td>
                     <td>
-                        <button *ngIf="driver.status==1" class="mr-2 btn-icon btn-icon-only btn btn-outline-primary"
-                            (click)="update(driver.stepper_id)"><i class="pe-7s-pen btn-icon-wrapper"> </i></button>
-                        <button class="mr-2 btn-icon btn-icon-only btn btn-outline-success" (click)="detail(driver.stepper_id)">
+                        <button class="mr-2 btn-icon btn-icon-only btn btn-outline-primary"
+                            (click)="update(transporteur.stepper_main_id)"><i class="pe-7s-pen btn-icon-wrapper"> </i></button>
+                        <button class="mr-2 btn-icon btn-icon-only btn btn-outline-success" (click)="detail(transporteur.stepper_main_id)">
                             <i class="pe-7s-info btn-icon-wrapper"> </i></button>
                         <button class="mr-2 btn-icon btn-icon-only btn btn-outline-danger"
-                            (click)="delete(driver.id)"><i class="pe-7s-trash btn-icon-wrapper"> </i></button>
-                    </td>
-                    <td>
-                        <button *ngIf="driver.status==0 " class="mr-2 btn btn-warning"
-                            (click)="completer(driver)">completer votre profil</button>
-                        <div *ngIf="driver.status==1" class="badge badge-pill badge-success">profil totalement renseigne</div>
+                            (click)="delete(transporteur.id)"><i class="pe-7s-trash btn-icon-wrapper"> </i></button>
                     </td>
                 </tr>
 
@@ -78,11 +69,11 @@
                     <div class="col-md-4">
                         <ul class="pagination">
                             <li class="paginate_button page-item previous" id="example_previous">
-                                <a (click)="getPage(drivers.prev_page_url)" aria-controls="example" data-dt-idx="0"
+                                <a (click)="getPage(transporteurs?.prev_page_url)" aria-controls="example" data-dt-idx="0"
                                     tabindex="0" class="page-link">PRECEDENT</a>
                             </li>
                             <li class="paginate_button page-item next" id="example_next">
-                                <a (click)="getPage(drivers.next_page_url)" aria-controls="example" data-dt-idx="7"
+                                <a (click)="getPage(transporteurs?.next_page_url)" aria-controls="example" data-dt-idx="7"
                                     tabindex="0" class="page-link">SUIVANT</a>
                             </li>
                         </ul>

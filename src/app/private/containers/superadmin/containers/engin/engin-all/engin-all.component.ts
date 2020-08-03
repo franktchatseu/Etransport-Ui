@@ -76,7 +76,7 @@ export class EnginAllComponent implements OnInit {
         this.engins = res;
         console.log(this.engins)
       }, (error) => {
-        this.notificationService.danger("Aucun engin disponibile");
+        this.notificationService.warning("Aucun engin disponibile");
       });
     }
 
@@ -85,7 +85,7 @@ export class EnginAllComponent implements OnInit {
         console.log(res)
         this.drivers = res;
       }, (error) => {
-        this.notificationService.danger("Page terminer");
+        this.notificationService.warning("Page terminer");
       });
     }
 
@@ -104,7 +104,7 @@ export class EnginAllComponent implements OnInit {
     }
 
     detail(id) {
-      this.router.navigate(['/private/superadmins/engin-detail/' + id]);
+      this.router.navigate(['/private/superadmins/engin-detail/' , id]);
     }
 
     delete(assoc_id) {
