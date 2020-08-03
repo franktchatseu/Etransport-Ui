@@ -98,11 +98,11 @@ export class TransporteurAllComponent implements OnInit {
    }
 
    update(id) {
-     this.router.navigate(['/transporter-update/' + id]);
+     this.router.navigate(['/private/superadmins/transporter/transporter-update', id]);
    }
 
    detail(id) {
-     this.router.navigate(['/private/superadmins/transporter/transporter-detail/' , id]);
+     this.router.navigate(['/private/superadmins/transporter/transporter-detail' , id]);
    }
 
    delete(assoc_id) {
@@ -144,6 +144,7 @@ export class TransporteurAllComponent implements OnInit {
        }
      })
    }
+   
    completeProfil(step_number){
     
      this.router.navigate(['/private/superadmins/driver-add/' , step_number]);

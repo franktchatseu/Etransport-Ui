@@ -41,7 +41,7 @@
                 <tr *ngFor="let transporteur of transporteurs?.data,let i = index">
 
                     <td>
-                        <img [src]="transporteur.image" width="50px" height="50px" alt="image du transporteur" srcset="">
+                        <img src="{{transporteur.image}}" width="50px" height="50px" alt="image du transporteur" srcset="">
                     </td>
                     <td>{{transporteur.name}}</td>
                     <td>{{transporteur.localisation}}</td>

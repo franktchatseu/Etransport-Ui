@@ -12,7 +12,7 @@ export class TransporteurService {
 
 
   delete(id: number) {
-    return this.http.delete(`${config.apiUrl}/module2/general_informations/${id}`).toPromise();
+    return this.http.delete(`${config.apiUrl}/module1/stepper_main/${id}`).toPromise();
 
   }
   addInfoGenerale1(formData: FormData): Promise<any> {
