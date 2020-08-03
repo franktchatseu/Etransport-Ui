@@ -102,7 +102,7 @@ export class TransporteurAllComponent implements OnInit {
    }
 
    detail(id) {
-     this.router.navigate(['/private/superadmins/driver-detail/' , id]);
+     this.router.navigate(['/private/superadmins/transporter/transporter-detail/' , id]);
    }
 
    delete(assoc_id) {

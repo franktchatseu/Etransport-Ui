@@ -3,184 +3,184 @@
         <div class="card">
             <div id="headingOne" class="card-header">
                 <button type="button" data-toggle="collapse" data-target="#collapseOne1" aria-expanded="true"
-                    aria-controls="collapseOne" class="text-left m-0 p-0 btn btn-link btn-block">
-                    <h5 class="m-0 p-0">Informations Generales</h5>
+                    aria-controls="collapseOne" class="text-center m-0 p-0 btn btn-link btn-block">
+                    <h5 class="m-0 p-0 widget-numbers text-success">Informations Generales</h5>
                 </button>
             </div>
             <div data-parent="#accordion" id="collapseOne1" aria-labelledby="headingOne" class="collapse show">
-                <div class="card-body" *ngFor="let driver of drivers">
-                    <ul class="list-group list-group-flush">
-                        <li class="list-group-item">
-                            <div class="widget-content p-0">
-                                <div class="widget-content-wrapper">
-                                    <div class="widget-content-left mr-3">
-                                        <div class="icon-wrapper border-light rounded m-0">
-                                            <div class="icon-wrapper-bg bg-light"></div>
-                                            <i class="lnr-cog icon-gradient bg-happy-itmeo"></i>
+                <div class="card-body" >
+                    <div class="row">
+                        <div class="col-md-6">
+                            <ul class="list-group list-group-flush">
+                                <li class="list-group-item">
+                                    <div class="widget-content p-0">
+                                        <div class="widget-content-wrapper">
+                                            <div class="widget-content-left mr-3">
+                                                <div class="icon-wrapper border-light rounded m-0">
+                                                    <div class="icon-wrapper-bg bg-light"></div>
+                                                    <i class="lnr-cog icon-gradient bg-happy-itmeo"></i>
+                                                </div>
+                                            </div>
+                                            <div class="widget-content-left">
+                                                <div class="widget-heading">Nom :</div>
+                                                <div>
+                                                    {{ driver.first_name}}
+                                                </div>
+                                            </div>
                                         </div>
                                     </div>
-                                    <div class="widget-content-left">
-                                        <div class="widget-heading">Nom :</div>
-                                        <div>
-                                            {{ driver.first_name}}
+                                </li>
+                                <li class="list-group-item">
+                                    <div class="widget-content p-0">
+                                        <div class="widget-content-wrapper">
+                                            <div class="widget-content-left mr-3">
+                                                <div class="icon-wrapper border-light rounded m-0">
+                                                    <div class="icon-wrapper-bg bg-light"></div>
+                                                    <i class="lnr-cog icon-gradient bg-happy-itmeo"></i>
+                                                </div>
+                                            </div>
+                                            <div class="widget-content-left">
+                                                <div class="widget-heading">Prenom :</div>
+                                                <div>
+                                                    {{ driver.last_name}}
+                                                </div>
+                                            </div>
                                         </div>
                                     </div>
-                                </div>
-                            </div>
-                        </li>
-                        <li class="list-group-item">
-                            <div class="widget-content p-0">
-                                <div class="widget-content-wrapper">
-                                    <div class="widget-content-left mr-3">
-                                        <div class="icon-wrapper border-light rounded m-0">
-                                            <div class="icon-wrapper-bg bg-light"></div>
-                                            <i class="lnr-cog icon-gradient bg-happy-itmeo"></i>
+                                </li>
+                                <li class="list-group-item">
+                                    <div class="widget-content p-0">
+                                        <div class="widget-content-wrapper">
+                                            <div class="widget-content-left mr-3">
+                                                <div class="icon-wrapper border-light rounded m-0">
+                                                    <div class="icon-wrapper-bg bg-light"></div>
+                                                    <i class="lnr-cog icon-gradient bg-happy-itmeo"></i>
+                                                </div>
+                                            </div>
+                                            <div class="widget-content-left">
+                                                <div class="widget-heading">Nationalite :</div>
+                                                <div>
+                                                    {{ driver.name}}
+                                                </div>
+                                            </div>
                                         </div>
                                     </div>
-                                    <div class="widget-content-left">
-                                        <div class="widget-heading">Prenom :</div>
-                                        <div>
-                                            {{ driver.last_name}}
+                                </li>
+                                <li class="list-group-item">
+                                    <div class="widget-content p-0">
+                                        <div class="widget-content-wrapper">
+                                            <div class="widget-content-left mr-3">
+                                                <div class="icon-wrapper border-light rounded m-0">
+                                                    <div class="icon-wrapper-bg bg-light"></div>
+                                                    <i class="lnr-cog icon-gradient bg-happy-itmeo"></i>
+                                                </div>
+                                            </div>
+                                            <div class="widget-content-left">
+                                                <div class="widget-heading">Email :</div>
+                                                <div>
+                                                    {{ driver.email}}
+                                                </div>
+                                            </div>
                                         </div>
                                     </div>
-                                </div>
-                            </div>
-                        </li>
-
-                        <li class="list-group-item">
-                            <div class="widget-content p-0">
-                                <div class="widget-content-wrapper">
-                                    <div class="widget-content-left mr-3">
-                                        <div class="icon-wrapper border-light rounded m-0">
-                                            <div class="icon-wrapper-bg bg-light"></div>
-                                            <i class="lnr-cog icon-gradient bg-happy-itmeo"></i>
+                                </li>
+                                <li class="list-group-item">
+                                    <div class="widget-content p-0">
+                                        <div class="widget-content-wrapper">
+                                            <div class="widget-content-left mr-3">
+                                                <div class="icon-wrapper border-light rounded m-0">
+                                                    <div class="icon-wrapper-bg bg-light"></div>
+                                                    <i class="lnr-cog icon-gradient bg-happy-itmeo"></i>
+                                                </div>
+                                            </div>
+                                            <div class="widget-content-left">
+                                                <div class="widget-heading">telephone :</div>
+                                                <div>
+                                                    {{ driver.tel2}}
+                                                </div>
+                                            </div>
                                         </div>
                                     </div>
-                                    <div class="widget-content-left">
-                                        <div class="widget-heading">Nationalite :</div>
-                                        <div>
-                                            {{ driver.name}}
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="col-md-6">
+                            <ul class="list-group list-group-flush">
+                                <li class="list-group-item">
+                                    <div class="widget-content p-0">
+                                        <div class="widget-content-wrapper">
+                                            <div class="widget-content-left mr-3">
+                                                <div class="icon-wrapper border-light rounded m-0">
+                                                    <div class="icon-wrapper-bg bg-light"></div>
+                                                    <i class="lnr-cog icon-gradient bg-happy-itmeo"></i>
+                                                </div>
+                                            </div>
+                                            <div class="widget-content-left">
+                                                <div class="widget-heading">Second Numero :</div>
+                                                <div>
+                                                    {{ driver.tel1}}
+                                                </div>
+                                            </div>
                                         </div>
                                     </div>
-                                </div>
-                            </div>
-                        </li>
-
-                        <li class="list-group-item">
-                            <div class="widget-content p-0">
-                                <div class="widget-content-wrapper">
-                                    <div class="widget-content-left mr-3">
-                                        <div class="icon-wrapper border-light rounded m-0">
-                                            <div class="icon-wrapper-bg bg-light"></div>
-                                            <i class="lnr-cog icon-gradient bg-happy-itmeo"></i>
+                                </li>
+                                <li class="list-group-item">
+                                    <div class="widget-content p-0">
+                                        <div class="widget-content-wrapper">
+                                            <div class="widget-content-left mr-3">
+                                                <div class="icon-wrapper border-light rounded m-0">
+                                                    <div class="icon-wrapper-bg bg-light"></div>
+                                                    <i class="lnr-cog icon-gradient bg-happy-itmeo"></i>
+                                                </div>
+                                            </div>
+                                            <div class="widget-content-left">
+                                                <div class="widget-heading">Addresse</div>
+                                                <div>
+                                                    {{ driver.address}}
+                                                </div>
+                                            </div>
                                         </div>
                                     </div>
-                                    <div class="widget-content-left">
-                                        <div class="widget-heading">Email :</div>
-                                        <div>
-                                            {{ driver.email}}
+                                </li>
+                                <li class="list-group-item">
+                                    <div class="widget-content p-0">
+                                        <div class="widget-content-wrapper">
+                                            <div class="widget-content-left mr-3">
+                                                <div class="icon-wrapper border-light rounded m-0">
+                                                    <div class="icon-wrapper-bg bg-light"></div>
+                                                    <i class="lnr-cog icon-gradient bg-happy-itmeo"></i>
+                                                </div>
+                                            </div>
+                                            <div class="widget-content-left">
+                                                <div class="widget-heading">Date de Naissance</div>
+                                                <div>
+                                                    {{ driver.date_birth}}
+                                                </div>
+                                            </div>
                                         </div>
                                     </div>
-                                </div>
-                            </div>
-                        </li>
-
-                        <li class="list-group-item">
-                            <div class="widget-content p-0">
-                                <div class="widget-content-wrapper">
-                                    <div class="widget-content-left mr-3">
-                                        <div class="icon-wrapper border-light rounded m-0">
-                                            <div class="icon-wrapper-bg bg-light"></div>
-                                            <i class="lnr-cog icon-gradient bg-happy-itmeo"></i>
+                                </li>
+                                <li class="list-group-item">
+                                    <div class="widget-content p-0">
+                                        <div class="widget-content-wrapper">
+                                            <div class="widget-content-left mr-3">
+                                                <div class="icon-wrapper border-light rounded m-0">
+                                                    <div class="icon-wrapper-bg bg-light"></div>
+                                                    <i class="lnr-cog icon-gradient bg-happy-itmeo"></i>
+                                                </div>
+                                            </div>
+                                            <div class="widget-content-left">
+                                                <div class="widget-heading">Lieu de Naissance :</div>
+                                                <div>
+                                                    {{ driver.place_birth}}
+                                                </div>
+                                            </div>
                                         </div>
                                     </div>
-                                    <div class="widget-content-left">
-                                        <div class="widget-heading">telephone :</div>
-                                        <div>
-                                            {{ driver.tel2}}
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </li>
-
-                        <li class="list-group-item">
-                            <div class="widget-content p-0">
-                                <div class="widget-content-wrapper">
-                                    <div class="widget-content-left mr-3">
-                                        <div class="icon-wrapper border-light rounded m-0">
-                                            <div class="icon-wrapper-bg bg-light"></div>
-                                            <i class="lnr-cog icon-gradient bg-happy-itmeo"></i>
-                                        </div>
-                                    </div>
-                                    <div class="widget-content-left">
-                                        <div class="widget-heading">Second Numero :</div>
-                                        <div>
-                                            {{ driver.tel1}}
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </li>
-
-                        <li class="list-group-item">
-                            <div class="widget-content p-0">
-                                <div class="widget-content-wrapper">
-                                    <div class="widget-content-left mr-3">
-                                        <div class="icon-wrapper border-light rounded m-0">
-                                            <div class="icon-wrapper-bg bg-light"></div>
-                                            <i class="lnr-cog icon-gradient bg-happy-itmeo"></i>
-                                        </div>
-                                    </div>
-                                    <div class="widget-content-left">
-                                        <div class="widget-heading">Addresse</div>
-                                        <div>
-                                            {{ driver.address}}
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </li>
-
-                        <li class="list-group-item">
-                            <div class="widget-content p-0">
-                                <div class="widget-content-wrapper">
-                                    <div class="widget-content-left mr-3">
-                                        <div class="icon-wrapper border-light rounded m-0">
-                                            <div class="icon-wrapper-bg bg-light"></div>
-                                            <i class="lnr-cog icon-gradient bg-happy-itmeo"></i>
-                                        </div>
-                                    </div>
-                                    <div class="widget-content-left">
-                                        <div class="widget-heading">Date de Naissance</div>
-                                        <div>
-                                            {{ driver.date_birth}}
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </li>
-
-                        <li class="list-group-item">
-                            <div class="widget-content p-0">
-                                <div class="widget-content-wrapper">
-                                    <div class="widget-content-left mr-3">
-                                        <div class="icon-wrapper border-light rounded m-0">
-                                            <div class="icon-wrapper-bg bg-light"></div>
-                                            <i class="lnr-cog icon-gradient bg-happy-itmeo"></i>
-                                        </div>
-                                    </div>
-                                    <div class="widget-content-left">
-                                        <div class="widget-heading">Lieu de Naissance :</div>
-                                        <div>
-                                            {{ driver.place_birth}}
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </li>
-
-                    </ul>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
@@ -188,70 +188,76 @@
         <div class="card">
             <div id="headingOne" class="card-header">
                 <button type="button" data-toggle="collapse" data-target="#collapseOne2" aria-expanded="true"
-                    aria-controls="collapseOne" class="text-left m-0 p-0 btn btn-link btn-block">
-                    <h5 class="m-0 p-0">Permit de Conduire</h5>
+                    aria-controls="collapseOne" class="text-center m-0 p-0 btn btn-link btn-block">
+                    <h5 class="m-0 p-0 widget-numbers text-success">Permit de Conduire</h5>
                 </button>
             </div>
-            <div data-parent="#accordion" id="collapseOne2" aria-labelledby="headingOne" class="collapse show">
+            <div data-parent="#accordion" id="collapseOne2" aria-labelledby="headingOne" class="collapse">
                 <div class="card-body">
-                    <ul class="list-group list-group-flush">
-                        <li class="list-group-item">
-                            <div class="widget-content p-0">
-                                <div class="widget-content-wrapper">
-                                    <div class="widget-content-left mr-3">
-                                        <div class="icon-wrapper border-light rounded m-0">
-                                            <div class="icon-wrapper-bg bg-light"></div>
-                                            <i class="lnr-cog icon-gradient bg-happy-itmeo"></i>
+                    <div class="row">
+                        <div class="col-md-6">
+                            <ul class="list-group list-group-flush">
+                                <li class="list-group-item">
+                                    <div class="widget-content p-0">
+                                        <div class="widget-content-wrapper">
+                                            <div class="widget-content-left mr-3">
+                                                <div class="icon-wrapper border-light rounded m-0">
+                                                    <div class="icon-wrapper-bg bg-light"></div>
+                                                    <i class="lnr-cog icon-gradient bg-happy-itmeo"></i>
+                                                </div>
+                                            </div>
+                                            <div class="widget-content-left">
+                                                <div class="widget-heading">Numero du Permis</div>
+                                                <div>
+                                                    {{ permit.number}}
+                                                </div>
+                                            </div>
                                         </div>
                                     </div>
-                                    <div class="widget-content-left">
-                                        <div class="widget-heading">Numero du Permis</div>
-                                        <div>
-                                            {{ permit.number}}
+                                </li>
+                                <li class="list-group-item">
+                                    <div class="widget-content p-0">
+                                        <div class="widget-content-wrapper">
+                                            <div class="widget-content-left mr-3">
+                                                <div class="icon-wrapper border-light rounded m-0">
+                                                    <div class="icon-wrapper-bg bg-light"></div>
+                                                    <i class="lnr-cog icon-gradient bg-happy-itmeo"></i>
+                                                </div>
+                                            </div>
+                                            <div class="widget-content-left">
+                                                <div class="widget-heading">Number</div>
+                                                <div>
+                                                    {{ permit.date_issue}}
+                                                </div>
+                                            </div>
                                         </div>
                                     </div>
-                                </div>
-                            </div>
-                        </li>
-
-                        <li class="list-group-item">
-                            <div class="widget-content p-0">
-                                <div class="widget-content-wrapper">
-                                    <div class="widget-content-left mr-3">
-                                        <div class="icon-wrapper border-light rounded m-0">
-                                            <div class="icon-wrapper-bg bg-light"></div>
-                                            <i class="lnr-cog icon-gradient bg-happy-itmeo"></i>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="col-md-6">
+                            <ul class="list-group list-group-flush">
+                                <li class="list-group-item">
+                                    <div class="widget-content p-0">
+                                        <div class="widget-content-wrapper">
+                                            <div class="widget-content-left mr-3">
+                                                <div class="icon-wrapper border-light rounded m-0">
+                                                    <div class="icon-wrapper-bg bg-light"></div>
+                                                    <i class="lnr-cog icon-gradient bg-happy-itmeo"></i>
+                                                </div>
+                                            </div>
+                                            <div class="widget-content-left">
+                                                <div class="widget-heading">Lieu de Delivrance</div>
+                                                <div>
+                                                    {{ permit.place_issue}}
+                                                </div>
+                                            </div>
                                         </div>
                                     </div>
-                                    <div class="widget-content-left">
-                                        <div class="widget-heading">Number</div>
-                                        <div>
-                                            {{ permit.date_issue}}
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </li>
-
-                        <li class="list-group-item">
-                            <div class="widget-content p-0">
-                                <div class="widget-content-wrapper">
-                                    <div class="widget-content-left mr-3">
-                                        <div class="icon-wrapper border-light rounded m-0">
-                                            <div class="icon-wrapper-bg bg-light"></div>
-                                            <i class="lnr-cog icon-gradient bg-happy-itmeo"></i>
-                                        </div>
-                                    </div>
-                                    <div class="widget-content-left">
-                                        <div class="widget-heading">Lieu de Delivrance</div>
-                                        <div>
-                                            {{ permit.place_issue}}
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </li>
-                    </ul>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
                 </div>
 
             </div>
@@ -260,11 +266,11 @@
         <div class="card">
             <div id="headingOne" class="card-header">
                 <button type="button" data-toggle="collapse" data-target="#collapseOne3" aria-expanded="true"
-                    aria-controls="collapseTwo" class="text-left m-0 p-0 btn btn-link btn-block">
-                    <h5 class="m-0 p-0">Formations </h5>
+                    aria-controls="collapseTwo" class="text-center m-0 p-0 btn btn-link btn-block">
+                    <h5 class="m-0 p-0 widget-numbers text-success">Formations </h5>
                 </button>
             </div>
-            <div data-parent="#accordion" id="collapseOne3" aria-labelledby="headingOne" class="collapse show">
+            <div data-parent="#accordion" id="collapseOne3" aria-labelledby="headingOne" class="collapse">
                 <div class="card-body">
                     <ul class="list-group list-group-flush">
                         <li class="list-group-item">
@@ -289,36 +295,40 @@
                 </div>
             </div>
         </div>
-
         <div class="card">
             <div id="headingOne" class="card-header">
                 <button type="button" data-toggle="collapse" data-target="#collapseOne4" aria-expanded="true"
-                    aria-controls="collapseThree" class="text-left m-0 p-0 btn btn-link btn-block">
-                    <h5 class="m-0 p-0">Nationalite</h5>
+                    aria-controls="collapseThree" class="text-center m-0 p-0 btn btn-link btn-block">
+                    <h5 class="m-0 p-0 widget-numbers text-success">Nationalite</h5>
                 </button>
             </div>
-            <div data-parent="#accordion" id="collapseOne4" aria-labelledby="headingOne" class="collapse show">
+            <div data-parent="#accordion" id="collapseOne4" aria-labelledby="headingOne" class="collapse">
                 <div class="card-body">
-                    <ul class="list-group list-group-flush">
-                        <li class="list-group-item">
-                            <div class="widget-content p-0">
-                                <div class="widget-content-wrapper">
-                                    <div class="widget-content-left mr-3">
-                                        <div class="icon-wrapper border-light rounded m-0">
-                                            <div class="icon-wrapper-bg bg-light"></div>
-                                            <i class="lnr-cog icon-gradient bg-happy-itmeo"></i>
+                    <div class="row">
+                        <div class="col-md-6">
+                            <ul class="list-group list-group-flush">
+                                <li class="list-group-item">
+                                    <div class="widget-content p-0">
+                                        <div class="widget-content-wrapper">
+                                            <div class="widget-content-left mr-3">
+                                                <div class="icon-wrapper border-light rounded m-0">
+                                                    <div class="icon-wrapper-bg bg-light"></div>
+                                                    <i class="lnr-cog icon-gradient bg-happy-itmeo"></i>
+                                                </div>
+                                            </div>
+                                            <div class="widget-content-left">
+                                                <div class="widget-heading">Nom :</div>
+                                                <div>
+                                                    {{ nationalite.name}}
+                                                </div>
+                                            </div>
                                         </div>
                                     </div>
-                                    <div class="widget-content-left">
-                                        <div class="widget-heading">Nom :</div>
-                                        <div>
-                                            {{ nationalite.name}}
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </li>
-
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="col-md-6">
+                            <ul class="list-group list-group-flush">
                         <li class="list-group-item">
                             <div class="widget-content p-0">
                                 <div class="widget-content-wrapper">
@@ -337,7 +347,9 @@
                                 </div>
                             </div>
                         </li>
-                    </ul>
+                            </ul>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
@@ -345,70 +357,74 @@
         <div class="card">
             <div id="headingOne" class="card-header">
                 <button type="button" data-toggle="collapse" data-target="#collapseOne5" aria-expanded="true"
-                    aria-controls="collapseFour" class="text-left m-0 p-0 btn btn-link btn-block">
-                    <h5 class="m-0 p-0">Information sur mes Documents</h5>
+                    aria-controls="collapseFour" class="text-center m-0 p-0 btn btn-link btn-block">
+                    <h5 class="m-0 p-0 widget-numbers text-success">Information sur mes Documents</h5>
                 </button>
             </div>
-            <div data-parent="#accordion" id="collapseOne5" aria-labelledby="headingOne" class="collapse show">
+            <div data-parent="#accordion" id="collapseOne5" aria-labelledby="headingOne" class="collapse">
                 <div class="card-body">
-                    <ul class="list-group list-group-flush">
-                        <li class="list-group-item">
-                            <div class="widget-content p-0">
-                                <div class="widget-content-wrapper">
-                                    <div class="widget-content-left mr-3">
-                                        <div class="icon-wrapper border-light rounded m-0">
-                                            <div class="icon-wrapper-bg bg-light"></div>
-                                            <i class="lnr-cog icon-gradient bg-happy-itmeo"></i>
+                    <div class="row">
+                        <div class="col-md-6">
+                            <ul class="list-group list-group-flush">
+                                <li class="list-group-item">
+                                    <div class="widget-content p-0">
+                                        <div class="widget-content-wrapper">
+                                            <div class="widget-content-left mr-3">
+                                                <div class="icon-wrapper border-light rounded m-0">
+                                                    <div class="icon-wrapper-bg bg-light"></div>
+                                                    <i class="lnr-cog icon-gradient bg-happy-itmeo"></i>
+                                                </div>
+                                            </div>
+                                            <div class="widget-content-left">
+                                                <div class="widget-heading">Piece Identique</div>
+                                                <div>
+                                                    {{ info.identical_piece}}
+                                                </div>
+                                            </div>
                                         </div>
                                     </div>
-                                    <div class="widget-content-left">
-                                        <div class="widget-heading">Piece Identique</div>
-                                        <div>
-                                            {{ info.identical_piece}}
+                                </li>
+                                <li class="list-group-item">
+                                    <div class="widget-content p-0">
+                                        <div class="widget-content-wrapper">
+                                            <div class="widget-content-left mr-3">
+                                                <div class="icon-wrapper border-light rounded m-0">
+                                                    <div class="icon-wrapper-bg bg-light"></div>
+                                                    <i class="lnr-cog icon-gradient bg-happy-itmeo"></i>
+                                                </div>
+                                            </div>
+                                            <div class="widget-content-left">
+                                                <div class="widget-heading">Numero de la Piece :</div>
+                                                <div>
+                                                    {{ info.piece_number}}
+                                                </div>
+                                            </div>
                                         </div>
                                     </div>
-                                </div>
-                            </div>
-                        </li>
-                        <li class="list-group-item">
-                            <div class="widget-content p-0">
-                                <div class="widget-content-wrapper">
-                                    <div class="widget-content-left mr-3">
-                                        <div class="icon-wrapper border-light rounded m-0">
-                                            <div class="icon-wrapper-bg bg-light"></div>
-                                            <i class="lnr-cog icon-gradient bg-happy-itmeo"></i>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="col-md-6">
+                            <ul class="list-group list-group-flush">
+                                <li class="list-group-item">
+                                    <div class="widget-content p-0">
+                                        <div class="widget-content-wrapper">
+                                            <div class="widget-content-left mr-3">
+                                                <div class="icon-wrapper border-light rounded m-0">
+                                                    <div class="icon-wrapper-bg bg-light"></div>
+                                                    <i class="lnr-cog icon-gradient bg-happy-itmeo"></i>
+                                                </div>
+                                            </div>
+                                            <div class="widget-content-left">
+                                                <div class="widget-heading">Date :</div>
+                                                <div>
+                                                    {{ info.date_issue}}
+                                                </div>
+                                            </div>
                                         </div>
                                     </div>
-                                    <div class="widget-content-left">
-                                        <div class="widget-heading">Numero de la Piece :</div>
-                                        <div>
-                                            {{ info.piece_number}}
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </li>
-
-                        <li class="list-group-item">
-                            <div class="widget-content p-0">
-                                <div class="widget-content-wrapper">
-                                    <div class="widget-content-left mr-3">
-                                        <div class="icon-wrapper border-light rounded m-0">
-                                            <div class="icon-wrapper-bg bg-light"></div>
-                                            <i class="lnr-cog icon-gradient bg-happy-itmeo"></i>
-                                        </div>
-                                    </div>
-                                    <div class="widget-content-left">
-                                        <div class="widget-heading">Date :</div>
-                                        <div>
-                                            {{ info.date_issue}}
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </li>
-
-                        <li class="list-group-item">
+                                </li>
+                                <li class="list-group-item">
                             <div class="widget-content p-0">
                                 <div class="widget-content-wrapper">
                                     <div class="widget-content-left mr-3">
@@ -425,12 +441,12 @@
                                     </div>
                                 </div>
                             </div>
-                        </li>
-                    </ul>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
-
-
     </div>
 </div>

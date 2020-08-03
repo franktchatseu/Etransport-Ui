@@ -36,7 +36,8 @@ export class EnginDetailComponent implements OnInit {
   async ngOnInit() {
     const engin_id = +this.route.snapshot.paramMap.get("id");
     
-    console.log("ceci est" +engin_id)
+    console.log("ceci est " +engin_id)
+
     this.enginService.getMarque(engin_id).then(
       data => {
         this.mark = data;
@@ -132,7 +133,7 @@ export class EnginDetailComponent implements OnInit {
     this.enginService.getModel(engin_id).then(
       data => {
         this.model = data;
-        console.log(this.model)
+        console.log("bjrrrrrrrrrrrrrrrrr")
       }
     ).catch(
       error => {

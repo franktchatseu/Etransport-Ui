@@ -37,12 +37,20 @@ export class TransporteurService {
       .pipe(map(data => data));
   }
 
-  findAllInfosEnterprise() {
-    return this.http.get<any>(`${config.apiUrl}/module1/info_entreprise_one/findAllInfosEnterprise`).pipe(map(data=>data));
+  findAllInfosEnterpriseById(id : number): Promise<any> {
+    return this.http.get<any>(`${config.apiUrl}/module1/info_entreprise_one/findAllInfosEnterpriseById/${id}`).toPromise();
+  }
+
+  findAllInfosEnterprise(){
+    return this.http.get<any>(`${config.apiUrl}/module1/info_entreprise_one/findAllInfosEnterprise`).pipe(map(data => data));
   }
 
   findInfo2(id: number): Promise<any> {
     return this.http.get<any>(`${config.apiUrl}/module1/info_entreprise_two/${id}`).toPromise();
+  }
+
+  findPersonnal(id: number): Promise<any> {
+    return this.http.get<any>(`${config.apiUrl}/module1/personalcomputingspecial/${id}`).toPromise();
   }
 
 
