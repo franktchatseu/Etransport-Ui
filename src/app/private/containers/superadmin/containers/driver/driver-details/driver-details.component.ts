@@ -50,9 +50,9 @@ export class DriverDetailsComponent implements OnInit {
       }
     )
 
-    this.driverService.finds(driver_id).then(
+    this.driverService.findGeneralInfo(driver_id).then(
       data => {
-        this.driver = data.data;
+        this.driver = data;
         console.log(this.driver)
       }
     ).catch(

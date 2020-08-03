@@ -13,7 +13,7 @@ import { NotificationService } from '../../../../../../services/notification.ser
 })
 export class EnginDetailComponent implements OnInit {
 
-  cars1 : any[] =[];
+  car1 : any;
   car2 : any;
   caros: any;
   description : any;
@@ -53,8 +53,8 @@ export class EnginDetailComponent implements OnInit {
 
     this.enginService.getCaractere1(engin_id).then(
       data => {
-        this.cars1 = data.data;
-        console.log(this.cars1)
+        this.car1 = data;
+        console.log(this.car1)
       }
     ).catch(
       error => {
