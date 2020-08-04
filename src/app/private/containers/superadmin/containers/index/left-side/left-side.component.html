@@ -35,9 +35,32 @@
             <ul class="vertical-nav-menu metismenu">
                 <li class="app-sidebar__heading">Menu</li>
                 <li class="mm-active">
+                    <a href="javascript:void(0);" (click)="activeMenu.menu0=1;goTo('accueil')">
+                        <i class="metismenu-icon pe-7s-way"></i>
+                        Tableau de Bord
+                    </a>
+                    <!-- <ul class="today mm-collapse">
+                        <li>
+                            <a href="javascript:void(0);" (click)="activeMenu.menu0=1;goTo('transporter/transporter-all')"
+                                class="{{ activeMenu.menu0 == 1 ? 'mm-active': ''}}">
+                                <i class="metismenu-icon">
+                                </i>Consulter 
+                            </a>
+                        </li>
+                         <li>
+                            <a href="javascript:void(0);" (click)="activeMenu.menu0=2;goTo('transporter/transporter-add')"
+                                class="{{ activeMenu.menu0 == 2 ? 'mm-active': ''}}">
+                                <i class="metismenu-icon">
+                                </i>Ajouter 
+                            </a>
+                        </li>
+                       
+                    </ul> -->
+                </li>
+                <li class="mm-active">
                     <a href="javascript:void(0);" aria-expanded="false" (click)="showChildren('.today')">
                         <i class="metismenu-icon pe-7s-way"></i>
-                        Transporteur
+                        Transporteurs
                         <i class="metismenu-state-icon pe-7s-angle-down caret-left"></i>
                     </a>
                     <ul class="today mm-collapse">
@@ -45,29 +68,29 @@
                             <a href="javascript:void(0);" (click)="activeMenu.menu0=1;goTo('transporter/transporter-all')"
                                 class="{{ activeMenu.menu0 == 1 ? 'mm-active': ''}}">
                                 <i class="metismenu-icon">
-                                </i>Consulter Entreprise
+                                </i>Consulter 
                             </a>
                         </li>
                          <li>
                             <a href="javascript:void(0);" (click)="activeMenu.menu0=2;goTo('transporter/transporter-add')"
                                 class="{{ activeMenu.menu0 == 2 ? 'mm-active': ''}}">
                                 <i class="metismenu-icon">
-                                </i>Ajouter Entreprise
+                                </i>Ajouter 
                             </a>
                         </li>
-                        <li>
+                        <!-- <li>
                             <a href="javascript:void(0);" (click)="activeMenu.menu0=3;goTo('')"
                                 class="{{ activeMenu.menu0 == 3 ? 'mm-active': ''}}">
                                 <i class="metismenu-icon">
                                 </i>Particulier
                             </a>
-                        </li>
+                        </li> -->
                     </ul>
                 </li>
                 <li class="mm-active">
                     <a href="javascript:void(0);" aria-expanded="false" (click)="showChildren('.today1')">
                         <i class="metismenu-icon pe-7s-users"></i>
-                        Chauffeur
+                        Chauffeurs
                         <i class="metismenu-state-icon pe-7s-angle-down caret-left"></i>
                     </a>
                     <ul class="today1 mm-collapse">
@@ -91,7 +114,7 @@
                 <li class="mm-active">
                     <a href="javascript:void(0);" aria-expanded="false" (click)="showChildren('.today2')">
                         <i class="metismenu-icon pe-7s-car"></i>
-                         Engin
+                         Engins
                         <i class="metismenu-state-icon pe-7s-angle-down caret-left"></i>
                     </a>
                     <ul class="today2 mm-collapse">
@@ -114,7 +137,7 @@
                 <li class="mm-active">
                     <a href="javascript:void(0);" aria-expanded="false" (click)="showChildren('.today3')">
                         <i class="metismenu-icon pe-7s-users"></i>
-                        Element Intervenant
+                        Elements Intervenants
                         <i class="metismenu-state-icon pe-7s-angle-down caret-left"></i>
                     </a>
                     <ul class="today3 mm-collapse">

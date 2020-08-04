@@ -515,7 +515,7 @@ export class EnginAddComponent implements OnInit {
   //reinitialisation
   reset() {
     localStorage.clear()
-    this.router.navigate(['/private/superadmins/driver-all']);
+    this.router.navigate(['/private/superadmins/engin/engin-all']);
 
   }
 

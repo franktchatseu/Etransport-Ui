@@ -76,7 +76,7 @@ export class AuthService {
   }
 
   private storeTokens(tokens: any) {
-    localStorage.setItem(this.JWT_TOKEN, tokens.token.accessToken);
+    localStorage.setItem(this.JWT_TOKEN, tokens.token.access_token);
     localStorage.setItem(this.REFRESH_TOKEN, tokens.refreshToken);
     localStorage.setItem(this.USER_INFOS, JSON.stringify(tokens.user));
   }

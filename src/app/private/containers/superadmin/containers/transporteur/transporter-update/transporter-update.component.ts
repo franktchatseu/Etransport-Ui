@@ -3,7 +3,7 @@ import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 import { StepperMainService } from 'src/app/services/stepper/stepper_main.service';
 import { STEPPER_GLOBAL_OPTIONS } from '@angular/cdk/stepper';
 import { MatSnackBar } from '@angular/material';
-import { TransporteurService} from '../../../services/transporteur.service';
+import { TransporteurService } from '../../../services/transporteur.service';
 import { Router, ActivatedRoute } from '@angular/router';
 import { NotificationService } from 'src/app/services/notification.service';
 import { TranslateService } from '@ngx-translate/core';
@@ -15,7 +15,7 @@ import { TranslateService } from '@ngx-translate/core';
 })
 export class TransporterUpdateComponent implements OnInit {
 
- 
+
   @ViewChild('fileInput1')
   fileInput1: ElementRef;
   @ViewChild('fileInput2')
@@ -26,13 +26,13 @@ export class TransporterUpdateComponent implements OnInit {
   fileInput4: ElementRef;
   @ViewChild('fileInputAvatar')
   fileInputAvatar: ElementRef;
-   //les differentes photos
-   file1: any;
-   file2: any;
-   file3: any;
-   file4: any;
-   file5: any;
-   file6: any;
+  //les differentes photos
+  file1: any;
+  file2: any;
+  file3: any;
+  file4: any;
+  file5: any;
+  file6: any;
   fileAvatar: any;
   fileInformation: any
   fileInformationAvatar: any
@@ -109,19 +109,19 @@ export class TransporterUpdateComponent implements OnInit {
     }
   }
 
-    //le click sur le button
-    selectFile1(): void {
-      this.fileInput1.nativeElement.click();
-    }
-    selectFile2(): void {
-      this.fileInput2.nativeElement.click();
-    }
-    selectFile3(): void {
-      this.fileInput3.nativeElement.click();
-    }
-    selectFile4(): void {
-      this.fileInput4.nativeElement.click();
-    }
+  //le click sur le button
+  selectFile1(): void {
+    this.fileInput1.nativeElement.click();
+  }
+  selectFile2(): void {
+    this.fileInput2.nativeElement.click();
+  }
+  selectFile3(): void {
+    this.fileInput3.nativeElement.click();
+  }
+  selectFile4(): void {
+    this.fileInput4.nativeElement.click();
+  }
 
   ngOnInit(): void {
 
@@ -174,28 +174,28 @@ export class TransporterUpdateComponent implements OnInit {
         tel_respo: ['', [Validators.required]],
         avatar: ['', [Validators.required]],
         //nbr_engin: ['', [Validators.required]],
-       // nbr_chauffeur: ['', [Validators.required]],
+        // nbr_chauffeur: ['', [Validators.required]],
       }
     )
   }
 
-    //initialisation des formulaires
-    initWithDataStep1() {
-      this.step1Form = this.formBuilder.group(
-        {
-          nom_entreprise: [this.info1.name, Validators.required],
-          num_contribuable: [this.info1.taxpayer_number, [Validators.required]],
-          num_rccm: [this.info1.rccm_number, [Validators.required]],
-          adresse_facturation: [this.info1.billing_address, [Validators.required]],
-          nom_respo: [this.info1.manager_name, [Validators.required, Validators.email]],
-          fonction_resp: [this.info1.manager_function, [Validators.required]],
-          tel_respo: [this.info1.manager_phone, [Validators.required]],
-          avatar: [this.info1.manager_picture, [Validators.required]],
-          //nbr_engin: ['', [Validators.required]],
-         // nbr_chauffeur: ['', [Validators.required]],
-        }
-      )
-    }
+  //initialisation des formulaires
+  initWithDataStep1() {
+    this.step1Form = this.formBuilder.group(
+      {
+        nom_entreprise: [this.info1.name, Validators.required],
+        num_contribuable: [this.info1.taxpayer_number, [Validators.required]],
+        num_rccm: [this.info1.rccm_number, [Validators.required]],
+        adresse_facturation: [this.info1.billing_address, [Validators.required]],
+        nom_respo: [this.info1.manager_name, [Validators.required, Validators.email]],
+        fonction_resp: [this.info1.manager_function, [Validators.required]],
+        tel_respo: [this.info1.manager_phone, [Validators.required]],
+        avatar: [this.info1.manager_picture, [Validators.required]],
+        //nbr_engin: ['', [Validators.required]],
+        // nbr_chauffeur: ['', [Validators.required]],
+      }
+    )
+  }
   //initialisation des formulaires
   initStep2() {
     this.step2Form = this.formBuilder.group(
@@ -203,7 +203,7 @@ export class TransporterUpdateComponent implements OnInit {
         localisation: ['', [Validators.required]],
         telephone1: ['', [Validators.required]],
         telephone2: ['', [Validators.required]],
-        email: ['', [Validators.required,Validators.email]],
+        email: ['', [Validators.required, Validators.email]],
         langue: ['', [Validators.required]],
         description: ['', [Validators.required]],
         mission: ['', [Validators.required]],
@@ -225,7 +225,7 @@ export class TransporterUpdateComponent implements OnInit {
         localisation: [this.info2.localisation, [Validators.required]],
         telephone1: [this.info2.phone1, [Validators.required]],
         telephone2: [this.info2.phone2, [Validators.required]],
-        email: [this.info2.email, [Validators.required,Validators.email]],
+        email: [this.info2.email, [Validators.required, Validators.email]],
         langue: [this.info2.langue, [Validators.required]],
         description: [this.info2.description_services, [Validators.required]],
         mission: [this.info2.enterprise_mission, [Validators.required]],
@@ -255,53 +255,37 @@ export class TransporterUpdateComponent implements OnInit {
   }
   addStep1() {
 
-    const formDataStep: FormData = new FormData();
-    formDataStep.append("value", '' + 1);
-    formDataStep.append("status", '' + 0);
-    formDataStep.append("stepper_main_id", '' + 1);
-    this.stepperService.add(formDataStep).then(
+    //recuperation des champs du stepper 1
+    const formData: FormData = new FormData();
+    formData.append("name", '' + this.InfoGenerale.nom_entreprise.value);
+    formData.append("taxpayer_number", '' + this.InfoGenerale.num_contribuable.value);
+    formData.append("rccm_number", '' + this.InfoGenerale.num_rccm.value);
+    formData.append("billing_address", '' + this.InfoGenerale.adresse_facturation.value);
+    formData.append("manager_name", '' + this.InfoGenerale.nom_respo.value);
+    formData.append("manager_function", '' + this.InfoGenerale.fonction_resp.value);
+    formData.append("manager_phone", '' + this.InfoGenerale.tel_respo.value);
+    formData.append("manager_picture", this.fileAvatar);
+    formData.append("stepper_main_id", '' + this.transporter_stepper_id);
+    formData.append("driver_number", '' + 0);
+    formData.append("gear_number", '' + 0);
+
+    //ajout des infos generales de utilisateurs
+    this.transportService.updateinfo1(formData, this.transporter_stepper_id).then(
       (Response) => {
         console.log(Response)
-        this.initStepper = Response;
         //sauvegarde dans le local storage
-        this.stepperService.storeStepper(Response)
-        //recuperation des champs du stepper 1
-        const formData: FormData = new FormData();
-        formData.append("name", '' + this.InfoGenerale.nom_entreprise.value);
-        formData.append("taxpayer_number", '' + this.InfoGenerale.num_contribuable.value);
-        formData.append("rccm_number", '' + this.InfoGenerale.num_rccm.value);
-        formData.append("billing_address", '' + this.InfoGenerale.adresse_facturation.value);
-        formData.append("manager_name", '' + this.InfoGenerale.nom_respo.value);
-        formData.append("manager_function", '' + this.InfoGenerale.fonction_resp.value);
-        formData.append("manager_phone", '' + this.InfoGenerale.tel_respo.value);
-        formData.append("manager_picture", this.fileAvatar);
-        formData.append("stepper_main_id", '' + this.initStepper.id);
-        formData.append("driver_number", ''+0);
-        formData.append("gear_number", '' + 0);
+        this.openSnackBar("modification Reussi", "Etape 1")
+        console.log("stepper 1 termine");
 
-        //ajout des infos generales de utilisateurs
-        this.transportService.updateinfo1(formData,this.transporter_stepper_id).then(
-          (Response) => {
-            console.log(Response)
-            //sauvegarde dans le local storage
-            this.openSnackBar("modification Reussi", "Etape 1")
-            console.log("stepper 1 termine");
-
-          },
-          (error) => {
-            console.log(error)
-          })
       },
       (error) => {
         console.log(error)
-      },
-
-    )
+      })
   }
   addStep2() {
     //recuperation des champs du stepper 2
     const formData: FormData = new FormData();
-        
+
     formData.append("localisation", '' + this.drivingPermit.localisation.value);
     formData.append("phone1", '' + this.drivingPermit.telephone1.value);
     formData.append("phone2", '' + this.drivingPermit.telephone2.value);
@@ -316,7 +300,7 @@ export class TransporterUpdateComponent implements OnInit {
     formData.append("image", '' + this.drivingPermit.image1.value);
 
     //ajout des infos generales de utilisateurs
-    if(this.info2 == null){
+    if (this.info2 == null) {
       formData.append("stepper_main_id", '' + this.transporter_stepper_id);
       this.transportService.addInfoGenerale1(formData).then(
         (Response) => {
@@ -328,10 +312,10 @@ export class TransporterUpdateComponent implements OnInit {
         (error) => {
           console.log(error)
         },
-  
+
       )
     }
-    this.transportService.updateinfo2(formData,this.transporter_stepper_id).then(
+    this.transportService.updateinfo2(formData, this.transporter_stepper_id).then(
       (Response) => {
         console.log(Response)
         //sauvegarde dans le local storage

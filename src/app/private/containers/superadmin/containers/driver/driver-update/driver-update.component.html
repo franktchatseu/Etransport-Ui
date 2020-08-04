@@ -13,7 +13,8 @@
                     <mat-form-field class="example-full-width">
                         <input matInput formControlName="avatar" placeholder="photo du chauffeur" readonly>
                     </mat-form-field>
-                    <button type="button" class="btn btn-primary" mat-button (click)="selectFileAvatar()">Choisir la photo</button>
+                    <button type="button" class="btn btn-primary" mat-button (click)="selectFileAvatar()">Choisir la
+                        photo</button>
                 </div>
 
             </div>
@@ -133,8 +134,8 @@
                 </div>
             </div>
             <div>
-                <button mat-button matStepperPrevious>Back</button>
-                <button (click)="addStep2()" mat-button matStepperNext>Next</button>
+                <button class="btn btn-warning" mat-button matStepperPrevious>Back</button>
+                <button class="btn btn-info" (click)="addStep2()" mat-button matStepperNext>Modifier</button>
             </div>
         </form>
     </mat-step>
@@ -209,7 +210,8 @@
                     <mat-form-field>
                         <input matInput formControlName="filename" placeholder="Fichier" readonly>
                     </mat-form-field>
-                    <button mat-button class="btn btn-primary" (click)="selectFile()">Importer une Piece Justificative</button>
+                    <button mat-button class="btn btn-primary" (click)="selectFile()">Importer une Piece
+                        Justificative</button>
                 </div>
             </div>
             <div>
@@ -217,7 +219,7 @@
                 <button class="btn btn-info" (click)="addStep4()" mat-button matStepperNext>Modifier</button>
             </div>
         </form>
-    </mat-step>
+    </mat-step> 
     <mat-step>
         <ng-template matStepLabel>Done</ng-template>
         <p class="finish">profl du chauffeur enregistre avec success.</p>

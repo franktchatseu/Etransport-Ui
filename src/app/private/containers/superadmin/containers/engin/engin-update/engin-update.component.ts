@@ -416,10 +416,6 @@ export class EnginUpdateComponent implements OnInit {
     });
   }
   addStep1() {
-    const formDataStep: FormData = new FormData();
-    formDataStep.append("value", '' + 1);
-    formDataStep.append("status", '' + 0);
-    formDataStep.append("stepper_main_id", '' + 1);
 
     //recuperation des champs du stepper 1
     const formData: FormData = new FormData();
