@@ -52,7 +52,7 @@ export class EnginAllComponent implements OnInit {
       this.translate.get(
         ['SweetAlert.AreYouSure', 'SweetAlert.Warning', 'SweetAlert.Yes', 'SweetAlert.No', 'SweetAlert.Deleted',
           'SweetAlert.DeletedMessage', 'SweetAlert.Cancelled', 'SweetAlert.CancelledMessage'],
-        { data: ' cet association' })
+        { data: ' cet engin' })
         .subscribe(val => {
           this.areYouSure = val['SweetAlert.AreYouSure'];
           this.warning = val['SweetAlert.Warning'];

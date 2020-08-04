@@ -31,7 +31,6 @@
             <table style="width: 100%;" id="example" class="table table-hover table-striped table-bordered">
                 <thead>
                     <tr>
-                     
                         <th>Immatriculation</th>
                         <th >Modele</th>
                         <th >Marque</th>
@@ -57,7 +56,7 @@
                                 (click)="detail(engin.stepper_id)">
                                 <i class="pe-7s-info btn-icon-wrapper"> </i></button>
                             <button class="mr-2 btn-icon btn-icon-only btn btn-outline-danger"
-                                (click)="delete(engin.id)"><i class="pe-7s-trash btn-icon-wrapper"> </i></button>
+                                (click)="delete(engin.number)"><i class="pe-7s-trash btn-icon-wrapper"> </i></button>
                         </td>
                         <td>
                             <button *ngIf="engin.status==0 " class="mr-2 btn btn-warning"
