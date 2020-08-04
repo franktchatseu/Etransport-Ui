@@ -148,7 +148,8 @@ export class DriverAllComponent implements OnInit {
       let driver: any={
         "id":driv.stepper_id,
         "value":driv.value,
-        "number":driv.number
+        "number":driv.number,
+        "stepper_main_id": driv.stepper_main_id
       }
   
       localStorage.setItem("driver", JSON.stringify(driver));

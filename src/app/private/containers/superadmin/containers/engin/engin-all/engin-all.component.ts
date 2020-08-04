@@ -19,143 +19,144 @@ import Swal from 'sweetalert2';
 })
 export class EnginAllComponent implements OnInit {
 
-    // language
-    currentLanguage = Lang.currentLang;
-    translations: any = null;
-     
-    engins : any  ;
-    loading: boolean = true;
-    @BlockUI() blockUI: NgBlockUI; lockUI: NgBlockUI;
-  
-    //SweetAlert Text
-    areYouSure = '';
-    drivers : any ;
-    warning = '';
-    yes = '';
-    no = '';
-    deleted = '';
-    deletedMessage = '';
-    cancelled = '';
-    cancelledMessage = '';
-    canCreate = false;
-    canUpdate = false;
-    canDelete = false;
-    constructor(
-      private router: Router,
-      private internationalizationService: InternationalizationService,
-      private notificationService: NotificationService,
-      private enginService: EnginService,
-      private dialog: MatDialog,
-      private notifService: NotificationService,
-      private translate: TranslateService,
-    ) {
-      this.translate.get(
-        ['SweetAlert.AreYouSure', 'SweetAlert.Warning', 'SweetAlert.Yes', 'SweetAlert.No', 'SweetAlert.Deleted',
-          'SweetAlert.DeletedMessage', 'SweetAlert.Cancelled', 'SweetAlert.CancelledMessage'],
-        { data: ' cet engin' })
-        .subscribe(val => {
-          this.areYouSure = val['SweetAlert.AreYouSure'];
-          this.warning = val['SweetAlert.Warning'];
-          this.yes = val['SweetAlert.Yes'];
-          this.no = val['SweetAlert.No'];
-          this.deleted = val['SweetAlert.Deleted'];
-          this.deletedMessage = val['SweetAlert.DeletedMessagePro'];
-          this.cancelled = val['SweetAlert.Cancelled'];
-          this.cancelledMessage = val['SweetAlert.CancelledMessage'];
-        });
-    }
-  
+  // language
+  currentLanguage = Lang.currentLang;
+  translations: any = null;
 
-    ngOnInit(): void {
-      this.changeLanguage(this.currentLanguage);
-      this.getEngins();
-    }
+  engins: any;
+  loading: boolean = true;
+  @BlockUI() blockUI: NgBlockUI; lockUI: NgBlockUI;
 
-    getEngins(){
-      this.enginService.getEngins().subscribe((res) => {
-        this.engins = res;
-        console.log(this.engins)
-      }, (error) => {
-        this.notificationService.warning("Aucun engin disponibile");
+  //SweetAlert Text
+  areYouSure = '';
+  drivers: any;
+  warning = '';
+  yes = '';
+  no = '';
+  deleted = '';
+  deletedMessage = '';
+  cancelled = '';
+  cancelledMessage = '';
+  canCreate = false;
+  canUpdate = false;
+  canDelete = false;
+  constructor(
+    private router: Router,
+    private internationalizationService: InternationalizationService,
+    private notificationService: NotificationService,
+    private enginService: EnginService,
+    private dialog: MatDialog,
+    private notifService: NotificationService,
+    private translate: TranslateService,
+  ) {
+    this.translate.get(
+      ['SweetAlert.AreYouSure', 'SweetAlert.Warning', 'SweetAlert.Yes', 'SweetAlert.No', 'SweetAlert.Deleted',
+        'SweetAlert.DeletedMessage', 'SweetAlert.Cancelled', 'SweetAlert.CancelledMessage'],
+      { data: ' cet engin' })
+      .subscribe(val => {
+        this.areYouSure = val['SweetAlert.AreYouSure'];
+        this.warning = val['SweetAlert.Warning'];
+        this.yes = val['SweetAlert.Yes'];
+        this.no = val['SweetAlert.No'];
+        this.deleted = val['SweetAlert.Deleted'];
+        this.deletedMessage = val['SweetAlert.DeletedMessagePro'];
+        this.cancelled = val['SweetAlert.Cancelled'];
+        this.cancelledMessage = val['SweetAlert.CancelledMessage'];
       });
-    }
+  }
 
-    getPage(url){
-      this.enginService.getPage(url).subscribe((res) => {
-        console.log(res)
-        this.drivers = res;
-      }, (error) => {
-        this.notificationService.warning("Page terminer");
-      });
-    }
 
-    changeLanguage(value) {
-      this.currentLanguage = value;
-      this.internationalizationService.changeLanguage(this.currentLanguage, (res) => { this.translations = res; });
-    }
+  ngOnInit(): void {
+    this.changeLanguage(this.currentLanguage);
+    this.getEngins();
+  }
 
-    add() {
-      this.router.navigate(['/private/superadmins/driver/add/']);
-    }
+  getEngins() {
+    this.enginService.getEngins().subscribe((res) => {
+      this.engins = res;
+      console.log(this.engins)
+    }, (error) => {
+      this.notificationService.warning("Aucun engin disponibile");
+    });
+  }
 
-    update(id) {
-      console.log("le stepper id est: "+ id)
-      this.router.navigate(['/private/superadmins/engin/engin-update/' + id]);
-    }
+  getPage(url) {
+    this.enginService.getPage(url).subscribe((res) => {
+      console.log(res)
+      this.drivers = res;
+    }, (error) => {
+      this.notificationService.warning("Page terminer");
+    });
+  }
 
-    detail(id) {
-      this.router.navigate(['/private/superadmins/engin-detail/' , id]);
-    }
+  changeLanguage(value) {
+    this.currentLanguage = value;
+    this.internationalizationService.changeLanguage(this.currentLanguage, (res) => { this.translations = res; });
+  }
 
-    delete(assoc_id) {
-      Swal.fire({
-        title: this.areYouSure,
-        text: this.warning,
-        icon: 'warning',
-        showCancelButton: true,
-        confirmButtonText: this.yes,
-        cancelButtonText: this.no
-      }).then((result) => {
-        if (result.value) {
-          this.blockUI.start('Loading...');
-          this.enginService.delete(assoc_id).then(
-            data => {
-              this.blockUI.stop();
-              Swal.fire(
-                this.deleted,
-                this.deletedMessage,
-                'success'
-              )
-              this.getEngins()
-            }
-          ).catch(
-            error => {
-              console.log(error)
-              this.blockUI.stop();
-              this.translate.get('info.' + error.error.code)
-                .subscribe(val => this.notifService.danger(val));
-            }
-          )
-  
-        } else if (result.dismiss === Swal.DismissReason.cancel) {
-          Swal.fire(
-            this.cancelled,
-            this.cancelledMessage,
-            'error'
-          )
-        }
-      })
-    }
-  
-    //completins enregistrement
-    completer(eng){
-      let engin: any={
-        "id":eng.stepper_id,
-        "value":eng.value,
-        "number":eng.number
+  add() {
+    this.router.navigate(['/private/superadmins/driver/add/']);
+  }
+
+  update(id) {
+    console.log("le stepper id est: " + id)
+    this.router.navigate(['/private/superadmins/engin/engin-update/' + id]);
+  }
+
+  detail(id) {
+    this.router.navigate(['/private/superadmins/engin-detail/', id]);
+  }
+
+  delete(assoc_id) {
+    Swal.fire({
+      title: this.areYouSure,
+      text: this.warning,
+      icon: 'warning',
+      showCancelButton: true,
+      confirmButtonText: this.yes,
+      cancelButtonText: this.no
+    }).then((result) => {
+      if (result.value) {
+        this.blockUI.start('Loading...');
+        this.enginService.delete(assoc_id).then(
+          data => {
+            this.blockUI.stop();
+            Swal.fire(
+              this.deleted,
+              this.deletedMessage,
+              'success'
+            )
+            this.getEngins()
+          }
+        ).catch(
+          error => {
+            console.log(error)
+            this.blockUI.stop();
+            this.translate.get('info.' + error.error.code)
+              .subscribe(val => this.notifService.danger(val));
+          }
+        )
+
+      } else if (result.dismiss === Swal.DismissReason.cancel) {
+        Swal.fire(
+          this.cancelled,
+          this.cancelledMessage,
+          'error'
+        )
       }
+    })
+  }
 
-      localStorage.setItem("engin", JSON.stringify(engin));
-      this.router.navigate(['/private/superadmins/engin/engin-add'])
+  //completins enregistrement
+  completer(eng) {
+    let engin: any = {
+      "id": eng.stepper_id,
+      "value": eng.value,
+      "number": eng.number,
+      "stepper_main_id": eng.stepper_main_id
     }
+
+    localStorage.setItem("engin", JSON.stringify(engin));
+    this.router.navigate(['/private/superadmins/engin/engin-add'])
+  }
 }

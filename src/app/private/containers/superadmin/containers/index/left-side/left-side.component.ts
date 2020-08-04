@@ -56,7 +56,9 @@ export class LeftSideComponent implements OnInit {
   }
 
   goTo(component) {
+    localStorage.clear()
     this.router.navigate(['/private/superadmins/' + component]);
+   
   }
 
 }

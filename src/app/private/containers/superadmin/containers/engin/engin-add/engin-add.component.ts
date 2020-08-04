@@ -167,6 +167,7 @@ export class EnginAddComponent implements OnInit {
     else {
       this.currentStepper = this.engin.value;
       this.initStepper = this.engin;
+      
     }
 
 
@@ -281,7 +282,6 @@ export class EnginAddComponent implements OnInit {
       (Response) => {
         console.log(Response)
         this.initStepper = Response;
-
         //recuperation des champs du stepper 1
         const formData: FormData = new FormData();
         formData.append("registration", '' + this.CaracTech1.registration.value);
@@ -456,7 +456,7 @@ export class EnginAddComponent implements OnInit {
     const formData: FormData = new FormData();
     formData.append("value", '' + 1);
     formData.append("status", '' + 0);
-    formData.append("stepper_main_id", '' + 1);
+    formData.append("stepper_main_id", '' + this.CaracTech1.transporter_id.value);
     this.stepperService.add(formData).then(
       (Response) => {
         console.log(Response)
@@ -471,6 +471,7 @@ export class EnginAddComponent implements OnInit {
     )
   }
   updateStepper() {
+    this.currentStepper = this.currentStepper+1
     const formData: FormData = new FormData();
     let number;
     let value;
@@ -483,16 +484,6 @@ export class EnginAddComponent implements OnInit {
       value = +this.engin.value
     }
 
-    //on recupere la valeur du stepper correspondant dans la base de donnne
-    this.stepperService.find(number).then(
-      (Response) => {
-        this.stepperApi = Response;
-      },
-      (error) => {
-        console.log(error)
-        return;
-      },
-    )
     console.log(value)
     if (value == 4) {
       formData.append("status", '' + 1);
@@ -508,7 +499,7 @@ export class EnginAddComponent implements OnInit {
 
 
     }
-    formData.append("stepper_main_id", '' + 1);
+    formData.append("stepper_main_id", '' + this.CaracTech1.transporter_id.value);
     this.stepperService.update(formData, number).then(
       (Response) => {
         //sauvegarde dans le local storage
