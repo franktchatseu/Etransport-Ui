@@ -15,13 +15,9 @@ export class EnginDetailComponent implements OnInit {
 
   car1 : any;
   car2 : any;
-  caros: any;
   description : any;
-  type : any;
   papier: any;
   photo: any;
-  mark: any;
-  model: any;
 
 
   constructor(
@@ -38,19 +34,6 @@ export class EnginDetailComponent implements OnInit {
     
     console.log("ceci est " +engin_id)
 
-    this.enginService.getMarque(engin_id).then(
-      data => {
-        this.mark = data;
-        console.log(this.mark.name)
-      }
-    ).catch(
-      error => {
-        this.translate.get("une erreurs est survenu")
-          .subscribe(val => this.notificationService.danger(val));
-        
-      }
-    )
-
     this.enginService.getCaractere1(engin_id).then(
       data => {
         this.car1 = data;
@@ -64,37 +47,10 @@ export class EnginDetailComponent implements OnInit {
       }
     )
 
-    this.enginService.getType(engin_id).then(
-      data => {
-        this.type = data;
-        console.log(this.type.name)
-      }
-    ).catch(
-      error => {
-        this.translate.get("une erreurs est survenu")
-          .subscribe(val => this.notificationService.danger(val));
-        
-      }
-    )
-
     this.enginService.getCaractere2(engin_id).then(
       data => {
         this.car2 = data;
         console.log(this.car2)
-      }
-    ).catch(
-      error => {
-        this.translate.get("une erreurs est survenu")
-          .subscribe(val => this.notificationService.danger(val));
-        
-      }
-    )
-
-    this.enginService.getCaosserie(engin_id).then(
-      data => {
-        this.caros = data;
-        console.log(this.caros )
-
       }
     ).catch(
       error => {
@@ -121,19 +77,6 @@ export class EnginDetailComponent implements OnInit {
       data => {
         this.papier = data;
         console.log(this.papier)
-      }
-    ).catch(
-      error => {
-        this.translate.get("une erreurs est survenu")
-          .subscribe(val => this.notificationService.danger(val));
-        
-      }
-    )
-
-    this.enginService.getModel(engin_id).then(
-      data => {
-        this.model = data;
-        console.log("bjrrrrrrrrrrrrrrrrr")
       }
     ).catch(
       error => {

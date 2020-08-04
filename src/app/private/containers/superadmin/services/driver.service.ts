@@ -26,7 +26,7 @@ export class DriverService {
   }
 
   findGeneralInfo(id: number): Promise<any> {
-    return this.http.get<any>(`${config.apiUrl}/module2/general_informations/${id}`).toPromise();
+    return this.http.get<any>(`${config.apiUrl}/module2/general_informations/finds/${id}`).toPromise();
   }
 
   getPermis(id: number): Promise<any> {
@@ -40,11 +40,6 @@ export class DriverService {
   getDocInfos(id: number): Promise<any> {
     return this.http.get<any>(`${config.apiUrl}/module2/doc_identity_information/${id}`).toPromise();
   }
-
-  getNationationalities(id: number): Promise<any> {
-    return this.http.get<any>(`${config.apiUrl}/module2/nationalities/${id}`).toPromise();
-  }
-
 
   delete(id: number) {
     return this.http.delete(`${config.apiUrl}/module2/general_informations/${id}`).toPromise();

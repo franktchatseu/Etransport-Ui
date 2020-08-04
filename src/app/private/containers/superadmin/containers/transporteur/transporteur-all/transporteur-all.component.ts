@@ -28,7 +28,6 @@ export class TransporteurAllComponent implements OnInit {
  
    //SweetAlert Text
    areYouSure = '';
-   transporteur : any ;
    warning = '';
    yes = '';
    no = '';

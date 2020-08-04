@@ -41,19 +41,6 @@ export class TransporteurDetailComponent implements OnInit {
         
       }
     )
-
-    this.transporteurService.findPersonnal(trans_id).then(
-      data => {
-        this.nationalite = data;
-        console.log(this.nationalite)
-      }
-    ).catch(
-      error => {
-        this.translate.get("une erreurs est survenu")
-          .subscribe(val => this.notificationService.danger(val));
-        
-      }
-    )
     }
 
 }

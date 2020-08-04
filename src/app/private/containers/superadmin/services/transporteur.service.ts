@@ -13,7 +13,6 @@ export class TransporteurService {
 
   delete(id: number) {
     return this.http.delete(`${config.apiUrl}/module1/stepper_main/${id}`).toPromise();
-
   }
   addInfoGenerale1(formData: FormData): Promise<any> {
     return this.http.post<any>(`${config.apiUrl}/module1/info_entreprise_one`, formData).toPromise();
@@ -37,16 +36,16 @@ export class TransporteurService {
       .pipe(map(data => data));
   }
 
-  findAll() {
-    return this.http.get<any>(`${config.apiUrl}/module1/info_entreprise_one/all`).toPromise();
-  }
   
   findAllInfosEnterpriseById(id : number): Promise<any> {
     return this.http.get<any>(`${config.apiUrl}/module1/info_entreprise_one/findAllInfosEnterpriseById/${id}`).toPromise();
   }
 
-
-  findAllInfosEnterprise(){
+  //findAllInfosEnterprise(){
+  findAll() {
+    return this.http.get<any>(`${config.apiUrl}/module1/info_entreprise_one/all`).toPromise();
+  }
+  findAllInfosEnterprise() {
     return this.http.get<any>(`${config.apiUrl}/module1/info_entreprise_one/findAllInfosEnterprise`).pipe(map(data => data));
   }
 
