@@ -37,6 +37,16 @@
                 </div>
             </div>
             <div class="row">
+                <div class="col-md-12">
+                    <input type="file" id="userFile" (change)="onSelectFileAvatar($event)" #fileInputAvatar
+                        style="display: none">
+                    <mat-form-field class="example-full-width">
+                        <input matInput formControlName="avatar " placeholder="Fichier" readonly>
+                    </mat-form-field>
+                    <button type="button" mat-button (click)="selectFileAvatar()">Choisir la photo du responsable</button>
+                </div>
+            </div>
+            <div class="row">
                 <div class="col-md-6">
                     <mat-form-field class="example-full-width">
                         <mat-label>Nom du responsable</mat-label>

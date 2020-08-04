@@ -2,6 +2,22 @@
     <mat-step [stepControl]="step1Form" [editable]="isEditable">
         <form class="example-form" [formGroup]="step1Form">
             <ng-template matStepLabel>Informations Generale</ng-template>
+
+            <div class="row">
+                <div class="col-md-10">
+                    <mat-form-field class="example-full-width">
+                        <mat-label>Selectionner le transporteur</mat-label>
+                        <mat-select formControlName="transporter_id">
+                            <mat-option *ngFor="let transporter of transporters"
+                            value="{{ transporter.stepper_main_id }}" title="{{ transporter.name }}">
+                            {{ transporter.name }}
+                            </mat-option>
+                        </mat-select>   
+                        <!-- <input matInput placeholder="Last name, First name" formControlName="nationality_id" required> -->
+                    </mat-form-field>
+
+                </div>
+            </div>
             <div class="row">
                 <div class="col-md-10">
                     <input type="file" id="userFile" (change)="onSelectFileAvatar($event)" #fileInputAvatar
@@ -27,7 +43,6 @@
                     </mat-form-field>
 
                 </div>
-
             </div>
             <div class="row">
                 <div class="col-md-10">

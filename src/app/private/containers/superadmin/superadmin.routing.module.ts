@@ -25,12 +25,18 @@ import { TransportElementComponent } from './containers/element-transport/transp
 import { ListTransportElementsComponent } from './containers/element-transport/list-transport-elements/list-transport-elements.component';
 import { AddTransportElementComponent } from './containers/element-transport/add-transport-element/add-transport-element.component';
 import { TransporteurDetailComponent } from "./containers/transporteur/transporteur-detail/transporteur-detail.component";
+import { DriverandcardComponent } from './containers/transporteur/driverandcard/driverandcard.component';
+import { AcceuilComponent } from './containers/acceuil/acceuil.component';
 
 const routes: Routes = [
   {
     path: '',
     component: IndexComponent,
     children: [
+      {
+        path: 'accueil',
+        component: AcceuilComponent,
+      },
       {
         path: 'random-number',
         component: RandomNumberComponent,
@@ -134,6 +140,10 @@ const routes: Routes = [
           {
             path: 'transporter-update/:id',
             component: TransporterUpdateComponent,
+          },
+          {
+            path: 'driversandcars/:id',
+            component: DriverandcardComponent,
           }
         ]
       },

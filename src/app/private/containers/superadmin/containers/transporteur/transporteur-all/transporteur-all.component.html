@@ -27,35 +27,37 @@
             <thead>
                 <tr>
 
-                    <th style="width: 15%;">Photo</th>
-                    <th>Nom</th>
-                    <th>Localisation</th>
+                    <th >Photo</th>
+                    <th>Responsable</th>
+                    <th>Entreprise</th>
                     <th>telephone</th>
+                    <th>Localisation</th>
                     <th>email</th>
                     <th>Numero du Contribuable</th>
-                    <th>Description des services</th>
                     <th>Action</th>
                 </tr>
             </thead>
             <tbody>
                 <tr *ngFor="let transporteur of transporteurs?.data,let i = index">
 
-                    <td>
-                        <img src="{{transporteur.image}}" width="50px" height="50px" alt="image du transporteur" srcset="">
+                    <td style="width: 3%;">
+                        <img [src]="transporteur.manager_picture" width="50px" height="50px" alt="image du transporteur" srcset="">
                     </td>
-                    <td>{{transporteur.name}}</td>
+                    <td style="width: 15%;">{{transporteur.manager_name}}</td>
+                    <td style="width: 15%;">{{transporteur.name}}</td>
+                    <td style="width: 10%;">{{transporteur.phone1}}</td>
                     <td>{{transporteur.localisation}}</td>
-                    <td>{{transporteur.phone1}}</td>
                     <td>{{transporteur.email}}</td>
-                    <td>{{transporteur.description_services}}</td>
-                    <td>{{transporteur.email}}</td>
+                    <td style="width: 10%;">{{transporteur.taxpayer_number}}</td>
                     <td>
                         <button class="mr-2 btn-icon btn-icon-only btn btn-outline-primary"
                             (click)="update(transporteur.stepper_main_id)"><i class="pe-7s-pen btn-icon-wrapper"> </i></button>
                         <button class="mr-2 btn-icon btn-icon-only btn btn-outline-success" (click)="detail(transporteur.stepper_main_id)">
                             <i class="pe-7s-info btn-icon-wrapper"> </i></button>
                         <button class="mr-2 btn-icon btn-icon-only btn btn-outline-danger"
-                            (click)="delete(transporteur.number)"><i class="pe-7s-trash btn-icon-wrapper"> </i></button>
+                            (click)="delete(transporteur.id)"><i class="pe-7s-trash btn-icon-wrapper"> </i></button>
+                        <button class="mr-2 btn-icon btn-icon-only btn btn-outline-info" (click)="detailDrivesAndCars(transporteur.stepper_main_id)">
+                                <i class="pe-7s-car btn-icon-wrapper"> </i></button>
                     </td>
                 </tr>
 

@@ -12,6 +12,7 @@ import { MarqueService } from 'src/app/services/parametre/marque/marque.service'
 import { TypeService } from 'src/app/services/parametre/type/type.service';
 import { ModeleService } from 'src/app/services/parametre/modele/modele.service';
 import { NotificationService } from 'src/app/services/notification.service';
+import { TransporteurService } from '../../../services/transporteur.service';
 
 @Component({
   selector: 'app-engin-add',
@@ -48,7 +49,6 @@ export class EnginAddComponent implements OnInit {
   fileInformation: any
   fileInformationAvatar: any
 
-
   //initialisation du stepper
   initStepper: any;
   currentStepper: number;
@@ -68,6 +68,8 @@ export class EnginAddComponent implements OnInit {
   stepperApi: any;
   picker: any
   engin: any
+  //liste des transporteurs
+  transporters: any;
 
 
   constructor(
@@ -75,6 +77,7 @@ export class EnginAddComponent implements OnInit {
     private stepperService: StepperEnginService,
     private _snackBar: MatSnackBar,
     private enginService: EnginService,
+    private transporterService: TransporteurService,
     private notificationService: NotificationService,
     private router: Router
   ) { }
@@ -143,6 +146,7 @@ export class EnginAddComponent implements OnInit {
 
 
   ngOnInit(): void {
+    this.getTransporters();
     this.getCarosseries();
     this.getMarks();
     this.getModels();
@@ -155,14 +159,15 @@ export class EnginAddComponent implements OnInit {
 
     //recuperation du stepper actif en fonction
     const value = +this.stepperService.getValue();
-    this.engin= JSON.parse(localStorage.getItem("engin")) ;
+    this.engin = JSON.parse(localStorage.getItem("engin"));
 
     if (!this.engin) {
       this.currentStepper = 0;
     }
     else {
-      this.currentStepper =  this.engin.value;
+      this.currentStepper = this.engin.value;
       this.initStepper = this.engin;
+      
     }
 
 
@@ -186,6 +191,7 @@ export class EnginAddComponent implements OnInit {
         ptc: ['', [Validators.required]],
         power: ['', [Validators.required]],
         volume: ['', [Validators.required]],
+        transporter_id: ['', [Validators.required]],
       }
     )
   }
@@ -271,12 +277,11 @@ export class EnginAddComponent implements OnInit {
     const formDataStep: FormData = new FormData();
     formDataStep.append("value", '' + 1);
     formDataStep.append("status", '' + 0);
-    formDataStep.append("stepper_main_id", '' + 1);
+    formDataStep.append("stepper_main_id", '' + this.CaracTech1.transporter_id.value);
     this.stepperService.add(formDataStep).then(
       (Response) => {
         console.log(Response)
         this.initStepper = Response;
-
         //recuperation des champs du stepper 1
         const formData: FormData = new FormData();
         formData.append("registration", '' + this.CaracTech1.registration.value);
@@ -334,7 +339,7 @@ export class EnginAddComponent implements OnInit {
     formData.append("consommation_max", this.CaracTech2.conso_max.value);
     formData.append("etat", this.CaracTech2.etat.value);
 
-    console.log("numero du stepper"+ this.initStepper.id)
+    console.log("numero du stepper" + this.initStepper.id)
     formData.append("stepper_id", '' + this.initStepper.id);
 
     //ajout des infos generales de utilisateurs
@@ -366,7 +371,7 @@ export class EnginAddComponent implements OnInit {
     formData.append("observation", '' + this.Description.observation.value);
     formData.append("owner", '' + this.Description.proprietaire.value);
     // on recupere le stepper id
-    console.log("numero du stepper"+ this.initStepper.id)
+    console.log("numero du stepper" + this.initStepper.id)
     formData.append("stepper_id", '' + this.initStepper.id);
     //ajout des infos generales de utilisateurs
     this.enginService.addDescription(formData).then(
@@ -392,7 +397,7 @@ export class EnginAddComponent implements OnInit {
     formData.append("technical_visit_date", '' + this.PapierVehicule.validite_visite.value);
 
     // on recupere le stepper id
-    console.log("numero du stepper"+ this.initStepper.id)
+    console.log("numero du stepper" + this.initStepper.id)
     formData.append("stepper_id", '' + this.initStepper.id);
 
     //ajout des infos generales de utilisateurs
@@ -428,7 +433,7 @@ export class EnginAddComponent implements OnInit {
 
     // on recupere le stepper id
 
-    console.log("numero du stepper"+ this.initStepper.id)
+    console.log("numero du stepper" + this.initStepper.id)
     formData.append("stepper_id", '' + this.initStepper.id);
     //ajout des infos generales de utilisateurs
     this.enginService.addPhotos(formData).then(
@@ -451,7 +456,7 @@ export class EnginAddComponent implements OnInit {
     const formData: FormData = new FormData();
     formData.append("value", '' + 1);
     formData.append("status", '' + 0);
-    formData.append("stepper_main_id", '' + 1);
+    formData.append("stepper_main_id", '' + this.CaracTech1.transporter_id.value);
     this.stepperService.add(formData).then(
       (Response) => {
         console.log(Response)
@@ -466,44 +471,35 @@ export class EnginAddComponent implements OnInit {
     )
   }
   updateStepper() {
+    this.currentStepper = this.currentStepper+1
     const formData: FormData = new FormData();
     let number;
     let value;
-    if(!this.engin){
-       number = this.stepperService.getNumber();
-       value = +this.stepperService.getValue()
+    if (!this.engin) {
+      number = this.stepperService.getNumber();
+      value = +this.stepperService.getValue()
     }
-    else{
-       number = this.engin.number;
-       value = +this.engin.value
+    else {
+      number = this.engin.number;
+      value = +this.engin.value
     }
 
-    //on recupere la valeur du stepper correspondant dans la base de donnne
-    this.stepperService.find(number).then(
-      (Response) => {
-        this.stepperApi = Response;
-      },
-      (error) => {
-        console.log(error)
-        return;
-      },
-    )
     console.log(value)
-    if(value == 4){
+    if (value == 4) {
       formData.append("status", '' + 1);
       console.log("voici le status 1")
       formData.append("value", '' + value);
 
     }
-    else{
+    else {
       formData.append("status", '' + 0);
       console.log("voici le status 0")
       const new_value = value + 1;
       formData.append("value", '' + new_value);
 
 
-    } 
-    formData.append("stepper_main_id", '' + 1);
+    }
+    formData.append("stepper_main_id", '' + this.CaracTech1.transporter_id.value);
     this.stepperService.update(formData, number).then(
       (Response) => {
         //sauvegarde dans le local storage
@@ -554,6 +550,16 @@ export class EnginAddComponent implements OnInit {
     this.enginService.getCarosseries().then((response) => {
       this.carosseries = response;
       console.log(this.carosseries);
+    }).catch((error) => {
+      this.notificationService.danger(this.translations.Superadmins.ServerUnavailable);
+    });
+  }
+
+  //on recupere la liste des transporteur disponible
+  getTransporters() {
+    this.transporterService.findAll().then((response) => {
+      this.transporters = response;
+      console.log(this.transporters)
     }).catch((error) => {
       this.notificationService.danger(this.translations.Superadmins.ServerUnavailable);
     });

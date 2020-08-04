@@ -103,6 +103,9 @@ export class TransporteurAllComponent implements OnInit {
    detail(id) {
      this.router.navigate(['/private/superadmins/transporter/transporter-detail' , id]);
    }
+   detailDrivesAndCars(id){
+    this.router.navigate(['/private/superadmins/transporter/driversandcars/' , id]);
+  }
 
    delete(assoc_id) {
      Swal.fire({
