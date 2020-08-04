@@ -11,15 +11,15 @@ const routes: Routes = [
     children: [
       {
         path: 'login',
-        component: LoginComponent
-        // canActivate: [AuthGuard] /* */
+        component: LoginComponent,
+        //canActivate: [AuthGuard] /* */
       },
       {
         path: 'superadmins',
         loadChildren:
           () => import('./containers/superadmin/superadmin.module').then(m => m.SuperadminModule),
-       // canActivate: [SuperadminGuard],
-        //canLoad: [SuperadminGuard] /* */
+        canActivate: [SuperadminGuard],
+        canLoad: [SuperadminGuard] /* */
       }
     ]
   }

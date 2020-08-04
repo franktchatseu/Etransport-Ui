@@ -41,7 +41,7 @@ export class EnginService {
     }
 
     delete(id: number) {
-      return this.http.delete(`${config.apiUrl}/module3/caractere_tech_ones/${id}`).toPromise();
+      return this.http.delete(`${config.apiUrl}/module3/stepper_trees/${id}`).toPromise();
   
     }
     //ajouter les caracteres techniques un du vehicule

@@ -36,9 +36,6 @@
                                                     <mat-form-field class="example-full-width">
                                                         <mat-label>Type d'intervenant</mat-label>
                                                         <mat-select formControlName="type_id">
-                                                            <mat-option value="" disabled hidden>
-                                                                Choisissez un type intervenant
-                                                            </mat-option>
                                                             <mat-option *ngFor="let type of types?.data"
                                                             value="{{ type.id }}" title="{{ type.description }}">
                                                             {{ type.name }}
@@ -101,14 +98,14 @@
                                                     <mat-form-field>
                                                         <input matInput formControlName="presentation_file" placeholder="Fichier" readonly>
                                                     </mat-form-field>
-                                                    <button type="button" mat-button (click)="selectFile()">Importer une fiche de presentation</button>
+                                                    <button type="button" class="btn btn-primary" mat-button (click)="selectFile()">Importer une fiche de presentation</button>
                                                 </div>
                                             </div>
                                             <div class="d-flex align-items-center">
                                                 <div class="ml-auto" *ngIf="active == null">
                                                     <input [disabled]="isLoading" type="submit"
                                                         class="btn btn-primary btn-lg"
-                                                        value="Ajouter" />
+                                                        value="Modifier" />
                                                     <div *ngIf="isLoading" style="padding: 5px; margin-left: 45%;">
                                                         <div class="ball-scale-multiple">
                                                             <div style="background-color: white;"></div>

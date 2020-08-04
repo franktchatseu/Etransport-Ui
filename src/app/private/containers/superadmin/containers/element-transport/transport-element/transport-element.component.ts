@@ -98,7 +98,7 @@ export class TransportElementComponent implements OnInit {
     if (withElement) {
       this.createForm = this.formBuilder.group({
         name: [this.data.name, [Validators.required]],
-        type_id: [this.data.type_id.id, [Validators.required]],
+        type_id: [this.data.type_id, [Validators.required]],
         localisation: [this.data.localisation, [Validators.required]],
         description: [this.data.description, [Validators.required]],
         phone1: [this.data.phone1, [Validators.required]],
@@ -109,15 +109,6 @@ export class TransportElementComponent implements OnInit {
       });
     } else {
       this.createForm = this.formBuilder.group({
-        // name: [obj.name, Validators.required],
-        // description: [obj.description, Validators.required],
-        // type_id: [obj.type_id, Validators.required],
-        // localisation: [obj.localisation, Validators.required],
-        // phone1: [obj.phone1],
-        // phone2: [obj.phone2],
-        // email: [obj.email, Validators.required],
-        // function: [obj.function, Validators.required],
-        // presentation_file: [obj.presentation_file, Validators.required],
         name: ['', Validators.required],
         description: ['', Validators.required],
         type_id: ['', Validators.required],

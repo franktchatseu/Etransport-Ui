@@ -36,6 +36,11 @@ export class TransporteurService {
       .pipe(map(data => data));
   }
 
+  findAllInfosEnterpriseById(id : number): Promise<any> {
+    return this.http.get<any>(`${config.apiUrl}/module1/info_entreprise_one/findAllInfosEnterpriseById/${id}`).toPromise();
+  }
+
+  //findAllInfosEnterprise(){
   findAll() {
     return this.http.get<any>(`${config.apiUrl}/module1/info_entreprise_one/all`).toPromise();
   }

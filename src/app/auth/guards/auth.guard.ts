@@ -12,11 +12,6 @@ export class AuthGuard implements CanActivate {
   canActivate() {
     if (this.authService.isLoggedIn()) {
       const ui = {
-        PRIEST: 'priests',
-        CATECHIST: 'catechists',
-        CATECHUMEN: 'cathecumenes',
-        PARISHIONER: 'parishionals',
-        OTHER: 'others',
         SUPERADMIN: 'superadmins',
       };
       const user = this.authService.getUserInfos();
