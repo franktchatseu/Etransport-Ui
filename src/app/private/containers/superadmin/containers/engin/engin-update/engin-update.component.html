@@ -32,14 +32,34 @@
                 <div class="col-md-6">
                     <mat-form-field class="example-full-width">
                         <mat-label>Marque</mat-label>
-                        <input matInput placeholder="Last name, First name" formControlName="marque" required>
+                        <mat-select formControlName="marque">
+
+                            <mat-option *ngFor="let mark of marks?.data" value="{{ mark.id }}"
+                                title="{{ mark.description }}">
+                                {{ mark.name }}
+                            </mat-option>
+                        </mat-select>
                     </mat-form-field>
+                    <!-- <mat-form-field class="example-full-width">
+                        <mat-label>Marque</mat-label>
+                        <input matInput placeholder="Last name, First name" formControlName="marque" required>
+                    </mat-form-field> -->
                 </div>
                 <div class="col-md-6">
                     <mat-form-field class="example-full-width">
                         <mat-label>Modele</mat-label>
-                        <input matInput placeholder="Last name, First name" formControlName="modele" required>
+                        <mat-select formControlName="modele">
+
+                            <mat-option *ngFor="let model of models?.data" value="{{ model.id }}"
+                                title="{{ model.description }}">
+                                {{ model.name }}
+                            </mat-option>
+                        </mat-select>
                     </mat-form-field>
+                    <!-- <mat-form-field class="example-full-width">
+                        <mat-label>Modele</mat-label>
+                        <input matInput placeholder="Last name, First name" formControlName="modele" required>
+                    </mat-form-field> -->
 
                 </div>
             </div>
@@ -48,16 +68,31 @@
                 <div class="col-md-6">
                     <mat-form-field class="example-full-width">
                         <mat-label>Type</mat-label>
-                        <input matInput placeholder="Last name, First name" formControlName="type" required>
+                        <mat-select formControlName="type">
+
+                            <mat-option *ngFor="let type of types?.data" value="{{ type.id }}"
+                                title="{{ type.description }}">
+                                {{ type.name }}
+                            </mat-option>
+                        </mat-select>
                     </mat-form-field>
+                    <!-- <mat-form-field class="example-full-width">
+                        <mat-label>Type</mat-label>
+                        <input matInput placeholder="Last name, First name" formControlName="type" required>
+                    </mat-form-field> -->
 
                 </div>
                 <div class="col-md-6">
                     <mat-form-field class="example-full-width">
                         <mat-label>Carosserie</mat-label>
-                        <input matInput placeholder="Last name, First name" formControlName="carosserie" required>
-                    </mat-form-field>
+                        <mat-select formControlName="carosserie">
 
+                            <mat-option *ngFor="let carosserie of carosseries?.data" value="{{ carosserie.id }}"
+                                title="{{ carosserie.description }}">
+                                {{ carosserie.color }}
+                            </mat-option>
+                        </mat-select>
+                    </mat-form-field>
                 </div>
 
             </div>

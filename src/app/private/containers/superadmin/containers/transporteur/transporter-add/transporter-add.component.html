@@ -59,14 +59,16 @@
                     </mat-form-field>
                 </div>
                 <div class="col-md-6">
+                    <input type="file" id="userFile" (change)="onSelectFileAvatar($event)" #fileInputAvatar
+                        style="display: none">
                     <mat-form-field class="example-full-width">
-                        <mat-label>Fonction du responsable</mat-label>
-                        <input matInput placeholder="Last name, First name" formControlName="fonction_resp" required>
+                        <input matInput formControlName="avatar" placeholder="Photo de profile du responsable" readonly>
                     </mat-form-field>
+                    <button type="button" mat-button class="btn btn-primary" (click)="selectFileAvatar()">Choisir la photo</button>
                 </div>
             </div>
             <div>
-                <button class="btn btn-success" (click)="addStep1()" mat-button matStepperNext>Enregistrer</button>
+                <button class="btn btn-success" (click)="addStep1()" mat-button matStepperNext>Suivant</button>
             </div>
         </form>
     </mat-step>
@@ -119,8 +121,10 @@
                 <div class="col-md-10">
                     <mat-form-field class="example-full-width">
                         <mat-label>Description de l'entreprise et service </mat-label>
-                        <input matInput placeholder="Ex. 1 Main St, New York, NY" formControlName="description"
-                            required>
+                        <textarea matInput placeholder="entrez la description de l'entreprise" formControlName="description"
+                        required></textarea>
+                        <!-- <input matInput placeholder="Ex. 1 Main St, New York, NY" formControlName="description"
+                            required> -->
                     </mat-form-field>
                 </div>
             </div>
@@ -129,8 +133,10 @@
                 <div class="col-md-10">
                     <mat-form-field class="example-full-width">
                         <mat-label>Mission de l'entreprise</mat-label>
-                        <input matInput placeholder="Ex. 1 Main St, New York, NY" formControlName="mission"
-                            required>
+                        <textarea matInput placeholder="entrez les missions de l'entreprise" formControlName="mission"
+                        required></textarea>
+                        <!-- <input matInput placeholder="Ex. 1 Main St, New York, NY" formControlName="mission"
+                            required> -->
                     </mat-form-field>
                 </div>
             </div>
@@ -138,8 +144,10 @@
                 <div class="col-md-10">
                     <mat-form-field class="example-full-width">
                         <mat-label>Ambitions de l'entreprise </mat-label>
-                        <input matInput placeholder="Ex. 1 Main St, New York, NY" formControlName="ambition"
-                            required>
+                        <textarea matInput placeholder="entrez les Ambitions de l'entreprise" formControlName="ambition"
+                        required></textarea>
+                        <!-- <input matInput placeholder="Ex. 1 Main St, New York, NY" formControlName="ambition"
+                            required> -->
                     </mat-form-field>
                 </div>
             </div>
@@ -147,8 +155,10 @@
                 <div class="col-md-10">
                     <mat-form-field class="example-full-width">
                         <mat-label>Valeurs de l'entreprise </mat-label>
-                        <input matInput placeholder="Ex. 1 Main St, New York, NY" formControlName="valeur"
-                            required>
+                        <textarea matInput placeholder="entrez les Valeurs de l'entreprise" formControlName="valeur"
+                        required></textarea>
+                        <!-- <input matInput placeholder="Ex. 1 Main St, New York, NY" formControlName="valeur"
+                            required> -->
                     </mat-form-field>
                 </div>
             </div>
@@ -164,9 +174,11 @@
             <div class="row">
                 <div class="col-md-10">
                     <mat-form-field class="example-full-width">
-                        <mat-label>Partenaire </mat-label>
-                        <input matInput placeholder="Ex. 1 Main St, New York, NY" formControlName="partenaire"
-                            required>
+                        <mat-label>Partenaires </mat-label>
+                        <textarea matInput placeholder="entrez les partenaires de l'entreprise" formControlName="partenaire"
+                        required></textarea>
+                        <!-- <input matInput placeholder="Ex. 1 Main St, New York, NY" formControlName="partenaire"
+                            required> -->
                     </mat-form-field>
                 </div>
             </div>
@@ -203,7 +215,7 @@
                 </div>
             </div>
             <div>
-                <button class="btn btn-success"  (click)="addStep2()" mat-button matStepperNext>Enregistrer</button>
+                <button class="btn btn-success"  (click)="addStep2()" mat-button matStepperNext>Suivant</button>
             </div>
         </form>
     </mat-step>

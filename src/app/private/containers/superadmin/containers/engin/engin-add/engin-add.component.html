@@ -156,7 +156,7 @@
             </div>
 
             <div>
-                <button class="btn btn-success" (click)="addStep1()" mat-button matStepperNext>Enregistrer</button>
+                <button class="btn btn-success" (click)="addStep1()" mat-button matStepperNext>Suivant</button>
             </div>
         </form>
     </mat-step>
@@ -266,7 +266,7 @@
                 </div>
             </div>
             <div>
-                <button class="btn btn-success" (click)="addStep2()" mat-button matStepperNext>Enregistrer</button>
+                <button class="btn btn-success" (click)="addStep2()" mat-button matStepperNext>Suivant</button>
             </div>
         </form>
     </mat-step>
@@ -325,8 +325,6 @@
                         <mat-label>Observation </mat-label>
                         <textarea matInput placeholder="entrez les Observations" formControlName="observation"
                             required></textarea>
-                        <!-- <input matInput placeholder="Ex. 1 Main St, New York, NY" formControlName="observation"
-                            required> -->
                     </mat-form-field>
                 </div>
             </div>
@@ -340,7 +338,7 @@
                 </div>
             </div>
             <div>
-                <button class="btn btn-success" (click)="addStep3()" mat-button matStepperNext>Enregistrer</button>
+                <button class="btn btn-success" (click)="addStep3()" mat-button matStepperNext>Suivant</button>
             </div>
         </form>
     </mat-step>
@@ -372,7 +370,7 @@
                 </div>
             </div>
             <div>
-                <button class="btn btn-success" (click)="addStep4()" mat-button matStepperNext>Enregistrer</button>
+                <button class="btn btn-success" (click)="addStep4()" mat-button matStepperNext>Suivant</button>
             </div>
         </form>
     </mat-step>
@@ -385,54 +383,54 @@
                 <div class="col-md-10">
                     <input type="file" id="userFile" (change)="onSelectFile1($event)" #fileInput1 style="display: none">
                     <mat-form-field>
-                        <input matInput formControlName="avant_engin" placeholder="Fichier" readonly>
+                        <input matInput formControlName="avant_engin" placeholder="photo du Vehicule" readonly>
                     </mat-form-field>
-                    <button type="button" mat-button (click)="selectFile1()">Importer Photo Avant Engin</button>
+                    <button type="button" class="btn btn-primary" mat-button (click)="selectFile1()">Importer Photo Avant Engin</button>
                 </div>
             </div>
             <div class="row">
                 <div class="col-md-10">
                     <input type="file" id="userFile" (change)="onSelectFile2($event)" #fileInput2 style="display: none">
                     <mat-form-field>
-                        <input matInput formControlName="arriere_engin" placeholder="Fichier" readonly>
+                        <input matInput formControlName="arriere_engin" placeholder="photo du Vehicule" readonly>
                     </mat-form-field>
-                    <button type="button" mat-button (click)="selectFile2()">Importer Photo Arriere Engin</button>
+                    <button type="button" class="btn btn-primary" mat-button (click)="selectFile2()">Importer Photo Arriere Engin</button>
                 </div>
             </div>
             <div class="row">
                 <div class="col-md-10">
                     <input type="file" id="userFile" (change)="onSelectFile3($event)" #fileInput3 style="display: none">
                     <mat-form-field>
-                        <input matInput formControlName="gauche_engin" placeholder="Fichier" readonly>
+                        <input matInput formControlName="gauche_engin" placeholder="photo du Vehicule" readonly>
                     </mat-form-field>
-                    <button type="button" mat-button (click)="selectFile3()">Importer Photo Cote Gauche Engin</button>
+                    <button type="button" class="btn btn-primary" mat-button (click)="selectFile3()">Importer Photo Cote Gauche Engin</button>
                 </div>
             </div>
             <div class="row">
                 <div class="col-md-10">
                     <input type="file" id="userFile" (change)="onSelectFile4($event)" #fileInput4 style="display: none">
                     <mat-form-field>
-                        <input matInput formControlName="droit_engin" placeholder="Fichier" readonly>
+                        <input matInput formControlName="droit_engin" placeholder="photo du Vehicule" readonly>
                     </mat-form-field>
-                    <button type="button" mat-button (click)="selectFile4()">Importer Photo Cote Droit Engin</button>
+                    <button type="button" class="btn btn-primary" mat-button (click)="selectFile4()">Importer Photo Cote Droit Engin</button>
                 </div>
             </div>
             <div class="row">
                 <div class="col-md-10">
                     <input type="file" id="userFile" (change)="onSelectFile5($event)" #fileInput5 style="display: none">
                     <mat-form-field>
-                        <input matInput formControlName="insurance_patente" placeholder="Fichier" readonly>
+                        <input matInput formControlName="insurance_patente" placeholder="photo du Vehicule" readonly>
                     </mat-form-field>
-                    <button type="button" mat-button (click)="selectFile5()">Importer Photo Assurance</button>
+                    <button type="button" class="btn btn-primary" mat-button (click)="selectFile5()">Importer Photo Assurance</button>
                 </div>
             </div>
             <div class="row">
                 <div class="col-md-10">
                     <input type="file" id="userFile" (change)="onSelectFile6($event)" #fileInput6 style="display: none">
                     <mat-form-field>
-                        <input matInput formControlName="grey_card" placeholder="Fichier" readonly>
+                        <input matInput formControlName="grey_card" placeholder="photo du Vehicule" readonly>
                     </mat-form-field>
-                    <button type="button" mat-button (click)="selectFile6()">Importer Photo Carte Grise</button>
+                    <button type="button" class="btn btn-primary" mat-button (click)="selectFile6()">Importer Photo Carte Grise</button>
                 </div>
             </div>
             <div>

@@ -7,9 +7,9 @@
                     <input type="file" id="userFile" (change)="onSelectFileAvatar($event)" #fileInputAvatar
                         style="display: none">
                     <mat-form-field class="example-full-width">
-                        <input matInput formControlName="avatar" placeholder="Fichier" readonly>
+                        <input matInput formControlName="avatar" placeholder="photo du chauffeur" readonly>
                     </mat-form-field>
-                    <button type="button" mat-button (click)="selectFileAvatar()">Choisir la photo</button>
+                    <button type="button" class="btn btn-primary" mat-button (click)="selectFileAvatar()">Choisir la photo</button>
                 </div>
 
             </div>
@@ -110,7 +110,7 @@
             </div>
 
             <div>
-                <button class="btn btn-success" (click)="addStep1()" mat-button matStepperNext>Enregistrer</button>
+                <button class="btn btn-success" (click)="addStep1()" mat-button matStepperNext>Suivant</button>
             </div>
         </form>
     </mat-step>
@@ -144,7 +144,7 @@
                 </div>
             </div>
             <div>
-                <button (click)="addStep2()" mat-button matStepperNext>Enregistrer</button>
+                <button (click)="addStep2()" class="btn btn-success" mat-button matStepperNext>Suivant</button>
             </div>
         </form>
     </mat-step>
@@ -196,7 +196,7 @@
                 </div>
             </div>
             <div>
-                <button class="btn btn-success" (click)="addStep3()" mat-button matStepperNext>Enregistrer</button>
+                <button class="btn btn-success" (click)="addStep3()" mat-button matStepperNext>Suivant</button>
             </div>
         </form>
     </mat-step>
@@ -218,11 +218,11 @@
                     <mat-form-field>
                         <input matInput formControlName="filename" placeholder="Fichier" readonly>
                     </mat-form-field>
-                    <button type="button" mat-button (click)="selectFile()">Importer une Piece Justificative</button>
+                    <button type="button" class="btn btn-primary" mat-button (click)="selectFile()">Importer une Piece Justificative</button>
                 </div>
             </div>
             <div>
-                <button class="btn btn-success" (click)="addStep4()" mat-button matStepperNext>Enregistrer</button>
+                <button class="btn btn-success" (click)="addStep4()" mat-button matStepperNext>Suivant</button>
             </div>
         </form>
     </mat-step>

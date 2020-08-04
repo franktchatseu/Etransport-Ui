@@ -17,7 +17,11 @@ import { TranslateService } from '@ngx-translate/core';
 })
 export class EnginUpdateComponent implements OnInit {
 
-
+  types: any = null;
+  marks: any = null;
+  models: any = null;
+  carosseries: any = null;
+  translations: any = null;
 
   @ViewChild('fileInput1')
   fileInput1: ElementRef;
@@ -144,7 +148,10 @@ export class EnginUpdateComponent implements OnInit {
 
 
   ngOnInit(): void {
-
+    this.getCarosseries();
+    this.getMarks();
+    this.getModels();
+    this.getTypes();
     this.initStep1();
     this.initStep2();
     this.initStep3();
@@ -693,4 +700,39 @@ export class EnginUpdateComponent implements OnInit {
 
   }
 
+  getTypes() {
+    this.enginService.getTypes().then((response) => {
+      this.types = response;
+      console.log(this.types);
+    }).catch((error) => {
+      this.notificationService.danger(this.translations.Superadmins.ServerUnavailable);
+    });
+  }
+
+  getModels() {
+    this.enginService.getModels().then((response) => {
+      this.models = response;
+      console.log(this.models);
+    }).catch((error) => {
+      this.notificationService.danger(this.translations.Superadmins.ServerUnavailable);
+    });
+  }
+
+  getMarks() {
+    this.enginService.getMarks().then((response) => {
+      this.marks = response;
+      console.log(this.marks);
+    }).catch((error) => {
+      this.notificationService.danger(this.translations.Superadmins.ServerUnavailable);
+    });
+  }
+
+  getCarosseries() {
+    this.enginService.getCarosseries().then((response) => {
+      this.carosseries = response;
+      console.log(this.carosseries);
+    }).catch((error) => {
+      this.notificationService.danger(this.translations.Superadmins.ServerUnavailable);
+    });
+  }
 }
