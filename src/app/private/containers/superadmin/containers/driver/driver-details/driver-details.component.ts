@@ -18,7 +18,6 @@ export class DriverDetailsComponent implements OnInit {
   driver : any;
   permit : any;
   info: any;
-  nationalite : any;
   formation : any;
   members: any;
   imagePath: any;
@@ -76,22 +75,10 @@ export class DriverDetailsComponent implements OnInit {
       }
     )
 
-    this.driverService.getNationationalities(driver_id).then(
-      data => {
-        this.nationalite = data;
-        console.log(this.nationalite.name)
-      }
-    ).catch(
-      error => {
-        this.translate.get("une erreurs est survenu")
-          .subscribe(val => this.notificationService.danger(val));
-        
-      }
-    )
-
     this.driverService.getDocInfos(driver_id).then(
       data => {
         this.info = data;
+        console.log(this.info)
       }
     ).catch(
       error => {

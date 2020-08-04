@@ -20,14 +20,6 @@ export class EnginService {
         .pipe(map(data => data));
     }
 
-    getMarque(id: number): Promise<any> {
-      return this.http.get<any>(`${config.apiUrl}/module3/marks/${id}`).toPromise();
-    }
-
-    getModel(id: number): Promise<any> {
-      return this.http.get<any>(`${config.apiUrl}/module3/modeles/${id}`).toPromise();
-    }
-
     getDescription(id: number): Promise<any> {
       return this.http.get<any>(`${config.apiUrl}/module3/descriptions/${id}`).toPromise();
     }
@@ -40,20 +32,12 @@ export class EnginService {
       return this.http.get<any>(`${config.apiUrl}/module3/gear_pictures/${id}`).toPromise();
     }
 
-    getType(id: number): Promise<any> {
-      return this.http.get<any>(`${config.apiUrl}/module3/types/${id}`).toPromise();
-    }
-
     getCaractere1(id: number): Promise<any> {
       return this.http.get<any>(`${config.apiUrl}/module3/caractere_tech_ones/${id}/findAllCaracterById`).toPromise();
     }
 
     getCaractere2(id: number): Promise<any> {
       return this.http.get<any>(`${config.apiUrl}/module3/caractertechtwos/${id}`).toPromise();
-    }
-
-    getCaosserie(id: number): Promise<any> {
-      return this.http.get<any>(`${config.apiUrl}/module3/carosseries/${id}`).toPromise();
     }
 
     delete(id: number) {
