@@ -6,6 +6,7 @@ import { MatSnackBar } from '@angular/material';
 import { DriverService } from '../../../services/driver.service';
 import { Router, ActivatedRoute } from '@angular/router';
 import { NotificationService } from 'src/app/services/notification.service';
+import { TransporteurService } from '../../../services/transporteur.service';
 @Component({
   selector: 'app-driver-add',
   templateUrl: './driver-add.component.html',
@@ -45,6 +46,8 @@ export class DriverAddComponent implements OnInit {
   picker: any
   translations: any = null;
   driver: any
+  //liste des transporteurs
+  transporters: any;
 
 
   constructor(
@@ -53,6 +56,7 @@ export class DriverAddComponent implements OnInit {
     private _snackBar: MatSnackBar,
     private notificationService: NotificationService,
     private driverService: DriverService,
+    private transporterService: TransporteurService,
     private activatedRoute: ActivatedRoute,
     private router: Router
 
@@ -79,6 +83,7 @@ export class DriverAddComponent implements OnInit {
     }
   }
   ngOnInit(): void {
+    this.getTransporters();
     this.getNationalities();
       //recuperation du stepper actif en fonction
       this.driver= JSON.parse(localStorage.getItem("driver")) ;
@@ -109,6 +114,7 @@ export class DriverAddComponent implements OnInit {
         telephone2: '',
         avatar: ['', [Validators.required]],
         nationality_id: ['', [Validators.required]],
+        transporter_id: ['', [Validators.required]],
 
 
       }
@@ -165,7 +171,7 @@ export class DriverAddComponent implements OnInit {
     const formDataStep: FormData = new FormData();
     formDataStep.append("value", '' + 1);
     formDataStep.append("status", '' + 0);
-    formDataStep.append("stepper_main_id", '' + 1);
+    formDataStep.append("stepper_main_id",'' + this.InfoGenerale.transporter_id.value);
     this.stepperService.add(formDataStep).then(
       (Response) => {
         console.log(Response)
@@ -360,6 +366,15 @@ export class DriverAddComponent implements OnInit {
       this.notificationService.danger(this.translations.Superadmins.ServerUnavailable);
     });
   }
+  //on recupere la liste des transporteur disponible
+   getTransporters(){
+    this.transporterService.findAll().then((response) => {
+      this.transporters = response;
+      console.log(this.transporters)
+    }).catch((error) => {
+      this.notificationService.danger(this.translations.Superadmins.ServerUnavailable);
+    });
+   }
 
   //reinitialisation
   reset() {

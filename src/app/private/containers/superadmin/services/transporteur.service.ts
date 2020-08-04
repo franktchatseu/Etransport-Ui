@@ -37,8 +37,11 @@ export class TransporteurService {
       .pipe(map(data => data));
   }
 
+  findAll() {
+    return this.http.get<any>(`${config.apiUrl}/module1/info_entreprise_one/all`).toPromise();
+  }
   findAllInfosEnterprise() {
-    return this.http.get<any>(`${config.apiUrl}/module1/info_entreprise_one/findAllInfosEnterprise`).pipe(map(data=>data));
+    return this.http.get<any>(`${config.apiUrl}/module1/info_entreprise_one/findAllInfosEnterprise`).pipe(map(data => data));
   }
 
   findInfo2(id: number): Promise<any> {
@@ -55,6 +58,7 @@ export class TransporteurService {
   }
 
   //get all drivers and cars for this entreprise
-  getDriversandCars(id){
-    return this.http.get<any>(`${config.apiUrl}/module1/stepper_main/${id}/driversandcars`).toPromise();  }
+  getDriversandCars(id) {
+    return this.http.get<any>(`${config.apiUrl}/module1/stepper_main/${id}/driversandcars`).toPromise();
+  }
 }

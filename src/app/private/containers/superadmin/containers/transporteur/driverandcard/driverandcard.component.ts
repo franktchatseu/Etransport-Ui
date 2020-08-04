@@ -12,6 +12,7 @@ import { NotificationService } from 'src/app/services/notification.service';
 export class DriverandcardComponent implements OnInit {
 
   drversandcars: any;
+  transporter: any
   isActive: boolean = true;
   constructor(
     private transporteurService: TransporteurService,
@@ -24,12 +25,28 @@ export class DriverandcardComponent implements OnInit {
   ngOnInit(): void {
     //recuperation de id du transporteur
     const transporteur_id = +this.activateRoute.snapshot.params['id'];
-    console.log(transporteur_id)
-    this.getDriversAndCars(transporteur_id)
+    //on recupere le transporteur
+    this.getEntreprise(transporteur_id);  
+    
 
   }
 
+  //recuperatino de entreprise
+  getEntreprise(id){
+    this.transporteurService.findInfo1(id).then(
+      data => {
+        this.transporter = data;
+        this.getDriversAndCars(this.transporter.stepper_main_id)
+      }
+    ).catch(
+      error => {
+        this.translate.get("probleme de chargement du transporteur")
+          .subscribe(val => this.notificationService.warning(val));
 
+      }
+    )
+    
+  }
   getDriversAndCars(id) {
     this.transporteurService.getDriversandCars(id).then(
       data => {
