@@ -27,6 +27,7 @@ import { TypeComponent } from "./containers/parametres/type/type.component";
 import { TypeIntervenantComponent } from "./containers/parametres/type-intervenant/type-intervenant.component";
 import { TransportElementComponent } from "./containers/element-transport/transport-element/transport-element.component";
 import { TransporteurAllComponent } from "./containers/transporteur/transporteur-all/transporteur-all.component";
+import { TransporteurDetailComponent } from "./containers/transporteur/transporteur-detail/transporteur-detail.component";
 import { AddTransportElementComponent } from "./containers/element-transport/add-transport-element/add-transport-element.component";
 import { ListTransportElementsComponent } from "./containers/element-transport/list-transport-elements/list-transport-elements.component";
 import { DriverandcardComponent } from "./containers/transporteur/driverandcard/driverandcard.component";
@@ -59,6 +60,7 @@ import { AcceuilComponent } from './containers/acceuil/acceuil.component';
     EnginAddComponent,
     EnginUpdateComponent,
     TransporterAddComponent,
+    TransporteurDetailComponent,
     TransporterUpdateComponent,
     DriverandcardComponent,
     AcceuilComponent

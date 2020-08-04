@@ -51,7 +51,7 @@ export class NavBarComponent implements OnInit {
   }
 
   showUserFirstAndLastName() {
-    //return this.user.infos.first_name.split(' ')[0] + ' ' + this.user.infos.last_name.split(' ')[0];
+    return this.user.infos.first_name.split(' ')[0] + ' ' + this.user.infos.last_name.split(' ')[0];
   }
 
   isInProfiles(value: string): boolean {
@@ -60,7 +60,7 @@ export class NavBarComponent implements OnInit {
   }
 
   goTo(url) {
-    this.router.navigate(['/private/parishionals/' + url]);
+    this.router.navigate(['/private/superadmins/' + url]);
   }
 
   /* Reactive translation */

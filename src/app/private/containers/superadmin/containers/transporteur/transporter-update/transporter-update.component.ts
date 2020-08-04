@@ -390,7 +390,6 @@ export class TransporterUpdateComponent implements OnInit {
       (Response) => {
         console.log(Response)
         //sauvegarde dans le local storage
-        this.stepperService.storeStepper(Response)
         this.openSnackBar("Ajout Reussi", "Etape 2")
 
       },

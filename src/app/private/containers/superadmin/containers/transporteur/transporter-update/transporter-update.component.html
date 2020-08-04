@@ -58,14 +58,16 @@
                     </mat-form-field>
                 </div>
                 <div class="col-md-6">
+                    <input type="file" id="userFile" (change)="onSelectFileAvatar($event)" #fileInputAvatar
+                        style="display: none">
                     <mat-form-field class="example-full-width">
-                        <mat-label>Fonction du responsable</mat-label>
-                        <input matInput placeholder="Last name, First name" formControlName="fonction_resp" required>
+                        <input matInput formControlName="avatar" placeholder="Photo de profile du responsable" readonly>
                     </mat-form-field>
+                    <button type="button" mat-button class="btn btn-primary" (click)="selectFileAvatar()">Choisir la photo</button>
                 </div>
             </div>
             <div>
-                <button class="btn btn-info" (click)="addStep1()" mat-button matStepperNext>Modifier</button>
+                <button class="btn btn-success" (click)="addStep1()" mat-button matStepperNext>Modifier</button>
             </div>
         </form>
     </mat-step>
@@ -196,7 +198,7 @@
             </div>
             <div>
                 <button class="btn btn-warning" mat-button matStepperPrevious>Back</button>
-                <button class="btn btn-info" (click)="addStep2()" mat-button matStepperNext>Modifier</button>
+                <button class="btn btn-success" (click)="addStep2()" mat-button matStepperNext>Modifier</button>
             </div>
         </form>
     </mat-step>

@@ -138,7 +138,7 @@ export class TransporterAddComponent implements OnInit {
         num_contribuable: ['', [Validators.required]],
         num_rccm: ['', [Validators.required]],
         adresse_facturation: ['', [Validators.required]],
-        nom_respo: ['', [Validators.required, Validators.email]],
+        nom_respo: ['', [Validators.required]],
         fonction_resp: ['', [Validators.required]],
         tel_respo: ['', [Validators.required]],
         avatar: ['', [Validators.required]],

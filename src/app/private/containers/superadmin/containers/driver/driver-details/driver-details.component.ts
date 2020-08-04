@@ -15,7 +15,7 @@ import { NotificationService } from '../../../../../../services/notification.ser
 })
 export class DriverDetailsComponent implements OnInit {
 
-  drivers : any[] =[];
+  driver : any;
   permit : any;
   info: any;
   nationalite : any;
@@ -50,10 +50,10 @@ export class DriverDetailsComponent implements OnInit {
       }
     )
 
-    this.driverService.finds(driver_id).then(
+    this.driverService.findGeneralInfo(driver_id).then(
       data => {
-        this.drivers = data.data;
-        console.log(this.drivers)
+        this.driver = data;
+        console.log(this.driver)
       }
     ).catch(
       error => {

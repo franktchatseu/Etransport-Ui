@@ -107,7 +107,7 @@ export class EnginAllComponent implements OnInit {
     this.router.navigate(['/private/superadmins/engin-detail/', id]);
   }
 
-  delete(assoc_id) {
+  delete(number) {
     Swal.fire({
       title: this.areYouSure,
       text: this.warning,
@@ -118,7 +118,7 @@ export class EnginAllComponent implements OnInit {
     }).then((result) => {
       if (result.value) {
         this.blockUI.start('Loading...');
-        this.enginService.delete(assoc_id).then(
+        this.enginService.deletebystepper(number).then(
           data => {
             this.blockUI.stop();
             Swal.fire(

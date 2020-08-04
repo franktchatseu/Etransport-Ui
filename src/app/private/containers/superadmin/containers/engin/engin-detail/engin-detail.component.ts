@@ -13,7 +13,7 @@ import { NotificationService } from '../../../../../../services/notification.ser
 })
 export class EnginDetailComponent implements OnInit {
 
-  cars1 : any[] =[];
+  car1 : any;
   car2 : any;
   caros: any;
   description : any;
@@ -36,7 +36,8 @@ export class EnginDetailComponent implements OnInit {
   async ngOnInit() {
     const engin_id = +this.route.snapshot.paramMap.get("id");
     
-    console.log("ceci est" +engin_id)
+    console.log("ceci est " +engin_id)
+
     this.enginService.getMarque(engin_id).then(
       data => {
         this.mark = data;
@@ -52,8 +53,8 @@ export class EnginDetailComponent implements OnInit {
 
     this.enginService.getCaractere1(engin_id).then(
       data => {
-        this.cars1 = data.data;
-        console.log(this.cars1)
+        this.car1 = data;
+        console.log(this.car1)
       }
     ).catch(
       error => {
@@ -132,7 +133,7 @@ export class EnginDetailComponent implements OnInit {
     this.enginService.getModel(engin_id).then(
       data => {
         this.model = data;
-        console.log(this.model)
+        console.log("bjrrrrrrrrrrrrrrrrr")
       }
     ).catch(
       error => {

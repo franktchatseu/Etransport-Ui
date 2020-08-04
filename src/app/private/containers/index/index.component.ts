@@ -54,6 +54,6 @@ export class IndexComponent implements OnInit {
   }
 
   goTo(url) {
-    this.router.navigate(['/private/parishionals']);
+    this.router.navigate(['/private/superadmins']);
   }
 }

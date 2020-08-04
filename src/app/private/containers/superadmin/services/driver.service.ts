@@ -25,10 +25,6 @@ export class DriverService {
       .toPromise();
   }
 
-  
-  finds(id: number): Promise<any> {
-    return this.http.get<any>(`${config.apiUrl}/module2/general_informations/finds/${id}`).toPromise();
-  }
   findGeneralInfo(id: number): Promise<any> {
     return this.http.get<any>(`${config.apiUrl}/module2/general_informations/${id}`).toPromise();
   }

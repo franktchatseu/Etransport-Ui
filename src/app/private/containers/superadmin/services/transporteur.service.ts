@@ -12,7 +12,7 @@ export class TransporteurService {
 
 
   delete(id: number) {
-    return this.http.delete(`${config.apiUrl}/module2/general_informations/${id}`).toPromise();
+    return this.http.delete(`${config.apiUrl}/module1/stepper_main/${id}`).toPromise();
 
   }
   addInfoGenerale1(formData: FormData): Promise<any> {
@@ -40,12 +40,22 @@ export class TransporteurService {
   findAll() {
     return this.http.get<any>(`${config.apiUrl}/module1/info_entreprise_one/all`).toPromise();
   }
-  findAllInfosEnterprise() {
+  
+  findAllInfosEnterpriseById(id : number): Promise<any> {
+    return this.http.get<any>(`${config.apiUrl}/module1/info_entreprise_one/findAllInfosEnterpriseById/${id}`).toPromise();
+  }
+
+
+  findAllInfosEnterprise(){
     return this.http.get<any>(`${config.apiUrl}/module1/info_entreprise_one/findAllInfosEnterprise`).pipe(map(data => data));
   }
 
   findInfo2(id: number): Promise<any> {
     return this.http.get<any>(`${config.apiUrl}/module1/info_entreprise_two/${id}`).toPromise();
+  }
+
+  findPersonnal(id: number): Promise<any> {
+    return this.http.get<any>(`${config.apiUrl}/module1/personalcomputingspecial/${id}`).toPromise();
   }
 
 

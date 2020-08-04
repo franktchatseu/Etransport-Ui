@@ -1,0 +1,649 @@
+<div class="col-md-18">
+        <div id="accordion" class="accordion-wrapper mb-3">
+            <div class="card">
+                <div id="headingOne" class="card-header">
+                    <button type="button" data-toggle="collapse" data-target="#collapseOne1" aria-expanded="true"
+                        aria-controls="collapseOne" class="text-center m-0 p-0 btn btn-link btn-block">
+                        <h5 class="m-0 p-0 widget-numbers text-success">Informations Sur L Entreprise</h5>
+                    </button>
+                </div>
+                <div data-parent="#accordion" id="collapseOne1" aria-labelledby="headingOne" class="collapse show">
+                    <div class="card-body" >
+                        <div class="row">
+                            <div class="col-md-6">
+                                <ul class="list-group list-group-flush">
+                                    <li class="list-group-item">
+                                        <div class="widget-content p-0">
+                                            <div class="widget-content-wrapper">
+                                                <div class="widget-content-left mr-3">
+                                                    <div class="icon-wrapper border-light rounded m-0">
+                                                        <div class="icon-wrapper-bg bg-light"></div>
+                                                        <i class="lnr-cog icon-gradient bg-happy-itmeo"></i>
+                                                    </div>
+                                                </div>
+                                                <div class="widget-content-left">
+                                                    <div class="widget-heading">Nom :</div>
+                                                    <div>
+                                                        {{ info.name}}
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </li>
+                                    <li class="list-group-item">
+                                        <div class="widget-content p-0">
+                                            <div class="widget-content-wrapper">
+                                                <div class="widget-content-left mr-3">
+                                                    <div class="icon-wrapper border-light rounded m-0">
+                                                        <div class="icon-wrapper-bg bg-light"></div>
+                                                        <i class="lnr-cog icon-gradient bg-happy-itmeo"></i>
+                                                    </div>
+                                                </div>
+                                                <div class="widget-content-left">
+                                                    <div class="widget-heading">Numero de Contribuable :</div>
+                                                    <div>
+                                                        {{ info.taxpayer_number}}
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </li>
+                                    <li class="list-group-item">
+                                        <div class="widget-content p-0">
+                                            <div class="widget-content-wrapper">
+                                                <div class="widget-content-left mr-3">
+                                                    <div class="icon-wrapper border-light rounded m-0">
+                                                        <div class="icon-wrapper-bg bg-light"></div>
+                                                        <i class="lnr-cog icon-gradient bg-happy-itmeo"></i>
+                                                    </div>
+                                                </div>
+                                                <div class="widget-content-left">
+                                                    <div class="widget-heading">Numero Rccm :</div>
+                                                    <div>
+                                                        {{ info.rccm_number}}
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </li>
+                                    <li class="list-group-item">
+                                        <div class="widget-content p-0">
+                                            <div class="widget-content-wrapper">
+                                                <div class="widget-content-left mr-3">
+                                                    <div class="icon-wrapper border-light rounded m-0">
+                                                        <div class="icon-wrapper-bg bg-light"></div>
+                                                        <i class="lnr-cog icon-gradient bg-happy-itmeo"></i>
+                                                    </div>
+                                                </div>
+                                                <div class="widget-content-left">
+                                                    <div class="widget-heading">Addresse de Facturation :</div>
+                                                    <div>
+                                                        {{ info.billing_address}}
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </li>
+                                    <li class="list-group-item">
+                                        <div class="widget-content p-0">
+                                            <div class="widget-content-wrapper">
+                                                <div class="widget-content-left mr-3">
+                                                    <div class="icon-wrapper border-light rounded m-0">
+                                                        <div class="icon-wrapper-bg bg-light"></div>
+                                                        <i class="lnr-cog icon-gradient bg-happy-itmeo"></i>
+                                                    </div>
+                                                </div>
+                                                <div class="widget-content-left">
+                                                    <div class="widget-heading">Numero de Vitesse :</div>
+                                                    <div>
+                                                        {{ info.gear_number}}
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </li>
+                                </ul>
+                            </div>
+                            <div class="col-md-6">
+                                <ul class="list-group list-group-flush">
+                                    <li class="list-group-item">
+                                        <div class="widget-content p-0">
+                                            <div class="widget-content-wrapper">
+                                                <div class="widget-content-left mr-3">
+                                                    <div class="icon-wrapper border-light rounded m-0">
+                                                        <div class="icon-wrapper-bg bg-light"></div>
+                                                        <i class="lnr-cog icon-gradient bg-happy-itmeo"></i>
+                                                    </div>
+                                                </div>
+                                                <div class="widget-content-left">
+                                                    <div class="widget-heading"> Numero de Pilote :</div>
+                                                    <div>
+                                                        {{ info.driver_number}}
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </li>
+                                    <li class="list-group-item">
+                                        <div class="widget-content p-0">
+                                            <div class="widget-content-wrapper">
+                                                <div class="widget-content-left mr-3">
+                                                    <div class="icon-wrapper border-light rounded m-0">
+                                                        <div class="icon-wrapper-bg bg-light"></div>
+                                                        <i class="lnr-cog icon-gradient bg-happy-itmeo"></i>
+                                                    </div>
+                                                </div>
+                                                <div class="widget-content-left">
+                                                    <div class="widget-heading">Addresse</div>
+                                                    <div>
+                                                        {{ info.address}}
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </li>
+                                    <li class="list-group-item">
+                                        <div class="widget-content p-0">
+                                            <div class="widget-content-wrapper">
+                                                <div class="widget-content-left mr-3">
+                                                    <div class="icon-wrapper border-light rounded m-0">
+                                                        <div class="icon-wrapper-bg bg-light"></div>
+                                                        <i class="lnr-cog icon-gradient bg-happy-itmeo"></i>
+                                                    </div>
+                                                </div>
+                                                <div class="widget-content-left">
+                                                    <div class="widget-heading">Nom Du Responsable</div>
+                                                    <div>
+                                                        {{ info.manager_name}}
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </li>
+                                    <li class="list-group-item">
+                                        <div class="widget-content p-0">
+                                            <div class="widget-content-wrapper">
+                                                <div class="widget-content-left mr-3">
+                                                    <div class="icon-wrapper border-light rounded m-0">
+                                                        <div class="icon-wrapper-bg bg-light"></div>
+                                                        <i class="lnr-cog icon-gradient bg-happy-itmeo"></i>
+                                                    </div>
+                                                </div>
+                                                <div class="widget-content-left">
+                                                    <div class="widget-heading">Fonction de Gestionnaire :</div>
+                                                    <div>
+                                                        {{ info.manager_function}}
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </li>
+                                    <li class="list-group-item">
+                                        <div class="widget-content p-0">
+                                            <div class="widget-content-wrapper">
+                                                <div class="widget-content-left mr-3">
+                                                    <div class="icon-wrapper border-light rounded m-0">
+                                                        <div class="icon-wrapper-bg bg-light"></div>
+                                                        <i class="lnr-cog icon-gradient bg-happy-itmeo"></i>
+                                                    </div>
+                                                </div>
+                                                <div class="widget-content-left">
+                                                    <div class="widget-heading">Telephone Du Directeur :</div>
+                                                    <div>
+                                                        {{ info.manager_phone}}
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </li>
+                                    <li class="list-group-item">
+                                        <div class="widget-content p-0">
+                                            <div class="widget-content-wrapper">
+                                                <div class="widget-content-left mr-3">
+                                                    <div class="icon-wrapper border-light rounded m-0">
+                                                        <div class="icon-wrapper-bg bg-light"></div>
+                                                        <i class="lnr-cog icon-gradient bg-happy-itmeo"></i>
+                                                    </div>
+                                                </div>
+                                                <div class="widget-content-left">
+                                                    <div class="widget-heading">Fonction de Gestionnaire :</div>
+                                                    <div>
+                                                        <img [src]="info.manager_picture" width="190px" height="100px" alt="image de  l engin" srcset="">
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+    
+            <div class="card">
+                <div id="headingOne" class="card-header">
+                    <button type="button" data-toggle="collapse" data-target="#collapseOne2" aria-expanded="true"
+                        aria-controls="collapseOne" class="text-center m-0 p-0 btn btn-link btn-block">
+                        <h5 class="m-0 p-0 widget-numbers text-success">Informations Sur L Entreprise</h5>
+                    </button>
+                </div>
+                <div data-parent="#accordion" id="collapseOne2" aria-labelledby="headingOne" class="collapse">
+                    <div class="card-body" >
+                        <div class="row">
+                            <div class="col-md-6">
+                                <ul class="list-group list-group-flush">
+                                    <li class="list-group-item">
+                                        <div class="widget-content p-0">
+                                            <div class="widget-content-wrapper">
+                                                <div class="widget-content-left mr-3">
+                                                    <div class="icon-wrapper border-light rounded m-0">
+                                                        <div class="icon-wrapper-bg bg-light"></div>
+                                                        <i class="lnr-cog icon-gradient bg-happy-itmeo"></i>
+                                                    </div>
+                                                </div>
+                                                <div class="widget-content-left">
+                                                    <div class="widget-heading">Localisation  :</div>
+                                                    <div>
+                                                        {{ info.localisation}}
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </li>
+                                    <li class="list-group-item">
+                                        <div class="widget-content p-0">
+                                            <div class="widget-content-wrapper">
+                                                <div class="widget-content-left mr-3">
+                                                    <div class="icon-wrapper border-light rounded m-0">
+                                                        <div class="icon-wrapper-bg bg-light"></div>
+                                                        <i class="lnr-cog icon-gradient bg-happy-itmeo"></i>
+                                                    </div>
+                                                </div>
+                                                <div class="widget-content-left">
+                                                    <div class="widget-heading">Telephone :</div>
+                                                    <div>
+                                                        {{ info.phone1}}
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </li>
+                                    <li class="list-group-item">
+                                        <div class="widget-content p-0">
+                                            <div class="widget-content-wrapper">
+                                                <div class="widget-content-left mr-3">
+                                                    <div class="icon-wrapper border-light rounded m-0">
+                                                        <div class="icon-wrapper-bg bg-light"></div>
+                                                        <i class="lnr-cog icon-gradient bg-happy-itmeo"></i>
+                                                    </div>
+                                                </div>
+                                                <div class="widget-content-left">
+                                                    <div class="widget-heading">Description des services :</div>
+                                                    <div>
+                                                        {{ info.description_services}}
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </li>
+                                    <li class="list-group-item">
+                                        <div class="widget-content p-0">
+                                            <div class="widget-content-wrapper">
+                                                <div class="widget-content-left mr-3">
+                                                    <div class="icon-wrapper border-light rounded m-0">
+                                                        <div class="icon-wrapper-bg bg-light"></div>
+                                                        <i class="lnr-cog icon-gradient bg-happy-itmeo"></i>
+                                                    </div>
+                                                </div>
+                                                <div class="widget-content-left">
+                                                    <div class="widget-heading">Mission de L Entreprise :</div>
+                                                    <div>
+                                                        {{ info.enterprise_mission}}
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </li>
+                                    <li class="list-group-item">
+                                        <div class="widget-content p-0">
+                                            <div class="widget-content-wrapper">
+                                                <div class="widget-content-left mr-3">
+                                                    <div class="icon-wrapper border-light rounded m-0">
+                                                        <div class="icon-wrapper-bg bg-light"></div>
+                                                        <i class="lnr-cog icon-gradient bg-happy-itmeo"></i>
+                                                    </div>
+                                                </div>
+                                                <div class="widget-content-left">
+                                                    <div class="widget-heading">Ambition  de L Entreprise :</div>
+                                                    <div>
+                                                        {{ info.enterprise_ambition}}
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </li>
+                                    <li class="list-group-item">
+                                        <div class="widget-content p-0">
+                                            <div class="widget-content-wrapper">
+                                                <div class="widget-content-left mr-3">
+                                                    <div class="icon-wrapper border-light rounded m-0">
+                                                        <div class="icon-wrapper-bg bg-light"></div>
+                                                        <i class="lnr-cog icon-gradient bg-happy-itmeo"></i>
+                                                    </div>
+                                                </div>
+                                                <div class="widget-content-left">
+                                                    <div class="widget-heading">Valeur de L Entreprise :</div>
+                                                    <div>
+                                                        {{ info.enterprise_value}}
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </li>
+                                </ul>
+                            </div>
+                            <div class="col-md-6">
+                                <ul class="list-group list-group-flush">
+                                    <li class="list-group-item">
+                                        <div class="widget-content p-0">
+                                            <div class="widget-content-wrapper">
+                                                <div class="widget-content-left mr-3">
+                                                    <div class="icon-wrapper border-light rounded m-0">
+                                                        <div class="icon-wrapper-bg bg-light"></div>
+                                                        <i class="lnr-cog icon-gradient bg-happy-itmeo"></i>
+                                                    </div>
+                                                </div>
+                                                <div class="widget-content-left">
+                                                    <div class="widget-heading">Second Numero :</div>
+                                                    <div>
+                                                        {{ info.phone2}}
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </li>
+                                    <li class="list-group-item">
+                                        <div class="widget-content p-0">
+                                            <div class="widget-content-wrapper">
+                                                <div class="widget-content-left mr-3">
+                                                    <div class="icon-wrapper border-light rounded m-0">
+                                                        <div class="icon-wrapper-bg bg-light"></div>
+                                                        <i class="lnr-cog icon-gradient bg-happy-itmeo"></i>
+                                                    </div>
+                                                </div>
+                                                <div class="widget-content-left">
+                                                    <div class="widget-heading">Email :</div>
+                                                    <div>
+                                                        {{ info.email}}
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </li>
+                                    <li class="list-group-item">
+                                        <div class="widget-content p-0">
+                                            <div class="widget-content-wrapper">
+                                                <div class="widget-content-left mr-3">
+                                                    <div class="icon-wrapper border-light rounded m-0">
+                                                        <div class="icon-wrapper-bg bg-light"></div>
+                                                        <i class="lnr-cog icon-gradient bg-happy-itmeo"></i>
+                                                    </div>
+                                                </div>
+                                                <div class="widget-content-left">
+                                                    <div class="widget-heading">Langue :</div>
+                                                    <div>
+                                                        {{ info.langue}}
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </li>
+                                    <li class="list-group-item">
+                                        <div class="widget-content p-0">
+                                            <div class="widget-content-wrapper">
+                                                <div class="widget-content-left mr-3">
+                                                    <div class="icon-wrapper border-light rounded m-0">
+                                                        <div class="icon-wrapper-bg bg-light"></div>
+                                                        <i class="lnr-cog icon-gradient bg-happy-itmeo"></i>
+                                                    </div>
+                                                </div>
+                                                <div class="widget-content-left">
+                                                    <div class="widget-heading">Heure D Ouverture :</div>
+                                                    <div>
+                                                        {{ info.opening_hours}}
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </li>
+                                    <li class="list-group-item">
+                                        <div class="widget-content p-0">
+                                            <div class="widget-content-wrapper">
+                                                <div class="widget-content-left mr-3">
+                                                    <div class="icon-wrapper border-light rounded m-0">
+                                                        <div class="icon-wrapper-bg bg-light"></div>
+                                                        <i class="lnr-cog icon-gradient bg-happy-itmeo"></i>
+                                                    </div>
+                                                </div>
+                                                <div class="widget-content-left">
+                                                    <div class="widget-heading">Entreprise Partenaire :</div>
+                                                    <div>
+                                                        {{ info.enterprise_partner}}
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </li>
+                                    <li class="list-group-item">
+                                        <div class="widget-content p-0">
+                                            <div class="widget-content-wrapper">
+                                                <div class="widget-content-left mr-3">
+                                                    <div class="icon-wrapper border-light rounded m-0">
+                                                        <div class="icon-wrapper-bg bg-light"></div>
+                                                        <i class="lnr-cog icon-gradient bg-happy-itmeo"></i>
+                                                    </div>
+                                                </div>
+                                                <div class="widget-content-left">
+                                                    <div class="widget-heading">image :</div>
+                                                    <div>
+                                                        <img [src]="info.image" width="190px" height="100px" alt="image de  l engin" srcset="">
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+    
+                </div>
+            </div>
+    
+            <div class="card">
+                <div id="headingOne" class="card-header">
+                    <button type="button" data-toggle="collapse" data-target="#collapseOne4" aria-expanded="true"
+                        aria-controls="collapseThree" class="text-center m-0 p-0 btn btn-link btn-block">
+                        <h5 class="m-0 p-0 widget-numbers text-success">offres spéciales sur l'informatique personnelle</h5>
+                    </button>
+                </div>
+                <div data-parent="#accordion" id="collapseOne4" aria-labelledby="headingOne" class="collapse">
+                    <div class="card-body">
+                        <div class="row">
+                            <div class="col-md-6">
+                                <ul class="list-group list-group-flush">
+                                    <li class="list-group-item">
+                                        <div class="widget-content p-0">
+                                            <div class="widget-content-wrapper">
+                                                <div class="widget-content-left mr-3">
+                                                    <div class="icon-wrapper border-light rounded m-0">
+                                                        <div class="icon-wrapper-bg bg-light"></div>
+                                                        <i class="lnr-cog icon-gradient bg-happy-itmeo"></i>
+                                                    </div>
+                                                </div>
+                                                <div class="widget-content-left">
+                                                    <div class="widget-heading">Nom :</div>
+                                                    <div>
+                                                        {{ nationalite.name}}
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </li>
+                                    <li class="list-group-item">
+                                        <div class="widget-content p-0">
+                                            <div class="widget-content-wrapper">
+                                                <div class="widget-content-left mr-3">
+                                                    <div class="icon-wrapper border-light rounded m-0">
+                                                        <div class="icon-wrapper-bg bg-light"></div>
+                                                        <i class="lnr-cog icon-gradient bg-happy-itmeo"></i>
+                                                    </div>
+                                                </div>
+                                                <div class="widget-content-left">
+                                                    <div class="widget-heading">Telephone :</div>
+                                                    <div>
+                                                        {{ nationalite.tel2}}
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </li>
+                                    <li class="list-group-item">
+                                        <div class="widget-content p-0">
+                                            <div class="widget-content-wrapper">
+                                                <div class="widget-content-left mr-3">
+                                                    <div class="icon-wrapper border-light rounded m-0">
+                                                        <div class="icon-wrapper-bg bg-light"></div>
+                                                        <i class="lnr-cog icon-gradient bg-happy-itmeo"></i>
+                                                    </div>
+                                                </div>
+                                                <div class="widget-content-left">
+                                                    <div class="widget-heading">Email :</div>
+                                                    <div>
+                                                        {{ nationalite.email}}
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </li>
+                                    <li class="list-group-item">
+                                        <div class="widget-content p-0">
+                                            <div class="widget-content-wrapper">
+                                                <div class="widget-content-left mr-3">
+                                                    <div class="icon-wrapper border-light rounded m-0">
+                                                        <div class="icon-wrapper-bg bg-light"></div>
+                                                        <i class="lnr-cog icon-gradient bg-happy-itmeo"></i>
+                                                    </div>
+                                                </div>
+                                                <div class="widget-content-left">
+                                                    <div class="widget-heading">Addresse :</div>
+                                                    <div>
+                                                        {{ nationalite.adress}}
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </li>
+                                    <li class="list-group-item">
+                                        <div class="widget-content p-0">
+                                            <div class="widget-content-wrapper">
+                                                <div class="widget-content-left mr-3">
+                                                    <div class="icon-wrapper border-light rounded m-0">
+                                                        <div class="icon-wrapper-bg bg-light"></div>
+                                                        <i class="lnr-cog icon-gradient bg-happy-itmeo"></i>
+                                                    </div>
+                                                </div>
+                                                <div class="widget-content-left">
+                                                    <div class="widget-heading">NOmbre D Engrenage :</div>
+                                                    <div>
+                                                        {{ nationalite.email}}
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </li>
+                                </ul>
+                            </div>
+                            <div class="col-md-6">
+                                <ul class="list-group list-group-flush">
+                                    <li class="list-group-item">
+                                        <div class="widget-content p-0">
+                                            <div class="widget-content-wrapper">
+                                                <div class="widget-content-left mr-3">
+                                                    <div class="icon-wrapper border-light rounded m-0">
+                                                        <div class="icon-wrapper-bg bg-light"></div>
+                                                        <i class="lnr-cog icon-gradient bg-happy-itmeo"></i>
+                                                    </div>
+                                                </div>
+                                                <div class="widget-content-left">
+                                                    <div class="widget-heading">Surnom :</div>
+                                                    <div>
+                                                        {{ nationalite.surmane}}
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </li>
+                                    <li class="list-group-item">
+                                        <div class="widget-content p-0">
+                                            <div class="widget-content-wrapper">
+                                                <div class="widget-content-left mr-3">
+                                                    <div class="icon-wrapper border-light rounded m-0">
+                                                        <div class="icon-wrapper-bg bg-light"></div>
+                                                        <i class="lnr-cog icon-gradient bg-happy-itmeo"></i>
+                                                    </div>
+                                                </div>
+                                                <div class="widget-content-left">
+                                                    <div class="widget-heading">Langue :</div>
+                                                    <div>
+                                                        {{ nationalite.langue}}
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </li>
+                                    <li class="list-group-item">
+                                        <div class="widget-content p-0">
+                                            <div class="widget-content-wrapper">
+                                                <div class="widget-content-left mr-3">
+                                                    <div class="icon-wrapper border-light rounded m-0">
+                                                        <div class="icon-wrapper-bg bg-light"></div>
+                                                        <i class="lnr-cog icon-gradient bg-happy-itmeo"></i>
+                                                    </div>
+                                                </div>
+                                                <div class="widget-content-left">
+                                                    <div class="widget-heading">Second Telephone :</div>
+                                                    <div>
+                                                        {{ nationalite.tel1}}
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </li>
+                                    <li class="list-group-item">
+                                        <div class="widget-content p-0">
+                                            <div class="widget-content-wrapper">
+                                                <div class="widget-content-left mr-3">
+                                                    <div class="icon-wrapper border-light rounded m-0">
+                                                        <div class="icon-wrapper-bg bg-light"></div>
+                                                        <i class="lnr-cog icon-gradient bg-happy-itmeo"></i>
+                                                    </div>
+                                                </div>
+                                                <div class="widget-content-left">
+                                                    <div class="widget-heading">Numero du Conducteur :</div>
+                                                    <div>
+                                                        {{ nationalite.driver_number}}
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+     </div>
+</div>

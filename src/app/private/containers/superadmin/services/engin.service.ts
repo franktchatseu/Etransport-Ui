@@ -122,4 +122,10 @@ export class EnginService {
   updatePicture(formData: FormData, id): Promise<any> {
     return this.http.post<any>(`${config.apiUrl}/module3/gear_pictures/${id}`, formData).toPromise();
   }
+
+  //good delete
+  deletebystepper(number){
+    return this.http.delete(`${config.apiUrl}/module3/stepper_trees/${number}`).toPromise();
+
+  }
 }

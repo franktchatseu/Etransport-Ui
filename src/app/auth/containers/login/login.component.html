@@ -6,37 +6,35 @@
           <div class="slider-light">
             <div class="slick-slider">
               <div>
-                <div class="position-relative h-100 d-flex justify-content-center align-items-center bg-plum-plate"
+                <div class="position-relative h-100 d-flex justify-content-center align-items-center bg-premium-dark"
                   tabindex="-1">
-                  <div class="slide-img-bg" style="background-image: url('assets/images/originals/city.jpg');"></div>
+                  <div class="slide-img-bg" style="background-image: url('assets/images/originals/truck-1.jpg');"></div>
                   <div class="slider-content">
-                    <h3>Perfect Balance</h3>
-                    <p>ArchitectUI is like a dream. Some think it's too good to be true! Extensive collection of unified
-                      React Boostrap Components and Elements.</p>
+                    <h3>E-transport</h3>
+                    <h6>Votre base de données des transporteurs routiers du Cameroun et de la sous région Afrique centrale</h6>
                   </div>
                 </div>
               </div>
               <div>
                 <div class="position-relative h-100 d-flex justify-content-center align-items-center bg-premium-dark"
                   tabindex="-1">
-                  <div class="slide-img-bg" style="background-image: url('assets/images/originals/citynights.jpg');">
+                  <div class="slide-img-bg" style="background-image: url('assets/images/originals/highway.jpg');">
                   </div>
                   <div class="slider-content">
-                    <h3>Scalable, Modular, Consistent</h3>
-                    <p>Easily exclude the components you don't require. Lightweight, consistent Bootstrap based styles
-                      across all elements and components</p>
+                    <h3>Osons et Innovons</h3>
+                    <h6>Un autre regard sur le transport routier des marchandises grâce au Numérique</h6>
                   </div>
                 </div>
               </div>
               <div>
-                <div class="position-relative h-100 d-flex justify-content-center align-items-center bg-sunny-morning"
+                <div class="position-relative h-100 d-flex justify-content-center align-items-center bg-premium-dark"
                   tabindex="-1">
-                  <div class="slide-img-bg" style="background-image: url('assets/images/originals/citydark.jpg');">
+                  <div class="slide-img-bg" style="background-image: url('assets/images/originals/truck.jpg');">
                   </div>
                   <div class="slider-content">
-                    <h3>Complex, but lightweight</h3>
-                    <p>We've included a lot of components that cover almost all use cases for any type of application.
-                    </p>
+                    <h3>Gestion du parc automobile</h3>
+                    <h6>Prenez en main le contrôle et la gestion de votre flotte seulement en quelques clics
+                    </h6>
                   </div>
                 </div>
               </div>
@@ -49,10 +47,14 @@
             <!-- <div class="app-logo"></div>-->
             <!--  -->
             <div class="row">
-              <div class="col-sm-6">
+              <div class="col-sm-12">
+                <h2>
+                  <span class="d-block" style="margin-bottom: 5%;">{{ 'Login.WelcomeBack' | translate }}</span>
+
+                </h2>
 
               </div>
-              <div class="col-sm-6">
+              <!-- <div class="col-sm-6">
                 <div class="dropdown">
                   <button *ngIf="currentLanguage == 'fr'" (click)="changeLanguage('en')" style="float: right" type="button" data-toggle="dropdown" class="p-0 mr-2 btn btn-link" aria-expanded="false" title="US">
                       <span class="icon-wrapper icon-wrapper-alt">
@@ -67,21 +69,20 @@
                       </span>
                   </button>
                 </div>
-              </div>
+              </div> -->
             </div>
             <!-- -->
             <div class="row">
-              <div class="row" style="width: 100%">
-                  <h4 class="mb-0">
-                      <span class="d-block">{{ 'Login.WelcomeBack' | translate }},</span>
-                      <span>{{ 'Login.PleaseSignIntoYourAccount' | translate }}</span>
-                    </h4>
+              <div class="row" style="width: 100%; margin-left: 2%;">
+                <h4 class="mb-0">
+                  <span>{{ 'Login.PleaseSignIntoYourAccount' | translate }}</span>
+                </h4>
               </div>
-              <div class="row">
+              <!-- <div class="row">
                   <h6 class="mt-3">{{ 'Login.NoAccount' | translate }}? <a href="javascript:void(0);"
                     class="text-primary">{{ 'Login.SignUpNow' | translate }}</a></h6>
-              </div>
-              
+              </div> -->
+
             </div>
             <div class="divider row"></div>
             <div>
@@ -107,8 +108,9 @@
                     class="form-check-label">{{ 'Login.KeepMeLoggedIn' | translate }}</label></div>
                 <div class="divider row"></div>
                 <div class="d-flex align-items-center">
-                  <div class="ml-auto"><a href="javascript:void(0);"
-                      class="btn-lg btn btn-link">{{ 'Login.RecoverPassword' | translate }}</a>
+                  <div class="ml-auto">
+                    <!-- <a href="javascript:void(0);"
+                      class="btn-lg btn btn-link">{{ 'Login.RecoverPassword' | translate }}</a> -->
                     <input type="submit" class="btn btn-primary btn-lg"
                       value="{{ 'Login.LoginToMySpace' | translate }}" />
                   </div>

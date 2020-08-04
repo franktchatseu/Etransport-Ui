@@ -11,9 +11,9 @@
                     <input type="file" id="userFile" (change)="onSelectFileAvatar($event)" #fileInputAvatar
                         style="display: none">
                     <mat-form-field class="example-full-width">
-                        <input matInput formControlName="avatar" placeholder="Fichier" readonly>
+                        <input matInput formControlName="avatar" placeholder="photo du chauffeur" readonly>
                     </mat-form-field>
-                    <button mat-button (click)="selectFileAvatar()">Selectionner</button>
+                    <button type="button" class="btn btn-primary" mat-button (click)="selectFileAvatar()">Choisir la photo</button>
                 </div>
 
             </div>
@@ -209,7 +209,7 @@
                     <mat-form-field>
                         <input matInput formControlName="filename" placeholder="Fichier" readonly>
                     </mat-form-field>
-                    <button mat-button (click)="selectFile()">Importer une Piece Justificative</button>
+                    <button mat-button class="btn btn-primary" (click)="selectFile()">Importer une Piece Justificative</button>
                 </div>
             </div>
             <div>
