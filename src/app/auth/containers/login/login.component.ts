@@ -56,6 +56,7 @@ export class LoginComponent implements OnInit {
           SUPERADMIN: 'superadmins'
         };
         const user = this.authService.getUserInfos();
+        console.log('User datas ', user);
         if (success) {
           this.notificationService.success(this.translations.Login.ConnectedWithSuccess);
           this.router.navigate(['/private/superadmins']);

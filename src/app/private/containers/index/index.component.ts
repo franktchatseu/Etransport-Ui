@@ -26,17 +26,9 @@ export class IndexComponent implements OnInit {
 
   ngOnInit() {
     this.user = this.authService.getUserInfos();
-    console.log(this.user);
+    console.log('private =>', this.user);
     this.isAuthenticated = this.user ? true : false;
 
-    const ui = {
-      PRIEST: 'priests',
-      CATECHIST: 'catechists',
-      CATECHUMEN: 'cathecumenes',
-      PARISHIONAL: 'parishionals',
-      OTHER: 'others',
-      SUPERADMIN: 'superadmins'
-    };
     if (this.user && this.user.types) {
      this.router.navigate(['/private/superadmins/list-element']);
     } else {
