@@ -107,6 +107,10 @@ export class TransporteurAllComponent implements OnInit {
     this.router.navigate(['/private/superadmins/transporter/driversandcars/' , id]);
   }
 
+  mail(){
+    this.router.navigate(['/private/superadmins/transporter/mail']);
+  }
+
    delete(assoc_id) {
      Swal.fire({
        title: this.areYouSure,

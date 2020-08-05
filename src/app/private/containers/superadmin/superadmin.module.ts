@@ -32,6 +32,8 @@ import { AddTransportElementComponent } from "./containers/element-transport/add
 import { ListTransportElementsComponent } from "./containers/element-transport/list-transport-elements/list-transport-elements.component";
 import { DriverandcardComponent } from "./containers/transporteur/driverandcard/driverandcard.component";
 import { AcceuilComponent } from './containers/acceuil/acceuil.component';
+import { MailTransporterComponent } from "./containers/transporteur/mail-transporter/mail-transporter.component";
+import { MailDriverComponent} from './containers/driver/mail-driver/mail-driver.component';
 
 @NgModule({
   declarations: [
@@ -63,7 +65,9 @@ import { AcceuilComponent } from './containers/acceuil/acceuil.component';
     TransporteurDetailComponent,
     TransporterUpdateComponent,
     DriverandcardComponent,
-    AcceuilComponent
+    AcceuilComponent,
+    MailTransporterComponent,
+    MailDriverComponent,
   ],
   imports: [
     CommonModule,

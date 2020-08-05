@@ -104,6 +104,10 @@ export class DriverAllComponent implements OnInit {
       this.router.navigate(['/private/superadmins/driver-detail/' , id]);
     }
 
+    mail(){
+      this.router.navigate(['/private/superadmins/mailing-driver']);
+    }
+
     delete(assoc_id) {
       Swal.fire({
         title: this.areYouSure,

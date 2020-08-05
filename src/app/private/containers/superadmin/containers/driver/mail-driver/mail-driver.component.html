@@ -1,0 +1,45 @@
+<div class="col-md-12">
+    <div class="main-card mb-3 card">
+        <div class="card-header"><i class="header-icon lnr-license pe-7s-mail bg-plum-plate"> </i>Envoyer un Mail
+        </div>
+        <form [formGroup]="createForm" (submit)="create()">
+            <div class="card-body">
+                <div class="tab-content">
+                    <div>
+                        <p>
+                            <input type="text" class="form-control" style="margin-bottom: 2%;" required
+                                formControlName="object" #name placeholder="Objet">
+                        </p>
+                    </div>
+                    <div>
+                        <p>
+                            <input type="email" class="form-control" style="margin-bottom: 2%;" required
+                                formControlName="email" #email placeholder="Destinataires">
+
+                        </p>
+                    </div>
+                    <div>
+                        <p>
+                            <textarea type="text" class="form-control" style="margin-bottom: 2%;" required
+                                formControlName="sms" #message placeholder="Message a Envoyer"></textarea>
+                        </p>
+                    </div>
+                </div>
+            </div>
+            <div class="d-block text-right card-footer">
+                <div class="ml-auto">
+                    <button [disabled]="isLoading" class="btn btn-primary" type="button">
+                        <i class="lnr-location btn-icon-wrapper"></i>Envoyer
+                    </button>
+                    <div *ngIf="isLoading" style="padding: 5px;">
+                        <div class="ball-scale-multiple">
+                            <div style="background-color: white;"></div>
+                            <div style="background-color: white;"></div>
+                            <div style="background-color: white;"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </form>
+    </div>
+</div>

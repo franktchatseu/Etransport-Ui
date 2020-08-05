@@ -27,6 +27,8 @@ import { AddTransportElementComponent } from './containers/element-transport/add
 import { TransporteurDetailComponent } from "./containers/transporteur/transporteur-detail/transporteur-detail.component";
 import { DriverandcardComponent } from './containers/transporteur/driverandcard/driverandcard.component';
 import { AcceuilComponent } from './containers/acceuil/acceuil.component';
+import { MailDriverComponent } from './containers/driver/mail-driver/mail-driver.component';
+import { MailTransporterComponent } from './containers/transporteur/mail-transporter/mail-transporter.component';
 
 const routes: Routes = [
   {
@@ -52,6 +54,10 @@ const routes: Routes = [
       {
         path: 'driver-detail/:id',
         component: DriverDetailsComponent,
+      },
+      {
+        path: 'mailing-driver',
+        component: MailDriverComponent,
       },
       {
         path: 'element-detail/:id',
@@ -144,7 +150,12 @@ const routes: Routes = [
           {
             path: 'driversandcars/:id',
             component: DriverandcardComponent,
+          },
+          {
+            path: 'mail',
+            component: MailTransporterComponent,
           }
+
         ]
       },
       {
