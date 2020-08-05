@@ -268,7 +268,13 @@
                 <div class="col-md-6">
                     <mat-form-field>
                         <mat-label>Etat</mat-label>
-                        <input matInput placeholder="Ex. 1 Main St, New York, NY" formControlName="etat" required>
+                        <mat-select formControlName="etat">
+                            <mat-option value="En Panne">En Panne</mat-option>
+                            <mat-option value="En Maintenance">En Maintenance</mat-option>
+                            <mat-option value="En Mission">En Mission</mat-option>
+                            <mat-option value="En Repos">En Repos</mat-option>
+                        </mat-select>
+                        <!-- <input matInput placeholder="Ex. 1 Main St, New York, NY" formControlName="etat" required> -->
                     </mat-form-field>
                 </div>
                 <div class="col-md-6">
