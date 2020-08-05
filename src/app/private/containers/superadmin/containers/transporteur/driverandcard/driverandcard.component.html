@@ -84,10 +84,12 @@
                                 <div class="col-md-4" position-relative form-group>
                                     <label for="etat">Filtrer vos Vehicules</label>
                                     <select class="mb-2 form-control" [(ngModel)]="etat" id="etat" (change)="filter(etat)">
-                                        <option value="Tous" selected>Tous</option>
-                                        <option value="Panne">En Panne</option>
-                                        <option value="Maintenance">En Maintenance</option>
-                                        <option value="Circulation">En Circulation</option>
+                                        <option value="Tous" selected="selected" >Tous</option>
+                                        <option value="En Panne">En Panne</option>
+                                        <option value="En Maintenance">En Maintenance</option>
+                                        <option value="En Mission">En Mission</option>
+                                        <option value="En Repos">En Repos</option>
+
                                     </select>
                             </div>
                                 <table style="width: 100%;" id="example"
