@@ -11,7 +11,11 @@ import { NotificationService } from 'src/app/services/notification.service';
 })
 export class DriverandcardComponent implements OnInit {
 
+  etat: any
+  trans_id: any
   drversandcars: any;
+  drivers:any;
+  cars:any;
   transporter: any
   isActive: boolean = true;
   constructor(
@@ -25,6 +29,7 @@ export class DriverandcardComponent implements OnInit {
   ngOnInit(): void {
     //recuperation de id du transporteur
     const transporteur_id = +this.activateRoute.snapshot.params['id'];
+    this.trans_id = transporteur_id
     //on recupere le transporteur
     this.getEntreprise(transporteur_id);  
     
@@ -51,6 +56,31 @@ export class DriverandcardComponent implements OnInit {
     this.transporteurService.getDriversandCars(id).then(
       data => {
         this.drversandcars = data;
+        this.drivers = this.drversandcars.drivers;
+        this.cars = this.drversandcars.cars;
+        console.log(this.drversandcars)
+      }
+    ).catch(
+      error => {
+        this.translate.get("probleme de chargement des chauffeurs et engin")
+          .subscribe(val => this.notificationService.warning(val));
+
+      }
+    )
+  }
+  //recuperation des chauffeurs suivant etat
+  filter(etat){
+    if(etat == 'Tous'){
+      this.getDriversAndCars(this.trans_id);
+    }
+    else{
+      this.getCarsByEtat(this.trans_id,etat)
+    }
+  }
+  getCarsByEtat(id,etat) {
+    this.transporteurService.getCarsByEat(id,etat).then(
+      data => {
+        this.cars = data;
         console.log(this.drversandcars)
       }
     ).catch(

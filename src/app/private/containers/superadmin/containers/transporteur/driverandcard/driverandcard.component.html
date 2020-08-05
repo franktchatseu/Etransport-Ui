@@ -27,9 +27,11 @@
                 </div>
                 <div class="mb-3 card">
                     <div class="card-header-tab card-header-tab-animation card-header">
-                        <div class="card-header-title font-size-lg text-capitalize font-weight-normal"><i
-                                class="header-icon lnr-gift icon-gradient bg-love-kiss"> </i>{{this.transporter?.name| uppercase}}</div>
-                        <ul class="nav">
+                        <div class="card-header-title font-size-lg text-capitalize font-weight-normal">
+                            <i class="header-icon lnr-gift icon-gradient bg-love-kiss"> </i>{{this.transporter?.name| uppercase}}</div>
+                               
+                            <ul class="nav">
+
                             <li class="nav-item"><a data-toggle="tab" href="components-tabs.html#tab-eg8-0"
                                 (click)=" desable_driver()"  class="active nav-link">Chauffeurs</a></li>
                             <li class="nav-item"><a data-toggle="tab" href="components-tabs.html#tab-eg8-1"
@@ -53,7 +55,7 @@
                                         </tr>
                                     </thead>
                                     <tbody>
-                                        <tr *ngFor="let driver of drversandcars?.drivers.data,let i = index">
+                                        <tr *ngFor="let driver of drivers.data,let i = index">
 
                                             <td>
                                                 <img [src]="driver.avatar" width="50px" height="50px"
@@ -79,6 +81,15 @@
                                 </table>
                             </div>
                             <div class="tab-pane {{ !isActive ? 'active' : '' }}" id="tab-eg8-1"  role="tabpanel">
+                                <div class="col-md-4" position-relative form-group>
+                                    <label for="etat">Filtrer vos Vehicules</label>
+                                    <select class="mb-2 form-control" [(ngModel)]="etat" id="etat" (change)="filter(etat)">
+                                        <option value="Tous" selected>Tous</option>
+                                        <option value="Panne">En Panne</option>
+                                        <option value="Maintenance">En Maintenance</option>
+                                        <option value="Circulation">En Circulation</option>
+                                    </select>
+                            </div>
                                 <table style="width: 100%;" id="example"
                                     class="table table-hover table-striped table-bordered">
                                     <thead>
@@ -92,7 +103,7 @@
                                             <th>Action</th>
                                     </thead>
                                     <tbody>
-                                        <tr *ngFor="let engin of drversandcars?.cars.data,let i = index">
+                                        <tr *ngFor="let engin of cars.data,let i = index">
                                             <td>{{engin.registration}}</td>
                                             <td>{{engin.model_name}}</td>
                                             <td>{{engin.mark_name}}</td>

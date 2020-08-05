@@ -70,4 +70,8 @@ export class TransporteurService {
   getDriversandCars(id) {
     return this.http.get<any>(`${config.apiUrl}/module1/stepper_main/${id}/driversandcars`).toPromise();
   }
+  
+  getCarsByEat(id,etat:any) {
+    return this.http.get<any>(`${config.apiUrl}/module1/stepper_main/${id}/cars/${etat}`).toPromise();
+  }
 }
