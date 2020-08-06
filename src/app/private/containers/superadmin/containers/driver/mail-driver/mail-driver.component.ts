@@ -46,7 +46,7 @@ export class MailDriverComponent implements OnInit {
 
   ngOnInit(): void {
     this.getDriver();
-    this.initForm({email: '', sms: '', object:''});
+    this.initForm({email: localStorage.getItem('driver_email'), sms: '', object:''});
 
    }
 
@@ -84,7 +84,7 @@ export class MailDriverComponent implements OnInit {
         console.log(resp);
         this.isSubmitted = false;
         this.openSnackBar("Message Envoye avec success", "Chauffeur");
-        this.initForm({email: '', sms: '', object:''});
+        this.initForm({email: localStorage.getItem('driver_email'), sms: '', object:''});
       })
       .catch(err => {
         this.errors = err.error.errors;

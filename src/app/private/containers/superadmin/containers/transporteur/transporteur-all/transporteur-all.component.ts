@@ -107,7 +107,8 @@ export class TransporteurAllComponent implements OnInit {
     this.router.navigate(['/private/superadmins/transporter/driversandcars/' , id]);
   }
 
-  mail(){
+  mail(transporteur_email){
+    localStorage.setItem('email',transporteur_email);
     this.router.navigate(['/private/superadmins/transporter/mail']);
   }
 

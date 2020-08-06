@@ -368,7 +368,7 @@ export class DriverAddComponent implements OnInit {
     if (!this.driver) {
       number = this.stepperService.getNumber();
       value = +this.stepperService.getValue()
-      console.log("the nimber!"+ number + " value "+value)
+      console.log("the number!"+ number + " value "+value)
     }
     else {
       number = this.driver.number;
@@ -386,7 +386,8 @@ export class DriverAddComponent implements OnInit {
         return;
       },
     )
-    if (value == 3) {
+    console.log('la valeur est' + value)
+    if (value == 2) {
       formData.append("status", '' + 1);
       console.log("voici le status 1")
       formData.append("value", '' + value);
@@ -398,11 +399,12 @@ export class DriverAddComponent implements OnInit {
       const new_value = value + 1;
       formData.append("value", '' + new_value);
     }
-    formData.append("stepper_main_id", '' + 1);
+    formData.append("stepper_main_id", '' + this.InfoGenerale.transporter_id.value);
     this.stepperService.update(formData, number).then(
       (Response) => {
-        console.log(Response)
         //sauvegarde dans le local storage
+        this.stepperService.storeStepper(Response)
+
       },
       (error) => {
         console.log(error)

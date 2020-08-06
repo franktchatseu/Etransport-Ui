@@ -46,7 +46,7 @@ export class MailTransporterComponent implements OnInit {
 
   ngOnInit(): void {
     this.findAllInfosEnterprise();
-    this.initForm({email: '', sms: '', object:''});
+    this.initForm({email: localStorage.getItem('email'), sms: '', object:''});
 
    }
 
@@ -84,7 +84,7 @@ export class MailTransporterComponent implements OnInit {
         console.log(resp);
         this.isSubmitted = false;
         this.openSnackBar("Message Envoye avec success", "Transporteur");
-        this.initForm({email: '', sms: '', object:''});
+        this.initForm({email: localStorage.getItem('email'), sms: '', object:''});
       })
       .catch(err => {
         this.errors = err.error.errors;

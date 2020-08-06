@@ -104,7 +104,8 @@ export class DriverAllComponent implements OnInit {
       this.router.navigate(['/private/superadmins/driver-detail/' , id]);
     }
 
-    mail(){
+    mail(driver_email){
+      localStorage.setItem('driver_email',driver_email);
       this.router.navigate(['/private/superadmins/mailing-driver']);
     }
 
