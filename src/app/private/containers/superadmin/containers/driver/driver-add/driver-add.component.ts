@@ -7,6 +7,7 @@ import { DriverService } from '../../../services/driver.service';
 import { Router, ActivatedRoute } from '@angular/router';
 import { NotificationService } from 'src/app/services/notification.service';
 import { TransporteurService } from '../../../services/transporteur.service';
+import { TranslateService } from '@ngx-translate/core';
 @Component({
   selector: 'app-driver-add',
   templateUrl: './driver-add.component.html',
@@ -49,6 +50,11 @@ export class DriverAddComponent implements OnInit {
   //liste des transporteurs
   transporters: any;
 
+  //control
+  isLoading = false;
+  isError = false;
+  isSuccess = false;
+  isSubmitted = false;
 
   constructor(
     private formBuilder: FormBuilder,
@@ -58,7 +64,8 @@ export class DriverAddComponent implements OnInit {
     private driverService: DriverService,
     private transporterService: TransporteurService,
     private activatedRoute: ActivatedRoute,
-    private router: Router
+    private router: Router,
+    private translate: TranslateService
 
   ) { }
   selectFile(): void {
@@ -167,7 +174,18 @@ export class DriverAddComponent implements OnInit {
     });
   }
   addStep1() {
+    this.isSubmitted = true;
+    this.isError = false;
+    this.isSuccess = false;
+    this.isLoading = false
+    // Si la validation a echoué, on arrete l'execution de la fonction
+    if (this.step1Form.invalid) {
+      this.translate.get('verifier vos champs')
+        .subscribe(val => this.notificationService.warning(val));
+      return;
+    }
 
+    this.isLoading = true;
     const formDataStep: FormData = new FormData();
     formDataStep.append("value", '' + 1);
     formDataStep.append("status", '' + 0);
@@ -206,7 +224,7 @@ export class DriverAddComponent implements OnInit {
           },
           (error) => {
             console.log(error)
-          })
+          }).finally(() => this.isLoading = false);
       },
       (error) => {
         console.log(error)
@@ -215,6 +233,18 @@ export class DriverAddComponent implements OnInit {
     )
   }
   addStep2() {
+    this.isSubmitted = true;
+    this.isError = false;
+    this.isSuccess = false;
+    this.isLoading = false
+    // Si la validation a echoué, on arrete l'execution de la fonction
+    if (this.step2Form.invalid) {
+      this.translate.get('verifier vos champs')
+        .subscribe(val => this.notificationService.warning(val));
+      return;
+    }
+
+    this.isLoading = true;
     //recuperation des champs du stepper 2
     const formData: FormData = new FormData();
     formData.append("number", '' + this.drivingPermit.num_permis.value);
@@ -226,7 +256,7 @@ export class DriverAddComponent implements OnInit {
       (Response) => {
         console.log(Response)
         //sauvegarde dans le local storage
-        this.openSnackBar("Ajout Reussi", "Etape 1")
+        this.openSnackBar("Ajout Reussi", "Etape 2")
         console.log("stepper 2 termine");
         this.updateStepper();
       },
@@ -234,11 +264,23 @@ export class DriverAddComponent implements OnInit {
         console.log(error)
       },
 
-    )
+    ).finally(() => this.isLoading = false);
 
   }
 
   addStep3() {
+    this.isSubmitted = true;
+    this.isError = false;
+    this.isSuccess = false;
+    this.isLoading = false
+    // Si la validation a echoué, on arrete l'execution de la fonction
+    if (this.step3Form.invalid) {
+      this.translate.get('verifier vos champs')
+        .subscribe(val => this.notificationService.warning(val));
+      return;
+    }
+
+    this.isLoading = true;
     //recuperation des champs du stepper 3
     const formData: FormData = new FormData();
     formData.append("identical_piece", '' + this.PieceIndentite.piece_identite.value);
@@ -252,7 +294,7 @@ export class DriverAddComponent implements OnInit {
       (Response) => {
         console.log(Response)
         //sauvegarde dans le local storage
-        this.openSnackBar("Ajout Reussi", "Etape 1")
+        this.openSnackBar("Ajout Reussi", "Etape 3")
         console.log("stepper 2 termine");
         this.updateStepper();
       },
@@ -260,9 +302,21 @@ export class DriverAddComponent implements OnInit {
         console.log(error)
       },
 
-    )
+    ).finally(() => this.isLoading = false);
   }
   addStep4() {
+    this.isSubmitted = true;
+    this.isError = false;
+    this.isSuccess = false;
+    this.isLoading = false
+    // Si la validation a echoué, on arrete l'execution de la fonction
+    if (this.step4Form.invalid) {
+      this.translate.get('verifier vos champs')
+        .subscribe(val => this.notificationService.warning(val));
+      return;
+    }
+
+    this.isLoading = true;
     //recuperation des champs du stepper 3
     const formData: FormData = new FormData();
     formData.append("name", '' + this.Formation.name_formation.value);
@@ -276,14 +330,14 @@ export class DriverAddComponent implements OnInit {
       (Response) => {
         console.log(Response)
         //sauvegarde dans le local storage
-        this.openSnackBar("Ajout Reussi", "Etape 1")
+        this.openSnackBar("Ajout Reussi", "Etape 4")
         console.log("stepper 4 termine");
         this.updateStepper();
       },
       (error) => {
         console.log(error)
       }
-    )
+    ).finally(() => this.isLoading = false);
     localStorage.clear()
 
 

@@ -171,10 +171,7 @@ export class TransporterAddComponent implements OnInit {
         heure_ouverture: ['', [Validators.required]],
         partenaire: ['', [Validators.required]],
         valeur: ['', [Validators.required]],
-        image1: ['', [Validators.required]],
-        image2: ['', [Validators.required]],
-        image3: ['', [Validators.required]],
-        image4: ['', [Validators.required]],
+        image1: ['', [Validators.required]]
       }
     )
   }

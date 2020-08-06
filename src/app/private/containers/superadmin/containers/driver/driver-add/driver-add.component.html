@@ -9,10 +9,10 @@
                         <mat-label>Selectionner le transporteur</mat-label>
                         <mat-select formControlName="transporter_id">
                             <mat-option *ngFor="let transporter of transporters"
-                            value="{{ transporter.stepper_main_id }}" title="{{ transporter.name }}">
-                            {{ transporter.name }}
+                                value="{{ transporter.stepper_main_id }}" title="{{ transporter.name }}">
+                                {{ transporter.name }}
                             </mat-option>
-                        </mat-select>   
+                        </mat-select>
                         <!-- <input matInput placeholder="Last name, First name" formControlName="nationality_id" required> -->
                     </mat-form-field>
 
@@ -25,7 +25,8 @@
                     <mat-form-field class="example-full-width">
                         <input matInput formControlName="avatar" placeholder="photo du chauffeur" readonly>
                     </mat-form-field>
-                    <button type="button" class="btn btn-primary" mat-button (click)="selectFileAvatar()">Choisir la photo</button>
+                    <button type="button" class="btn btn-primary" mat-button (click)="selectFileAvatar()">Choisir la
+                        photo</button>
                 </div>
 
             </div>
@@ -34,11 +35,11 @@
                     <mat-form-field class="example-full-width">
                         <mat-label>Nationalite</mat-label>
                         <mat-select formControlName="nationality_id">
-                            <mat-option *ngFor="let nationalitie of nationalities?.data"
-                            value="{{ nationalitie.id }}" title="{{ nationalitie.description }}">
-                            {{ nationalitie.name }}
+                            <mat-option *ngFor="let nationalitie of nationalities?.data" value="{{ nationalitie.id }}"
+                                title="{{ nationalitie.description }}">
+                                {{ nationalitie.name }}
                             </mat-option>
-                        </mat-select>   
+                        </mat-select>
                         <!-- <input matInput placeholder="Last name, First name" formControlName="nationality_id" required> -->
                     </mat-form-field>
 
@@ -70,7 +71,8 @@
                 <div class="col-md-10">
                     <mat-form-field class="example-full-width">
                         <mat-label>Date de Naissance</mat-label>
-                        <input matInput  type="date" placeholder="Last name, First name" formControlName="date_naissance" required>
+                        <input matInput type="date" placeholder="Last name, First name" formControlName="date_naissance"
+                            required>
                     </mat-form-field>
 
                 </div>
@@ -107,7 +109,6 @@
                 <div class="col-md-10">
                     <mat-form-field class="example-full-width">
                         <mat-label>Telephone</mat-label>
-                        <span matPrefix>+1 &nbsp;</span>
                         <input type="tel" formControlName="telephone1" matInput placeholder="555-555-1234">
                     </mat-form-field>
                 </div>
@@ -116,16 +117,23 @@
                 <div class="col-md-6">
                     <mat-form-field class="example-full-width">
                         <mat-label>Telephone</mat-label>
-                        <span matPrefix>+1 &nbsp;</span>
                         <input type="tel" formControlName="telephone2" matInput placeholder="555-555-1234">
                     </mat-form-field>
 
                 </div>
-
             </div>
-
-            <div>
-                <button class="btn btn-success" (click)="addStep1()" mat-button matStepperNext>Suivant</button>
+            <div class="d-flex align-items-center" style="width: 25%;">
+                <button (click)="addStep1()" [disabled]="isLoading" class="btn btn-success btn-lg"
+                    style="width: 50%; justify-content: center; align-items: center; flex: 1;" mat-button matStepperNext>
+                    <p *ngIf="!isLoading" style="font-size: 1.2em; padding: 0px; margin: 5px;">Suivant</p>
+                    <div *ngIf="isLoading" style="padding: 15px; margin-left: 50%;">
+                        <div class="ball-scale-multiple">
+                            <div style="background-color: white;"></div>
+                            <div style="background-color: white;"></div>
+                            <div style="background-color: white;"></div>
+                        </div>
+                    </div>
+                </button>
             </div>
         </form>
     </mat-step>
@@ -144,8 +152,8 @@
                 <div class="col-md-10">
                     <mat-form-field class="example-full-width">
                         <mat-label>Date de Delivrance</mat-label>
-                        <input matInput type="date" placeholder="Ex. 1 Main St, New York, NY" formControlName="date_delivrance"
-                            required>
+                        <input matInput type="date" placeholder="Ex. 1 Main St, New York, NY"
+                            formControlName="date_delivrance" required>
                     </mat-form-field>
                 </div>
             </div>
@@ -158,8 +166,18 @@
                     </mat-form-field>
                 </div>
             </div>
-            <div>
-                <button (click)="addStep2()" class="btn btn-success" mat-button matStepperNext>Suivant</button>
+            <div class="d-flex align-items-center" style="width: 25%;">
+                <button (click)="addStep2()" [disabled]="isLoading" class="btn btn-success btn-lg"
+                    style="width: 50%; justify-content: center; align-items: center; flex: 1;" mat-button matStepperNext>
+                    <p *ngIf="!isLoading" style="font-size: 1.2em; padding: 0px; margin: 5px;">Suivant</p>
+                    <div *ngIf="isLoading" style="padding: 15px; margin-left: 50%;">
+                        <div class="ball-scale-multiple">
+                            <div style="background-color: white;"></div>
+                            <div style="background-color: white;"></div>
+                            <div style="background-color: white;"></div>
+                        </div>
+                    </div>
+                </button>
             </div>
         </form>
     </mat-step>
@@ -196,8 +214,8 @@
                 <div class="col-md-10">
                     <mat-form-field class="example-full-width">
                         <mat-label>Date de Delivrance</mat-label>
-                        <input matInput type="date" placeholder="Ex. 1 Main St, New York, NY" formControlName="date_delivrance"
-                            required>
+                        <input matInput type="date" placeholder="Ex. 1 Main St, New York, NY"
+                            formControlName="date_delivrance" required>
                     </mat-form-field>
                 </div>
             </div>
@@ -210,8 +228,18 @@
                     </mat-form-field>
                 </div>
             </div>
-            <div>
-                <button class="btn btn-success" (click)="addStep3()" mat-button matStepperNext>Suivant</button>
+            <div class="d-flex align-items-center" style="width: 25%;">
+                <button (click)="addStep3()" [disabled]="isLoading" class="btn btn-success btn-lg"
+                    style="width: 50%; justify-content: center; align-items: center; flex: 1;" mat-button matStepperNext>
+                    <p *ngIf="!isLoading" style="font-size: 1.2em; padding: 0px; margin: 5px;">Suivant</p>
+                    <div *ngIf="isLoading" style="padding: 15px; margin-left: 50%;">
+                        <div class="ball-scale-multiple">
+                            <div style="background-color: white;"></div>
+                            <div style="background-color: white;"></div>
+                            <div style="background-color: white;"></div>
+                        </div>
+                    </div>
+                </button>
             </div>
         </form>
     </mat-step>
@@ -233,11 +261,22 @@
                     <mat-form-field>
                         <input matInput formControlName="filename" placeholder="Fichier" readonly>
                     </mat-form-field>
-                    <button type="button" class="btn btn-primary" mat-button (click)="selectFile()">Importer une Piece Justificative</button>
+                    <button type="button" class="btn btn-primary" mat-button (click)="selectFile()">Importer une Piece
+                        Justificative</button>
                 </div>
             </div>
-            <div>
-                <button class="btn btn-success" (click)="addStep4()" mat-button matStepperNext>Suivant</button>
+            <div class="d-flex align-items-center" style="width: 25%;">
+                <button (click)="addStep4()" [disabled]="isLoading" class="btn btn-success btn-lg"
+                    style="width: 50%; justify-content: center; align-items: center; flex: 1;" mat-button matStepperNext>
+                    <p *ngIf="!isLoading" style="font-size: 1.2em; padding: 0px; margin: 5px;">Suivant</p>
+                    <div *ngIf="isLoading" style="padding: 15px; margin-left: 50%;">
+                        <div class="ball-scale-multiple">
+                            <div style="background-color: white;"></div>
+                            <div style="background-color: white;"></div>
+                            <div style="background-color: white;"></div>
+                        </div>
+                    </div>
+                </button>
             </div>
         </form>
     </mat-step>
