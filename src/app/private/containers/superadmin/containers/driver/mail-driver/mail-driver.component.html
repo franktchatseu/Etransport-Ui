@@ -1,6 +1,6 @@
 <div class="col-md-12">
     <div class="main-card mb-3 card">
-        <div class="card-header"><i class="header-icon lnr-license pe-7s-mail bg-plum-plate"> </i>Envoyer un Mail
+        <div class="card-header"><i class="header-icon lnr-license pe-7s-mail bg-plum-plate"> </i>Envoyer un Mail au Chauffeur
         </div>
         <form [formGroup]="createForm" (submit)="create()">
             <div class="card-body">
@@ -26,11 +26,10 @@
                     </div>
                 </div>
             </div>
-            <div class="d-block text-right card-footer">
+            <div class="card-footer">
                 <div class="ml-auto">
-                    <button [disabled]="isLoading" class="btn btn-primary" type="button">
-                        <i class="lnr-location btn-icon-wrapper"></i>Envoyer
-                    </button>
+                    <input [disabled]="isLoading" type="submit" class="btn btn-primary btn-lg"
+                    value="Envoyer" />
                     <div *ngIf="isLoading" style="padding: 5px;">
                         <div class="ball-scale-multiple">
                             <div style="background-color: white;"></div>

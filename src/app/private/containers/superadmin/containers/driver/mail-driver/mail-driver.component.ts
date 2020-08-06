@@ -83,7 +83,7 @@ export class MailDriverComponent implements OnInit {
       .then(resp => {
         console.log(resp);
         this.isSubmitted = false;
-        this.openSnackBar("Message Envoye", "Chauffeur");
+        this.openSnackBar("Message Envoye avec success", "Chauffeur");
         this.initForm({email: '', sms: '', object:''});
       })
       .catch(err => {

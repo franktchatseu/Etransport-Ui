@@ -82,8 +82,8 @@ export class MailTransporterComponent implements OnInit {
     this.dataService.mailTransporter(formData)
       .then(resp => {
         console.log(resp);
-        this.notificationService.success(this.translations.Superadmins.DoneWithSuccess);
         this.isSubmitted = false;
+        this.openSnackBar("Message Envoye avec success", "Transporteur");
         this.initForm({email: '', sms: '', object:''});
       })
       .catch(err => {
