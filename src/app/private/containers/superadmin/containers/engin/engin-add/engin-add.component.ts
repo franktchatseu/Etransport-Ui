@@ -165,7 +165,7 @@ export class EnginAddComponent implements OnInit {
     this.initStep5()
 
     //recuperation du stepper actif en fonction
-    const value = +this.stepperService.getValue();
+    const value = this.stepperService.getValue();
     this.engin = JSON.parse(localStorage.getItem("engin"));
 
     if (!this.engin) {
@@ -294,7 +294,7 @@ export class EnginAddComponent implements OnInit {
 
     this.isLoading = true;
     const formDataStep: FormData = new FormData();
-    formDataStep.append("value", '' + 1);
+    formDataStep.append("value", ''+1);
     formDataStep.append("status", '' + 0);
     formDataStep.append("stepper_main_id", '' + this.CaracTech1.transporter_id.value);
     this.stepperService.add(formDataStep).then(
@@ -541,11 +541,11 @@ export class EnginAddComponent implements OnInit {
     let value;
     if (!this.engin) {
       number = this.stepperService.getNumber();
-      value = +this.stepperService.getValue()
+      value = +this.stepperService.getValue()+1 
     }
     else {
       number = this.engin.number;
-      value = +this.engin.value
+      value = this.engin.value
     }
 
     console.log('la valeur est' + value)

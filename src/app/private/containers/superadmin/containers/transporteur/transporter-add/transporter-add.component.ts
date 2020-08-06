@@ -171,7 +171,8 @@ export class TransporterAddComponent implements OnInit {
         heure_ouverture: ['', [Validators.required]],
         partenaire: ['', [Validators.required]],
         valeur: ['', [Validators.required]],
-        image1: ['', [Validators.required]]
+        image1: ['', [Validators.required]],
+  
       }
     )
   }
@@ -185,7 +186,7 @@ export class TransporterAddComponent implements OnInit {
 
   openSnackBar(message: string, action: string) {
     this._snackBar.open(message, action, {
-      duration: 5000,
+      duration: 2000,
     });
   }
   addStep1() {
@@ -253,6 +254,14 @@ export class TransporterAddComponent implements OnInit {
     this.isError = false;
     this.isSuccess = false;
     this.isLoading = false
+
+    if (this.step2Form.invalid) {
+      this.translate.get('verifier vos champs')
+        .subscribe(val => this.notificationService.warning(val));
+      return;
+    }
+
+    this.isLoading = true;
     const formData: FormData = new FormData();
         
     formData.append("localisation", '' + this.drivingPermit.localisation.value);
