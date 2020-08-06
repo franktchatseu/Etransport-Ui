@@ -255,6 +255,7 @@
 		"DeleteWithSuccess": "Supprimer avec success",
 		"DeleteWithError": "Supprimer avec erreur",
 		"DoneWithSuccess": "Creer avec success",
+		"SendWithSuccess": "Envoyer avec success",
 		"DescriptionField": "Description",
 		"SaveField": "Ajouter",
 		"UpdateField": "Mettre a jour",
