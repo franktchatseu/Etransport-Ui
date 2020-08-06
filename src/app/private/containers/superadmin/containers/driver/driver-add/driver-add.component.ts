@@ -226,7 +226,7 @@ export class DriverAddComponent implements OnInit {
       (Response) => {
         console.log(Response)
         //sauvegarde dans le local storage
-        this.openSnackBar("Ajout Reussi", "Etape 1")
+        this.openSnackBar("Ajout Reussi", "Etape 2")
         console.log("stepper 2 termine");
         this.updateStepper();
       },
@@ -252,7 +252,7 @@ export class DriverAddComponent implements OnInit {
       (Response) => {
         console.log(Response)
         //sauvegarde dans le local storage
-        this.openSnackBar("Ajout Reussi", "Etape 1")
+        this.openSnackBar("Ajout Reussi", "Etape 3")
         console.log("stepper 2 termine");
         this.updateStepper();
       },
@@ -276,7 +276,7 @@ export class DriverAddComponent implements OnInit {
       (Response) => {
         console.log(Response)
         //sauvegarde dans le local storage
-        this.openSnackBar("Ajout Reussi", "Etape 1")
+        this.openSnackBar("Ajout Reussi", "Etape 4")
         console.log("stepper 4 termine");
         this.updateStepper();
       },
@@ -314,10 +314,12 @@ export class DriverAddComponent implements OnInit {
     if (!this.driver) {
       number = this.stepperService.getNumber();
       value = +this.stepperService.getValue()
+      console.log("the nimber!"+ number + " value "+value)
     }
     else {
       number = this.driver.number;
-      value = +this.driver.value
+      value = this.driver.value
+      console.log('compl '+value)
     }
     //on recupere la valeur du stepper correspondant dans la base de donnne
     this.stepperService.find(number).then(
@@ -347,9 +349,6 @@ export class DriverAddComponent implements OnInit {
       (Response) => {
         console.log(Response)
         //sauvegarde dans le local storage
-        this.stepperService.storeStepper(Response)
-        this.openSnackBar("Ajout Reussi", "Etape 2")
-
       },
       (error) => {
         console.log(error)

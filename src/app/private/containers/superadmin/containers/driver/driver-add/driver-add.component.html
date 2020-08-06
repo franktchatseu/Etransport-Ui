@@ -159,7 +159,7 @@
                 </div>
             </div>
             <div>
-                <button (click)="addStep2()" class="btn btn-success" mat-button matStepperNext>Suivant</button>
+                <button (click)="addStep2()" (click)="stepper.next()" class="btn btn-success" mat-button matStepperNext>Suivant</button>
             </div>
         </form>
     </mat-step>
