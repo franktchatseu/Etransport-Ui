@@ -66,10 +66,7 @@ export class MailTransporterComponent implements OnInit {
     this.isSubmitted = true;
     this.isError = false;
     this.isSuccess = false;
-    this.isLoading = false
-    if (this.form.invalid) {
-      this.notificationService.danger(this.translations.Superadmins.AllFieldsAreRequired);
-    }
+     this.isLoading = false
 
     this.isLoading = true;
     const formData = new FormData();
@@ -83,7 +80,6 @@ export class MailTransporterComponent implements OnInit {
       .then(resp => {
         console.log(resp);
         this.isSubmitted = false;
-        this.openSnackBar("Message Envoye", "Transporteur");
         this.initForm({email: '', sms: '', object:''});
       })
       .catch(err => {
