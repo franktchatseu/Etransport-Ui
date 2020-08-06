@@ -5,6 +5,8 @@ import { STEPPER_GLOBAL_OPTIONS } from '@angular/cdk/stepper';
 import { MatSnackBar } from '@angular/material';
 import { TransporteurService} from '../../../services/transporteur.service';
 import { Router } from '@angular/router';
+import { NotificationService } from 'src/app/services/notification.service';
+import { TranslateService } from '@ngx-translate/core';
 @Component({
   selector: 'app-transporter-add',
   templateUrl: './transporter-add.component.html',
@@ -50,13 +52,20 @@ export class TransporterAddComponent implements OnInit {
   step4Form: FormGroup;
   stepperApi: any;
   picker: any
+
+  //control
+  isLoading = false;
+  isError = false;
+  isSuccess = false;
+  isSubmitted = false;
   constructor(
     private formBuilder: FormBuilder,
     private stepperService: StepperMainService,
     private _snackBar: MatSnackBar,
     private driverService: TransporteurService,
-    private router: Router
-
+    private router: Router,
+    private notificationService: NotificationService,
+    private translate: TranslateService
   ) { }
   onSelectFile1(event) {
     if (event.target.files && event.target.files.length > 0) {
@@ -184,6 +193,18 @@ export class TransporterAddComponent implements OnInit {
   }
   addStep1() {
 
+    this.isSubmitted = true;
+    this.isError = false;
+    this.isSuccess = false;
+    this.isLoading = false
+    // Si la validation a echoué, on arrete l'execution de la fonction
+    if (this.step1Form.invalid) {
+      this.translate.get('verifier vos champs')
+        .subscribe(val => this.notificationService.warning(val));
+      return;
+    }
+
+    this.isLoading = true;
     const formDataStep: FormData = new FormData();
     formDataStep.append("value", '' + 1);
     formDataStep.append("status", '' + 0);
@@ -215,11 +236,12 @@ export class TransporterAddComponent implements OnInit {
             //sauvegarde dans le local storage
             this.openSnackBar("Ajout Reussi", "Etape 1")
             console.log("stepper 1 termine");
+            this.currentStepper= 1;
 
           },
           (error) => {
             console.log(error)
-          })
+          }) .finally(() => this.isLoading = false);
       },
       (error) => {
         console.log(error)
@@ -229,6 +251,11 @@ export class TransporterAddComponent implements OnInit {
   }
   addStep2() {
     //recuperation des champs du stepper 2
+
+    this.isSubmitted = true;
+    this.isError = false;
+    this.isSuccess = false;
+    this.isLoading = false
     const formData: FormData = new FormData();
         
     formData.append("localisation", '' + this.drivingPermit.localisation.value);
@@ -253,14 +280,15 @@ export class TransporterAddComponent implements OnInit {
       (Response) => {
         console.log(Response)
         //sauvegarde dans le local storage
-        this.openSnackBar("Ajout Reussi", "Etape 1")
+        this.openSnackBar("Ajout Reussi", "Etape 2")
         console.log("stepper 2 termine");
+        this.currentStepper = 2;
       },
       (error) => {
         console.log(error)
       },
 
-    )
+    ).finally(() => this.isLoading = false);
 
   }
 
