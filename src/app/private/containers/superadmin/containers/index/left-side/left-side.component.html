@@ -191,6 +191,50 @@
                         </li>
                     </ul>
                 </li>
+                <li class="mm-active">
+                    <a href="javascript:void(0);" aria-expanded="false" (click)="showChildren('.parc')">
+                        <i class="metismenu-icon pe-7s-config"></i>
+                        Gestion du Parc
+                        <i class="metismenu-state-icon pe-7s-angle-down caret-left"></i>
+                    </a>
+                    <ul class="parc mm-collapse">
+                        <li>
+                            <a href="javascript:void(0);" (click)="activeMenu.menu4=1;goTo('type')"
+                                class="{{ activeMenu.menu4 == 1 ? 'mm-active': ''}}">
+                                <i class="metismenu-icon">
+                                </i>Assurance véhicule
+                            </a>
+                        </li>
+                        <li>
+                            <a href="javascript:void(0);" (click)="activeMenu.menu4=2;goTo('modele')"
+                                class="{{ activeMenu.menu4 == 2 ? 'mm-active': ''}}">
+                                <i class="metismenu-icon">
+                                </i>Visites techniques
+                            </a>
+                        </li>
+                        <li>
+                            <a href="javascript:void(0);" (click)="activeMenu.menu4=3;goTo('marque')"
+                                class="{{ activeMenu.menu4 == 3 ? 'mm-active': ''}}">
+                                <i class="metismenu-icon">
+                                </i>Alertes
+                            </a>
+                        </li>
+                        <li>
+                            <a href="javascript:void(0);" (click)="activeMenu.menu4=5;goTo('type-intervenant')"
+                                class="{{ activeMenu.menu4 == 5 ? 'mm-active': ''}}">
+                                <i class="metismenu-icon">
+                                </i>Taxes 
+                            </a>
+                        </li>
+                        <li>
+                            <a href="javascript:void(0);" (click)="activeMenu.menu4=6;goTo('nationalite')"
+                                class="{{ activeMenu.menu4 == 6 ? 'mm-active': ''}}">
+                                <i class="metismenu-icon">
+                                </i>Programme entretien
+                            </a>
+                        </li>
+                    </ul>
+                </li>
             </ul>
         </div>
         <div class="ps__rail-x" style="left: 0px; bottom: 0px;">

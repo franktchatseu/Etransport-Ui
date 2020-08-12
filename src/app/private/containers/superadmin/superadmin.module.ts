@@ -32,7 +32,11 @@ import { AddTransportElementComponent } from "./containers/element-transport/add
 import { ListTransportElementsComponent } from "./containers/element-transport/list-transport-elements/list-transport-elements.component";
 import { DriverandcardComponent } from "./containers/transporteur/driverandcard/driverandcard.component";
 import { AcceuilComponent } from './containers/acceuil/acceuil.component';
-
+// module pour la gestion du parc
+import { CarInsuranceAllComponent } from './containers/parc/car-insurance/car-insurance-all/car-insurance-all.component';
+import { CarInsuranceAddComponent } from './containers/parc/car-insurance/car-insurance-add/car-insurance-add.component';
+import { TechnicalVisitAllComponent } from './containers/parc/technical-visit/technical-visit-all/technical-visit-all.component';
+import { TaxeAllComponent } from './containers/parc/taxes/taxe-all/taxe-all.component';
 @NgModule({
   declarations: [
     IndexComponent,
@@ -63,7 +67,13 @@ import { AcceuilComponent } from './containers/acceuil/acceuil.component';
     TransporteurDetailComponent,
     TransporterUpdateComponent,
     DriverandcardComponent,
-    AcceuilComponent
+    AcceuilComponent,
+    //gestion du parc
+    CarInsuranceAllComponent,
+    CarInsuranceAddComponent,
+    TechnicalVisitAllComponent,
+    TaxeAllComponent
+
   ],
   imports: [
     CommonModule,
