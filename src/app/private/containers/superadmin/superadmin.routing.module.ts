@@ -26,6 +26,12 @@ import { ListTransportElementsComponent } from './containers/element-transport/l
 import { AddTransportElementComponent } from './containers/element-transport/add-transport-element/add-transport-element.component';
 import { TransporteurDetailComponent } from "./containers/transporteur/transporteur-detail/transporteur-detail.component";
 import { DriverandcardComponent } from './containers/transporteur/driverandcard/driverandcard.component';
+import { CarInsuranceAllComponent } from './containers/parc/car-insurance/car-insurance-all/car-insurance-all.component';
+import { TechnicalVisitAllComponent } from './containers/parc/technical-visit/technical-visit-all/technical-visit-all.component';
+import { TaxeAllComponent } from './containers/parc/taxes/taxe-all/taxe-all.component';
+import { AffectationAllComponent } from "./containers/parametres/affectation/affectation-all/affectation-all.component";
+import { MissionOrderAddComponent } from './containers/parc/mission-order/mission-order-add/mission-order-add.component';
+
 import { AcceuilComponent } from './containers/acceuil/acceuil.component';
 import { MailDriverComponent } from './containers/driver/mail-driver/mail-driver.component';
 import { MailTransporterComponent } from './containers/transporteur/mail-transporter/mail-transporter.component';
@@ -112,6 +118,10 @@ const routes: Routes = [
         component: ListTransportElementsComponent,
       },
       {
+        path: 'affectation',
+        component: AffectationAllComponent,
+      },
+      {
         path: 'engin',
         children: [
           {
@@ -156,6 +166,27 @@ const routes: Routes = [
             component: MailTransporterComponent,
           }
 
+        ]
+      },
+      {
+        path: 'parc',
+        children: [
+          {
+            path: 'car-insurance',
+            component: CarInsuranceAllComponent,
+          },
+          {
+            path: 'technical-visit',
+            component: TechnicalVisitAllComponent,
+          },
+          {
+            path: 'taxes',
+            component: TaxeAllComponent
+          },
+          {
+            path: 'mission-order',
+            component: MissionOrderAddComponent
+          }
         ]
       },
       {
