@@ -29,6 +29,8 @@ import { DriverandcardComponent } from './containers/transporteur/driverandcard/
 import { CarInsuranceAllComponent } from './containers/parc/car-insurance/car-insurance-all/car-insurance-all.component';
 import { TechnicalVisitAllComponent } from './containers/parc/technical-visit/technical-visit-all/technical-visit-all.component';
 import { TaxeAllComponent } from './containers/parc/taxes/taxe-all/taxe-all.component';
+import { AffectationAllComponent } from "./containers/parametres/affectation/affectation-all/affectation-all.component";
+import { MissionOrderAddComponent } from './containers/parc/mission-order/mission-order-add/mission-order-add.component';
 
 import { AcceuilComponent } from './containers/acceuil/acceuil.component';
 
@@ -110,6 +112,10 @@ const routes: Routes = [
         component: ListTransportElementsComponent,
       },
       {
+        path: 'affectation',
+        component: AffectationAllComponent,
+      },
+      {
         path: 'engin',
         children: [
           {
@@ -166,6 +172,10 @@ const routes: Routes = [
             path: 'taxes',
             component: TaxeAllComponent
           },
+          {
+            path: 'mission-order',
+            component: MissionOrderAddComponent
+          }
         ]
       },
       {

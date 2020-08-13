@@ -102,6 +102,13 @@
                     </a>
                     <ul class="today2 mm-collapse">
                         <li>
+                            <a href="javascript:void(0);" (click)="activeMenu.menu2=2;goTo('affectation')"
+                                class="{{ activeMenu.menu2 == 2 ? 'mm-active': ''}}">
+                                <i class="metismenu-icon">
+                                </i>Affectation des Engins
+                            </a>
+                        </li>
+                        <li>
                             <a href="javascript:void(0);" (click)="activeMenu.menu2=1;goTo('engin/engin-all')"
                                 class="{{ activeMenu.menu2 == 1 ? 'mm-active': ''}}">
                                 <i class="metismenu-icon">
@@ -199,31 +206,38 @@
                     </a>
                     <ul class="parc mm-collapse">
                         <li>
-                            <a href="javascript:void(0);" (click)="activeMenu.menu4=1;goTo('type')"
+                            <a href="javascript:void(0);" (click)="activeMenu.menu4=1;goTo('parc/car-insurance')"
                                 class="{{ activeMenu.menu4 == 1 ? 'mm-active': ''}}">
                                 <i class="metismenu-icon">
                                 </i>Assurance véhicule
                             </a>
                         </li>
                         <li>
-                            <a href="javascript:void(0);" (click)="activeMenu.menu4=2;goTo('modele')"
+                            <a href="javascript:void(0);" (click)="activeMenu.menu4=2;goTo('parc/technical-visit')"
                                 class="{{ activeMenu.menu4 == 2 ? 'mm-active': ''}}">
                                 <i class="metismenu-icon">
                                 </i>Visites techniques
                             </a>
                         </li>
                         <li>
-                            <a href="javascript:void(0);" (click)="activeMenu.menu4=3;goTo('marque')"
+                            <a href="javascript:void(0);" (click)="activeMenu.menu4=3;goTo('parc/taxes')"
                                 class="{{ activeMenu.menu4 == 3 ? 'mm-active': ''}}">
                                 <i class="metismenu-icon">
-                                </i>Alertes
+                                </i>Taxes
+                            </a>
+                        </li>
+                        <li>
+                            <a href="javascript:void(0);" (click)="activeMenu.menu4=3;goTo('parc/mission-order')"
+                                class="{{ activeMenu.menu4 == 3 ? 'mm-active': ''}}">
+                                <i class="metismenu-icon">
+                                </i>Ordre de mission
                             </a>
                         </li>
                         <li>
                             <a href="javascript:void(0);" (click)="activeMenu.menu4=5;goTo('type-intervenant')"
                                 class="{{ activeMenu.menu4 == 5 ? 'mm-active': ''}}">
                                 <i class="metismenu-icon">
-                                </i>Taxes 
+                                </i>Alerte 
                             </a>
                         </li>
                         <li>

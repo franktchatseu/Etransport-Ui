@@ -1,15 +1,16 @@
 import { Component, OnInit } from '@angular/core';
-import { MatDialog } from '@angular/material';
 import { FormGroup, FormBuilder } from '@angular/forms';
+import { MatDialog } from '@angular/material';
 import { NotificationService } from 'src/app/services/notification.service';
 import { TranslateService } from '@ngx-translate/core';
 
 @Component({
-  selector: 'app-car-insurance-add',
-  templateUrl: './car-insurance-add.component.html',
-  styleUrls: ['./car-insurance-add.component.scss']
+  selector: 'app-affectation-add',
+  templateUrl: './affectation-add.component.html',
+  styleUrls: ['./affectation-add.component.scss']
 })
-export class CarInsuranceAddComponent implements OnInit {
+export class AffectationAddComponent implements OnInit {
+
   //declaration des variables
   isLoading:boolean;
   isSubmitted:boolean;

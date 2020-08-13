@@ -1,19 +1,16 @@
 import { Component, OnInit } from '@angular/core';
 import { MatDialog } from '@angular/material';
-import { TaxeAddComponent } from '../taxe-add/taxe-add.component';
-import { TaxeUpdateComponent } from '../taxe-update/taxe-update.component';
-import { TaxeDetailComponent } from '../taxe-detail/taxe-detail.component';
-import { MyCrudService } from '../../../../services/parc/my-service.service';
 import { NotificationService } from 'src/app/services/notification.service';
 import { TranslateService } from '@ngx-translate/core';
+import { MyCrudService } from '../../../../services/parc/my-service.service';
+import { AffectationAddComponent } from '../affectation-add/affectation-add.component';
 
 @Component({
-  selector: 'app-taxe-all',
-  templateUrl: './taxe-all.component.html',
-  styleUrls: ['./taxe-all.component.scss']
+  selector: 'app-affectation-all',
+  templateUrl: './affectation-all.component.html',
+  styleUrls: ['./affectation-all.component.scss']
 })
-export class TaxeAllComponent implements OnInit {
-
+export class AffectationAllComponent implements OnInit {
   url: any;
   data:any;
   constructor(
@@ -44,27 +41,9 @@ export class TaxeAllComponent implements OnInit {
   }
   //affichage de la boite de dialogue pour ajout
   add() {
-    this.dialog.open(TaxeAddComponent, {
+    this.dialog.open(AffectationAddComponent, {
       width: '400px',
       height: '450px',
-      disableClose: true,
-      backdropClass: 'backdropBackground'
-    });
-  }
-  //affichage de la boite de dialogue pour update
-  update() {
-    this.dialog.open(TaxeUpdateComponent, {
-      width: '400px',
-      height: '400px',
-      disableClose: true,
-      backdropClass: 'backdropBackground'
-    });
-  }
-  //affichage de la boite de dialogue pour le detail
-   detail() {
-    this.dialog.open(TaxeDetailComponent, {
-      width: '400px',
-      height: '400px',
       disableClose: true,
       backdropClass: 'backdropBackground'
     });

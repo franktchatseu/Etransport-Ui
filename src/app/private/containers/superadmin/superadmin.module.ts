@@ -18,7 +18,11 @@ import { EnginUpdateComponent} from './containers/engin/engin-update/engin-updat
 import { DriverAllComponent} from './containers/driver/driver-all/driver-all.component';
 import { DriverDetailsComponent} from './containers/driver/driver-details/driver-details.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
-import {MatSelectModule, MatDialogModule,MatStepperModule,MatFormFieldModule,MatInputModule,MatButtonModule,MatDatepickerModule,MatSnackBarModule, MatSnackBar, MatExpansionModule } from '@angular/material';
+import {MatSelectModule, MatDialogModule,MatStepperModule,MatFormFieldModule,MatInputModule,MatButtonModule,MatDatepickerModule,MatSnackBarModule, MatSnackBar, MatExpansionModule, } from '@angular/material';
+import {MatTableModule} from '@angular/material/table';
+import {MatRadioModule} from '@angular/material/radio';
+import {MatIconModule} from '@angular/material/icon';
+
 import { CarosserieComponent } from "./containers/parametres/carosserie/carosserie.component";
 import { MarqueComponent } from "./containers/parametres/marque/marque.component";
 import { ModeleComponent } from "./containers/parametres/modele/modele.component";
@@ -35,8 +39,23 @@ import { AcceuilComponent } from './containers/acceuil/acceuil.component';
 // module pour la gestion du parc
 import { CarInsuranceAllComponent } from './containers/parc/car-insurance/car-insurance-all/car-insurance-all.component';
 import { CarInsuranceAddComponent } from './containers/parc/car-insurance/car-insurance-add/car-insurance-add.component';
-import { TechnicalVisitAllComponent } from './containers/parc/technical-visit/technical-visit-all/technical-visit-all.component';
 import { TaxeAllComponent } from './containers/parc/taxes/taxe-all/taxe-all.component';
+import { CarInsuranceUpdateComponent } from './containers/parc/car-insurance/car-insurance-update/car-insurance-update.component';
+import { CarInsuranceDetailComponent } from './containers/parc/car-insurance/car-insurance-detail/car-insurance-detail.component';
+import { TechnicalVisitDetailComponent } from './containers/parc/technical-visit/technical-visit-detail/technical-visit-detail.component';
+import { TechnicalVisitAddComponent } from './containers/parc/technical-visit/technical-visit-add/technical-visit-add.component';
+import { TechnicalVisitUpdateComponent } from './containers/parc/technical-visit/technical-visit-update/technical-visit-update.component';
+import { TechnicalVisitAllComponent } from './containers/parc/technical-visit/technical-visit-all/technical-visit-all.component';
+import { TaxeDetailComponent } from './containers/parc/taxes/taxe-detail/taxe-detail.component';
+import { TaxeAddComponent } from './containers/parc/taxes/taxe-add/taxe-add.component';
+import { TaxeUpdateComponent } from './containers/parc/taxes/taxe-update/taxe-update.component';
+import { AffectationAddComponent } from "./containers/parametres/affectation/affectation-add/affectation-add.component";
+import { AffectationAllComponent } from "./containers/parametres/affectation/affectation-all/affectation-all.component";
+//ordres de mission
+import { MissionOrderAddComponent } from './containers/parc/mission-order/mission-order-add/mission-order-add.component';
+
+
+
 @NgModule({
   declarations: [
     IndexComponent,
@@ -68,11 +87,25 @@ import { TaxeAllComponent } from './containers/parc/taxes/taxe-all/taxe-all.comp
     TransporterUpdateComponent,
     DriverandcardComponent,
     AcceuilComponent,
-    //gestion du parc
+    //car insurance
     CarInsuranceAllComponent,
     CarInsuranceAddComponent,
+    CarInsuranceUpdateComponent,
+    CarInsuranceDetailComponent,
+    //technical visit
     TechnicalVisitAllComponent,
-    TaxeAllComponent
+    TechnicalVisitDetailComponent,
+    TechnicalVisitAddComponent,
+    TechnicalVisitUpdateComponent,
+    //taxes
+    TaxeAllComponent,
+    TaxeDetailComponent,
+    TaxeAddComponent,
+    TaxeUpdateComponent,
+    //affectation des engins aux chauffeurs
+    AffectationAddComponent,
+    AffectationAllComponent,
+    MissionOrderAddComponent
 
   ],
   imports: [
@@ -85,12 +118,18 @@ import { TaxeAllComponent } from './containers/parc/taxes/taxe-all/taxe-all.comp
     MatExpansionModule,
     MatInputModule,
     MatButtonModule,
+    MatTableModule,
     MatDatepickerModule,
     MatSelectModule,
     MatSnackBarModule,
+    MatTableModule,
+    MatRadioModule,
+    MatIconModule,
     FormsModule,
+    MatExpansionModule,
     ReactiveFormsModule
-  ]
+  ],
+  
 })
 
 export class SuperadminModule { }
