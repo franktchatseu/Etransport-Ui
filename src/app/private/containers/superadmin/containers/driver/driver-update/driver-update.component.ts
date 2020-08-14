@@ -58,6 +58,12 @@ export class DriverUpdateComponent implements OnInit {
   formation: any = null;
   members: any;
   imagePath: any;
+
+  //control
+  isLoading = false;
+  isError = false;
+  isSuccess = false;
+  isSubmitted = false;
   constructor(
     private formBuilder: FormBuilder,
     private stepperService: StepperService,
@@ -266,7 +272,18 @@ export class DriverUpdateComponent implements OnInit {
     });
   }
   addStep1() {
+    this.isSubmitted = true;
+    this.isError = false;
+    this.isSuccess = false;
+    this.isLoading = false
+    // Si la validation a echoué, on arrete l'execution de la fonction
+    if (this.step1Form.invalid) {
+      this.translate.get('verifier vos champs')
+        .subscribe(val => this.notificationService.warning(val));
+      return;
+    }
 
+    this.isLoading = true;
     //recuperation des champs du stepper 1
     const formData: FormData = new FormData();
     formData.append("first_name", '' + this.InfoGenerale.nom.value);

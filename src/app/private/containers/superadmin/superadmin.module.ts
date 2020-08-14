@@ -36,6 +36,8 @@ import { AddTransportElementComponent } from "./containers/element-transport/add
 import { ListTransportElementsComponent } from "./containers/element-transport/list-transport-elements/list-transport-elements.component";
 import { DriverandcardComponent } from "./containers/transporteur/driverandcard/driverandcard.component";
 import { AcceuilComponent } from './containers/acceuil/acceuil.component';
+import { MailTransporterComponent } from "./containers/transporteur/mail-transporter/mail-transporter.component";
+import { MailDriverComponent} from './containers/driver/mail-driver/mail-driver.component';
 // module pour la gestion du parc
 import { CarInsuranceAllComponent } from './containers/parc/car-insurance/car-insurance-all/car-insurance-all.component';
 import { CarInsuranceAddComponent } from './containers/parc/car-insurance/car-insurance-add/car-insurance-add.component';
@@ -87,6 +89,8 @@ import { MissionOrderAddComponent } from './containers/parc/mission-order/missio
     TransporterUpdateComponent,
     DriverandcardComponent,
     AcceuilComponent,
+    MailTransporterComponent,
+    MailDriverComponent,
     //car insurance
     CarInsuranceAllComponent,
     CarInsuranceAddComponent,

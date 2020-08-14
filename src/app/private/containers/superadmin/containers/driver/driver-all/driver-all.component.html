@@ -55,15 +55,19 @@
                     <td>
                         <button *ngIf="driver.status==1" class="mr-2 btn-icon btn-icon-only btn btn-outline-primary"
                             (click)="update(driver.stepper_id)"><i class="pe-7s-pen btn-icon-wrapper"> </i></button>
-                        <button class="mr-2 btn-icon btn-icon-only btn btn-outline-success" (click)="detail(driver.stepper_id)">
+                        <button class="mr-2 btn-icon btn-icon-only btn btn-outline-success"
+                            (click)="detail(driver.stepper_id)">
                             <i class="pe-7s-info btn-icon-wrapper"> </i></button>
                         <button class="mr-2 btn-icon btn-icon-only btn btn-outline-danger"
                             (click)="delete(driver.id)"><i class="pe-7s-trash btn-icon-wrapper"> </i></button>
+                        <button class="mr-2 btn-icon btn-icon-only btn btn-outline-info" title="Envoyer un Mail" (click)="mail(driver.email)">
+                            <i class="pe-7s-mail btn-icon-wrapper"> </i></button>
                     </td>
                     <td>
                         <button *ngIf="driver.status==0 " class="mr-2 btn btn-warning"
                             (click)="completer(driver)">completer votre profil</button>
-                        <div *ngIf="driver.status==1" class="badge badge-pill badge-success">profil totalement renseigne</div>
+                        <div *ngIf="driver.status==1" class="badge badge-pill badge-success">profil totalement renseigne
+                        </div>
                     </td>
                 </tr>
 

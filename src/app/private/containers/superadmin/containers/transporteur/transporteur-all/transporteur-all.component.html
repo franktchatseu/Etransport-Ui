@@ -27,7 +27,7 @@
             <thead>
                 <tr>
 
-                    <th >Photo</th>
+                    <th>Photo</th>
                     <th>Responsable</th>
                     <th>Entreprise</th>
                     <th>telephone</th>
@@ -41,7 +41,8 @@
                 <tr *ngFor="let transporteur of transporteurs?.data,let i = index">
 
                     <td style="width: 3%;">
-                        <img [src]="transporteur.manager_picture" width="50px" height="50px" alt="image du transporteur" srcset="">
+                        <img [src]="transporteur.manager_picture" width="50px" height="50px" alt="image du transporteur"
+                            srcset="">
                     </td>
                     <td style="width: 15%;">{{transporteur.manager_name}}</td>
                     <td style="width: 15%;">{{transporteur.name}}</td>
@@ -51,13 +52,19 @@
                     <td style="width: 10%;">{{transporteur.taxpayer_number}}</td>
                     <td>
                         <button class="mr-2 btn-icon btn-icon-only btn btn-outline-primary"
-                            (click)="update(transporteur.stepper_main_id)"><i class="pe-7s-pen btn-icon-wrapper"> </i></button>
-                        <button class="mr-2 btn-icon btn-icon-only btn btn-outline-success" (click)="detail(transporteur.stepper_main_id)">
+                            (click)="update(transporteur.stepper_main_id)"><i class="pe-7s-pen btn-icon-wrapper">
+                            </i></button>
+                        <button class="mr-2 btn-icon btn-icon-only btn btn-outline-success"
+                            (click)="detail(transporteur.stepper_main_id)">
                             <i class="pe-7s-info btn-icon-wrapper"> </i></button>
                         <button class="mr-2 btn-icon btn-icon-only btn btn-outline-danger"
                             (click)="delete(transporteur.id)"><i class="pe-7s-trash btn-icon-wrapper"> </i></button>
-                        <button class="mr-2 btn-icon btn-icon-only btn btn-outline-info" (click)="detailDrivesAndCars(transporteur.stepper_main_id)">
-                                <i class="pe-7s-car btn-icon-wrapper"> </i></button>
+                        <button class="mr-2 btn-icon btn-icon-only btn btn-outline-info"
+                            (click)="detailDrivesAndCars(transporteur.stepper_main_id)">
+                            <i class="pe-7s-car btn-icon-wrapper"> </i></button>
+                        <button class="mr-2 btn-icon btn-icon-only btn btn-outline-info"
+                            (click)="mail(transporteur.email)" title="Envoyer un Mail">
+                            <i class="pe-7s-mail btn-icon-wrapper"> </i></button>
                     </td>
                 </tr>
 
@@ -71,12 +78,12 @@
                     <div class="col-md-4">
                         <ul class="pagination">
                             <li class="paginate_button page-item previous" id="example_previous">
-                                <a (click)="getPage(transporteurs?.prev_page_url)" aria-controls="example" data-dt-idx="0"
-                                    tabindex="0" class="page-link">PRECEDENT</a>
+                                <a (click)="getPage(transporteurs?.prev_page_url)" aria-controls="example"
+                                    data-dt-idx="0" tabindex="0" class="page-link">PRECEDENT</a>
                             </li>
                             <li class="paginate_button page-item next" id="example_next">
-                                <a (click)="getPage(transporteurs?.next_page_url)" aria-controls="example" data-dt-idx="7"
-                                    tabindex="0" class="page-link">SUIVANT</a>
+                                <a (click)="getPage(transporteurs?.next_page_url)" aria-controls="example"
+                                    data-dt-idx="7" tabindex="0" class="page-link">SUIVANT</a>
                             </li>
                         </ul>
                     </div>

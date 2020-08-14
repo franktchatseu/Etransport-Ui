@@ -168,10 +168,22 @@
                 </div>
 
             </div>
-
-            <div>
-                <button class="btn btn-success" (click)="addStep1()" mat-button matStepperNext>Suivant</button>
+            <div class="d-flex align-items-center" style="width: 25%;">
+                <button (click)="addStep1()" [disabled]="isLoading" class="btn btn-success btn-lg"
+                    style="width: 50%; justify-content: center; align-items: center; flex: 1;" mat-button matStepperNext>
+                    <p *ngIf="!isLoading" style="font-size: 1.2em; padding: 0px; margin: 5px;">Suivant</p>
+                    <div *ngIf="isLoading" style="padding: 15px; margin-left: 50%;">
+                        <div class="ball-scale-multiple">
+                            <div style="background-color: white;"></div>
+                            <div style="background-color: white;"></div>
+                            <div style="background-color: white;"></div>
+                        </div>
+                    </div>
+                </button>
             </div>
+            <!-- <div>
+                <button class="btn btn-success" (click)="addStep1()" mat-button matStepperNext>Suivant</button>
+            </div> -->
         </form>
     </mat-step>
     <mat-step [stepControl]="step2Form">
@@ -285,9 +297,22 @@
                     </mat-form-field>
                 </div>
             </div>
-            <div>
-                <button class="btn btn-success" (click)="addStep2()" mat-button matStepperNext>Suivant</button>
+            <div class="d-flex align-items-center" style="width: 25%;">
+                <button (click)="addStep2()" [disabled]="isLoading" class="btn btn-success btn-lg"
+                    style="width: 50%; justify-content: center; align-items: center; flex: 1;" mat-button matStepperNext>
+                    <p *ngIf="!isLoading" style="font-size: 1.2em; padding: 0px; margin: 5px;">Suivant</p>
+                    <div *ngIf="isLoading" style="padding: 15px; margin-left: 50%;">
+                        <div class="ball-scale-multiple">
+                            <div style="background-color: white;"></div>
+                            <div style="background-color: white;"></div>
+                            <div style="background-color: white;"></div>
+                        </div>
+                    </div>
+                </button>
             </div>
+            <!-- <div>
+                <button class="btn btn-success" (click)="addStep2()" mat-button matStepperNext>Suivant</button>
+            </div> -->
         </form>
     </mat-step>
     <mat-step [stepControl]="step3Form">
@@ -357,9 +382,22 @@
                     </mat-form-field>
                 </div>
             </div>
-            <div>
-                <button class="btn btn-success" (click)="addStep3()" mat-button matStepperNext>Suivant</button>
+            <div class="d-flex align-items-center" style="width: 25%;">
+                <button (click)="addStep3()" [disabled]="isLoading" class="btn btn-success btn-lg"
+                    style="width: 50%; justify-content: center; align-items: center; flex: 1;" mat-button matStepperNext>
+                    <p *ngIf="!isLoading" style="font-size: 1.2em; padding: 0px; margin: 5px;">Suivant</p>
+                    <div *ngIf="isLoading" style="padding: 15px; margin-left: 50%;">
+                        <div class="ball-scale-multiple">
+                            <div style="background-color: white;"></div>
+                            <div style="background-color: white;"></div>
+                            <div style="background-color: white;"></div>
+                        </div>
+                    </div>
+                </button>
             </div>
+            <!-- <div>
+                <button class="btn btn-success" (click)="addStep3()" mat-button matStepperNext>Suivant</button>
+            </div> -->
         </form>
     </mat-step>
     <mat-step [stepControl]="step4Form">
@@ -389,15 +427,28 @@
                     </mat-form-field>
                 </div>
             </div>
-            <div>
-                <button class="btn btn-success" (click)="addStep4()" mat-button matStepperNext>Suivant</button>
+            <div class="d-flex align-items-center" style="width: 25%;">
+                <button (click)="addStep4()" [disabled]="isLoading" class="btn btn-success btn-lg"
+                    style="width: 50%; justify-content: center; align-items: center; flex: 1;" mat-button matStepperNext>
+                    <p *ngIf="!isLoading" style="font-size: 1.2em; padding: 0px; margin: 5px;">Suivant</p>
+                    <div *ngIf="isLoading" style="padding: 15px; margin-left: 50%;">
+                        <div class="ball-scale-multiple">
+                            <div style="background-color: white;"></div>
+                            <div style="background-color: white;"></div>
+                            <div style="background-color: white;"></div>
+                        </div>
+                    </div>
+                </button>
             </div>
+            <!-- <div>
+                <button class="btn btn-success" (click)="addStep4()" mat-button matStepperNext>Suivant</button>
+            </div> -->
         </form>
     </mat-step>
     <mat-step [stepControl]="step5Form">
         <form class="example-form" [formGroup]="step5Form">
 
-            <ng-template matStepLabel>Papier Du Vehicule</ng-template>
+            <ng-template matStepLabel>Image Du Vehicule</ng-template>
 
             <div class="row">
                 <div class="col-md-10">
@@ -453,17 +504,30 @@
                     <button type="button" class="btn btn-primary" mat-button (click)="selectFile6()">Importer Photo Carte Grise</button>
                 </div>
             </div>
-            <div>
-                <button class="btn btn-primary" (click)="addStep5()" mat-button matStepperNext>Next</button>
+            <div class="d-flex align-items-center" style="width: 25%;">
+                <button (click)="addStep5()" [disabled]="isLoading" class="btn btn-success btn-lg"
+                    style="width: 50%; justify-content: center; align-items: center; flex: 1;" mat-button matStepperNext>
+                    <p *ngIf="!isLoading" style="font-size: 1.2em; padding: 0px; margin: 5px;">Suivant</p>
+                    <div *ngIf="isLoading" style="padding: 15px; margin-left: 50%;">
+                        <div class="ball-scale-multiple">
+                            <div style="background-color: white;"></div>
+                            <div style="background-color: white;"></div>
+                            <div style="background-color: white;"></div>
+                        </div>
+                    </div>
+                </button>
             </div>
+            <!-- <div>
+                <button class="btn btn-primary" (click)="addStep5()" mat-button matStepperNext>Next</button>
+            </div> -->
         </form>
     </mat-step>
     <mat-step>
         <ng-template matStepLabel>Done</ng-template>
         <p>You are now done.</p>
         <div>
-            <button mat-button matStepperPrevious>Back</button>
-            <button mat-button (click)="reset()">Reset</button>
+            <button mat-button class="btn btn-primary" matStepperPrevious>Back</button>
+            <button mat-button class="btn btn-primary" (click)="reset()">Reset</button>
         </div>
     </mat-step>
 </mat-horizontal-stepper>

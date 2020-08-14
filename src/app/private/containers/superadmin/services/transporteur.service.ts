@@ -70,8 +70,11 @@ export class TransporteurService {
   getDriversandCars(id) {
     return this.http.get<any>(`${config.apiUrl}/module1/stepper_main/${id}/driversandcars`).toPromise();
   }
-  
-  getCarsByEat(id,etat:any) { 
+
+  mailTransporter(formData: FormData):Promise<any>{
+    return this.http.post<any>(`${config.apiUrl}/module1/info_entreprise_two/mail`, formData).toPromise();
+  }
+  getCarsByEat(id,etat:any) {
     return this.http.get<any>(`${config.apiUrl}/module1/stepper_main/${id}/cars/${etat}`).toPromise();
   }
 }

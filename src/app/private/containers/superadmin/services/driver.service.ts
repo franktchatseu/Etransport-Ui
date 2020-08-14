@@ -72,4 +72,8 @@ export class DriverService {
   updateFormations(formData: FormData, id): Promise<any> {
     return this.http.post<any>(`${config.apiUrl}/module2/formations/${id}`, formData).toPromise();
   }
+
+  mailDriver(formData:FormData):Promise<any>{
+    return this.http.post<any>(`${config.apiUrl}/module2/general_informations/mail`, formData).toPromise();
+  }
 }

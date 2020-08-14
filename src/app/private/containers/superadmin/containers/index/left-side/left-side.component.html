@@ -102,8 +102,8 @@
                     </a>
                     <ul class="today2 mm-collapse">
                         <li>
-                            <a href="javascript:void(0);" (click)="activeMenu.menu2=2;goTo('affectation')"
-                                class="{{ activeMenu.menu2 == 2 ? 'mm-active': ''}}">
+                            <a href="javascript:void(0);" (click)="activeMenu.menu2=3;goTo('affectation')"
+                                class="{{ activeMenu.menu2 == 3 ? 'mm-active': ''}}">
                                 <i class="metismenu-icon">
                                 </i>Affectation des Engins
                             </a>
@@ -143,6 +143,58 @@
                                 class="{{ activeMenu.menu3 == 2 ? 'mm-active': ''}}">
                                 <i class="metismenu-icon">
                                 </i>Ajouter
+                            </a>
+                        </li>
+                    </ul>
+                </li>
+
+                <li class="mm-active">
+                    <a href="javascript:void(0);" aria-expanded="false" (click)="showChildren('.parc')">
+                        <i class="metismenu-icon pe-7s-config"></i>
+                        Gestion du Parc
+                        <i class="metismenu-state-icon pe-7s-angle-down caret-left"></i>
+                    </a>
+                    <ul class="parc mm-collapse">
+                        <li>
+                            <a href="javascript:void(0);" (click)="activeMenu.menu4=1;goTo('parc/car-insurance')"
+                                class="{{ activeMenu.menu4 == 1 ? 'mm-active': ''}}">
+                                <i class="metismenu-icon">
+                                </i>Assurance véhicule
+                            </a>
+                        </li>
+                        <li>
+                            <a href="javascript:void(0);" (click)="activeMenu.menu4=2;goTo('parc/technical-visit')"
+                                class="{{ activeMenu.menu4 == 2 ? 'mm-active': ''}}">
+                                <i class="metismenu-icon">
+                                </i>Visites techniques
+                            </a>
+                        </li>
+                        <li>
+                            <a href="javascript:void(0);" (click)="activeMenu.menu4=3;goTo('parc/taxes')"
+                                class="{{ activeMenu.menu4 == 3 ? 'mm-active': ''}}">
+                                <i class="metismenu-icon">
+                                </i>Taxes
+                            </a>
+                        </li>
+                        <li>
+                            <a href="javascript:void(0);" (click)="activeMenu.menu4=4;goTo('parc/mission-order')"
+                                class="{{ activeMenu.menu4 == 4 ? 'mm-active': ''}}">
+                                <i class="metismenu-icon">
+                                </i>Ordre de mission
+                            </a>
+                        </li>
+                        <li>
+                            <a href="javascript:void(0);" (click)="activeMenu.menu4=5;goTo('type-intervenant')"
+                                class="{{ activeMenu.menu4 == 5 ? 'mm-active': ''}}">
+                                <i class="metismenu-icon">
+                                </i>Alerte 
+                            </a>
+                        </li>
+                        <li>
+                            <a href="javascript:void(0);" (click)="activeMenu.menu4=6;goTo('nationalite')"
+                                class="{{ activeMenu.menu4 == 6 ? 'mm-active': ''}}">
+                                <i class="metismenu-icon">
+                                </i>Programme entretien
                             </a>
                         </li>
                     </ul>
@@ -194,57 +246,6 @@
                                 class="{{ activeMenu.menu4 == 6 ? 'mm-active': ''}}">
                                 <i class="metismenu-icon">
                                 </i>Nationalite
-                            </a>
-                        </li>
-                    </ul>
-                </li>
-                <li class="mm-active">
-                    <a href="javascript:void(0);" aria-expanded="false" (click)="showChildren('.parc')">
-                        <i class="metismenu-icon pe-7s-config"></i>
-                        Gestion du Parc
-                        <i class="metismenu-state-icon pe-7s-angle-down caret-left"></i>
-                    </a>
-                    <ul class="parc mm-collapse">
-                        <li>
-                            <a href="javascript:void(0);" (click)="activeMenu.menu4=1;goTo('parc/car-insurance')"
-                                class="{{ activeMenu.menu4 == 1 ? 'mm-active': ''}}">
-                                <i class="metismenu-icon">
-                                </i>Assurance véhicule
-                            </a>
-                        </li>
-                        <li>
-                            <a href="javascript:void(0);" (click)="activeMenu.menu4=2;goTo('parc/technical-visit')"
-                                class="{{ activeMenu.menu4 == 2 ? 'mm-active': ''}}">
-                                <i class="metismenu-icon">
-                                </i>Visites techniques
-                            </a>
-                        </li>
-                        <li>
-                            <a href="javascript:void(0);" (click)="activeMenu.menu4=3;goTo('parc/taxes')"
-                                class="{{ activeMenu.menu4 == 3 ? 'mm-active': ''}}">
-                                <i class="metismenu-icon">
-                                </i>Taxes
-                            </a>
-                        </li>
-                        <li>
-                            <a href="javascript:void(0);" (click)="activeMenu.menu4=3;goTo('parc/mission-order')"
-                                class="{{ activeMenu.menu4 == 3 ? 'mm-active': ''}}">
-                                <i class="metismenu-icon">
-                                </i>Ordre de mission
-                            </a>
-                        </li>
-                        <li>
-                            <a href="javascript:void(0);" (click)="activeMenu.menu4=5;goTo('type-intervenant')"
-                                class="{{ activeMenu.menu4 == 5 ? 'mm-active': ''}}">
-                                <i class="metismenu-icon">
-                                </i>Alerte 
-                            </a>
-                        </li>
-                        <li>
-                            <a href="javascript:void(0);" (click)="activeMenu.menu4=6;goTo('nationalite')"
-                                class="{{ activeMenu.menu4 == 6 ? 'mm-active': ''}}">
-                                <i class="metismenu-icon">
-                                </i>Programme entretien
                             </a>
                         </li>
                     </ul>

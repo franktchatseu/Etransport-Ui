@@ -136,7 +136,7 @@ export class AddTransportElementComponent implements OnInit {
         //this.notificationService.success(this.translations.Superadmins.DoneWithSuccess);
         this.openSnackBar("Ajout Reussi", "element de transport");
         this.initForm({ name: '', description: '', type_id: '', localisation: '', phone1: '', phone2: '', email: '', function: '', presentation_file: '' });
-      //  this.createForm.reset();
+        this.router.navigate(['/private/superadmins/list-element']);
       })
       .catch(err => {
         this.errors = err.error.errors;

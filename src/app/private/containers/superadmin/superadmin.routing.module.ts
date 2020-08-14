@@ -33,6 +33,8 @@ import { AffectationAllComponent } from "./containers/parametres/affectation/aff
 import { MissionOrderAddComponent } from './containers/parc/mission-order/mission-order-add/mission-order-add.component';
 
 import { AcceuilComponent } from './containers/acceuil/acceuil.component';
+import { MailDriverComponent } from './containers/driver/mail-driver/mail-driver.component';
+import { MailTransporterComponent } from './containers/transporteur/mail-transporter/mail-transporter.component';
 
 const routes: Routes = [
   {
@@ -58,6 +60,10 @@ const routes: Routes = [
       {
         path: 'driver-detail/:id',
         component: DriverDetailsComponent,
+      },
+      {
+        path: 'mailing-driver',
+        component: MailDriverComponent,
       },
       {
         path: 'element-detail/:id',
@@ -154,7 +160,12 @@ const routes: Routes = [
           {
             path: 'driversandcars/:id',
             component: DriverandcardComponent,
+          },
+          {
+            path: 'mail',
+            component: MailTransporterComponent,
           }
+
         ]
       },
       {

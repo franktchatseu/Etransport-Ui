@@ -13,6 +13,7 @@ import { TypeService } from 'src/app/services/parametre/type/type.service';
 import { ModeleService } from 'src/app/services/parametre/modele/modele.service';
 import { NotificationService } from 'src/app/services/notification.service';
 import { TransporteurService } from '../../../services/transporteur.service';
+import { TranslateService } from '@ngx-translate/core';
 
 @Component({
   selector: 'app-engin-add',
@@ -71,6 +72,11 @@ export class EnginAddComponent implements OnInit {
   //liste des transporteurs
   transporters: any;
 
+  //control
+  isLoading = false;
+  isError = false;
+  isSuccess = false;
+  isSubmitted = false;
 
   constructor(
     private formBuilder: FormBuilder,
@@ -79,7 +85,8 @@ export class EnginAddComponent implements OnInit {
     private enginService: EnginService,
     private transporterService: TransporteurService,
     private notificationService: NotificationService,
-    private router: Router
+    private router: Router,
+    private translate:TranslateService
   ) { }
 
   onSelectFile1(event) {
@@ -274,6 +281,18 @@ export class EnginAddComponent implements OnInit {
     });
   }
   addStep1() {
+    this.isSubmitted = true;
+    this.isError = false;
+    this.isSuccess = false;
+    this.isLoading = false
+    // Si la validation a echoué, on arrete l'execution de la fonction
+    if (this.step1Form.invalid) {
+      this.translate.get('verifier vos champs')
+        .subscribe(val => this.notificationService.warning(val));
+      return;
+    }
+
+    this.isLoading = true;
     const formDataStep: FormData = new FormData();
     formDataStep.append("value", ''+1);
     formDataStep.append("status", '' + 0);
@@ -312,8 +331,8 @@ export class EnginAddComponent implements OnInit {
           },
           (error) => {
             console.log(error)
-          })
-      },
+          }).finally(() => this.isLoading = false);
+        },
       (error) => {
         console.log(error)
       },
@@ -322,7 +341,18 @@ export class EnginAddComponent implements OnInit {
 
   }
   addStep2() {
+    this.isSubmitted = true;
+    this.isError = false;
+    this.isSuccess = false;
+    this.isLoading = false
+    // Si la validation a echoué, on arrete l'execution de la fonction
+    if (this.step2Form.invalid) {
+      this.translate.get('verifier vos champs')
+        .subscribe(val => this.notificationService.warning(val));
+      return;
+    }
 
+    this.isLoading = true;
     //recuperation des champs du stepper 2
     const formData: FormData = new FormData();
     formData.append("semi_trailer_number", this.CaracTech2.semi_remorq.value);
@@ -355,12 +385,23 @@ export class EnginAddComponent implements OnInit {
         console.log(error)
       },
 
-    )
+    ).finally(() => this.isLoading = false);
 
   }
 
   addStep3() {
+    this.isSubmitted = true;
+    this.isError = false;
+    this.isSuccess = false;
+    this.isLoading = false
+    // Si la validation a echoué, on arrete l'execution de la fonction
+    if (this.step3Form.invalid) {
+      this.translate.get('verifier vos champs')
+        .subscribe(val => this.notificationService.warning(val));
+      return;
+    }
 
+    this.isLoading = true;
     //recuperation des champs du stepper 3
     const formData: FormData = new FormData();
     formData.append("required_workday", '' + this.Description.jour_taf.value);
@@ -386,10 +427,22 @@ export class EnginAddComponent implements OnInit {
         console.log(error)
       },
 
-    )
+    ).finally(() => this.isLoading = false);
 
   }
   addStep4() {
+    this.isSubmitted = true;
+    this.isError = false;
+    this.isSuccess = false;
+    this.isLoading = false
+    // Si la validation a echoué, on arrete l'execution de la fonction
+    if (this.step4Form.invalid) {
+      this.translate.get('verifier vos champs')
+        .subscribe(val => this.notificationService.warning(val));
+      return;
+    }
+
+    this.isLoading = true;
     //recuperation des champs du stepper 4
     const formData: FormData = new FormData();
     formData.append("patent_validation", '' + this.PapierVehicule.validite_patente.value);
@@ -412,11 +465,23 @@ export class EnginAddComponent implements OnInit {
       (error) => {
         console.log(error)
       }
-    )
+    ).finally(() => this.isLoading = false);
 
   }
 
   addStep5() {
+    this.isSubmitted = true;
+    this.isError = false;
+    this.isSuccess = false;
+    this.isLoading = false
+    // Si la validation a echoué, on arrete l'execution de la fonction
+    if (this.step5Form.invalid) {
+      this.translate.get('verifier vos champs')
+        .subscribe(val => this.notificationService.warning(val));
+      return;
+    }
+
+    this.isLoading = true;
     //recuperation des champs du stepper 4
     console.log(this.file1)
     console.log(this.file2)
@@ -447,7 +512,7 @@ export class EnginAddComponent implements OnInit {
       (error) => {
         console.log(error)
       }
-    )
+    ).finally(() => this.isLoading = false);
     localStorage.clear()
 
   }
@@ -483,7 +548,7 @@ export class EnginAddComponent implements OnInit {
       value = this.engin.value
     }
 
-    console.log(value)
+    console.log('la valeur est' + value)
     if (value == 4) {
       formData.append("status", '' + 1);
       console.log("voici le status 1")
@@ -495,8 +560,6 @@ export class EnginAddComponent implements OnInit {
       console.log("voici le status 0")
       const new_value = value + 1;
       formData.append("value", '' + new_value);
-
-
     }
     formData.append("stepper_main_id", '' + this.CaracTech1.transporter_id.value);
     this.stepperService.update(formData, number).then(
