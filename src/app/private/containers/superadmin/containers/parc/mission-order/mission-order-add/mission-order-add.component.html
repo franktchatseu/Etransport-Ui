@@ -1,4 +1,4 @@
-<div class="container-fluid">
+<div class="col-md-10">
   <div class="app-page-title">
     <div class="page-title-wrapper">
       <div class="page-title-heading" style="width: 100%;">
@@ -16,6 +16,7 @@
   <br>
   <div class="col-md-10 ml-2">
     <mat-accordion class="example-headers-align">
+      <form  [formGroup]="myformGroup">
       <mat-expansion-panel [expanded]="step === 0" (opened)="setStep(0)" hideToggle>
         <mat-expansion-panel-header>
           <mat-panel-title>
@@ -25,13 +26,14 @@
             Renseigner les informations
           </mat-panel-description>
         </mat-expansion-panel-header>
+      
         <div class="row">
           <div class="col-md-12">
             <div class="row">
               <div class="col-md-6">
                 <mat-form-field class="example-full-width">
                   <mat-label>Numero de dossier </mat-label>
-                  <input matInput placeholder="4474E" required>
+                  <input matInput placeholder="4474E" formControlName="num_dossier" required>
                 </mat-form-field>
               </div>
             </div>
@@ -39,14 +41,14 @@
               <div class="col-md-6">
                 <mat-form-field class="example-full-width">
                   <mat-label>Numero </mat-label>
-                  <input matInput placeholder="4474E" required>
+                  <input matInput placeholder="4474E" formControlName="numero" required>
                 </mat-form-field>
     
               </div>
               <div class="col-md-6">
                 <mat-form-field class="example-full-width">
                   <mat-label>Objet</mat-label>
-                  <mat-select>
+                  <mat-select formControlName="object">
                     <mat-option value="1" title="title">
                       CLD456
                     </mat-option>
@@ -65,14 +67,14 @@
               <div class="col-md-6">
                 <mat-form-field class="example-full-width">
                   <mat-label>Date de depart</mat-label>
-                  <input matInput type="date" placeholder="Ex. 1 Main St, New York, NY" 
+                  <input matInput type="date" placeholder="12" formControlName="date_depart"
                     required>
                 </mat-form-field>
               </div>
               <div class="col-md-6">
                 <mat-form-field class="example-full-width">
                   <mat-label>Heure de depart</mat-label>
-                  <input matInput placeholder="Ex. 1 Main St, New York, NY"  required>
+                  <input matInput placeholder="Ex. 1 Main St, New York, NY" formControlName="heure_depart" required>
                 </mat-form-field>
               </div>
     
@@ -81,20 +83,20 @@
               <div class="col-md-4">
                 <mat-form-field class="example-full-width">
                   <mat-label>Date Retour</mat-label>
-                  <input matInput type="date" placeholder="Ex. 1 Main St, New York, NY" 
+                  <input matInput type="date" placeholder="Ex. 1 Main St, New York, NY" formControlName="date_retour"
                     required>
                 </mat-form-field>
               </div>
               <div class="col-md-4">
                 <mat-form-field class="example-full-width">
                   <mat-label>Heure Retour</mat-label>
-                  <input matInput placeholder="Ex. 1 Main St, New York, NY"  required>
+                  <input matInput placeholder="Ex. 1 Main St, New York, NY" formControlName="heure_retour"  required> 
                 </mat-form-field>
               </div>
               <div class="col-md-4">
                 <mat-form-field class="example-full-width">
                   <mat-label>Duree</mat-label>
-                  <input matInput placeholder="Ex. 1 Main St, New York, NY"  required>
+                  <input matInput placeholder="Ex. 1 Main St, New York, NY" formControlName="duree"  required>
                 </mat-form-field>
               </div>
             </div>
@@ -102,13 +104,13 @@
               <div class="col-md-6">
                 <mat-form-field class="example-full-width">
                   <mat-label>Index de Depart</mat-label>
-                  <input matInput placeholder="Ex. 1 Main St, New York, NY"  required>
+                  <input matInput placeholder="Ex. 1 Main St, New York, NY" formControlName="index_depart"  required>
                 </mat-form-field>
               </div>
               <div class="col-md-6">
                 <mat-form-field class="example-full-width">
                   <mat-label>Index Retour</mat-label>
-                  <input matInput placeholder="Ex. 1 Main St, New York, NY"  required>
+                  <input matInput placeholder="Ex. 1 Main St, New York, NY" formControlName="index_retour"  required>
                 </mat-form-field>
               </div>
             </div>
@@ -116,14 +118,14 @@
               <div class="col-md-3">
                 <mat-form-field appearance="fill">
                   <mat-label>Parcours reel</mat-label>
-                  <input matInput type="number" class="example-full-align">
+                  <input matInput type="number" class="example-full-align" formControlName="parcours_reel" >
                   <span matSuffix>.00</span>
                 </mat-form-field>
               </div>
               <div class="col-md-3">
                 <mat-form-field appearance="fill">
                   <mat-label>Parcours Theorique</mat-label>
-                  <input matInput type="number" class="example-full-align">
+                  <input matInput type="number" class="example-full-align" formControlName="parours_theorique">
                   <span matSuffix>.00</span>
                 </mat-form-field> 
               </div>
@@ -136,6 +138,7 @@
         </mat-action-row>
       </mat-expansion-panel>
     
+
       <mat-expansion-panel [expanded]="step === 1" (opened)="setStep(1)" hideToggle>
         <mat-expansion-panel-header>
           <mat-panel-title>
@@ -148,8 +151,8 @@
         <div class="row">
           <div class="col-md-6">
             <mat-form-field class="example-full-width">
-              <mat-label>Objet</mat-label>
-              <mat-select>
+              <mat-label>Vehicule</mat-label>
+              <mat-select formControlName="car_id" >
                 <mat-option value="1" title="title">
                   CLD456
                 </mat-option>
@@ -165,7 +168,7 @@
           <div class="col-md-6">
             <mat-form-field appearance="fill">
               <mat-label>Caburant</mat-label>
-              <input matInput type="number" class="example-full-align">
+              <input matInput type="number" class="example-full-align" formControlName="carburant" >
               <span matSuffix>.00</span>
             </mat-form-field>
           </div>
@@ -173,8 +176,8 @@
         <div class="row">
           <div class="col-md-6">
             <mat-form-field class="example-full-width">
-              <mat-label>Vehicule</mat-label>
-              <mat-select>
+              <mat-label>Remorque</mat-label>
+              <mat-select formControlName="remorque">
                 <mat-option value="1" title="title">
                   CLD456
                 </mat-option>
@@ -190,8 +193,8 @@
           </div>
           <div class="col-md-6">
             <mat-form-field appearance="fill">
-              <mat-label>Caburant</mat-label>
-              <input matInput type="number" class="example-full-align">
+              <mat-label>REtour usine</mat-label>
+              <input matInput type="number" class="example-full-align" formControlName="retour_usine" >
               <span matSuffix>.00</span>
             </mat-form-field>
           </div>
@@ -200,7 +203,7 @@
           <div class="col-md-6">
             <mat-form-field class="example-full-width">
               <mat-label>Chauffeur</mat-label>
-              <mat-select>
+              <mat-select formControlName="driver_id">
                 <mat-option value="1" title="title">
                   CLD456
                 </mat-option>
@@ -217,7 +220,7 @@
           <div class="col-md-6">
             <mat-form-field class="example-full-width">
               <mat-label>Convoyeur</mat-label>
-              <mat-select>
+              <mat-select formControlName="convoyer_id">
                 <mat-option value="1" title="title">
                   CLD456
                 </mat-option>
@@ -236,7 +239,7 @@
           <div class="col-md-6">
             <mat-form-field class="example-full-width">
               <mat-label>Depart de</mat-label>
-              <input matInput placeholder="Ex. 1 Main St, New York, NY"  required>
+              <input matInput placeholder="4" formControlName="depart_of"  required>
             </mat-form-field>
           </div>
         </div>
@@ -245,7 +248,7 @@
           <button mat-button color="primary" (click)="nextStep()">Next</button>
         </mat-action-row>
       </mat-expansion-panel>
-    
+    </form>
       <mat-expansion-panel [expanded]="step === 2" (opened)="setStep(2)" hideToggle>
         <mat-expansion-panel-header>
           <mat-panel-title>
@@ -276,7 +279,7 @@
        
         </div>
         <div class="table-responsive">
-            <table class="table table-bordered table-hover" style="width: 70%;">
+            <table class="table table-bordered table-hover" style="width: 100%;">
               <thead>
                 <tr>
                   <th>Client</th>
@@ -413,8 +416,6 @@
           <button mat-button color="primary" (click)="nextStep()">End</button>
         </mat-action-row>
       </mat-expansion-panel>
-    
     </mat-accordion>
   </div>
- 
 </div>

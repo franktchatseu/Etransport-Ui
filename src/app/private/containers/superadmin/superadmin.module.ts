@@ -18,7 +18,7 @@ import { EnginUpdateComponent} from './containers/engin/engin-update/engin-updat
 import { DriverAllComponent} from './containers/driver/driver-all/driver-all.component';
 import { DriverDetailsComponent} from './containers/driver/driver-details/driver-details.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
-import {MatSelectModule, MatDialogModule,MatStepperModule,MatFormFieldModule,MatInputModule,MatButtonModule,MatDatepickerModule,MatSnackBarModule, MatSnackBar, MatExpansionModule, } from '@angular/material';
+import {MatSelectModule, MatDialogModule,MatStepperModule,MatFormFieldModule,MatInputModule,MatButtonModule,MatDatepickerModule,MatSnackBarModule, MatSnackBar, MatExpansionModule, MatCheckboxModule, } from '@angular/material';
 import {MatTableModule} from '@angular/material/table';
 import {MatRadioModule} from '@angular/material/radio';
 import {MatIconModule} from '@angular/material/icon';
@@ -128,6 +128,7 @@ import { MissionOrderAddComponent } from './containers/parc/mission-order/missio
     MatSnackBarModule,
     MatTableModule,
     MatRadioModule,
+    MatCheckboxModule,
     MatIconModule,
     FormsModule,
     MatExpansionModule,
