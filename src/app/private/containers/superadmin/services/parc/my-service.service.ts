@@ -32,4 +32,8 @@ export class MyCrudService {
         return this.http.post<any>(`${config.apiUrl}${url}/${id}`, formData).toPromise();
     }
 
+    delete(id,url){
+        return this.http.delete(`${config.apiUrl}${url}/${id}`).toPromise();
+    
+      }
 }

@@ -148,7 +148,6 @@ export class AddTransportElementComponent implements OnInit {
       });
   }
 
- 
   activate(item) {
     this.detail = null;
     this.active = item;

@@ -32,42 +32,47 @@
         <table style="width: 100%;" id="example" class="table table-hover table-striped table-bordered">
             <thead>
             <tr>
-                <th>Name</th>
-                <th>Position</th>
-                <th>Office</th>
-                <th>Age</th>
-                <th>Start date</th>
-                <th>Salary</th>
+                <th>#</th>
+                <th>Assureur</th>
+                <th>Vehicule</th>
+                <th>Debut Validite</th>
+                <th>Fin validite</th>
+                <th>Valeur Police D'Assurance</th>
+                <th>N<sup>o</sup> Police</th>
+                <th style="width: 150px;">Action</th>
             </tr>
             </thead>
             <tbody>
-            <tr>
-                <td>Tiger Nixon</td>
-                <td>System Architect</td>
-                <td>Edinburgh</td>
-                <td>61</td>
-                <td>2011/04/25</td>
-                <td>$320,800</td>
-            </tr>
-            <tr>
-                <td>Garrett Winters</td>
-                <td>Accountant</td>
-                <td>Tokyo</td>
-                <td>63</td>
-                <td>2011/07/25</td>
-                <td>$170,750</td>
-            </tr>
-      
+                <tr *ngFor="let element of data?.data ,let i = index" id="tr{{ element.id }}">
+                    <td >{{ i+1 }}</td>
+                    <td>{{element.name}}</td>
+                    <td>{{element.registration}}</td>
+                    <td>{{element.validity_date}}</td>
+                    <td>{{element.end_validity}}</td>
+                    <td>{{element.policy_number}}</td>
+                    <td>{{element.bonus}}</td>
+                    <td style="width: 150px;">
+                        <button class="mr-2 btn-icon btn-icon-only btn btn-outline-primary"
+                        (click)="update(element.id)"><i class="pe-7s-pen btn-icon-wrapper"> </i></button>
+                    <button class="mr-2 btn-icon btn-icon-only btn btn-outline-success"
+                        (click)="detail(element.id)">
+                        <i class="pe-7s-info btn-icon-wrapper"> </i></button>
+                    <button class="mr-2 btn-icon btn-icon-only btn btn-outline-danger"
+                        (click)="delete(element.id)"><i class="pe-7s-trash btn-icon-wrapper"> </i></button>
+                    </td>
+                </tr>
             </tbody>
             <tfoot>
-            <tr>
-                <th>Name</th>
-                <th>Position</th>
-                <th>Office</th>
-                <th>Age</th>
-                <th>Start date</th>
-                <th>Salary</th>
-            </tr>
+                <tr>
+                    <th>#</th>
+                    <th>Assureur</th>
+                    <th>Vehicule</th>
+                    <th>Debut Validite</th>
+                    <th>Fin validite</th>
+                    <th>Valeur Police D'Assurance</th>
+                    <th>N<sup>o</sup> Police</th>
+                    <th>Action</th>
+                </tr>
             </tfoot>
         </table>
     </div>
