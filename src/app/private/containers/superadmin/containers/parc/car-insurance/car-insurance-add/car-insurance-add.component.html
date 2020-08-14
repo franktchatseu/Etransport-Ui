@@ -1,16 +1,13 @@
+<form [formGroup]="myformGroup" (submit)="add()">
+
 <div class="row">
     <div class="col-md-12">
         <mat-form-field class="example-full-width">
             <mat-label>Assureur</mat-label>
-            <mat-select >
-                <mat-option value="1" title="title">
-                    Frank
-                </mat-option>
-                <mat-option value="1" title="title">
-                    Junior
-                </mat-option>
-                <mat-option value="1" title="title">
-                    Franka
+            <mat-select formControlName="insurer_id">
+                <mat-option *ngFor="let assurer of assurers"
+                value="{{ assurer.id }}" title="{{ assurer.description }}">
+                {{ assurer.name }}
                 </mat-option>
             </mat-select>
             <!-- <input matInput placeholder="Last name, First name" formControlName="nationality_id" required> -->
@@ -22,15 +19,10 @@
     <div class="col-md-12">
         <mat-form-field class="example-full-width">
             <mat-label>Vehicule</mat-label>
-            <mat-select >
-                <mat-option value="1" title="title">
-                    CLD456
-                </mat-option>
-                <mat-option value="1" title="title">
-                    CLD155
-                </mat-option>
-                <mat-option value="1" title="title">
-                    TY777
+            <mat-select formControlName="car_id">
+                <mat-option *ngFor="let car of cars"
+                value="{{ car.stepper_id }}" title="{{ car.country_registration }}">
+                {{ car.registration }}
                 </mat-option>
             </mat-select>
             <!-- <input matInput placeholder="Last name, First name" formControlName="nationality_id" required> -->
@@ -41,8 +33,8 @@
 <div class="row">
     <div class="col-md-12">
         <mat-form-field class="example-full-width">
-            <mat-label>Date de Validite</mat-label>
-            <input matInput type="date" placeholder="Ex. 1 Main St, New York, NY" formControlName="date_delivrance"
+            <mat-label>Debut Validite</mat-label>
+            <input matInput type="date" placeholder="Ex. 1 Main St, New York, NY" formControlName="validity_date"
                 required>
         </mat-form-field>
     </div>
@@ -50,8 +42,8 @@
 <div class="row">
     <div class="col-md-12">
         <mat-form-field class="example-full-width">
-            <mat-label>Fin de Validite</mat-label>
-            <input matInput type="date" placeholder="Ex. 1 Main St, New York, NY" formControlName="date_delivrance"
+            <mat-label>Fin Validite</mat-label>
+            <input matInput type="date" placeholder="Ex. 1 Main St, New York, NY" formControlName="end_validity"
                 required>
         </mat-form-field>
     </div>
@@ -59,8 +51,8 @@
 <div class="row">
     <div class="col-md-12">
         <mat-form-field class="example-full-width">
-            <mat-label>Prime </mat-label>
-            <input matInput placeholder="11222" required>
+            <mat-label>Valeur Police d'Assurance </mat-label>
+            <input matInput placeholder="11222" formControlName="bonus" required>
         </mat-form-field>
     </div>
 </div>
@@ -68,12 +60,25 @@
     <div class="col-md-12">
         <mat-form-field class="example-full-width">
             <mat-label>Numero Police </mat-label>
-            <input matInput placeholder="4474E" required>
+            <input matInput placeholder="4474E" formControlName="policy_number" required>
         </mat-form-field>
     </div>
 </div>
 
 <div class="col-md-12">
-    <button class="btn btn-primary">Enregistrer</button>
-    <button class="btn btn-danger" (click)="close()" style="margin-left: 40%;">Fermer</button>
+    <button [disabled]="isLoading" class="btn btn-primary btn-lg" 
+    style="width: 40%; flex: 1;">
+    <p *ngIf="!isLoading" style="font-size: 1.2em; padding: 0px; margin:1px;">Enregistrer</p>
+    <div *ngIf="isLoading" style="padding: 5px; margin-left: 50%;">
+        <div class="ball-scale-multiple">
+            <div style="background-color: white;"></div>
+            <div style="background-color: white;"></div>
+            <div style="background-color: white;"></div>
+        </div>
+    </div>
+</button>   
+ <button class="btn btn-danger" (click)="close()" style="margin-left: 30%;">
+    <p *ngIf="!isLoading" style="font-size: 1.2em; padding: 0px; margin:1px;">Fermer</p>
+</button>
 </div>
+</form>
