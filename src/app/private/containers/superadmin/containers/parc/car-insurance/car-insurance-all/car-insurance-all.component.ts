@@ -44,7 +44,7 @@ export class CarInsuranceAllComponent implements OnInit {
     this.translate.get(
       ['SweetAlert.AreYouSure', 'SweetAlert.Warning', 'SweetAlert.Yes', 'SweetAlert.No', 'SweetAlert.Deleted',
         'SweetAlert.DeletedMessage', 'SweetAlert.Cancelled', 'SweetAlert.CancelledMessage'],
-      { data: ' cet engin' })
+      { data: ' cette assurance' })
       .subscribe(val => {
         this.areYouSure = val['SweetAlert.AreYouSure'];
         this.warning = val['SweetAlert.Warning'];
@@ -78,29 +78,29 @@ export class CarInsuranceAllComponent implements OnInit {
   add() {
     this.dialog.open(CarInsuranceAddComponent, {
       width: '400px',
-      height: '450px',
+      height: '500px',
       disableClose: true,
-      backdropClass: 'backdropBackground'
+      //backdropClass: 'backdropBackground'
     });
   }
   //affichage de la boite de dialogue pour update
   update(element_id) {
     this.dialog.open(CarInsuranceUpdateComponent, {
       width: '400px',
-      height: '450px',
+      height: '500px',
       disableClose: true,
       data:element_id,
-      backdropClass: 'backdropBackground'
+      //backdropClass: 'backdropBackground'
     });
   }
   //affichage de la boite de dialogue pour le detail
    detail(element_id) {
     this.dialog.open(CarInsuranceDetailComponent, {
-      width: '400px',
+      width: '500px',
       height: '400px',
       disableClose: true,
       data:element_id,
-      backdropClass: 'backdropBackground'
+      //backdropClass: 'backdropBackground'
     });
   }
 

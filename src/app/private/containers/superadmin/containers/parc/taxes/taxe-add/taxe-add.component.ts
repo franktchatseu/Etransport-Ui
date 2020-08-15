@@ -1,8 +1,9 @@
 import { Component, OnInit } from '@angular/core';
-import { FormGroup, FormBuilder } from '@angular/forms';
+import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 import { MatDialog } from '@angular/material';
 import { NotificationService } from 'src/app/services/notification.service';
 import { TranslateService } from '@ngx-translate/core';
+import { MyCrudService } from '../../../../services/parc/my-service.service';
 
 @Component({
   selector: 'app-taxe-add',
@@ -10,6 +11,8 @@ import { TranslateService } from '@ngx-translate/core';
   styleUrls: ['./taxe-add.component.scss']
 })
 export class TaxeAddComponent implements OnInit {
+  url: any;
+  cars:any;
 
   //declaration des variables
   isLoading:boolean;
@@ -22,6 +25,7 @@ export class TaxeAddComponent implements OnInit {
   constructor(
     private dialog: MatDialog,
     private formBuilder:FormBuilder,
+    private myService: MyCrudService,
     private notificationService: NotificationService,
     private translate: TranslateService,
    // private myService:any//put your service here
@@ -30,8 +34,18 @@ export class TaxeAddComponent implements OnInit {
   ) { }
 
   ngOnInit(): void {
-    
+    this.url ="/moduleparc/taxe"
     this.initForm();
+    this.getCars();
+  }
+
+  getCars(){
+    this.myService.get("/module3/caractere_tech_ones/car").then((res) => {
+      this.cars = res;
+      console.log(this.cars)
+    }, (error) => {
+      this.notificationService.warning("Aucune assurance disponible");
+    });
   }
 
 
@@ -39,8 +53,11 @@ export class TaxeAddComponent implements OnInit {
   initForm(){
     this.myformGroup = this.formBuilder.group(
       {
-        'attr1':'value1',
-        'attr2':'value2'
+        car_id: ['', Validators.required],
+        type_periode: ['', [Validators.required]],
+        period: ['', [Validators.required]],
+        year: ['', [Validators.required]],
+        amount: ['', [Validators.required]],
       }
     )
   }
@@ -63,22 +80,27 @@ export class TaxeAddComponent implements OnInit {
     //tout ce passe bien 
     this.isLoading = true;
     const formData = new FormData();
-    formData.append('attr1', this.form.attr1.value);
-    formData.append('attr2', this.form.attr2.value);
+    const data = this.form;
+    for (const k in data) {
+      if (k) {
+        formData.append(k + '', data[k].value); 
+      }
+    }
     //appol du service
-   /* this.myService.post(formData)
+    this.myService.post(formData, this.url)
     .then(resp => {
       this.translate.get('enregistrement réussie')
         .subscribe(val => this.notificationService.success(val));
       this.isSubmitted = false;
       console.log(resp)
       this.myformGroup.reset();
+      this.close();
     })
     .catch(error => {
       console.log(error);
 
     })
-    .finally(() => this.isLoading = false);*/
+    .finally(() => this.isLoading = false);
   }
 
   close() {

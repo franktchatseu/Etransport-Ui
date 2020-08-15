@@ -24,6 +24,7 @@ import {MatRadioModule} from '@angular/material/radio';
 import {MatIconModule} from '@angular/material/icon';
 
 import { CarosserieComponent } from "./containers/parametres/carosserie/carosserie.component";
+import { RangeActionsComponent } from "./containers/parametres/range-actions/range-actions.component";
 import { MarqueComponent } from "./containers/parametres/marque/marque.component";
 import { ModeleComponent } from "./containers/parametres/modele/modele.component";
 import { NationaliteComponent } from "./containers/parametres/nationalite/nationalite.component";
@@ -53,6 +54,8 @@ import { TaxeAddComponent } from './containers/parc/taxes/taxe-add/taxe-add.comp
 import { TaxeUpdateComponent } from './containers/parc/taxes/taxe-update/taxe-update.component';
 import { AffectationAddComponent } from "./containers/parametres/affectation/affectation-add/affectation-add.component";
 import { AffectationAllComponent } from "./containers/parametres/affectation/affectation-all/affectation-all.component";
+import { AffectationUpdateComponent } from "./containers/parametres/affectation/affectation-update/affectation-update.component";
+import { AffectationDetailComponent } from "./containers/parametres/affectation/affectation-detail/affectation-detail.component";
 //ordres de mission
 import { MissionOrderAddComponent } from './containers/parc/mission-order/mission-order-add/mission-order-add.component';
 
@@ -109,7 +112,11 @@ import { MissionOrderAddComponent } from './containers/parc/mission-order/missio
     //affectation des engins aux chauffeurs
     AffectationAddComponent,
     AffectationAllComponent,
-    MissionOrderAddComponent
+    AffectationUpdateComponent,
+    AffectationDetailComponent,
+    MissionOrderAddComponent,
+
+    RangeActionsComponent,
 
   ],
   imports: [

@@ -1,1 +1,39 @@
-<p>technical-visit-detail works!</p>
+<div class="card-header">
+    <h3 style="text-align: center;">Detail d'une Visite Technique</h3>
+</div>
+<div class="card-body">
+    <div class="row">
+        <div class="col-md-6 card-title">
+            Vehicule: {{element.registration}}
+        </div>
+    </div>
+    <div class="col-md-12">
+        <div class="col-md-12 mb-2">
+            <span class="card-title">Type D'Intervenant</span>: {{element.type_intervention}}
+         </div>
+         <div class="col-md-12 mb-2">
+            <span class="card-title">Debut de Validite</span>: {{element.validity_date}}
+         </div>
+         <div class="col-md-12 mb-2">
+           <span class="card-title">Fin de Validite</span> : {{element.end_validity}}
+        </div>
+        <div class="col-md-12 mb-2">
+           <span class="card-title">Visite Par</span> : {{element.visited_by}}
+        </div>
+        <div class="col-md-12 mb-2">
+           <span class="card-title"> N<sup>o</sup>  Recu</span>: {{element.receipt_number}}
+        </div>
+        <div class="col-md-12 mb-2">
+            <span class="card-title">Montant</span> : {{element.amount}}
+         </div>
+         <div class="col-md-12 mb-2">
+           <span class="card-title"> Date de creation</span> : {{element.created_at| date:'dd/MM/yyyy'}}
+        </div>
+    </div>
+
+</div>
+<div class="card-footer">
+    <button class="btn btn-danger" type="button" (click)="close()" style="float: right;">
+        <p style="font-size: 1.2em; padding: 0px; margin:1px;">Fermer</p>
+    </button>
+</div>

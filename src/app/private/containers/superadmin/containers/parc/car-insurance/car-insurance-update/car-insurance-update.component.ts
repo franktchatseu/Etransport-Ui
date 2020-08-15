@@ -130,7 +130,7 @@ export class CarInsuranceUpdateComponent implements OnInit {
     //appol du service
      this.myService.update(formData, this.data.id,this.url)
     .then(resp => {
-      this.translate.get('enregistrement réussie')
+      this.translate.get('mise a jour réussie')
         .subscribe(val => this.notificationService.success(val));
       this.isSubmitted = false;
       console.log(resp)
@@ -147,4 +147,5 @@ export class CarInsuranceUpdateComponent implements OnInit {
   close() {
     this.dialog.close();
   }
+
 }

@@ -53,41 +53,40 @@
         <table style="width: 100%;" id="example" class="table table-hover table-striped table-bordered">
             <thead>
             <tr>
-                <th>Name</th>
-                <th>Position</th>
-                <th>Office</th>
-                <th>Age</th>
-                <th>Start date</th>
-                <th>Salary</th>
+                <th>#</th>
+                <th>Date</th>
+                <th>Vehicule</th>
+                <th>Remorque</th>
+                <th>Driver</th>
+                <th style="width: 200px;">Action</th>
             </tr>
             </thead>
             <tbody>
-            <tr>
-                <td>Tiger Nixon</td>
-                <td>System Architect</td>
-                <td>Edinburgh</td>
-                <td>61</td>
-                <td>2011/04/25</td>
-                <td>$320,800</td>
-            </tr>
-            <tr>
-                <td>Garrett Winters</td>
-                <td>Accountant</td>
-                <td>Tokyo</td>
-                <td>63</td>
-                <td>2011/07/25</td>
-                <td>$170,750</td>
-            </tr>
-      
+                <tr *ngFor="let element of data?.data ,let i = index" id="tr{{ element.id }}">
+                    <td >{{ i+1 }}</td>
+                    <td>{{element.date}}</td>
+                    <td>{{element.registration}}</td>
+                    <td>{{element.remorque}}</td>
+                    <td>{{ element.first_name }}  {{ element.last_name }}</td>
+                    <td style="width: 200px;">
+                        <button class="mr-2 btn-icon btn-icon-only btn btn-outline-primary"
+                        (click)="update(element.id)"><i class="pe-7s-pen btn-icon-wrapper"> </i></button>
+                    <button class="mr-2 btn-icon btn-icon-only btn btn-outline-success"
+                        (click)="detail(element.id)">
+                        <i class="pe-7s-info btn-icon-wrapper"> </i></button>
+                    <button class="mr-2 btn-icon btn-icon-only btn btn-outline-danger"
+                        (click)="delete(element.id)"><i class="pe-7s-trash btn-icon-wrapper"> </i></button>
+                    </td>
+                </tr>
             </tbody>
             <tfoot>
             <tr>
-                <th>Name</th>
-                <th>Position</th>
-                <th>Office</th>
-                <th>Age</th>
-                <th>Start date</th>
-                <th>Salary</th>
+                <th>#</th>
+                <th>Date</th>
+                <th>Vehicule</th>
+                <th>Remorque</th>
+                <th>Driver</th>
+                <th style="width: 200px;">Action</th>
             </tr>
             </tfoot>
         </table>

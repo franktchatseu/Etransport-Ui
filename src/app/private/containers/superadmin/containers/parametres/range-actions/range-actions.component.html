@@ -7,8 +7,8 @@
                         <i class="pe-7s-phone icon-gradient bg-premium-dark">
                         </i>
                     </div>
-                    <div>Type de Vehicule
-                        <div class="page-title-subheading">Permet de fixer les types Vehicule
+                    <div>Gamme D'Intervention
+                        <div class="page-title-subheading">Permet de fixer les Gammes D'Intervention
                         </div>
                     </div>
                 </div>
@@ -38,13 +38,13 @@
                                 </div>
                                 <div class="col-md-12">
                                     <div class="position-relative form-group"><label for="exampleEmail"
-                                            class="">Description</label>
-                                        <textarea name="description" placeholder="Entrez une description..." type="text"
-                                            class="form-control {{ form.description.errors && isSubmitted ? 'invalid': '' }}"
-                                            formControlName="description" required></textarea>
+                                            class="">Frequence</label>
+                                        <input name="frequency" placeholder="entrez une frequence..." type="text"
+                                            class="form-control {{ form.frequency.errors && isSubmitted ? 'invalid': '' }}"
+                                            formControlName="frequency" required>
                                         <small class="form-text text-muted info-error info-error-danger"
-                                            *ngIf="handleError?.description">
-                                            {{ handleError?.description }}
+                                            *ngIf="handleError?.frequency">
+                                            {{ handleError?.frequency }}
                                         </small>
                                     </div>
                                 </div>
@@ -137,9 +137,9 @@
                                                         </div>
                                                         <div class="widget-content-left">
                                                             <div class="widget-heading">
-                                                                Description
+                                                                Frequence
                                                             </div>
-                                                            <div>{{ detail.description }}</div>
+                                                            <div>{{ detail.frequency }}</div>
                                                         </div>
                                                     </div>
                                                 </div>
@@ -165,7 +165,7 @@
                                 <div class="widget-content-left" (click)="showDetails(type)">
                                     <div class="widget-heading">{{ type.name }}</div>
                                     <div class="widget-subheading" style="padding-right: 5%; width: 185%;">
-                                        <span>{{ getPartOfcontent(type.description) }}</span></div>
+                                        <span>{{ type.frequency }}</span></div>
                                 </div>
                                 <div class="widget-content-right">
                                     <div role="group" class="btn-group-sm btn-group">

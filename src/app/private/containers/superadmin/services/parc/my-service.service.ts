@@ -36,4 +36,14 @@ export class MyCrudService {
         return this.http.delete(`${config.apiUrl}${url}/${id}`).toPromise();
     
       }
+
+      public gets(page) {
+        return this.http.get<any>(`${config.apiUrl}/modulemaintenance/range-action?page=${page}`)
+          .toPromise();
+      }
+    
+      public getUrl(url) {
+        return this.http.get<any>(`${url}`)
+          .toPromise();
+      }
 }

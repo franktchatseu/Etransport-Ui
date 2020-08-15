@@ -52,6 +52,7 @@ export class AuthService {
   private doLoginUser(login: string, tokens: any) {
     this.loggedUser = login;
     this.storeTokens(tokens);
+    console.log('salut le monde',tokens)
   }
 
   private doLogoutUser() {

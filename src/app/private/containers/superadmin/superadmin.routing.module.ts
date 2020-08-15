@@ -35,6 +35,7 @@ import { MissionOrderAddComponent } from './containers/parc/mission-order/missio
 import { AcceuilComponent } from './containers/acceuil/acceuil.component';
 import { MailDriverComponent } from './containers/driver/mail-driver/mail-driver.component';
 import { MailTransporterComponent } from './containers/transporteur/mail-transporter/mail-transporter.component';
+import { RangeActionsComponent } from './containers/parametres/range-actions/range-actions.component';
 
 const routes: Routes = [
   {
@@ -84,6 +85,10 @@ const routes: Routes = [
       {
         path: 'marque',
         component: MarqueComponent,
+      },
+      {
+        path: 'range-actions',
+        component: RangeActionsComponent,
       },
       {
         path: 'driver-all',
