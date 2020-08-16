@@ -78,7 +78,7 @@
                                     <a  (click)="getPage(engins?.prev_page_url)" aria-controls="example" data-dt-idx="0" tabindex="0"
                                         class="page-link">PRECEDENT</a>
                                 </li>
-                                <li class="paginate_button page-item next" id="example_next">
+                                <li class="paginate_button page-item next" id="example_next" *ngIf="engins.next_page_url !== null">
                                     <a (click)="getPage(engins?.next_page_url)" aria-controls="example" data-dt-idx="7" tabindex="0"
                                         class="page-link">SUIVANT</a>
                                 </li> 

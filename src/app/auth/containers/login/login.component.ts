@@ -15,6 +15,8 @@ import { InternationalizationService } from '../../../services/features/internat
   styleUrls: ['./login.component.css']
 })
 export class LoginComponent implements OnInit {
+  isSubmitted = false;
+  isLoading = false;
   loginForm: FormGroup;
   subscription: Subscription;
   translations: any = null;
@@ -42,10 +44,12 @@ export class LoginComponent implements OnInit {
   }
 
   login() {
+    this.isSubmitted = true;
+    this.isLoading = true;
     if (this.f.invalid) {
       this.notificationService.danger(this.translations.Login.AllFieldsAreRequired);
     }
-
+    this.isLoading = true;
     this.authService
       .login({
         login: this.f.login.value,
@@ -63,6 +67,7 @@ export class LoginComponent implements OnInit {
         } else {
           this.notificationService.danger(this.translations.Login.ErrorIncorrectLoginOrPwd);
         }
+        this.isLoading = false;
       });
   }
 
@@ -70,4 +75,5 @@ export class LoginComponent implements OnInit {
     this.currentLanguage = value;
     this.internationalizationService.changeLanguage(this.currentLanguage, (res) => { this.translations = res; });
   }
+  
 }

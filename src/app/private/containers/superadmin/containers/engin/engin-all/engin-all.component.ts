@@ -72,9 +72,11 @@ export class EnginAllComponent implements OnInit {
   }
 
   getEngins() {
+    this.loading = true;
     this.enginService.getEngins().subscribe((res) => {
       this.engins = res;
       console.log(this.engins)
+      this.loading = false;
     }, (error) => {
       this.notificationService.warning("Aucun engin disponibile");
     });

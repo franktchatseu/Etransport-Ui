@@ -11,7 +11,8 @@
                   <div class="slide-img-bg" style="background-image: url('assets/images/originals/truck-1.jpg');"></div>
                   <div class="slider-content">
                     <h3>E-transport</h3>
-                    <h6>Votre base de données des transporteurs routiers du Cameroun et de la sous région Afrique centrale</h6>
+                    <h6>Votre base de données des transporteurs routiers du Cameroun et de la sous région Afrique
+                      centrale</h6>
                   </div>
                 </div>
               </div>
@@ -45,8 +46,7 @@
         <div class="h-100 d-flex bg-white justify-content-center align-items-center col-md-12 col-lg-8">
           <div class="mx-auto app-login-box col-sm-12 col-md-10 col-lg-9">
             <div class="row" style="margin-bottom: 5%;">
-              <img 
-              src="assets/images/logo.jpeg" alt="">
+              <img src="assets/images/logo.jpeg" alt="">
             </div>
             <!--  -->
             <div class="row">
@@ -111,13 +111,30 @@
                     class="form-check-label">{{ 'Login.KeepMeLoggedIn' | translate }}</label></div>
                 <div class="divider row"></div>
                 <div class="d-flex align-items-center">
+                  <div class="ml-auto"  style="width: 38%;">
+                    <button [disabled]="isLoading" class="btn btn-primary"
+                      style="width: 100%; justify-content: center; align-items: center; flex: 1;">
+                      <p *ngIf="!isLoading" style="font-size: 1.2em; padding: 0px; margin: 2px;">
+                        {{ 'Login.LoginToMySpace' | translate }}</p>
+                      <div *ngIf="isLoading" style="padding: 5px; margin-left: 50%;">
+                        <div class="ball-scale-multiple">
+                          <div style="background-color: white;"></div>
+                          <div style="background-color: white;"></div>
+                          <div style="background-color: white;"></div>
+                        </div>
+                      </div>
+                    </button>
+                  </div>
+
+                </div>
+                <!-- <div class="d-flex align-items-center">
                   <div class="ml-auto">
-                    <!-- <a href="javascript:void(0);"
-                      class="btn-lg btn btn-link">{{ 'Login.RecoverPassword' | translate }}</a> -->
+                    <a href="javascript:void(0);"
+                      class="btn-lg btn btn-link">{{ 'Login.RecoverPassword' | translate }}</a>
                     <input type="submit" class="btn btn-primary btn-lg"
                       value="{{ 'Login.LoginToMySpace' | translate }}" />
                   </div>
-                </div>
+                </div> -->
               </form>
             </div>
           </div>

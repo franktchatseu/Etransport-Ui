@@ -8,6 +8,7 @@ import { NgBlockUI, BlockUI } from 'ng-block-ui';
 import Swal from 'sweetalert2';
 import { AffectationUpdateComponent } from '../affectation-update/affectation-update.component';
 import { AffectationDetailComponent } from '../affectation-detail/affectation-detail.component';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-affectation-all',
@@ -34,6 +35,7 @@ export class AffectationAllComponent implements OnInit {
   canUpdate = false;
   canDelete = false;
   constructor(
+    private router:Router,
     private dialog: MatDialog,
     private myService: MyCrudService,
     private notificationService: NotificationService,
@@ -93,14 +95,12 @@ export class AffectationAllComponent implements OnInit {
     });
   }
   //affichage de la boite de dialogue pour le detail
-   detail(element_id) {
-    this.dialog.open(AffectationDetailComponent, {
-      width: '500px',
-      height: '400px',
-      disableClose: true,
-      data:element_id,
-      //backdropClass: 'backdropBackground'
-    });
+  detailDriver(id) {
+    this.router.navigate(['/private/superadmins/driver-detail/' , id]);
+  }
+  
+  detailCar(id) {
+    this.router.navigate(['/private/superadmins/engin-detail/', id]);
   }
 
   delete(id) {

@@ -15,7 +15,8 @@
 
 <div class="ml-2">
     <div class="d-flex align-items-center" style="width:15%;">
-        <button (click)="add()"  class="btn btn-primary btn-sm" style="width: 50%; justify-content: center; align-items: center; flex: 1;">
+        <button (click)="add()" class="btn btn-primary btn-sm"
+            style="width: 50%; justify-content: center; align-items: center; flex: 1;">
             <p *ngIf="true" style="font-size: 1.2em; padding: 0px; margin: 5px;">Ajouter</p>
             <div *ngIf="false" style="padding: 15px; margin-left: 50%;">
                 <div class="ball-scale-multiple">
@@ -25,14 +26,14 @@
                 </div>
             </div>
         </button>
-  </div>
+    </div>
 </div>
 <br>
 <div class="row">
     <div class="col-md-12">
         <mat-form-field class="example-full-width">
             <mat-label>Choisir le Vehicule</mat-label>
-            <mat-select >
+            <mat-select>
                 <mat-option value="1" title="title">
                     CLD456
                 </mat-option>
@@ -52,42 +53,45 @@
     <div class="card-body">
         <table style="width: 100%;" id="example" class="table table-hover table-striped table-bordered">
             <thead>
-            <tr>
-                <th>#</th>
-                <th>Date</th>
-                <th>Vehicule</th>
-                <th>Remorque</th>
-                <th>Driver</th>
-                <th style="width: 200px;">Action</th>
-            </tr>
+                <tr>
+                    <th>#</th>
+                    <th>Date</th>
+                    <th>Vehicule</th>
+                    <th>Remorque</th>
+                    <th>Driver</th>
+                    <th style="width: 200px;">Action</th>
+                </tr>
             </thead>
             <tbody>
                 <tr *ngFor="let element of data?.data ,let i = index" id="tr{{ element.id }}">
-                    <td >{{ i+1 }}</td>
+                    <td>{{ i+1 }}</td>
                     <td>{{element.date}}</td>
                     <td>{{element.registration}}</td>
                     <td>{{element.remorque}}</td>
-                    <td>{{ element.first_name }}  {{ element.last_name }}</td>
+                    <td>{{ element.first_name }} {{ element.last_name }}</td>
                     <td style="width: 200px;">
                         <button class="mr-2 btn-icon btn-icon-only btn btn-outline-primary"
-                        (click)="update(element.id)"><i class="pe-7s-pen btn-icon-wrapper"> </i></button>
-                    <button class="mr-2 btn-icon btn-icon-only btn btn-outline-success"
-                        (click)="detail(element.id)">
-                        <i class="pe-7s-info btn-icon-wrapper"> </i></button>
-                    <button class="mr-2 btn-icon btn-icon-only btn btn-outline-danger"
-                        (click)="delete(element.id)"><i class="pe-7s-trash btn-icon-wrapper"> </i></button>
+                            (click)="update(element.id)"><i class="pe-7s-pen btn-icon-wrapper"> </i></button>
+                        <button class="mr-2 btn-icon btn-icon-only btn btn-outline-success"
+                            (click)="detailCar(element.car_id)" title="Detail du vehicule">
+                            <i class="pe-7s-car btn-icon-wrapper"> </i></button>
+                        <button class="mr-2 btn-icon btn-icon-only btn btn-outline-success"
+                            (click)="detailDriver(element.driver_id)" title="Detail du chaffeur">
+                            <i class="pe-7s-user btn-icon-wrapper"> </i></button>
+                        <button class="mr-2 btn-icon btn-icon-only btn btn-outline-danger"
+                            (click)="delete(element.id)"><i class="pe-7s-trash btn-icon-wrapper"> </i></button>
                     </td>
                 </tr>
             </tbody>
             <tfoot>
-            <tr>
-                <th>#</th>
-                <th>Date</th>
-                <th>Vehicule</th>
-                <th>Remorque</th>
-                <th>Driver</th>
-                <th style="width: 200px;">Action</th>
-            </tr>
+                <tr>
+                    <th>#</th>
+                    <th>Date</th>
+                    <th>Vehicule</th>
+                    <th>Remorque</th>
+                    <th>Driver</th>
+                    <th style="width: 200px;">Action</th>
+                </tr>
             </tfoot>
         </table>
     </div>
