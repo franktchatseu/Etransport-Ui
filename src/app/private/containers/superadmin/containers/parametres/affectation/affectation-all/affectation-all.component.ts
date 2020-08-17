@@ -19,6 +19,8 @@ export class AffectationAllComponent implements OnInit {
   url: any;
   data:any;
 
+  loading: boolean = true;
+
   @BlockUI() blockUI: NgBlockUI; lockUI: NgBlockUI;
 
   //SweetAlert Text
@@ -70,6 +72,7 @@ export class AffectationAllComponent implements OnInit {
     this.myService.get(this.url).then((res) => {
       this.data = res;
       console.log(this.data)
+      this.loading = false;
     }, (error) => {
       this.notificationService.warning("Aucune affectation disponible");
     });

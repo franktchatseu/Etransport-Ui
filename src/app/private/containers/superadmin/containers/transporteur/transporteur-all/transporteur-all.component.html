@@ -40,27 +40,27 @@
             <tbody>
                 <tr *ngFor="let transporteur of transporteurs?.data,let i = index">
 
-                    <td style="width: 3%;">
-                        <img [src]="transporteur.manager_picture" width="50px" height="50px" alt="image du transporteur"
-                            srcset="">
+                    <td>
+                        <img [src]="transporteur.manager_picture" width="80px" height="80px" alt="image du transporteur"
+                           class="rounded-circle">
                     </td>
-                    <td style="width: 15%;">{{transporteur.manager_name}}</td>
-                    <td style="width: 15%;">{{transporteur.name}}</td>
-                    <td style="width: 10%;">{{transporteur.phone1}}</td>
+                    <td>{{transporteur.manager_name}}</td>
+                    <td>{{transporteur.name}}</td>
+                    <td>{{transporteur.phone1}}</td>
                     <td>{{transporteur.localisation}}</td>
                     <td>{{transporteur.email}}</td>
-                    <td style="width: 10%;">{{transporteur.taxpayer_number}}</td>
-                    <td>
+                    <td>{{transporteur.taxpayer_number}}</td>
+                    <td style="width: 200px;">
                         <button class="mr-2 btn-icon btn-icon-only btn btn-outline-primary"
-                            (click)="update(transporteur.stepper_main_id)"><i class="pe-7s-pen btn-icon-wrapper">
+                            (click)="update(transporteur.stepper_main_id)"  title="Modifier un transporteur"><i class="pe-7s-pen btn-icon-wrapper">
                             </i></button>
                         <button class="mr-2 btn-icon btn-icon-only btn btn-outline-success"
-                            (click)="detail(transporteur.stepper_main_id)">
+                            (click)="detail(transporteur.stepper_main_id)" title="voir les detail du transporteur">
                             <i class="pe-7s-info btn-icon-wrapper"> </i></button>
                         <button class="mr-2 btn-icon btn-icon-only btn btn-outline-danger"
-                            (click)="delete(transporteur.id)"><i class="pe-7s-trash btn-icon-wrapper"> </i></button>
+                            (click)="delete(transporteur.id)" title="Supprimer un transporteur"><i class="pe-7s-trash btn-icon-wrapper"> </i></button>
                         <button class="mr-2 btn-icon btn-icon-only btn btn-outline-info"
-                            (click)="detailDrivesAndCars(transporteur.stepper_main_id)">
+                            (click)="detailDrivesAndCars(transporteur.stepper_main_id)" title="voitures et engins du transporteur">
                             <i class="pe-7s-car btn-icon-wrapper"> </i></button>
                         <button class="mr-2 btn-icon btn-icon-only btn btn-outline-info"
                             (click)="mail(transporteur.email)" title="Envoyer un Mail">
@@ -71,17 +71,28 @@
             </tbody>
 
             <br>
-
+            <tfoot *ngIf="loading">
+                <td colspan="7" class="text-center">
+                    <div class="spinner-border spinner-sm">
+                        <span class="sr-only">Patientez svp...</span>
+                    </div>
+                </td>
+            </tfoot>
+            <tfoot *ngIf="!loading && transporteurs?.data.length == 0">
+                <td colspan="7" class="text-center">
+                    Liste vide
+                </td>
+            </tfoot>
             <tfoot>
                 <div class="row" style="margin-top: 4%">
                     <div class="col-md-4"></div>
                     <div class="col-md-4">
                         <ul class="pagination">
-                            <li class="paginate_button page-item previous" id="example_previous">
+                            <li class="paginate_button page-item previous" id="example_previous" *ngIf="transporteurs.prev_page_url !== null"> 
                                 <a (click)="getPage(transporteurs?.prev_page_url)" aria-controls="example"
                                     data-dt-idx="0" tabindex="0" class="page-link">PRECEDENT</a>
                             </li>
-                            <li class="paginate_button page-item next" id="example_next">
+                            <li class="paginate_button page-item next" id="example_next" *ngIf="transporteurs.next_page_url !== null">
                                 <a (click)="getPage(transporteurs?.next_page_url)" aria-controls="example"
                                     data-dt-idx="7" tabindex="0" class="page-link">SUIVANT</a>
                             </li>

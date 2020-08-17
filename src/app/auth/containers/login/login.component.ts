@@ -45,7 +45,7 @@ export class LoginComponent implements OnInit {
 
   login() {
     this.isSubmitted = true;
-    this.isLoading = true;
+    this.isLoading = false;
     if (this.f.invalid) {
       this.notificationService.danger(this.translations.Login.AllFieldsAreRequired);
     }

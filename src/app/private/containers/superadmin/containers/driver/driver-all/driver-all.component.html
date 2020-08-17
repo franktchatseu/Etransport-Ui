@@ -45,7 +45,7 @@
                 <tr *ngFor="let driver of drivers?.data,let i = index">
 
                     <td>
-                        <img [src]="driver.avatar" width="50px" height="50px" alt="image du chauffeur" srcset="">
+                        <img [src]="driver.avatar" width="80px" height="80px" alt="image du chauffeur" class="rounded-circle">
                     </td>
                     <td>{{driver.first_name}}</td>
                     <td>{{driver.last_name}}</td>
@@ -91,11 +91,11 @@
                     <div class="col-md-4"></div>
                     <div class="col-md-4">
                         <ul class="pagination">
-                            <li class="paginate_button page-item previous" id="example_previous">
+                            <li class="paginate_button page-item previous" id="example_previous" *ngIf="drivers.prev_page_url !== null">
                                 <a (click)="getPage(drivers.prev_page_url)" aria-controls="example" data-dt-idx="0"
                                     tabindex="0" class="page-link">PRECEDENT</a>
                             </li>
-                            <li class="paginate_button page-item next" id="example_next" *ngIf="drivers.next_page_url == null">
+                            <li class="paginate_button page-item next" id="example_next" *ngIf="drivers.next_page_url !== null">
                                 <a (click)="getPage(drivers.next_page_url)" aria-controls="example" data-dt-idx="7"
                                     tabindex="0" class="page-link">SUIVANT</a>
                             </li>

@@ -64,18 +64,17 @@
                     </td>
                 </tr>
             </tbody>
-            <tfoot>
-            <tr>
-                <th>#</th>
-                <th>Vehicule</th>
-                <th>Type D'Intervention</th>
-                <th>Debut Validite</th>
-                <th>Fin validite</th>
-                <th>Visite par</th>
-                <th>N<sup>o</sup> Recu</th>
-                <th>Montant</th>
-                <th style="width: 150px;">Action</th>
-            </tr>
+            <tfoot *ngIf="loading">
+                <td colspan="7" class="text-center">
+                    <div class="spinner-border spinner-sm">
+                        <span class="sr-only">Patientez svp...</span>
+                    </div>
+                </td>
+            </tfoot>
+            <tfoot *ngIf="!loading && data?.data.length == 0">
+                <td colspan="7" class="text-center">
+                    Liste vide
+                </td>
             </tfoot>
         </table>
     </div>

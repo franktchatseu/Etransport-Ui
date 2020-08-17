@@ -17,6 +17,7 @@ import Swal from 'sweetalert2';
 export class TechnicalVisitAllComponent implements OnInit {
   url: any;
   data:any;
+  loading: boolean = true;
 
 
   @BlockUI() blockUI: NgBlockUI; lockUI: NgBlockUI;
@@ -69,6 +70,7 @@ export class TechnicalVisitAllComponent implements OnInit {
     this.myService.get(this.url).then((res) => {
       this.data = res;
       console.log(this.data)
+      this.loading = false;
     }, (error) => {
       this.notificationService.warning("Aucune assurance disponible");
     });
@@ -79,7 +81,7 @@ export class TechnicalVisitAllComponent implements OnInit {
       width: '400px',
       height: '500px',
       disableClose: true,
-      backdropClass: 'backdropBackground'
+      //backdropClass: 'backdropBackground'
     });
   }
   //affichage de la boite de dialogue pour update
@@ -89,7 +91,7 @@ export class TechnicalVisitAllComponent implements OnInit {
       height: '500px',
       disableClose: true,
       data:element_id,
-      backdropClass: 'backdropBackground'
+      //backdropClass: 'backdropBackground'
     });
   }
   //affichage de la boite de dialogue pour le detail
@@ -99,7 +101,7 @@ export class TechnicalVisitAllComponent implements OnInit {
       height: '500px',
       disableClose: true,
       data:element_id,
-      backdropClass: 'backdropBackground'
+      //backdropClass: 'backdropBackground'
     });
   }
 

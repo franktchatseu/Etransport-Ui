@@ -70,7 +70,6 @@ export class DriverAllComponent implements OnInit {
     }
 
     getDriver(){
-      this.loading = true;
       this.driverService.getDrivers().subscribe((res) => {
         this.drivers = res;
         console.log(this.drivers)

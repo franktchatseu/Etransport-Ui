@@ -54,16 +54,28 @@
                         </td>
                     </tr>
                 </tbody>
+                <tfoot *ngIf="loading">
+                    <td colspan="7" class="text-center">
+                        <div class="spinner-border spinner-sm">
+                            <span class="sr-only">Patientez svp...</span>
+                        </div>
+                    </td>
+                </tfoot>
+                <tfoot *ngIf="!loading && data?.data.length == 0">
+                    <td colspan="7" class="text-center">
+                        Liste vide
+                    </td>
+                </tfoot>
                 <tfoot>
                     <div class="row" style="margin-top: 4%">
                         <div class="col-md-4"></div>
                         <div class="col-md-4">
                             <ul class="pagination">
-                                <li class="paginate_button page-item previous" id="example_previous">
+                                <li class="paginate_button page-item previous" id="example_previous" *ngIf="data.prev_page_url !== null">
                                     <a (click)="getPage(data.prev_page_url)" aria-controls="example" data-dt-idx="0"
                                         tabindex="0" class="page-link">precedent</a>
                                 </li>
-                                <li class="paginate_button page-item next" id="example_next">
+                                <li class="paginate_button page-item next" id="example_next"  *ngIf="data.next_page_url !== null">
                                     <a (click)="getPage(data.next_page_url)" aria-controls="example" data-dt-idx="7"
                                         tabindex="0" class="page-link">suivant</a>
                                 </li>

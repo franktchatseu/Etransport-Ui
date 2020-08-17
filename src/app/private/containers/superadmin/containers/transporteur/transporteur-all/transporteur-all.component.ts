@@ -73,7 +73,8 @@ export class TransporteurAllComponent implements OnInit {
      this.transporteurService.findAllInfosEnterprise().subscribe((res) => {
        this.transporteurs = res;
        console.log(this.transporteurs)
-     }, (error) => {
+       this.loading = false;
+      }, (error) => {
        this.notificationService.danger(this.translations.transporteur.NoDriver);
      });
    }

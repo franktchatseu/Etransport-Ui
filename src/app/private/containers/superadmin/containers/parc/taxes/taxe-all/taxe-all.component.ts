@@ -19,6 +19,8 @@ export class TaxeAllComponent implements OnInit {
   url: any;
   data:any;
 
+  loading: boolean = true;
+
   @BlockUI() blockUI: NgBlockUI; lockUI: NgBlockUI;
 
   //SweetAlert Text
@@ -69,6 +71,7 @@ export class TaxeAllComponent implements OnInit {
     this.myService.get(this.url).then((res) => {
       this.data = res;
       console.log(this.data)
+      this.loading =false;
     }, (error) => {
       this.notificationService.warning("Aucune taxe disponible");
     });
@@ -79,7 +82,7 @@ export class TaxeAllComponent implements OnInit {
       width: '400px',
       height: '450px',
       disableClose: true,
-      backdropClass: 'backdropBackground'
+      //backdropClass: 'backdropBackground'
     });
   }
   //affichage de la boite de dialogue pour update
@@ -89,7 +92,7 @@ export class TaxeAllComponent implements OnInit {
       height: '400px',
       disableClose: true,   
       data:element_id,
-      backdropClass: 'backdropBackground'
+      //backdropClass: 'backdropBackground'
     });
   }
   //affichage de la boite de dialogue pour le detail
@@ -99,7 +102,7 @@ export class TaxeAllComponent implements OnInit {
       height: '400px',
       disableClose: true,
       data:element_id,
-      backdropClass: 'backdropBackground'
+      //backdropClass: 'backdropBackground'
     });
   }
   delete(id) {

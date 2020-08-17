@@ -62,17 +62,17 @@
                     </td>
                 </tr>
             </tbody>
-            <tfoot>
-                <tr>
-                    <th>#</th>
-                    <th>Assureur</th>
-                    <th>Vehicule</th>
-                    <th>Debut Validite</th>
-                    <th>Fin validite</th>
-                    <th>Valeur Police D'Assurance</th>
-                    <th>N<sup>o</sup> Police</th>
-                    <th>Action</th>
-                </tr>
+            <tfoot *ngIf="loading">
+                <td colspan="7" class="text-center">
+                    <div class="spinner-border spinner-sm">
+                        <span class="sr-only">Patientez svp...</span>
+                    </div>
+                </td>
+            </tfoot>
+            <tfoot *ngIf="!loading && data?.data.length == 0">
+                <td colspan="7" class="text-center">
+                    Liste vide
+                </td>
             </tfoot>
         </table>
     </div>

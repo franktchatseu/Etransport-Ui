@@ -51,6 +51,7 @@ export class ListTransportElementsComponent implements OnInit {
     this.dataService.gets(page).then((response) => {
       this.data = response;
       console.log(this.data);
+      this.loading = false;
     }).catch((error) => {
       this.notificationService.danger(this.translations.Superadmins.ServerUnavailable);
     });
