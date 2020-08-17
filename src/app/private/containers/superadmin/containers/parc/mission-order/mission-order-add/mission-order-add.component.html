@@ -1,50 +1,177 @@
-<div class="app-page-title">
-  <div class="page-title-wrapper">
-    <div class="page-title-heading" style="width: 100%;">
-      <div class="page-title-icon">
-        <i _ngcontent-lhs-c2="" class="metismenu-icon pe-7s-users"></i>
-      </div>
-      <div>Saisir des ordres de mission
-        <div class="page-title-subheading">saisie
+<div class="col-md-10">
+  <div class="app-page-title">
+    <div class="page-title-wrapper">
+      <div class="page-title-heading" style="width: 100%;">
+        <div class="page-title-icon">
+          <i _ngcontent-lhs-c2="" class="metismenu-icon pe-7s-users"></i>
+        </div>
+        <div>Saisir des ordres de mission
+          <div class="page-title-subheading">saisie
+          </div>
         </div>
       </div>
     </div>
   </div>
-</div>
+  
+  <br>
+  <div class="col-md-10 ml-2">
+    <mat-accordion class="example-headers-align">
+      <form  [formGroup]="myformGroup">
+      <mat-expansion-panel [expanded]="step === 0" (opened)="setStep(0)" hideToggle>
+        <mat-expansion-panel-header>
+          <mat-panel-title>
+           Entete Feuille de Route
+          </mat-panel-title>
+          <mat-panel-description>
+            Renseigner les informations
+          </mat-panel-description>
+        </mat-expansion-panel-header>
+      
+        <div class="row">
+          <div class="col-md-12">
+            <div class="row">
+              <div class="col-md-6">
+                <mat-form-field class="example-full-width">
+                  <mat-label>Numero de dossier </mat-label>
+                  <input matInput placeholder="4474E" formControlName="num_dossier" required>
+                </mat-form-field>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-md-6">
+                <mat-form-field class="example-full-width">
+                  <mat-label>Numero </mat-label>
+                  <input matInput placeholder="4474E" formControlName="numero" required>
+                </mat-form-field>
+    
+              </div>
+              <div class="col-md-6">
+                <mat-form-field class="example-full-width">
+                  <mat-label>Objet</mat-label>
+                  <mat-select formControlName="object">
+                    <mat-option value="1" title="title">
+                      CLD456
+                    </mat-option>
+                    <mat-option value="1" title="title">
+                      CLD155
+                    </mat-option>
+                    <mat-option value="1" title="title">
+                      TY777
+                    </mat-option>
+                  </mat-select>
+                  <!-- <input matInput placeholder="Last name, First name" formControlName="nationality_id" required> -->
+                </mat-form-field>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-md-6">
+                <mat-form-field class="example-full-width">
+                  <mat-label>Date de depart</mat-label>
+                  <input matInput type="date" placeholder="12" formControlName="date_depart"
+                    required>
+                </mat-form-field>
+              </div>
+              <div class="col-md-6">
+                <mat-form-field class="example-full-width">
+                  <mat-label>Heure de depart</mat-label>
+                  <input matInput placeholder="Ex. 1 Main St, New York, NY" formControlName="heure_depart" required>
+                </mat-form-field>
+              </div>
+    
+            </div>
+            <div class="row">
+              <div class="col-md-4">
+                <mat-form-field class="example-full-width">
+                  <mat-label>Date Retour</mat-label>
+                  <input matInput type="date" placeholder="Ex. 1 Main St, New York, NY" formControlName="date_retour"
+                    required>
+                </mat-form-field>
+              </div>
+              <div class="col-md-4">
+                <mat-form-field class="example-full-width">
+                  <mat-label>Heure Retour</mat-label>
+                  <input matInput placeholder="Ex. 1 Main St, New York, NY" formControlName="heure_retour"  required> 
+                </mat-form-field>
+              </div>
+              <div class="col-md-4">
+                <mat-form-field class="example-full-width">
+                  <mat-label>Duree</mat-label>
+                  <input matInput placeholder="Ex. 1 Main St, New York, NY" formControlName="duree"  required>
+                </mat-form-field>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-md-6">
+                <mat-form-field class="example-full-width">
+                  <mat-label>Index de Depart</mat-label>
+                  <input matInput placeholder="Ex. 1 Main St, New York, NY" formControlName="index_depart"  required>
+                </mat-form-field>
+              </div>
+              <div class="col-md-6">
+                <mat-form-field class="example-full-width">
+                  <mat-label>Index Retour</mat-label>
+                  <input matInput placeholder="Ex. 1 Main St, New York, NY" formControlName="index_retour"  required>
+                </mat-form-field>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-md-6">
+                <mat-form-field appearance="fill" class="example-full-width"> 
+                  <mat-label>Parcours reel</mat-label>
+                  <input matInput type="number" class="example-full-align" formControlName="parcours_reel" >
+                  <span matSuffix>.00</span>
+                </mat-form-field>
+              </div>
+              <div class="col-md-6">
+                <mat-form-field appearance="fill" class="example-full-width">
+                  <mat-label>Parcours Theorique</mat-label>
+                  <input matInput type="number" class="example-full-align" formControlName="parours_theorique">
+                  <span matSuffix>.00</span>
+                </mat-form-field> 
+              </div>
+            </div>
+          </div>
+    
+        </div>
+        <mat-action-row>
+          <button mat-button color="primary" (click)="nextStep()">Next</button>
+        </mat-action-row>
+      </mat-expansion-panel>
+    
 
-<br>
-<mat-accordion class="example-headers-align">
-  <mat-expansion-panel [expanded]="step === 0" (opened)="setStep(0)" hideToggle>
-    <mat-expansion-panel-header>
-      <mat-panel-title>
-       Entete Feuille de Route
-      </mat-panel-title>
-      <mat-panel-description>
-        Renseigner les informations
-      </mat-panel-description>
-    </mat-expansion-panel-header>
-    <div class="row">
-      <div class="col-md-12">
+      <mat-expansion-panel [expanded]="step === 1" (opened)="setStep(1)" hideToggle>
+        <mat-expansion-panel-header>
+          <mat-panel-title>
+            Information du Parc
+          </mat-panel-title>
+          <mat-panel-description>
+            Renseigner les informations
+          </mat-panel-description>
+        </mat-expansion-panel-header>
         <div class="row">
           <div class="col-md-6">
             <mat-form-field class="example-full-width">
-              <mat-label>Numero de dossier </mat-label>
-              <input matInput placeholder="4474E" required>
+              <mat-label>Vehicule</mat-label>
+              <mat-select formControlName="car_id" (change)=getRemorque($event) >
+                <mat-option *ngFor="let car of cars" [value]="car.stepper_id" title="title">
+                 {{car.registration}}
+                </mat-option>
+              </mat-select>
+            </mat-form-field>
+          </div>
+          <div class="col-md-6">
+            <mat-form-field appearance="fill" class="example-full-width">
+              <mat-label>Caburant</mat-label>
+              <input matInput type="number" class="example-full-align" formControlName="carburant" >
+              <span matSuffix>.00</span>
             </mat-form-field>
           </div>
         </div>
         <div class="row">
           <div class="col-md-6">
             <mat-form-field class="example-full-width">
-              <mat-label>Numero </mat-label>
-              <input matInput placeholder="4474E" required>
-            </mat-form-field>
-
-          </div>
-          <div class="col-md-6">
-            <mat-form-field class="example-full-width">
-              <mat-label>Objet</mat-label>
-              <mat-select>
+              <mat-label>Remorque</mat-label>
+              <mat-select formControlName="remorque">
                 <mat-option value="1" title="title">
                   CLD456
                 </mat-option>
@@ -58,210 +185,193 @@
               <!-- <input matInput placeholder="Last name, First name" formControlName="nationality_id" required> -->
             </mat-form-field>
           </div>
-        </div>
-        <div class="row">
-          <div class="col-md-6">
-            <mat-form-field class="example-full-width">
-              <mat-label>Date de depart</mat-label>
-              <input matInput type="date" placeholder="Ex. 1 Main St, New York, NY" formControlName="date_delivrance"
-                required>
-            </mat-form-field>
-          </div>
-          <div class="col-md-6">
-            <mat-form-field class="example-full-width">
-              <mat-label>Heure de depart</mat-label>
-              <input matInput placeholder="Ex. 1 Main St, New York, NY" formControlName="date_delivrance" required>
-            </mat-form-field>
-          </div>
-
-        </div>
-        <div class="row">
-          <div class="col-md-4">
-            <mat-form-field class="example-full-width">
-              <mat-label>Date Retour</mat-label>
-              <input matInput type="date" placeholder="Ex. 1 Main St, New York, NY" formControlName="date_delivrance"
-                required>
-            </mat-form-field>
-          </div>
-          <div class="col-md-4">
-            <mat-form-field class="example-full-width">
-              <mat-label>Heure Retour</mat-label>
-              <input matInput placeholder="Ex. 1 Main St, New York, NY" formControlName="date_delivrance" required>
-            </mat-form-field>
-          </div>
-          <div class="col-md-4">
-            <mat-form-field class="example-full-width">
-              <mat-label>Duree</mat-label>
-              <input matInput placeholder="Ex. 1 Main St, New York, NY" formControlName="date_delivrance" required>
-            </mat-form-field>
-          </div>
-        </div>
-        <div class="row">
-          <div class="col-md-6">
-            <mat-form-field class="example-full-width">
-              <mat-label>Index de Depart</mat-label>
-              <input matInput placeholder="Ex. 1 Main St, New York, NY" formControlName="date_delivrance" required>
-            </mat-form-field>
-          </div>
-          <div class="col-md-6">
-            <mat-form-field class="example-full-width">
-              <mat-label>Index Retour</mat-label>
-              <input matInput placeholder="Ex. 1 Main St, New York, NY" formControlName="date_delivrance" required>
-            </mat-form-field>
-          </div>
-        </div>
-        <div class="row">
-          <div class="col-md-3">
-            <mat-form-field appearance="fill">
-              <mat-label>Parcours reel</mat-label>
-              <input matInput type="number" class="example-full-align">
+          <div class="col-md-6" > 
+            <mat-form-field appearance="fill" class="example-full-width">
+              <mat-label>Retour usine</mat-label>
+              <input matInput type="number" class="example-full-align" formControlName="retour_usine" >
               <span matSuffix>.00</span>
             </mat-form-field>
           </div>
-          <div class="col-md-3">
-            <mat-form-field appearance="fill">
-              <mat-label>Parcours Theorique</mat-label>
-              <input matInput type="number" class="example-full-align">
-              <span matSuffix>.00</span>
-            </mat-form-field> 
+        </div>
+        <div class="row">
+          <div class="col-md-6">
+            <mat-form-field class="example-full-width">
+              <mat-label>Chauffeur</mat-label>
+              <mat-select formControlName="driver_id" >
+                <mat-option *ngFor="let driver of drivers" [value]="driver.stepper_id" title="title">
+                 {{driver.first_name |uppercase}} {{driver.last_name|uppercase}}
+                </mat-option>
+              </mat-select>
+              <!-- <input matInput placeholder="Last name, First name" formControlName="nationality_id" required> -->
+            </mat-form-field>
+          </div>
+          <div class="col-md-6">
+            <mat-form-field class="example-full-width">
+              <mat-label>Convoyeur</mat-label>
+              <mat-select formControlName="convoyer_id" >
+                <mat-option *ngFor="let driver of drivers" [value]="driver.stepper_id" title="title">
+                 {{driver.first_name |uppercase}} {{driver.last_name|uppercase}}
+                </mat-option>
+              </mat-select>
+              <!-- <input matInput placeholder="Last name, First name" formControlName="nationality_id" required> -->
+            </mat-form-field>
           </div>
         </div>
-      </div>
-
-    </div>
-    <mat-action-row>
-      <button mat-button color="primary" (click)="nextStep()">Next</button>
-    </mat-action-row>
-  </mat-expansion-panel>
-
-  <mat-expansion-panel [expanded]="step === 1" (opened)="setStep(1)" hideToggle>
-    <mat-expansion-panel-header>
-      <mat-panel-title>
-        Information du Parc
-      </mat-panel-title>
-      <mat-panel-description>
-        Renseigner les informations
-      </mat-panel-description>
-    </mat-expansion-panel-header>
-    <div class="row">
-      <div class="col-md-6">
-        <mat-form-field class="example-full-width">
-          <mat-label>Objet</mat-label>
-          <mat-select>
-            <mat-option value="1" title="title">
-              CLD456
-            </mat-option>
-            <mat-option value="1" title="title">
-              CLD155
-            </mat-option>
-            <mat-option value="1" title="title">
-              TY777
-            </mat-option>
-          </mat-select>
-          <!-- <input matInput placeholder="Last name, First name" formControlName="nationality_id" required> -->
-        </mat-form-field>
-      </div>
-      <div class="col-md-6">
-        <mat-form-field appearance="fill">
-          <mat-label>Caburant</mat-label>
-          <input matInput type="number" class="example-full-align">
-          <span matSuffix>.00</span>
-        </mat-form-field>
-      </div>
-    </div>
-    <div class="row">
-      <div class="col-md-6">
-        <mat-form-field class="example-full-width">
-          <mat-label>Vehicule</mat-label>
-          <mat-select>
-            <mat-option value="1" title="title">
-              CLD456
-            </mat-option>
-            <mat-option value="1" title="title">
-              CLD155
-            </mat-option>
-            <mat-option value="1" title="title">
-              TY777
-            </mat-option>
-          </mat-select>
-          <!-- <input matInput placeholder="Last name, First name" formControlName="nationality_id" required> -->
-        </mat-form-field>
-      </div>
-      <div class="col-md-6">
-        <mat-form-field appearance="fill">
-          <mat-label>Caburant</mat-label>
-          <input matInput type="number" class="example-full-align">
-          <span matSuffix>.00</span>
-        </mat-form-field>
-      </div>
-    </div>
-    <div class="row">
-      <div class="col-md-6">
-        <mat-form-field class="example-full-width">
-          <mat-label>Chauffeur</mat-label>
-          <mat-select>
-            <mat-option value="1" title="title">
-              CLD456
-            </mat-option>
-            <mat-option value="1" title="title">
-              CLD155
-            </mat-option>
-            <mat-option value="1" title="title">
-              TY777
-            </mat-option>
-          </mat-select>
-          <!-- <input matInput placeholder="Last name, First name" formControlName="nationality_id" required> -->
-        </mat-form-field>
-      </div>
-      <div class="col-md-6">
-        <mat-form-field class="example-full-width">
-          <mat-label>Convoyeur</mat-label>
-          <mat-select>
-            <mat-option value="1" title="title">
-              CLD456
-            </mat-option>
-            <mat-option value="1" title="title">
-              CLD155
-            </mat-option>
-            <mat-option value="1" title="title">
-              TY777
-            </mat-option>
-          </mat-select>
-          <!-- <input matInput placeholder="Last name, First name" formControlName="nationality_id" required> -->
-        </mat-form-field>
-      </div>
-    </div>
-    <div class="row">
-      <div class="col-md-6">
-        <mat-form-field class="example-full-width">
-          <mat-label>Depart de</mat-label>
-          <input matInput placeholder="Ex. 1 Main St, New York, NY" formControlName="date_delivrance" required>
-        </mat-form-field>
-      </div>
-    </div>
-    <mat-action-row>
-      <button mat-button color="warn" (click)="prevStep()">Previous</button>
-      <button mat-button color="primary" (click)="nextStep()">Next</button>
-    </mat-action-row>
-  </mat-expansion-panel>
-
-  <mat-expansion-panel [expanded]="step === 2" (opened)="setStep(2)" hideToggle>
-    <mat-expansion-panel-header>
-      <mat-panel-title>
-        Day of the trip
-      </mat-panel-title>
-      <mat-panel-description>
-        Inform the date you wish to travel
-        <mat-icon>date_range</mat-icon>
-      </mat-panel-description>
-    </mat-expansion-panel-header>
-
-
-
-    <mat-action-row>
-      <button mat-button color="warn" (click)="prevStep()">Previous</button>
-      <button mat-button color="primary" (click)="nextStep()">End</button>
-    </mat-action-row>
-  </mat-expansion-panel>
-
-</mat-accordion>
+        <div class="row">
+          <div class="col-md-6">
+            <mat-form-field class="example-full-width">
+              <mat-label>Depart de</mat-label>
+              <input matInput placeholder="4" formControlName="depart_of"  required>
+            </mat-form-field>
+          </div>
+        </div>
+        <mat-action-row>
+          <button mat-button color="warn" (click)="prevStep()">Previous</button>
+          <button mat-button color="primary" (click)="nextStep()">Next</button>
+        </mat-action-row>
+      </mat-expansion-panel>
+    </form>
+      <mat-expansion-panel [expanded]="step === 2" (opened)="setStep(2)" hideToggle>
+        <mat-expansion-panel-header>
+          <mat-panel-title>
+            Destination
+          </mat-panel-title>
+          <mat-panel-description>
+            renseigner les differentes destinations
+          </mat-panel-description>
+        </mat-expansion-panel-header>
+        <div class="row">
+        </div>
+        <div class="table-responsive">
+            <table class="table table-bordered table-hover" style="width: 100%;">
+              <thead>
+                <tr>
+                  <th>Client</th>
+                  <th>Chargement à</th>
+                  <th>Dechargement à</th>
+                  <th>Produit</th>
+                  <th>Quantite</th>
+                  <th>Num Bon</th>
+                  <th>Obs</th>
+                  <th>Action</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                    <td>
+                      <mat-form-field class="example-full-width">
+                        <mat-label>Client</mat-label>
+                        <mat-select [(ngModel)]="this.client" >
+                          <mat-option *ngFor="let client of clients" [value]="client.id" title="title">
+                           {{client.name |uppercase}} 
+                          </mat-option>
+                        </mat-select>
+                      </mat-form-field>
+                    </td>
+                    <td>
+                      <div  class="badge badge-pill badge-success">{{this.form.depart_of.value}}</div>
+                    </td>
+                    <td>
+                      <mat-form-field class="example-full-width">
+                        <mat-label>Dechargement à</mat-label>
+                        <input matInput placeholder="Ex. 1 Main St, New York, NY" [(ngModel)]="this.dechar" >
+                      </mat-form-field>
+                    </td>
+                    <td>
+                      <mat-form-field class="example-full-width">
+                        <mat-label>Produit</mat-label>
+                        <input matInput placeholder="Ex. 1 Main St, New York, NY" [(ngModel)]="this.prod" >
+                      </mat-form-field>
+                    </td>
+                    <td>
+                      <mat-form-field class="example-full-width">
+                        <mat-label>quantite</mat-label>
+                        <input matInput placeholder="Ex. 1 Main St, New York, NY" [(ngModel)]="this.qte" >
+                      </mat-form-field>
+                    </td>
+                    <td>
+                      <mat-form-field class="example-full-width">
+                        <mat-label>Num bon</mat-label>
+                        <input matInput placeholder="Ex. 1 Main St, New York, NY"  [(ngModel)]="this.bon" >
+                      </mat-form-field>
+                    </td>
+                    <td>
+                      <mat-form-field class="example-full-width">
+                        <mat-label>Obs</mat-label>
+                        <input matInput placeholder="Ex. 1 Main St, New York, NY" [(ngModel)]="this.obs" >
+                      </mat-form-field>
+                    </td>
+                    <td>
+                      <button class="btn btn-success" (click)="addCargaison()">Add</button>
+                    </td>
+                </tr>
+        
+                <tr *ngFor="let cargaison of cargaisons,let index=index">
+                  <td>
+                    <mat-form-field class="example-full-width">
+                      <mat-label>Client</mat-label>
+                      <mat-select [(ngModel)]="cargaison.transport_element_id">
+                        <mat-option value="1" title="title">
+                          CLD456
+                        </mat-option>
+                        <mat-option value="1" title="title">
+                          CLD155
+                        </mat-option>
+                        <mat-option value="1" title="title">
+                          TY777
+                        </mat-option>
+                      </mat-select>
+                    </mat-form-field>
+                  </td>
+                  <td>
+                    <mat-form-field class="example-full-width">
+                      <mat-label>Depart dechargement à</mat-label>
+                      <input matInput placeholder="Ex. 1 Main St, New York, NY"  [(ngModel)]="cargaison.loading_city" required>
+                    </mat-form-field>
+                  </td>
+                  <td>
+                    <mat-form-field class="example-full-width">
+                      <mat-label>Dechargement à</mat-label>
+                      <input matInput placeholder="Ex. 1 Main St, New York, NY" [(ngModel)]="cargaison.dechar"  required>
+                    </mat-form-field>
+                  </td>
+                  <td>
+                    <mat-form-field class="example-full-width">
+                      <mat-label>Produit</mat-label>
+                      <input matInput placeholder="Ex. 1 Main St, New York, NY" [(ngModel)]="cargaison.product" required>
+                    </mat-form-field>
+                  </td>
+                  <td>
+                    <mat-form-field class="example-full-width">
+                      <mat-label>quantite</mat-label>
+                      <input matInput placeholder="Ex. 1 Main St, New York, NY" [(ngModel)]="cargaison.quantity"  required>
+                    </mat-form-field>
+                  </td>
+                  <td>
+                    <mat-form-field class="example-full-width">
+                      <mat-label>Num bon</mat-label>
+                      <input matInput placeholder="Ex. 1 Main St, New York, NY" [(ngModel)]="cargaison.voucher_number"  required>
+                    </mat-form-field>
+                  </td>
+                  <td>
+                    <mat-form-field class="example-full-width">
+                      <mat-label>Obs</mat-label>
+                      <input matInput placeholder="Ex. 1 Main St, New York, NY" [(ngModel)]="cargaison.park_observation" required>
+                    </mat-form-field>
+                  </td>
+                  <td>
+                    <button class="btn btn-danger btn-sm" (click)="deleteCargaison(index)">delete</button>
+                  </td>
+              </tr>
+              </tbody>
+            </table>
+        </div>
+    
+        <mat-action-row>
+          <button mat-button color="warn" (click)="prevStep()">Previous</button>
+          <button mat-button color="primary" (click)="add()">Enregistrer</button>
+        </mat-action-row>
+      </mat-expansion-panel>
+    </mat-accordion>
+  </div>
+</div>

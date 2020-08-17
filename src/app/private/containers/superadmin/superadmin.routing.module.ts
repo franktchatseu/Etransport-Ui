@@ -36,6 +36,7 @@ import { AcceuilComponent } from './containers/acceuil/acceuil.component';
 import { MailDriverComponent } from './containers/driver/mail-driver/mail-driver.component';
 import { MailTransporterComponent } from './containers/transporteur/mail-transporter/mail-transporter.component';
 import { RangeActionsComponent } from './containers/parametres/range-actions/range-actions.component';
+import { InterventionSheetAddComponent } from './containers/maintenance/intervention-sheet/intervention-sheet-add/intervention-sheet-add.component';
 
 const routes: Routes = [
   {
@@ -192,6 +193,16 @@ const routes: Routes = [
             path: 'mission-order',
             component: MissionOrderAddComponent
           }
+        ]
+      },
+      {
+        path: 'maintenance',
+        children: [
+          {
+            path: 'intervention-sheet',
+            component: InterventionSheetAddComponent,
+          },
+        
         ]
       },
       {
