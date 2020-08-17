@@ -55,6 +55,8 @@ import { AffectationAddComponent } from "./containers/parametres/affectation/aff
 import { AffectationAllComponent } from "./containers/parametres/affectation/affectation-all/affectation-all.component";
 //ordres de mission
 import { MissionOrderAddComponent } from './containers/parc/mission-order/mission-order-add/mission-order-add.component';
+import { InterventionSheetAddComponent } from './containers/maintenance/intervention-sheet/intervention-sheet-add/intervention-sheet-add.component';
+
 
 
 
@@ -109,7 +111,9 @@ import { MissionOrderAddComponent } from './containers/parc/mission-order/missio
     //affectation des engins aux chauffeurs
     AffectationAddComponent,
     AffectationAllComponent,
-    MissionOrderAddComponent
+    MissionOrderAddComponent,
+    //saisie des fiches interventions
+    InterventionSheetAddComponent
 
   ],
   imports: [

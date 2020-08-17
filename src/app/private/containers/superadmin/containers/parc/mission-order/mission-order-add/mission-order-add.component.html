@@ -115,15 +115,15 @@
               </div>
             </div>
             <div class="row">
-              <div class="col-md-3">
-                <mat-form-field appearance="fill">
+              <div class="col-md-6">
+                <mat-form-field appearance="fill" class="example-full-width"> 
                   <mat-label>Parcours reel</mat-label>
                   <input matInput type="number" class="example-full-align" formControlName="parcours_reel" >
                   <span matSuffix>.00</span>
                 </mat-form-field>
               </div>
-              <div class="col-md-3">
-                <mat-form-field appearance="fill">
+              <div class="col-md-6">
+                <mat-form-field appearance="fill" class="example-full-width">
                   <mat-label>Parcours Theorique</mat-label>
                   <input matInput type="number" class="example-full-align" formControlName="parours_theorique">
                   <span matSuffix>.00</span>
@@ -152,21 +152,15 @@
           <div class="col-md-6">
             <mat-form-field class="example-full-width">
               <mat-label>Vehicule</mat-label>
-              <mat-select formControlName="car_id" >
-                <mat-option value="1" title="title">
-                  CLD456
-                </mat-option>
-                <mat-option value="1" title="title">
-                  CLD155
-                </mat-option>
-                <mat-option value="1" title="title">
-                  TY777
+              <mat-select formControlName="car_id" (change)=getRemorque($event) >
+                <mat-option *ngFor="let car of cars" [value]="car.stepper_id" title="title">
+                 {{car.registration}}
                 </mat-option>
               </mat-select>
             </mat-form-field>
           </div>
           <div class="col-md-6">
-            <mat-form-field appearance="fill">
+            <mat-form-field appearance="fill" class="example-full-width">
               <mat-label>Caburant</mat-label>
               <input matInput type="number" class="example-full-align" formControlName="carburant" >
               <span matSuffix>.00</span>
@@ -191,9 +185,9 @@
               <!-- <input matInput placeholder="Last name, First name" formControlName="nationality_id" required> -->
             </mat-form-field>
           </div>
-          <div class="col-md-6">
-            <mat-form-field appearance="fill">
-              <mat-label>REtour usine</mat-label>
+          <div class="col-md-6" > 
+            <mat-form-field appearance="fill" class="example-full-width">
+              <mat-label>Retour usine</mat-label>
               <input matInput type="number" class="example-full-align" formControlName="retour_usine" >
               <span matSuffix>.00</span>
             </mat-form-field>
@@ -203,15 +197,9 @@
           <div class="col-md-6">
             <mat-form-field class="example-full-width">
               <mat-label>Chauffeur</mat-label>
-              <mat-select formControlName="driver_id">
-                <mat-option value="1" title="title">
-                  CLD456
-                </mat-option>
-                <mat-option value="1" title="title">
-                  CLD155
-                </mat-option>
-                <mat-option value="1" title="title">
-                  TY777
+              <mat-select formControlName="driver_id" >
+                <mat-option *ngFor="let driver of drivers" [value]="driver.stepper_id" title="title">
+                 {{driver.first_name |uppercase}} {{driver.last_name|uppercase}}
                 </mat-option>
               </mat-select>
               <!-- <input matInput placeholder="Last name, First name" formControlName="nationality_id" required> -->
@@ -220,15 +208,9 @@
           <div class="col-md-6">
             <mat-form-field class="example-full-width">
               <mat-label>Convoyeur</mat-label>
-              <mat-select formControlName="convoyer_id">
-                <mat-option value="1" title="title">
-                  CLD456
-                </mat-option>
-                <mat-option value="1" title="title">
-                  CLD155
-                </mat-option>
-                <mat-option value="1" title="title">
-                  TY777
+              <mat-select formControlName="convoyer_id" >
+                <mat-option *ngFor="let driver of drivers" [value]="driver.stepper_id" title="title">
+                 {{driver.first_name |uppercase}} {{driver.last_name|uppercase}}
                 </mat-option>
               </mat-select>
               <!-- <input matInput placeholder="Last name, First name" formControlName="nationality_id" required> -->
@@ -259,24 +241,6 @@
           </mat-panel-description>
         </mat-expansion-panel-header>
         <div class="row">
-          <div class="col-md-6">
-            <mat-form-field class="example-full-width">
-              <mat-label>Vehicule</mat-label>
-              <mat-select>
-                <mat-option value="1" title="title">
-                  CLD456
-                </mat-option>
-                <mat-option value="1" title="title">
-                  CLD155
-                </mat-option>
-                <mat-option value="1" title="title">
-                  TY777
-                </mat-option>
-              </mat-select>
-              <!-- <input matInput placeholder="Last name, First name" formControlName="nationality_id" required> -->
-            </mat-form-field>
-          </div>
-       
         </div>
         <div class="table-responsive">
             <table class="table table-bordered table-hover" style="width: 100%;">
@@ -284,7 +248,7 @@
                 <tr>
                   <th>Client</th>
                   <th>Chargement à</th>
-                  <th>Dechargtement à</th>
+                  <th>Dechargement à</th>
                   <th>Produit</th>
                   <th>Quantite</th>
                   <th>Num Bon</th>
@@ -297,24 +261,15 @@
                     <td>
                       <mat-form-field class="example-full-width">
                         <mat-label>Client</mat-label>
-                        <mat-select [(ngModel)]="this.client">
-                          <mat-option value="1" title="title">
-                            CLD456
-                          </mat-option>
-                          <mat-option value="1" title="title">
-                            CLD155
-                          </mat-option>
-                          <mat-option value="1" title="title">
-                            TY777
+                        <mat-select [(ngModel)]="this.client" >
+                          <mat-option *ngFor="let client of clients" [value]="client.id" title="title">
+                           {{client.name |uppercase}} 
                           </mat-option>
                         </mat-select>
                       </mat-form-field>
                     </td>
                     <td>
-                      <mat-form-field class="example-full-width">
-                        <mat-label>chargement à</mat-label>
-                        <input matInput placeholder="Ex. 1 Main St, New York, NY" [(ngModel)]="this.char"  >
-                      </mat-form-field>
+                      <div  class="badge badge-pill badge-success">{{this.form.depart_of.value}}</div>
                     </td>
                     <td>
                       <mat-form-field class="example-full-width">
@@ -350,11 +305,12 @@
                       <button class="btn btn-success" (click)="addCargaison()">Add</button>
                     </td>
                 </tr>
+        
                 <tr *ngFor="let cargaison of cargaisons,let index=index">
                   <td>
                     <mat-form-field class="example-full-width">
                       <mat-label>Client</mat-label>
-                      <mat-select [(ngModel)]="cargaison.client">
+                      <mat-select [(ngModel)]="cargaison.transport_element_id">
                         <mat-option value="1" title="title">
                           CLD456
                         </mat-option>
@@ -370,7 +326,7 @@
                   <td>
                     <mat-form-field class="example-full-width">
                       <mat-label>Depart dechargement à</mat-label>
-                      <input matInput placeholder="Ex. 1 Main St, New York, NY"  [(ngModel)]="cargaison.char" required>
+                      <input matInput placeholder="Ex. 1 Main St, New York, NY"  [(ngModel)]="cargaison.loading_city" required>
                     </mat-form-field>
                   </td>
                   <td>
@@ -382,25 +338,25 @@
                   <td>
                     <mat-form-field class="example-full-width">
                       <mat-label>Produit</mat-label>
-                      <input matInput placeholder="Ex. 1 Main St, New York, NY" [(ngModel)]="cargaison.prod" required>
+                      <input matInput placeholder="Ex. 1 Main St, New York, NY" [(ngModel)]="cargaison.product" required>
                     </mat-form-field>
                   </td>
                   <td>
                     <mat-form-field class="example-full-width">
                       <mat-label>quantite</mat-label>
-                      <input matInput placeholder="Ex. 1 Main St, New York, NY" [(ngModel)]="cargaison.qte"  required>
+                      <input matInput placeholder="Ex. 1 Main St, New York, NY" [(ngModel)]="cargaison.quantity"  required>
                     </mat-form-field>
                   </td>
                   <td>
                     <mat-form-field class="example-full-width">
                       <mat-label>Num bon</mat-label>
-                      <input matInput placeholder="Ex. 1 Main St, New York, NY" [(ngModel)]="cargaison.bon"  required>
+                      <input matInput placeholder="Ex. 1 Main St, New York, NY" [(ngModel)]="cargaison.voucher_number"  required>
                     </mat-form-field>
                   </td>
                   <td>
                     <mat-form-field class="example-full-width">
                       <mat-label>Obs</mat-label>
-                      <input matInput placeholder="Ex. 1 Main St, New York, NY" [(ngModel)]="cargaison.obs" required>
+                      <input matInput placeholder="Ex. 1 Main St, New York, NY" [(ngModel)]="cargaison.park_observation" required>
                     </mat-form-field>
                   </td>
                   <td>
@@ -413,7 +369,7 @@
     
         <mat-action-row>
           <button mat-button color="warn" (click)="prevStep()">Previous</button>
-          <button mat-button color="primary" (click)="nextStep()">End</button>
+          <button mat-button color="primary" (click)="add()">Enregistrer</button>
         </mat-action-row>
       </mat-expansion-panel>
     </mat-accordion>

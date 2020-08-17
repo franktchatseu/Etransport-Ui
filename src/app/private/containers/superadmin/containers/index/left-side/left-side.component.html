@@ -200,6 +200,29 @@
                     </ul>
                 </li>
                 <li class="mm-active">
+                    <a href="javascript:void(0);" aria-expanded="false" (click)="showChildren('.maintenance')">
+                        <i class="metismenu-icon pe-7s-config"></i>
+                        Maintenance
+                        <i class="metismenu-state-icon pe-7s-angle-down caret-left"></i>
+                    </a>
+                    <ul class="maintenance mm-collapse">
+                        <li>
+                            <a href="javascript:void(0);" (click)="activeMenu.menu8=1;goTo('maintenance/intervention-sheet')"
+                                class="{{ activeMenu.menu8 == 1 ? 'mm-active': ''}}">
+                                <i class="metismenu-icon">
+                                </i>Fiche Intervention
+                            </a>
+                        </li>
+                        <li>
+                            <a href="javascript:void(0);" (click)="activeMenu.menu8=2;goTo('parc/technical-visit')"
+                                class="{{ activeMenu.menu8 == 2 ? 'mm-active': ''}}">
+                                <i class="metismenu-icon">
+                                </i>Historique de Maintenance
+                            </a>
+                        </li>
+                    </ul>
+                </li>
+                <li class="mm-active">
                     <a href="javascript:void(0);" aria-expanded="false" (click)="showChildren('.today4')">
                         <i class="metismenu-icon pe-7s-config"></i>
                         Parametres
